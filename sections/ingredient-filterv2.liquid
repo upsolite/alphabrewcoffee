@@ -1,0 +1,305 @@
+{{ 'ingredient-filterv2.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="ingredient-filter-v2"
+  style="
+    --ingredient-filter-v2-desktop-columns: {{ section.settings.desktop_columns }};
+    --ingredient-filter-v2-bg: {{ section.settings.background_color }};
+  "
+>
+  <div class="ingredient-filter-v2__container">
+    {% if section.settings.heading != blank or section.settings.subheading != blank %}
+      <div class="ingredient-filter-v2__header">
+        {% if section.settings.heading != blank %}
+          <h2 class="ingredient-filter-v2__title">{{ section.settings.heading | escape }}</h2>
+        {% endif %}
+
+        {% if section.settings.subheading != blank %}
+          <p class="ingredient-filter-v2__subtitle">{{ section.settings.subheading | escape }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="ingredient-filter-v2__cards {% if section.settings.convert_grid_to_scrollable %}ingredient-filter-v2__cards--scrollable{% endif %}">
+        {% for block in section.blocks %}
+          <div class="ingredient-filter-v2__card" {{ block.shopify_attributes }}>
+            {% if block.settings.category_title != blank or block.settings.category_description != blank %}
+              <div class="ingredient-filter-v2__card-header">
+                {% if block.settings.category_title != blank %}
+                  <h3>{{ block.settings.category_title | escape }}</h3>
+                {% endif %}
+
+                {% if block.settings.category_description != blank %}
+                  <p>{{ block.settings.category_description | escape }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <div class="ingredient-filter-v2__items ingredient-filter-v2__items--{{ block.settings.items_count }}">
+              {% for index in (1..3) %}
+                {% liquid
+                  assign show_item = true
+
+                  if index == 3 and block.settings.items_count == '2'
+                    assign show_item = false
+                  endif
+
+                  assign image_key = 'item_' | append: index | append: '_image'
+                  assign amount_key = 'item_' | append: index | append: '_amount'
+                  assign title_key = 'item_' | append: index | append: '_title'
+                  assign description_key = 'item_' | append: index | append: '_description'
+
+                  assign image = block.settings[image_key]
+                  assign amount = block.settings[amount_key]
+                  assign title = block.settings[title_key]
+                  assign description = block.settings[description_key]
+                %}
+
+                {% if show_item %}
+                  <div class="ingredient-filter-v2__item">
+                    {% if image != blank %}
+                      {{
+                        image
+                        | image_url: width: 700
+                        | image_tag:
+                          width: 700,
+                          height: 360,
+                          loading: 'lazy',
+                          class: 'ingredient-filter-v2__item-image',
+                          alt: image.alt
+                      }}
+                    {% endif %}
+
+                    <div class="ingredient-filter-v2__item-overlay"></div>
+
+                    {% if amount != blank %}
+                      <span class="ingredient-filter-v2__amount">{{ amount | escape }}</span>
+                    {% endif %}
+
+                    <div class="ingredient-filter-v2__item-copy">
+                      {% if title != blank %}
+                        <h4>{{ title | escape }}</h4>
+                      {% endif %}
+
+                      {% if description != blank %}
+                        <p>{{ description | escape }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ingredient Filter V2",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Functional Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Built with premium daily performance support"
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "label": "Desktop cards per row",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "convert_grid_to_scrollable",
+      "label": "Convert grid to scrollable",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient_group",
+      "name": "Ingredient group",
+      "settings": [
+        {
+          "type": "text",
+          "id": "category_title",
+          "label": "Card title",
+          "default": "Testosterone Production"
+        },
+        {
+          "type": "text",
+          "id": "category_description",
+          "label": "Card description",
+          "default": "Supports your body's natural testosterone production pathways"
+        },
+        {
+          "type": "select",
+          "id": "items_count",
+          "label": "Ingredient tiles in this card",
+          "options": [
+            {
+              "value": "2",
+              "label": "2 tiles"
+            },
+            {
+              "value": "3",
+              "label": "3 tiles"
+            }
+          ],
+          "default": "2"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_1_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "item_1_amount",
+          "label": "Amount",
+          "default": "400 mg"
+        },
+        {
+          "type": "text",
+          "id": "item_1_title",
+          "label": "Title",
+          "default": "Tongkat Ali"
+        },
+        {
+          "type": "textarea",
+          "id": "item_1_description",
+          "label": "Description",
+          "default": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "item_2_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "item_2_amount",
+          "label": "Amount",
+          "default": "600 mg"
+        },
+        {
+          "type": "text",
+          "id": "item_2_title",
+          "label": "Title",
+          "default": "Ashwagandha"
+        },
+        {
+          "type": "textarea",
+          "id": "item_2_description",
+          "label": "Description",
+          "default": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth"
+        },
+        {
+          "type": "header",
+          "content": "Ingredient 3"
+        },
+        {
+          "type": "paragraph",
+          "content": "Ingredient 3 only shows when this block is set to 3 tiles."
+        },
+        {
+          "type": "image_picker",
+          "id": "item_3_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "item_3_amount",
+          "label": "Amount",
+          "default": "1000 mg"
+        },
+        {
+          "type": "text",
+          "id": "item_3_title",
+          "label": "Title",
+          "default": "Black Maca"
+        },
+        {
+          "type": "textarea",
+          "id": "item_3_description",
+          "label": "Description",
+          "default": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredient Filter V2",
+      "blocks": [
+        {
+          "type": "ingredient_group",
+          "settings": {
+            "category_title": "Testosterone Production",
+            "category_description": "Supports your body's natural testosterone production pathways",
+            "items_count": "2",
+            "item_1_amount": "400 mg",
+            "item_1_title": "Tongkat Ali",
+            "item_2_amount": "600 mg",
+            "item_2_title": "Ashwagandha"
+          }
+        },
+        {
+          "type": "ingredient_group",
+          "settings": {
+            "category_title": "Energy & Stamina",
+            "category_description": "Boosts energy levels and enhances stamina",
+            "items_count": "2",
+            "item_1_amount": "8000 mg",
+            "item_1_title": "Arabica Coffee",
+            "item_2_amount": "200 mg",
+            "item_2_title": "L-Theanine"
+          }
+        },
+        {
+          "type": "ingredient_group",
+          "settings": {
+            "category_title": "Performance Support",
+            "category_description": "Supports vitality, circulation, and daily performance",
+            "items_count": "3",
+            "item_1_amount": "6000 mg",
+            "item_1_title": "L-Citrulline",
+            "item_2_amount": "800 mg",
+            "item_2_title": "Horny Goat Weed",
+            "item_3_amount": "1000 mg",
+            "item_3_title": "Fenugreek"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

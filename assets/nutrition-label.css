@@ -1,0 +1,226 @@
+.nutrition-label__trigger {
+  display: block;
+  width: max-content;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #f1e5c2;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: underline;
+}
+
+.alpha-brew-spec {
+  --primary: #edca7b;
+  --secondary: #f1e5c2;
+  --text: #111111;
+  --border: #e5d4a3;
+  max-width: 500px;
+  margin: 20px auto;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 8px;
+  color: var(--text);
+  text-align: left;
+}
+
+
+
+.alpha-brew-spec * {
+  box-sizing: border-box;
+}
+
+.alpha-brew-spec__hero {
+  text-align: center;
+  padding: 21px 13px;
+  background: linear-gradient(180deg, var(--secondary), #ffffff);
+  border-bottom: 1px solid var(--border);
+}
+
+.alpha-brew-spec__logo {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #8c6a20;
+  margin-bottom: 8.5px;
+  text-transform: uppercase;
+}
+
+.alpha-brew-spec__hero h2 {
+  margin: 0 0 8.5px;
+  font-size: clamp(18px, 2.5vw, 34px);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.alpha-brew-spec__hero p {
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.alpha-brew-spec__section {
+  padding: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.alpha-brew-spec__title {
+  margin: 0 0 8.5px;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8c6a20;
+}
+
+.alpha-brew-spec__ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.alpha-brew-spec__ingredient {
+  background: var(--secondary);
+  padding: 4px 7px;
+  border-radius: 25px;
+  font-size: 7.5px;
+  font-weight: 600;
+}
+
+.alpha-brew-spec__table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.alpha-brew-spec__table th {
+  background: var(--secondary);
+  text-align: left;
+  padding: 6px;
+  font-size: 7.5px;
+}
+
+.alpha-brew-spec__table td {
+  padding: 6px;
+  border-top: 1px solid var(--border);
+}
+
+.alpha-brew-spec__table tr:nth-child(even) {
+  background: #faf8f2;
+}
+
+.alpha-brew-spec__usage {
+  font-size: 8.5px;
+  line-height: 1.55;
+}
+
+.alpha-brew-spec__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8.5px;
+  align-items: center;
+  padding: 10.5px 15px;
+  flex-wrap: wrap;
+}
+
+.alpha-brew-spec__badge {
+  background: var(--secondary);
+  padding: 5px 8.5px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.nutrition-label__close {
+  position: absolute;
+  top: 7.5px;
+  right: 7.5px;
+  width: 21px;
+  height: 21px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nutrition-label__modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 8.5px;
+  z-index: 999999;
+}
+
+.nutrition-label__modal.active {
+  display: flex;
+}
+
+.nutrition-label__modal__background {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.nutrition-label__modal__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 525px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+body.nutrition-modal-open {
+  overflow: hidden;
+}
+
+@media(max-width:768px) {
+
+  .alpha-brew-spec__hero {
+    padding: 14.25px 8.5px;
+  }
+
+  .alpha-brew-spec__section {
+    padding: 10px 8.5px;
+  }
+
+  .alpha-brew-spec__title {
+    font-size: 14px;
+  }
+
+  .alpha-brew-spec__table {
+    display: table;
+    width: 100%;
+  }
+
+  .alpha-brew-spec__table th,
+  .alpha-brew-spec__table td {
+    width: 50%;
+    padding: 6.45px 6px;
+    word-break: normal;
+  }
+
+  .alpha-brew-spec__footer {
+    padding: 8px 8.5px;
+  }
+
+  .nutrition-label__close {
+    right: 0;
+  }
+
+  .nutrition-label__container {
+    text-align: center;
+  }
+}

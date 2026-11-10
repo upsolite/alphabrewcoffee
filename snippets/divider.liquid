@@ -1,0 +1,47 @@
+{% comment %}
+  Divider Snippet
+  
+  Accepts:
+  - color: Color of the divider line
+  - width: Width of the divider (% or px)
+  - thickness: Thickness of the divider line (px)
+  - style: Line style (solid, dashed, dotted)
+  - margin_top: Top margin in pixels
+  - margin_bottom: Bottom margin in pixels
+  - alignment: Alignment of the divider (left, center, right)
+  - max_width: Maximum width of the divider
+  - block: Block object for Shopify attributes
+{% endcomment %}
+
+<div class="divider-container" 
+  style="
+    margin-top: {{ margin_top | default: 10 }}px;
+    margin-bottom: {{ margin_bottom | default: 10 }}px;
+    text-align: {{ alignment | default: 'center' }};
+  "
+  {{ block.shopify_attributes }}>
+  
+  <hr class="divider-line" 
+    style="
+      width: {{ width | default: '100%' }};
+      max-width: {{ max_width | default: '100%' }};
+      border: none;
+      border-top: {{ thickness | default: 1 }}px {{ style | default: 'solid' }} {{ color | default: '#e0e0e0' }};
+      margin: 0 auto;
+      display: block;
+    ">
+</div>
+
+<style>
+  .divider-container {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    clear: both;
+  }
+  
+  .divider-line {
+    padding: 0;
+    background: none;
+  }
+</style> 

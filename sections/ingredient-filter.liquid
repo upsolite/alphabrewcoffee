@@ -1,0 +1,188 @@
+{{ 'ingredient-filter.css' | asset_url | stylesheet_tag }}
+
+
+{% liquid
+  assign background_color = section.settings.background_color
+  assign background_image = section.settings.background_image
+%}
+
+<style>
+  .ingredient-filter__content {
+    {% if background_color != blank %}
+      background-color: {{ background_color }};
+    {% else %}
+      background-image: url({{ background_image | image_url }});
+    {% endif %}
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+</style>
+
+<div
+  class="ingredient-filter"
+  style="
+    --ingredient-filter-desktop-columns: {{ section.settings.desktop_columns }};
+    --ingredient-filter-mobile-columns: {{ section.settings.mobile_columns }};
+  "
+>
+  <div class="ingredient-filter__container">
+    <div class="ingredient-filter__header">
+      {% if section.settings.heading != blank %}
+        <h2 class="ingredient-filter__title">{{ section.settings.heading | escape }}</h2>
+      {% endif %}
+
+      {% if section.settings.subheading != blank %}
+        <p class="ingredient-filter__subtitle">{{ section.settings.subheading | escape }}</p>
+      {% endif %}
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="ingredient-filter__content">
+        {% for block in section.blocks %}
+          <div class="ingredient-filter__content__item" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank or block.settings.tag != blank %}
+              <div class="ingredient-filter__content__item__image">
+                {% if block.settings.image != blank %}
+                  {{
+                    block.settings.image
+                    | image_url: width: 300
+                    | image_tag:
+                      width: 300,
+                      height: 300,
+                      loading: 'lazy',
+                      class: 'ingredient-filter__content__item__image__desktop',
+                      alt: block.settings.image.alt
+                  }}
+                {% endif %}
+                {% if block.settings.mobile_image != blank %}
+                  {{
+                    block.settings.mobile_image
+                    | image_url: width: 300
+                    | image_tag:
+                      width: 300,
+                      height: 300,
+                      class: 'ingredient-filter__content__item__image__mobile',
+                      loading: 'lazy',
+                      alt: block.settings.mobile_image.alt
+                  }}
+                {% endif %}
+
+                {% if block.settings.tag != blank %}
+                  <p class="ingredient-filter__content__item__image__tag">{{ block.settings.tag | escape }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <div class="ingredient-filter__content__item__title">
+              {% if block.settings.title != blank %}
+                <h3>{{ block.settings.title | escape }}</h3>
+              {% endif %}
+
+              {% if block.settings.description != blank %}
+                <p>{{ block.settings.description | escape }}</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ingredient Filter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "8 INGREDIENTS IN 1 POWERFUL FORMULA"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "clinically dosed + EFFECTIVE"
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "label": "Desktop columns",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "Mobile columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Amount tag",
+          "default": "1000 mg"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Tongkat Ali"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredient Filter"
+    }
+  ]
+}
+{% endschema %}

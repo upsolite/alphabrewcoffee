@@ -1,0 +1,1022 @@
+{{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+
+{% comment %} Google Fonts for accent text customization {% endcomment %}
+{% if section.settings.override_global_accent %}
+  {% if section.settings.accent_font_family != 'inherit' and section.settings.accent_font_family != 'serif' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% case section.settings.accent_font_family %}
+      {% when 'Georgia Pro' %}
+        <link href="https://fonts.googleapis.com/css2?family=Georgia+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+      {% when 'Bodoni Moda' %}
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800&display=swap" rel="stylesheet">
+      {% when 'Instrument Serif' %}
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'DM Serif Text' %}
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'Nothing You Could Do' %}
+        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    {% endcase %}
+  {% endif %}
+{% endif %}
+
+{% liquid
+  assign scheme = section.settings.color_scheme
+  assign contained = section.settings.contained_section
+  assign enable_spacing = section.settings.enable_spacing
+  assign section_spacing_mobile = section.settings.section_spacing_mobile
+  assign section_spacing_desktop = section.settings.section_spacing_desktop
+%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    {% if enable_spacing %}
+      padding-top: {{ section_spacing_mobile }}px;
+      padding-bottom: {{ section_spacing_mobile }}px;
+    {% endif %}
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      {% if enable_spacing %}
+        padding-top: {{ section_spacing_desktop }}px;
+        padding-bottom: {{ section_spacing_desktop }}px;
+      {% endif %}
+    }
+  }
+
+  .roadmap-section {
+    {% if section.settings.use_theme_colors %}
+      background: {{ settings.global_section_background_gradient }};
+      color: {{ settings.global_section_text_color }};
+    {% else %}
+      background: {{ section.settings.section_background }};
+      color: {{ section.settings.text_color }};
+    {% endif %}
+  }
+
+  .roadmap-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    .roadmap-container {
+      flex-direction: {% if section.settings.image_position == 'left' %}row-reverse{% else %}row{% endif %};
+      align-items: flex-start;
+      gap: 60px;
+      max-width: {{ section.settings.max_container_width }}px;
+    }
+
+    .roadmap-content {
+      {% if section.settings.desktop_image != blank %}
+        flex: 0 0 {{ section.settings.text_column_width }}%;
+        max-width: {{ section.settings.text_column_width }}%;
+      {% else %}
+        flex: 1;
+      {% endif %}
+      min-width: 0;
+    }
+
+    .roadmap-image-column {
+      flex: 0 0 {{ section.settings.image_column_width }}%;
+      max-width: {{ section.settings.image_column_width }}%;
+    }
+  }
+
+  .roadmap-image {
+    width: 100%;
+    height: auto;
+    border-radius: {{ section.settings.image_border_radius }}px;
+  }
+
+  .roadmap-timeline {
+    position: relative;
+    max-width: 100%;
+  }
+
+  .roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 30px;
+    bottom: 0;
+    width: {{ section.settings.timeline_width }}px;
+    background: {{ section.settings.timeline_color }};
+    border-radius: {{ section.settings.timeline_border_radius }}px;
+  }
+
+  .roadmap-item {
+    position: relative;
+    margin-bottom: {{ section.settings.roadmap_item_spacing_desktop }}px;
+    padding-left: 50px;
+  }
+
+  .roadmap-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .roadmap-circle {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_2_color }}{% else %}{{ section.settings.circle_color }}{% endif %};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .roadmap-circle svg {
+    width: 16px;
+    height: 16px;
+    fill: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.circle_icon_color }}{% endif %} !important;
+  }
+
+  .roadmap-badge {
+    display: inline-block;
+    background: {{ section.settings.badge_background }};
+    color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.badge_text_color }}{% endif %};
+    padding: 4px 12px;
+    border-radius: {{ section.settings.badge_border_radius }}px;
+    font-size: {{ section.settings.desktop_badge_font_size }}px !important;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 6px;
+    letter-spacing: var(--letter-spacing-body);
+    border: {{ section.settings.badge_border_width }}px {{ section.settings.badge_border_style }} {{ section.settings.badge_border_color }};
+  }
+
+  .roadmap-title {
+    font-size: {{ section.settings.step_title_size }}px !important;
+    font-weight: var(--font-weight-bold) !important;
+    {% unless settings.h3_use_heading_font %}
+      font-style: normal !important;
+      font-family: var(--font-body-family) !important;
+    {% endunless %}
+    margin-bottom: 8px;
+    letter-spacing: var(--letter-spacing-heading) !important;
+    line-height: 1.3;
+    color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.step_title_color }}{% endif %} !important;
+  }
+
+  .roadmap-description {
+    font-size: {{ section.settings.step_description_size }}px !important;
+    line-height: 1.6;
+    color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.step_description_color }}{% endif %} !important;
+    opacity: 0.9;
+    letter-spacing: var(--letter-spacing-body);
+  }
+
+  .roadmap-header {
+    text-align: {{ section.settings.desktop_content_alignment }} !important;
+    margin-bottom: 40px;
+  }
+
+  .roadmap-header .heading {
+    font-size: {{ section.settings.heading_size }}px !important;
+    font-weight: var(--font-weight-bold);
+    color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.heading_color }}{% endif %} !important;
+    margin-bottom: 15px;
+    letter-spacing: var(--letter-spacing-heading) !important;
+    line-height: 1.3;
+  }
+
+  .roadmap-header .subheading {
+    font-size: {{ section.settings.subheading_size }}px !important;
+    color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.subheading_color }}{% endif %} !important;
+    opacity: 0.8;
+    letter-spacing: var(--letter-spacing-body) !important;
+  }
+
+  /* Enhanced accent text styling with global and local customization options */
+  .roadmap-section .accent,
+  .roadmap-section .global-accent-text,
+  .roadmap-section .custom-accent-text {
+    {% comment %} Always apply core accent text styling {% endcomment %}
+    padding-right: 0px !important;
+    display: inline-block !important;
+    
+    {% comment %} Apply color or gradient based on theme colors and settings {% endcomment %}
+    {% if section.settings.use_theme_colors %}
+      {% comment %} Use global dark gradient when theme colors are enabled {% endcomment %}
+      background: {{ settings.global_accent_text_gradient_dark }} !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      color: transparent !important;
+      line-height: 1.3 !important;
+    {% elsif section.settings.use_accent_gradient %}
+      background: {{ section.settings.accent_text_gradient }} !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      color: transparent !important;
+      line-height: 1.3 !important;
+    {% else %}
+      {% comment %} Apply solid color {% endcomment %}
+      color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.accent_color }}{% endif %} !important;
+    {% endif %}
+    
+    {% if section.settings.override_global_accent %}
+      {% comment %} Use section-specific typography settings when override is enabled {% endcomment %}
+      {% if section.settings.accent_font_family != 'inherit' %}
+        {% case section.settings.accent_font_family %}
+          {% when 'serif' %}
+            font-family: serif !important;
+          {% when 'Georgia Pro' %}
+            font-family: 'Georgia Pro', Georgia, serif !important;
+          {% when 'Bodoni Moda' %}
+            font-family: 'Bodoni Moda', Georgia, serif !important;
+          {% when 'Instrument Serif' %}
+            font-family: 'Instrument Serif', Georgia, serif !important;
+          {% when 'DM Serif Text' %}
+            font-family: 'DM Serif Text', Georgia, serif !important;
+          {% when 'Nothing You Could Do' %}
+            font-family: 'Nothing You Could Do', cursive !important;
+        {% endcase %}
+      {% else %}
+        font-family: var(--font-accent-family, var(--font-body-family)) !important;
+      {% endif %}
+      
+      font-style: {% if section.settings.accent_font_style != 'normal' %}{{ section.settings.accent_font_style }}{% else %}var(--font-accent-style, normal){% endif %} !important;
+      font-weight: {% if section.settings.accent_font_weight != 'inherit' %}{{ section.settings.accent_font_weight }}{% else %}var(--font-accent-weight, inherit){% endif %} !important;
+      
+    {% else %}
+      {% comment %} Use global accent typography system {% endcomment %}
+      font-family: var(--font-accent-family, var(--font-body-family)) !important;
+      font-style: var(--font-accent-style, normal) !important;
+      font-weight: var(--font-accent-weight, inherit) !important;
+      letter-spacing: var(--font-accent-letter-spacing, inherit) !important;
+      text-transform: var(--font-accent-text-transform, none) !important;
+    {% endif %}
+  }
+
+  @media screen and (max-width: 749px) {
+    .roadmap-header {
+      text-align: {{ section.settings.mobile_content_alignment }} !important;
+      margin-bottom: 30px;
+    }
+
+    .roadmap-header .heading {
+      font-size: {{ section.settings.heading_size_mobile }}px !important;
+      color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.heading_color }}{% endif %} !important;
+      letter-spacing: var(--letter-spacing-heading) !important;
+    }
+
+    .roadmap-header .subheading {
+      font-size: {{ section.settings.subheading_size_mobile }}px !important;
+      color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.subheading_color }}{% endif %} !important;
+      letter-spacing: var(--letter-spacing-body) !important;
+    }
+
+    .roadmap-timeline::before {
+      left: 15px;
+      top: 25px;
+    }
+
+    .roadmap-item {
+      padding-left: 50px;
+      margin-bottom: {{ section.settings.roadmap_item_spacing_mobile }}px;
+    }
+
+    .roadmap-circle {
+      left: 0;
+      top: 0px;
+      width: 30px;
+      height: 30px;
+    }
+
+    .roadmap-circle svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .roadmap-badge {
+      font-size: {{ section.settings.badge_font_size_mobile }}px;
+      padding: 3px 10px;
+      margin-bottom: 6px;
+    }
+
+    .roadmap-title {
+      font-size: {{ section.settings.step_title_size_mobile }}px !important;
+      {% unless settings.h3_use_heading_font %}
+        font-style: normal !important;
+        font-family: var(--font-body-family) !important;
+      {% endunless %}
+      color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.step_title_color }}{% endif %} !important;
+    }
+
+    .roadmap-description {
+      font-size: {{ section.settings.step_description_size_mobile }}px !important;
+      color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.step_description_color }}{% endif %} !important;
+    }
+  }
+{%- endstyle -%}
+
+<div class="roadmap-section">
+  <div class="{% unless contained == false %}page-width{% endunless %}">
+    <div class="section-{{ section.id }}-padding">
+      {% if section.settings.heading != blank or section.settings.accent_text != blank %}
+        <div class="roadmap-header">
+          {% if section.settings.heading != blank or section.settings.accent_text != blank %}
+            <h2 class="heading">
+              {% if section.settings.heading != blank %}{{ section.settings.heading }}{% endif %}{% if section.settings.accent_text != blank %} <span class="accent{% unless section.settings.override_global_accent %} global-accent-text{% endunless %}">{{ section.settings.accent_text }}</span>{% endif %}
+            </h2>
+          {% endif %}
+          {% if section.settings.subheading != blank %}
+            <div class="subheading rte">{{ section.settings.subheading }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="roadmap-container">
+        <div class="roadmap-content">
+          <div class="roadmap-timeline">
+            {% for block in section.blocks %}
+              <div class="roadmap-item" {{ block.shopify_attributes }}>
+                <div class="roadmap-circle">
+                  {% if block.settings.custom_icon != blank %}
+                    {{ block.settings.custom_icon }}
+                  {% else %}
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"/>
+                    </svg>
+                  {% endif %}
+                </div>
+                
+                {% if block.settings.badge_text != blank and section.settings.show_badges %}
+                  <div class="roadmap-badge">{{ block.settings.badge_text }}</div>
+                {% endif %}
+                
+                {% if block.settings.title != blank %}
+                  <h3 class="roadmap-title">{{ block.settings.title }}</h3>
+                {% endif %}
+                
+                {% if block.settings.description != blank %}
+                  <div class="roadmap-description rte">{{ block.settings.description }}</div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        {% if section.settings.desktop_image != blank %}
+          <div class="roadmap-image-column">
+            <img 
+              src="{{ section.settings.desktop_image | image_url: width: 600 }}" 
+              alt="{{ section.settings.desktop_image.alt | escape }}"
+              class="roadmap-image"
+              loading="lazy"
+              width="{{ section.settings.desktop_image.width }}"
+              height="{{ section.settings.desktop_image.height }}"
+            >
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Roadmap",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_theme_colors",
+      "default": false,
+      "label": "Use theme colors"
+    },
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "contained_section",
+      "default": true,
+      "label": "Contained section"
+    },
+    {
+      "type": "range",
+      "id": "max_container_width",
+      "min": 600,
+      "max": 1400,
+      "step": 10,
+      "default": 1200,
+      "label": "Max container width (px)",
+      "info": "Only applies to desktop"
+    },
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Our Roadmap",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "default": "<p>Follow your progress and see what's ahead on your path to success</p>",
+      "label": "Subheading"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "default": 36,
+      "label": "Heading size"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "default": 24,
+      "label": "Mobile heading size"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "label": "Subheading size"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "label": "Mobile subheading size"
+    },
+    {
+      "type": "range",
+      "id": "step_title_size",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "default": 20,
+      "label": "Step title size"
+    },
+    {
+      "type": "range",
+      "id": "step_title_size_mobile",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "default": 18,
+      "label": "Mobile step title size"
+    },
+    {
+      "type": "range",
+      "id": "step_description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "label": "Step description size"
+    },
+    {
+      "type": "range",
+      "id": "step_description_size_mobile",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "default": 12,
+      "label": "Mobile step description size"
+    },
+    {
+      "type": "header",
+      "content": "Accent Text"
+    },
+    {
+      "type": "text",
+      "id": "accent_text",
+      "label": "Accent Text",
+      "default": "Ahead",
+      "info": "Optional accent text to highlight in the heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "override_global_accent",
+      "default": false,
+      "label": "Override global accent text settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_accent_gradient",
+      "default": false,
+      "label": "Use accent gradient",
+      "info": "Only applies when override is enabled"
+    },
+    {
+      "type": "color_background",
+      "id": "accent_text_gradient",
+      "default": "linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%)",
+      "label": "Accent text gradient",
+      "info": "Only applies when override is enabled and use_accent_gradient is true"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "default": "#007bff",
+      "label": "Accent color",
+      "info": "Only applies when override is enabled and gradient is disabled"
+    },
+    {
+      "type": "header",
+      "content": "Accent Font Settings"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_family",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Inherit"
+        },
+        {
+          "value": "serif",
+          "label": "Serif"
+        },
+        {
+          "value": "Georgia Pro",
+          "label": "Georgia Pro"
+        },
+        {
+          "value": "Bodoni Moda",
+          "label": "Bodoni Moda"
+        },
+        {
+          "value": "Instrument Serif",
+          "label": "Instrument Serif"
+        },
+        {
+          "value": "DM Serif Text",
+          "label": "DM Serif Text"
+        },
+        {
+          "value": "Nothing You Could Do",
+          "label": "Nothing You Could Do"
+        }
+      ],
+      "default": "inherit",
+      "label": "Accent font family",
+      "info": "Only applies when override is enabled"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_style",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "italic",
+          "label": "Italic"
+        },
+        {
+          "value": "oblique",
+          "label": "Oblique"
+        }
+      ],
+      "default": "normal",
+      "label": "Accent font style",
+      "info": "Only applies when override is enabled"
+    },
+    {
+      "type": "range",
+      "id": "accent_font_weight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default": 700,
+      "label": "Accent font weight",
+      "info": "Only applies when override is enabled"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right",
+      "label": "Image position"
+    },
+    {
+      "type": "range",
+      "id": "image_column_width",
+      "min": 25,
+      "max": 50,
+      "step": 5,
+      "default": 40,
+      "label": "Image column width (%)"
+    },
+    {
+      "type": "range",
+      "id": "text_column_width",
+      "min": 30,
+      "max": 70,
+      "step": 5,
+      "default": 50,
+      "label": "Text column width (%)",
+      "info": "Only applies when desktop image is added"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 8,
+      "label": "Image border radius"
+    },
+    {
+      "type": "header",
+      "content": "Timeline Design"
+    },
+    {
+      "type": "range",
+      "id": "timeline_width",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 2,
+      "label": "Timeline width (px)"
+    },
+    {
+      "type": "range",
+      "id": "timeline_border_radius",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 2,
+      "label": "Timeline border radius"
+    },
+    {
+      "type": "header",
+      "content": "Badge Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badges",
+      "default": true,
+      "label": "Show badges"
+    },
+    {
+      "type": "range",
+      "id": "desktop_badge_font_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "default": 12,
+      "label": "Desktop badge font size"
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size_mobile",
+      "min": 8,
+      "max": 14,
+      "step": 1,
+      "default": 11,
+      "label": "Mobile badge font size"
+    },
+    {
+      "type": "range",
+      "id": "badge_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 50,
+      "label": "Badge border radius (px)"
+    },
+    {
+      "type": "header",
+      "content": "Badge Border"
+    },
+    {
+      "type": "range",
+      "id": "badge_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "default": 1,
+      "label": "Badge border width (px)"
+    },
+    {
+      "type": "select",
+      "id": "badge_border_style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        },
+        {
+          "value": "double",
+          "label": "Double"
+        }
+      ],
+      "default": "solid",
+      "label": "Badge border style"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "default": "#4CAF50",
+      "label": "Badge border color"
+    },
+    {
+      "type": "header",
+      "content": "Layout Options"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Desktop content alignment"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Mobile content alignment"
+    },
+    {
+      "type": "range",
+      "id": "roadmap_item_spacing_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "label": "Desktop roadmap item spacing (px)"
+    },
+    {
+      "type": "range",
+      "id": "roadmap_item_spacing_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 30,
+      "label": "Mobile roadmap item spacing (px)"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_spacing",
+      "default": true,
+      "label": "Enable custom spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 72,
+      "label": "Desktop spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_spacing_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 36,
+      "label": "Mobile spacing"
+    },
+    {
+      "type": "header",
+      "content": "Colors",
+      "info": "Only applies when theme colors are disabled"
+    },
+    {
+      "type": "color_background",
+      "id": "section_background",
+      "default": "linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%)",
+      "label": "Section background"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "default": "#121212",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "default": "#121212",
+      "label": "Heading color"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "default": "#121212",
+      "label": "Subheading color"
+    },
+    {
+      "type": "color",
+      "id": "step_title_color",
+      "default": "#121212",
+      "label": "Step title color"
+    },
+    {
+      "type": "color",
+      "id": "step_description_color",
+      "default": "#666666",
+      "label": "Step description color"
+    },
+    {
+      "type": "header",
+      "content": "Timeline & Badge Colors",
+      "info": "These colors are customizable even when theme colors are enabled"
+    },
+    {
+      "type": "color",
+      "id": "timeline_color",
+      "default": "#e0e0e0",
+      "label": "Timeline line color"
+    },
+    {
+      "type": "color",
+      "id": "circle_color",
+      "default": "#4CAF50",
+      "label": "Circle background color"
+    },
+    {
+      "type": "color",
+      "id": "circle_icon_color",
+      "default": "#ffffff",
+      "label": "Circle icon color"
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "default": "#4CAF50",
+      "label": "Badge background color"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "default": "#ffffff",
+      "label": "Badge text color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "roadmap_step",
+      "name": "Roadmap Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_text",
+          "default": "Phase 1",
+          "label": "Badge text"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "GETTING STARTED",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>Begin your journey with our comprehensive onboarding process. Set up your account, explore key features, and get familiar with the platform.</p>",
+          "label": "Description"
+        },
+        {
+          "type": "html",
+          "id": "custom_icon",
+          "label": "Custom SVG Icon",
+          "info": "Leave blank to use default checkmark icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Roadmap",
+      "settings": {
+        "heading": "Your Journey",
+        "accent_text": "Ahead",
+        "subheading": "<p>Follow your progress and see what's ahead on your path to success</p>"
+      },
+      "blocks": [
+        {
+          "type": "roadmap_step",
+          "settings": {
+            "badge_text": "Phase 1",
+            "title": "GETTING STARTED",
+            "description": "<p>Begin your journey with our comprehensive onboarding process. Set up your account, explore key features, and get familiar with the platform.</p>"
+          }
+        },
+        {
+          "type": "roadmap_step",
+          "settings": {
+            "badge_text": "Phase 2",
+            "title": "BUILDING MOMENTUM",
+            "description": "<p>Start implementing what you've learned. Access advanced features, customize your experience, and begin seeing initial results.</p>"
+          }
+        },
+        {
+          "type": "roadmap_step",
+          "settings": {
+            "badge_text": "Phase 3",
+            "title": "REACHING MILESTONES",
+            "description": "<p>Achieve significant progress markers. Unlock premium features, optimize your workflow, and experience measurable improvements.</p>"
+          }
+        },
+        {
+          "type": "roadmap_step",
+          "settings": {
+            "badge_text": "Phase 4",
+            "title": "MASTERING SUCCESS",
+            "description": "<p>Reach your full potential with expert-level capabilities. Enjoy all benefits, share your achievements, and inspire others on their journey.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %} 

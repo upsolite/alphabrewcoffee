@@ -1,0 +1,116 @@
+{% liquid
+  assign total_compare_at_price = 0
+  assign discount_amount = 0
+
+  for item in cart.items
+    if item.variant.compare_at_price > item.variant.price
+      assign compare_at_line_price = item.variant.compare_at_price | times: item.quantity
+      assign total_compare_at_price = total_compare_at_price | plus: compare_at_line_price
+    else
+      assign total_compare_at_price = total_compare_at_price | plus: item.final_line_price
+    endif
+  endfor
+
+  if total_compare_at_price > cart.total_price
+    assign discount_amount = total_compare_at_price | minus: cart.total_price
+  endif
+
+  if settings.use_theme_colors_cart_drawer
+    assign banner_bg_color = settings.global_section_accent_2_color
+    assign banner_text_color = settings.global_section_accent_1_color
+  else
+    assign banner_bg_color = settings.discount_banner_bg_color
+    assign banner_text_color = settings.discount_banner_text_color
+  endif
+
+  if settings.discount_banner_use_gradient
+    assign banner_background_style = 'background: linear-gradient(' | append: settings.discount_banner_gradient_angle | append: 'deg, ' | append: settings.discount_banner_gradient_start_color | append: ', ' | append: settings.discount_banner_gradient_end_color | append: ');'
+  else
+    assign banner_background_style = 'background-color: ' | append: banner_bg_color | append: ';'
+  endif
+%}
+
+<style>
+  /* Discount banner color overrides */
+        .cart-drawer .discount-banner {
+          {% if settings.use_theme_colors_cart_drawer %}
+            background-color: {{ settings.global_section_accent_2_color }} !important;
+            color: {{ settings.global_section_text_color }} !important;
+          {% else %}
+            {% if settings.discount_banner_use_gradient %}
+              background: linear-gradient({{ settings.discount_banner_gradient_angle }}deg, {{ settings.discount_banner_gradient_start_color }}, {{ settings.discount_banner_gradient_end_color }}) !important;
+            {% else %}
+              background-color: {{ settings.discount_banner_bg_color }} !important;
+            {% endif %}
+            color: {{ settings.discount_banner_text_color }} !important;
+          {% endif %}
+        }
+
+        .cart-drawer .discount-banner .discount-banner-text,
+        .cart-drawer .discount-banner .discount-banner-bold,
+        .cart-drawer .discount-banner .celebration-icon {
+          letter-spacing: var(--letter-spacing-body);
+          {% if settings.use_theme_colors_cart_drawer %}
+            color: {{ settings.global_section_text_color }} !important;
+          {% else %}
+            color: {{ settings.discount_banner_text_color }} !important;
+          {% endif %}
+        }
+
+    .discount-banner {
+      padding: 10px 15px;
+      text-align: center;
+      font-family: var(--font-body-family);
+      font-size: 14px;
+      font-weight: 400;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 0px;
+    }
+
+    .celebration-icon {
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .discount-banner-bold {
+      font-weight: var(--font-weight-bold, 700);
+    }
+
+    @media (max-width: 749px) {
+      .discount-banner {
+        padding: 8px 10px;
+        font-size: 13px;
+      }
+    }
+</style>
+
+{% comment %} Always show the banner regardless of discount amount {% endcomment %}
+<div class="discount-banner" style="{{ banner_background_style }} color: {{ banner_text_color }};">
+  {% if settings.discount_banner_icon != 'none' %}
+    <span class="celebration-icon">
+      {% case settings.discount_banner_icon %}
+        {% when 'celebration' %}
+          🎉
+        {% when 'star' %}
+          ⭐
+        {% when 'gift' %}
+          🎁
+        {% when 'discount' %}
+          💰
+      {% endcase %}
+    </span>
+  {% endif %}
+  <span class="discount-banner-text">
+    <span class="discount-banner-bold">{{ settings.discount_banner_prefix }}</span>
+    {{ settings.discount_banner_middle }}
+    <span class="discount-banner-bold">
+      {%- if discount_amount > 0 -%}
+        {{- discount_amount | money -}}
+      {%- else -%}
+        {{- settings.discount_banner_default_text | default: 'today' -}}
+      {%- endif -%}
+    </span>
+    {{ settings.discount_banner_suffix }}
+  </span>
+</div>

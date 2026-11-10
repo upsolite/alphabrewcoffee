@@ -1,0 +1,214 @@
+{% liquid
+  if product.variants.first.featured_image == blank
+    assign novariant_matches = true
+  else
+    assign novariant_matches = false
+  endif
+
+  if show_product_variants != false and current_variant != false
+    assign current_variant_id = current_variant.id
+    assign current_variant_media_id = current_variant.featured_media.id
+    assign unmatched_variant_media = product.variants | reject: "id", current_variant_id | map: "featured_media" | compact | map: "id" | join: ","
+  endif
+
+  assign enable_autoplay_video = section.settings.enable_autoplay_video
+  assign enable_custom_video_controls = section.settings.enable_custom_video_controls
+%}
+<div class="shop-carousel-container">
+  <div class="shop-product-carousel product-gallery">
+    <div class="shop-main-image-wrapper">
+      <div class="shop-image-container shop-square-container">
+        {% for media in product.media %}
+          {% case media.media_type %}
+            {% when 'image' %}
+              <img
+                class="shop-main-image {% if forloop.first and novariant_matches %}active{% endif %}"
+                src="{{ media | img_url: '530x' }}"
+                srcset="
+                  {{ media | img_url: '530x' }} 1x,
+                  {{ media | img_url: '1060x' }} 2x"
+                data-srcset="
+                  {{ media | img_url: '530x' }} 1x,
+                  {{ media | img_url: '1060x' }} 2x"
+                alt="{{ media.alt | escape }}"
+                loading="lazy"
+                data-src="{{ media | img_url: '530x' }}"
+                data-media-id="{{ media.id }}" width="" height=""
+              >
+            {% when 'video' %}
+              <div
+                class="shop-main-image {% if forloop.first and novariant_matches %}active{% endif %}"
+                id="shop-image{{ forloop.index }}"
+                data-media-id="{{ media.id }}"
+                data-position="{{ forloop.index0 }}"
+                data-video-type="local"
+              >
+                {{ media | video_tag: controls: true, autoplay: enable_autoplay_video, class: 'shop-video' }}
+              </div>
+            {% when 'external_video' %}
+              <div
+                class="shop-main-image {% if forloop.first and novariant_matches %}active{% endif %}"
+                id="shop-image{{ forloop.index }}"
+                data-media-id="{{ media.id }}"
+                data-position="{{ forloop.index0 }}"
+                data-video-type="external"
+              >
+                {{ media | external_video_url: color: 'white' | external_video_tag: class: 'shop-video' }}
+              </div>
+            {% else %}
+              <!-- fallback for unsupported media -->
+              <div
+                class="shop-main-image {% if forloop.first and novariant_matches %}active{% endif %}"
+                id="shop-image{{ forloop.index }}"
+                data-media-id="{{ media.id }}"
+                data-position="{{ forloop.index0 }}"
+              >
+                <img src="{{ media | img_url: '530x' }}" alt="{{ media.alt | escape }}" width="" height="">
+              </div>
+          {% endcase %}
+        {% endfor %}
+
+        <!-- Mobile navigation arrows (overlaid on image) -->
+        {% comment %} Mobile arrows show when mobile arrows are enabled AND placement is NOT below AND there are multiple media items {% endcomment %}
+        {% if section.settings.show_mobile_arrows and section.settings.mobile_arrow_placement != 'below' and product.media.size > 1 %}
+          <div class="shop-mobile-arrows">
+            <button class="shop-mobile-arrow shop-mobile-prev-arrow" aria-label="Previous image" tabindex="0">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 6L9 12L15 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+            <button class="shop-mobile-arrow shop-mobile-next-arrow" aria-label="Next image" tabindex="0">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+          </div>
+        {% endif %}
+
+        <!-- Desktop navigation arrows (overlaid on image) -->
+        {% comment %} Desktop arrows show when desktop arrows are enabled AND placement is overlaid AND there are multiple media items {% endcomment %}
+        {% if section.settings.show_desktop_arrows and section.settings.desktop_arrow_placement == 'overlaid' and product.media.size > 1 %}
+          <div class="shop-desktop-arrows shop-desktop-arrows-overlaid">
+            <button class="shop-desktop-arrow shop-desktop-prev-arrow" aria-label="Previous image" tabindex="0">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 6L9 12L15 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+            <button class="shop-desktop-arrow shop-desktop-next-arrow" aria-label="Next image" tabindex="0">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="shop-thumbnails-outer">
+      <div class="shop-thumbnails-wrapper shop-match-image-width{% if section.settings.show_mobile_arrows and section.settings.mobile_arrow_placement == 'below' and product.media.size > 1 and section.settings.hide_thumbnails == false %} has-mobile-arrows{% endif %}">
+        <!-- Mobile arrows at start of thumbnails (when placement is below and thumbnails are visible) -->
+        {% if section.settings.show_mobile_arrows and section.settings.mobile_arrow_placement == 'below' and product.media.size > 1 and section.settings.hide_thumbnails == false %}
+          <button class="shop-mobile-arrow shop-mobile-arrow-in-thumbnails shop-mobile-prev-arrow" aria-label="Previous image" tabindex="0">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 6L9 12L15 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        {% endif %}
+
+        <div class="shop-thumbnails {% if show_product_variants != false and current_variant != false %}toggle-product-variants{% endif %}{% if section.settings.mobile_thumbnails_2x2_grid and section.settings.show_mobile_arrows == false %} mobile-2x2-grid{% endif %}" id="thumbnail-container">
+          {% for media in product.media %}
+            <div
+              class="shop-thumbnail {% if forloop.first %}active{% endif %} {% if show_product_variants != false and current_variant != false and unmatched_variant_media contains media.id %}visually-hidden{% endif %} {% if current_variant_media_id == media.id %}current-variant-media{% endif %}"
+              data-target="shop-image{{ forloop.index }}"
+              data-index="{{ forloop.index0 }}"
+              data-media-id="{{ media.id }}"
+            >
+              <div class="thumb-square">
+                <img
+                  src="{{ media | img_url: '200x', scale: 2 }}"
+                  alt="{{ media.alt | escape }}"
+                  loading="lazy"
+                  data-media-id="{{ media.id }}" width="" height=""
+                >
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Mobile arrows at end of thumbnails (when placement is below and thumbnails are visible) -->
+        {% if section.settings.show_mobile_arrows and section.settings.mobile_arrow_placement == 'below' and product.media.size > 1 and section.settings.hide_thumbnails == false %}
+          <button class="shop-mobile-arrow shop-mobile-arrow-in-thumbnails shop-mobile-next-arrow" aria-label="Next image" tabindex="0">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        {% endif %}
+      </div>
+
+      <div class="shop-thumbnail-indicators" id="thumbnail-indicators"></div>
+    </div>
+
+    <!-- Navigation dots (shown when thumbnails are hidden) -->
+    {% if section.settings.hide_thumbnails and product.media.size > 1 %}
+      <div class="shop-dots-navigation">
+        {% for media in product.media %}
+          <span class="shop-dot {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}" tabindex="0" role="button" aria-label="View image {{ forloop.index }}"></span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Mobile navigation arrows (below dots when thumbnails are hidden) -->
+    {% comment %} Mobile arrows show when mobile arrows are enabled AND placement is below AND thumbnails are hidden AND there are multiple media items {% endcomment %}
+    {% if section.settings.show_mobile_arrows and section.settings.mobile_arrow_placement == 'below' and section.settings.hide_thumbnails and product.media.size > 1 %}
+      <div class="shop-mobile-arrows shop-mobile-arrows-below">
+        <button class="shop-mobile-arrow shop-mobile-prev-arrow" aria-label="Previous image" tabindex="0">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6L9 12L15 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <button class="shop-mobile-arrow shop-mobile-next-arrow" aria-label="Next image" tabindex="0">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+    {% endif %}
+
+    <!-- Desktop navigation arrows (below image) - LEGACY FALLBACK -->
+    {% comment %} Show desktop arrows when enabled, placement is NOT overlaid or below, and there are multiple images (fallback for undefined placement) {% endcomment %}
+    {% if section.settings.show_desktop_arrows and section.settings.desktop_arrow_placement != 'overlaid' and section.settings.desktop_arrow_placement != 'below' and product.media.size > 1 %}
+      <div class="shop-desktop-arrows">
+        <button class="shop-desktop-arrow shop-desktop-prev-arrow" aria-label="Previous image" tabindex="0">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6L9 12L15 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <button class="shop-desktop-arrow shop-desktop-next-arrow" aria-label="Next image" tabindex="0">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+    {% endif %}
+
+    <!-- Desktop navigation arrows (below thumbnails/dots) -->
+    {% comment %} Desktop arrows show when desktop arrows are enabled AND placement is below AND there are multiple media items {% endcomment %}
+    {% if section.settings.show_desktop_arrows and section.settings.desktop_arrow_placement == 'below' and product.media.size > 1 %}
+      <div class="shop-desktop-arrows shop-desktop-arrows-below">
+        <button class="shop-desktop-arrow shop-desktop-prev-arrow" aria-label="Previous image" tabindex="0">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6L9 12L15 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <button class="shop-desktop-arrow shop-desktop-next-arrow" aria-label="Next image" tabindex="0">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+    {% endif %}
+
+
+  </div>
+</div>
+<script>window.enableAutoplay = {{ enable_autoplay_video | json }};</script>

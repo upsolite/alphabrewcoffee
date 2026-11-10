@@ -1,0 +1,1140 @@
+
+
+<!-- Apply mobile fonts immediately on page load -->
+<script>
+  (function() {
+    if (window.innerWidth < 750) {
+      document.documentElement.classList.add('faq-mobile-view');
+    }
+  })();
+</script>
+
+<div class="store-faq-section" style="
+  padding-top: {{ section.settings.section_padding }}px;
+  padding-bottom: {{ section.settings.section_padding }}px;
+  background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.section_bg_color }}{% endif %} !important;
+">
+  <div class="store-faq-container" style="
+    width: 100%;
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+  ">
+    <div class="page-width faq-flex-container {% if section.settings.center_when_no_image and section.settings.header_image == blank %}center-no-image{% endif %} {% if section.settings.two_column_desktop %}two-column-desktop{% endif %}">
+      <div class="faq-header-column">
+        {% if section.settings.heading != blank %}
+          <h2 class="store-faq-heading" style="color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.heading_color }}{% endif %} !important; font-size: {{ section.settings.heading_font_size }}px;">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+        
+        {% if section.settings.subtitle != blank %}
+          <div class="store-faq-subtitle" style="color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.heading_color | color_modify: 'alpha', 0.8 }}{% endif %} !important; font-size: {{ section.settings.subtitle_font_size }}px;">
+            {{ section.settings.subtitle }}
+          </div>
+        {% endif %}
+        
+        <div class="store-faq" 
+          id="store-faq-{{ section.id }}"
+          style="
+            width: 100%;
+            margin: 0 auto;
+          "
+        >
+          {% if section.settings.two_column_desktop %}
+            <!-- Two Column Layout -->
+            <div class="faq-two-columns">
+              <!-- Column 1 -->
+              <div class="faq-container faq-column-1{% if section.settings.border_style == 'bottom_only' %} border-bottom-only{% endif %}{% if section.settings.individual_item_borders %} individual-borders{% endif %}"
+                style="border-radius: {{ section.settings.border_radius }}px;"
+                data-accordion="{{ section.settings.accordion_mode }}"
+              >
+                {% for block in section.blocks %}
+                  {% assign modulo = forloop.index | modulo: 2 %}
+                  {% case block.type %}
+                    {% when 'faq_item' %}
+                      {% comment %} Show odd items (1, 3, 5...) in column 1, or all items on mobile {% endcomment %}
+                      {% if modulo == 1 %}
+                        {% comment %} Calculate if this is the last odd item for column 1 {% endcomment %}
+                        {% assign is_last_in_column_1 = true %}
+                        {% assign current_index = forloop.index %}
+                        {% for future_block in section.blocks %}
+                          {% assign future_index = forloop.index %}
+                          {% if future_index > current_index %}
+                            {% assign future_modulo = future_index | modulo: 2 %}
+                            {% if future_modulo == 1 and future_block.type == 'faq_item' %}
+                              {% assign is_last_in_column_1 = false %}
+                              {% break %}
+                            {% endif %}
+                          {% endif %}
+                        {% endfor %}
+                        
+                        <div class="faq-item" {{ block.shopify_attributes }} style="{% unless is_last_in_column_1 %}border-bottom: 1px solid {% if section.settings.use_theme_colors %}#E5E5E5{% else %}{{ section.settings.border_color }}{% endif %} !important;{% endunless %}">
+                          <div class="faq-question" style="
+                            color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.question_color }}{% endif %} !important;
+                            background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.question_bg_color }}{% endif %} !important;
+                            --question-padding-top: {{ section.settings.question_padding_top | default: 15 }}px;
+                            --question-padding-bottom: {{ section.settings.question_padding_bottom | default: 15 }}px;
+                            --question-padding-left: {{ section.settings.question_padding_left | default: 20 }}px;
+                            --question-padding-right: {{ section.settings.question_padding_right | default: 20 }}px;
+                          ">
+                            <span>{{ block.settings.question }}</span>
+                            <span class="faq-toggle">+</span>
+                          </div>
+                          <div class="faq-answer" style="
+                            color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.answer_color }}{% endif %} !important;
+                            background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.answer_bg_color }}{% endif %} !important;
+                            --answer-padding-top: {{ section.settings.answer_padding_top | default: 15 }}px;
+                            --answer-padding-bottom: {{ section.settings.answer_padding_bottom | default: 15 }}px;
+                            --answer-padding-left: {{ section.settings.answer_padding_left | default: 10 }}px;
+                            --answer-padding-right: {{ section.settings.answer_padding_right | default: 10 }}px;
+                          ">
+                            {{ block.settings.answer }}
+                          </div>
+                        </div>
+                      {% endif %}
+                      {% comment %} Show even items (2, 4, 6...) in column 1 on mobile only {% endcomment %}
+                      {% if modulo == 0 %}
+                        {% comment %} Calculate if this is the last even item for mobile {% endcomment %}
+                        {% assign is_last_even_item = true %}
+                        {% assign current_index = forloop.index %}
+                        {% for future_block in section.blocks %}
+                          {% assign future_index = forloop.index %}
+                          {% if future_index > current_index %}
+                            {% assign future_modulo = future_index | modulo: 2 %}
+                            {% if future_modulo == 0 and future_block.type == 'faq_item' %}
+                              {% assign is_last_even_item = false %}
+                              {% break %}
+                            {% endif %}
+                          {% endif %}
+                        {% endfor %}
+                        
+                        <div class="faq-item mobile-only-item" {{ block.shopify_attributes }} style="{% unless is_last_even_item %}border-bottom: 1px solid {% if section.settings.use_theme_colors %}#E5E5E5{% else %}{{ section.settings.border_color }}{% endif %} !important;{% endunless %}">
+                          <div class="faq-question" style="
+                            color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.question_color }}{% endif %} !important;
+                            background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.question_bg_color }}{% endif %} !important;
+                            --question-padding-top: {{ section.settings.question_padding_top | default: 15 }}px;
+                            --question-padding-bottom: {{ section.settings.question_padding_bottom | default: 15 }}px;
+                            --question-padding-left: {{ section.settings.question_padding_left | default: 20 }}px;
+                            --question-padding-right: {{ section.settings.question_padding_right | default: 20 }}px;
+                          ">
+                            <span>{{ block.settings.question }}</span>
+                            <span class="faq-toggle">+</span>
+                          </div>
+                          <div class="faq-answer" style="
+                            color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.answer_color }}{% endif %} !important;
+                            background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.answer_bg_color }}{% endif %} !important;
+                            --answer-padding-top: {{ section.settings.answer_padding_top | default: 15 }}px;
+                            --answer-padding-bottom: {{ section.settings.answer_padding_bottom | default: 15 }}px;
+                            --answer-padding-left: {{ section.settings.answer_padding_left | default: 10 }}px;
+                            --answer-padding-right: {{ section.settings.answer_padding_right | default: 10 }}px;
+                          ">
+                            {{ block.settings.answer }}
+                          </div>
+                        </div>
+                      {% endif %}
+                  {% endcase %}
+                {% endfor %}
+              </div>
+              
+              <!-- Column 2 -->
+              <div class="faq-container faq-column-2{% if section.settings.border_style == 'bottom_only' %} border-bottom-only{% endif %}{% if section.settings.individual_item_borders %} individual-borders{% endif %}"
+                style="border-radius: {{ section.settings.border_radius }}px;"
+                data-accordion="{{ section.settings.accordion_mode }}"
+              >
+                {% for block in section.blocks %}
+                  {% assign modulo = forloop.index | modulo: 2 %}
+                  {% case block.type %}
+                    {% when 'faq_item' %}
+                      {% if modulo == 0 %}
+                        {% comment %} Calculate if this is the last even item for column 2 {% endcomment %}
+                        {% assign is_last_in_column_2 = true %}
+                        {% assign current_index = forloop.index %}
+                        {% for future_block in section.blocks %}
+                          {% assign future_index = forloop.index %}
+                          {% if future_index > current_index %}
+                            {% assign future_modulo = future_index | modulo: 2 %}
+                            {% if future_modulo == 0 and future_block.type == 'faq_item' %}
+                              {% assign is_last_in_column_2 = false %}
+                              {% break %}
+                            {% endif %}
+                          {% endif %}
+                        {% endfor %}
+                        
+                        <div class="faq-item" {{ block.shopify_attributes }} style="{% unless is_last_in_column_2 %}border-bottom: 1px solid {% if section.settings.use_theme_colors %}#E5E5E5{% else %}{{ section.settings.border_color }}{% endif %} !important;{% endunless %}">
+                          <div class="faq-question" style="
+                            color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.question_color }}{% endif %} !important;
+                            background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.question_bg_color }}{% endif %} !important;
+                            --question-padding-top: {{ section.settings.question_padding_top | default: 15 }}px;
+                            --question-padding-bottom: {{ section.settings.question_padding_bottom | default: 15 }}px;
+                            --question-padding-left: {{ section.settings.question_padding_left | default: 20 }}px;
+                            --question-padding-right: {{ section.settings.question_padding_right | default: 20 }}px;
+                          ">
+                            <span>{{ block.settings.question }}</span>
+                            <span class="faq-toggle">+</span>
+                          </div>
+                          <div class="faq-answer" style="
+                            color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.answer_color }}{% endif %} !important;
+                            background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.answer_bg_color }}{% endif %} !important;
+                            --answer-padding-top: {{ section.settings.answer_padding_top | default: 15 }}px;
+                            --answer-padding-bottom: {{ section.settings.answer_padding_bottom | default: 15 }}px;
+                            --answer-padding-left: {{ section.settings.answer_padding_left | default: 10 }}px;
+                            --answer-padding-right: {{ section.settings.answer_padding_right | default: 10 }}px;
+                          ">
+                            {{ block.settings.answer }}
+                          </div>
+                        </div>
+                      {% endif %}
+                  {% endcase %}
+                {% endfor %}
+              </div>
+            </div>
+          {% else %}
+            <!-- Single Column Layout (Default) -->
+            <div class="faq-container{% if section.settings.border_style == 'bottom_only' %} border-bottom-only{% endif %}{% if section.settings.individual_item_borders %} individual-borders{% endif %}"
+              style="border-radius: {{ section.settings.border_radius }}px;"
+              data-accordion="{{ section.settings.accordion_mode }}"
+            >
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'faq_item' %}
+                    <div class="faq-item" {{ block.shopify_attributes }} style="border-bottom: 1px solid {% if section.settings.use_theme_colors %}#E5E5E5{% else %}{{ section.settings.border_color }}{% endif %} !important;">
+                      <div class="faq-question" style="
+                        color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.question_color }}{% endif %} !important;
+                        background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.question_bg_color }}{% endif %} !important;
+                      ">
+                        <span>{{ block.settings.question }}</span>
+                        <span class="faq-toggle">+</span>
+                      </div>
+                      <div class="faq-answer" style="
+                        color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.answer_color }}{% endif %} !important;
+                        background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.answer_bg_color }}{% endif %} !important;
+                        --answer-padding-top: {{ section.settings.answer_padding_top | default: 15 }}px;
+                        --answer-padding-bottom: {{ section.settings.answer_padding_bottom | default: 15 }}px;
+                        --answer-padding-left: {{ section.settings.answer_padding_left | default: 10 }}px;
+                        --answer-padding-right: {{ section.settings.answer_padding_right | default: 10 }}px;
+                      ">
+                        {{ block.settings.answer }}
+                      </div>
+                    </div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      
+      <div class="faq-content-column">
+        {% if section.settings.header_image != blank %}
+          <div class="faq-header-image desktop-only">
+            <img src="{{ section.settings.header_image | image_url: width: 600 }}" 
+                 alt="{{ section.settings.header_image.alt | default: section.settings.heading }}"
+                 style="
+                   max-width: 100%;
+                   height: auto;
+                   border-radius: {{ section.settings.image_border_radius }}px;
+                 " width="" height="">
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .store-faq-section {
+    padding: {{ section.settings.section_padding }}px 0;
+    overflow-x: hidden; /* Prevent horizontal overflow at section level */
+  }
+  
+  .store-faq-container {
+    width: 100%;
+    max-width: 1200px; /* Set max-width here instead of inline */
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+
+  .faq-container.border-bottom-only {
+    border: none !important;
+  }
+  .faq-container.border-bottom-only .faq-question {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .faq-container.border-bottom-only .faq-answer {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  
+  .faq-flex-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .faq-header-column {
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .faq-content-column {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .store-faq-heading {
+    margin-bottom: 15px;
+    letter-spacing: var(--letter-spacing-heading);
+    font-size: {{ section.settings.heading_font_size }}px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .store-faq-subtitle {
+    line-height: 1.5;
+    max-width: 90%;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: var(--letter-spacing-body);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .faq-header-image {
+    margin-top: 20px;
+  }
+  
+  .faq-header-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Hide image on mobile */
+  .desktop-only {
+    display: none;
+  }
+  
+  .store-faq {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .store-faq .faq-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 1px solid {% if section.settings.use_theme_colors %}#E5E5E5{% else %}{{ section.settings.border_color }}{% endif %};
+  }
+  
+  .store-faq .faq-item {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .store-faq .faq-container:not(.individual-borders) .faq-item:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .store-faq .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--question-padding-top, 15px) var(--question-padding-right, 20px) var(--question-padding-bottom, 15px) var(--question-padding-left, 20px);
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: var(--letter-spacing-body);
+    position: relative;
+    font-size: {{ section.settings.question_font_size }}px;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+  }
+  
+  .store-faq .faq-question span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word; /* Allow breaking at any character if needed */
+    max-width: calc(100% - 30px); /* Leave room for toggle */
+    text-align: left;
+    align-self: flex-start;
+  }
+  
+  .store-faq .faq-toggle {
+    font-size: 20px;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    display: block;
+    width: 20px;
+    text-align: center;
+    align-self: flex-start;
+    margin-top: 2px; /* Slight offset to align with text baseline */
+  }
+  
+  .store-faq .faq-answer {
+    padding: 0 var(--answer-padding-left, 20px) 0 var(--answer-padding-right, 20px);
+    max-height: 0;
+    overflow: hidden;
+    letter-spacing: var(--letter-spacing-body);
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    font-size: {{ section.settings.answer_font_size }}px;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word; /* For extremely long strings */
+  }
+  
+  .store-faq .faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+  }
+  
+  .store-faq .faq-item.active .faq-answer {
+    max-height: 300px; /* Reduced for better mobile experience */
+    overflow-y: auto;
+    text-align: left;
+    letter-spacing: var(--letter-spacing-body);
+    overflow-x: hidden;
+    padding: var(--answer-padding-top, 15px) var(--answer-padding-right, 20px) var(--answer-padding-bottom, 15px) var(--answer-padding-left, 20px);
+    box-sizing: border-box;
+  }
+  
+  /* Target all possible children of faq-answer */
+  .store-faq .faq-answer > * {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word; /* Handle extremely long strings */
+    box-sizing: border-box;
+  }
+  
+  .store-faq .faq-answer p {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word; /* For extremely long strings */
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
+  .store-faq .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Apply mobile styles when the faq-mobile-view class is present */
+  .faq-mobile-view .store-faq .faq-question {
+    font-size: {{ section.settings.question_font_size_mobile }}px !important;
+  }
+  
+  .faq-mobile-view .store-faq .faq-answer {
+    font-size: {{ section.settings.answer_font_size_mobile }}px !important;
+  }
+  
+  @media screen and (min-width: 750px) {
+    .faq-flex-container {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    
+    .faq-header-column {
+      flex: 0 0 48%;
+      margin-bottom: 0;
+      padding-top: 20px;
+      max-width: 48%;
+    }
+    
+    .faq-content-column {
+      flex: 0 0 48%;
+      display: flex;
+      justify-content: center;
+      max-width: 48%;
+    }
+    
+    .store-faq {
+      width: 100%;
+    }
+    
+    .store-faq .faq-question {
+      padding: var(--question-padding-top, 13px) var(--question-padding-right, 17px) var(--question-padding-bottom, 13px) var(--question-padding-left, 17px);
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .faq-container.individual-borders .faq-question {
+      padding: var(--question-padding-top, 13px) var(--question-padding-right, 17px) var(--question-padding-bottom, 13px) var(--question-padding-left, 17px) !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
+    
+    .store-faq .faq-toggle {
+      font-size: 17px;
+    }
+    
+    .store-faq .faq-answer {
+      padding: 0 var(--answer-padding-left, 17px) 0 var(--answer-padding-right, 17px);
+    }
+    
+    .store-faq .faq-item.active .faq-answer {
+      padding: var(--answer-padding-top, 15px) var(--answer-padding-right, 17px) var(--answer-padding-bottom, 14px) var(--answer-padding-left, 17px);
+      max-height: 400px; /* Slightly larger on desktop */
+    }
+    
+    /* Show image on desktop */
+    .desktop-only {
+      display: block;
+    }
+
+    /* Desktop Layout Options */
+    
+    /* Center FAQ when no image */
+    .faq-flex-container.center-no-image {
+      justify-content: center;
+    }
+    
+    .faq-flex-container.center-no-image .faq-header-column {
+      flex: 0 0 100%;
+      max-width: {{ section.settings.center_max_width | default: 600 }}px;
+      text-align: center;
+    }
+    
+    .faq-flex-container.center-no-image .faq-content-column {
+      display: none;
+    }
+
+    /* Two Column FAQ Layout */
+    .faq-flex-container.two-column-desktop .faq-two-columns {
+      display: flex;
+      gap: {{ section.settings.column_gap | default: 30 }}px;
+      width: 100%;
+    }
+
+    .faq-flex-container.two-column-desktop .faq-column-1,
+    .faq-flex-container.two-column-desktop .faq-column-2 {
+      flex: 1;
+      width: 50%;
+    }
+
+    /* Hide mobile-only items on desktop */
+    .faq-flex-container.two-column-desktop .mobile-only-item {
+      display: none !important;
+    }
+
+    /* Last item in each column should have no bottom margin/border */
+    .faq-flex-container.two-column-desktop .faq-column-1 .faq-item:last-child,
+    .faq-flex-container.two-column-desktop .faq-column-2 .faq-item:last-child {
+      margin-bottom: 0 !important;
+      border-bottom: none !important;
+    }
+
+    /* FAQ Item Spacing */
+    .store-faq .faq-item {
+      margin-bottom: {{ section.settings.faq_item_spacing | default: 0 }}px;
+    }
+
+    .store-faq .faq-container:not(.individual-borders) .faq-item:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* Individual Item Borders */
+    .faq-container.individual-borders {
+      border: none !important;
+    }
+
+    .faq-container.individual-borders .faq-item {
+      border: 1px solid {% if section.settings.use_theme_colors %}#E5E5E5{% else %}{{ section.settings.border_color }}{% endif %};
+      border-radius: {{ section.settings.border_radius }}px;
+      overflow: hidden;
+    }
+
+    .faq-container.individual-borders .faq-item:not(:last-child) {
+      margin-bottom: {{ section.settings.faq_item_spacing | default: 8 }}px;
+    }
+
+    .faq-container.individual-borders .faq-item:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* Last item in each column with individual borders */
+    .faq-flex-container.two-column-desktop .faq-column-1.individual-borders .faq-item:last-child,
+    .faq-flex-container.two-column-desktop .faq-column-2.individual-borders .faq-item:last-child {
+      margin-bottom: 0 !important;
+      border-bottom: none !important;
+    }
+
+    .faq-container.individual-borders .faq-question {
+      padding: var(--question-padding-top, 15px) var(--question-padding-right, 20px) var(--question-padding-bottom, 15px) var(--question-padding-left, 20px) !important;
+    }
+  }
+  
+  @media screen and (max-width: 749px) {
+    .store-faq-section {
+      padding: {{ section.settings.section_padding | divided_by: 1.5 }}px 0;
+    }
+    
+    .faq-header-column {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Reset two-column layout on mobile - hide second column */
+    .faq-flex-container.two-column-desktop .faq-two-columns {
+      display: block !important;
+      gap: 0 !important;
+    }
+
+    .faq-flex-container.two-column-desktop .faq-column-1 {
+      width: 100% !important;
+      flex: none !important;
+    }
+
+    .faq-flex-container.two-column-desktop .faq-column-2 {
+      display: none !important;
+    }
+
+    /* Show mobile-only items on mobile */
+    .faq-flex-container.two-column-desktop .mobile-only-item {
+      display: block !important;
+    }
+    
+    .store-faq-heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px !important;
+      line-height: 1.2;
+      letter-spacing: var(--letter-spacing-heading);
+    }
+    
+    .store-faq-subtitle {
+      font-size: {{ section.settings.subtitle_font_size_mobile }}px !important;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .store-faq .faq-question {
+      padding: var(--question-padding-top, 10px) var(--question-padding-right, 12px) var(--question-padding-bottom, 10px) var(--question-padding-left, 12px);
+      font-size: {{ section.settings.question_font_size_mobile }}px !important;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .faq-container.individual-borders .faq-question {
+      padding: var(--question-padding-top, 10px) var(--question-padding-right, 12px) var(--question-padding-bottom, 10px) var(--question-padding-left, 12px) !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
+    
+    .store-faq .faq-question.mobile-font {
+      font-size: {{ section.settings.question_font_size_mobile }}px !important;
+    }
+    
+    .store-faq .faq-toggle {
+      font-size: 18px;
+    }
+    
+    .store-faq .faq-answer {
+      font-size: {{ section.settings.answer_font_size_mobile }}px !important;
+    }
+    
+    .store-faq .faq-answer.mobile-font {
+      font-size: {{ section.settings.answer_font_size_mobile }}px !important;
+    }
+    
+    .store-faq .faq-item.active .faq-answer {
+      padding: var(--answer-padding-top, 15px) var(--answer-padding-right, 12px) var(--answer-padding-bottom, 10px) var(--answer-padding-left, 12px);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqContainer = document.querySelector('#store-faq-{{ section.id }}');
+    if (!faqContainer) return;
+    
+    const faqItems = faqContainer.querySelectorAll('.faq-item');
+    const isAccordion = faqContainer.querySelector('.faq-container').getAttribute('data-accordion') === 'true';
+    
+    // Set initial styles for answers so they get proper padding when activated
+    faqItems.forEach(item => {
+      const answer = item.querySelector('.faq-answer');
+      // Store original padding values to restore when active
+      answer.setAttribute('data-padding-active', '0 20px 16px');
+      answer.setAttribute('data-padding-mobile-active', '0 12px 10px');
+      
+      const question = item.querySelector('.faq-question');
+      
+      // Only add event listener if it doesn't already exist to prevent conflicts
+      if (!question.hasAttribute('data-store-faq-listener')) {
+        question.setAttribute('data-store-faq-listener', 'true');
+        
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Close all other items first if accordion mode is enabled
+          if (isAccordion && !isActive) {
+            faqItems.forEach(otherItem => {
+              otherItem.classList.remove('active');
+            });
+          }
+          
+          // Toggle the clicked item
+          item.classList.toggle('active');
+        });
+      }
+    });
+    
+    // Handle responsive font sizes
+    function updateResponsiveFontSizes() {
+      const isMobile = window.innerWidth < 750;
+      
+      // Apply/remove mobile class at the document level
+      if (isMobile) {
+        document.documentElement.classList.add('faq-mobile-view');
+      } else {
+        document.documentElement.classList.remove('faq-mobile-view');
+      }
+      
+      // Apply/remove mobile class for each element
+      const questions = faqContainer.querySelectorAll('.faq-question');
+      const answers = faqContainer.querySelectorAll('.faq-answer');
+      
+      questions.forEach(question => {
+        if (isMobile) {
+          question.classList.add('mobile-font');
+        } else {
+          question.classList.remove('mobile-font');
+        }
+      });
+      
+      answers.forEach(answer => {
+        if (isMobile) {
+          answer.classList.add('mobile-font');
+        } else {
+          answer.classList.remove('mobile-font');
+        }
+      });
+    }
+    
+    // Initial call and add resize listener
+    updateResponsiveFontSizes();
+    window.addEventListener('resize', updateResponsiveFontSizes);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Store FAQ",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_theme_colors",
+      "label": "Use Theme Colors",
+      "default": true,
+      "info": "Apply the global theme colors to this section"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Find answers to common questions about our products, shipping, returns, and more.</p>"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "default": 60,
+      "label": "Section padding (px)"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 8,
+      "label": "Border radius (px)"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "select",
+      "id": "border_style",
+      "label": "Border style",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full border"
+        },
+        {
+          "value": "bottom_only",
+          "label": "Bottom border only"
+        }
+      ],
+      "default": "full",
+      "info": "Choose between full container border or bottom border only"
+    },
+    {
+      "type": "header",
+      "content": "Content Styling"
+    },
+    {
+      "type": "color",
+      "id": "question_color",
+      "label": "Question text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "question_bg_color",
+      "label": "Question background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "answer_color",
+      "label": "Answer text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "answer_bg_color",
+      "label": "Answer background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "checkbox",
+      "id": "accordion_mode",
+      "label": "Accordion mode (only one answer open at a time)",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Header Image (Desktop Only)"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_image",
+      "label": "Header image",
+      "info": "This image will appear below the title on desktop only"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 8,
+      "label": "Image border radius (px)"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Layout Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "center_when_no_image",
+      "label": "Center FAQ when no image",
+      "default": false,
+      "info": "Center the FAQ content on desktop when no header image is provided"
+    },
+    {
+      "type": "range",
+      "id": "center_max_width",
+      "min": 400,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "label": "Centered FAQ Max Width",
+      "default": 600,
+      "info": "Maximum width of the FAQ content when centered (no image mode)"
+    },
+    {
+      "type": "checkbox",
+      "id": "two_column_desktop",
+      "label": "Two-column layout on desktop",
+      "default": false,
+      "info": "Display FAQs in two columns side by side on desktop"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Column Gap",
+      "default": 30,
+      "info": "Space between the two columns in two-column desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "faq_item_spacing",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "FAQ Item Spacing",
+      "default": 0,
+      "info": "Vertical space between FAQ items"
+    },
+    {
+      "type": "checkbox",
+      "id": "individual_item_borders",
+      "label": "Individual Item Borders",
+      "default": false,
+      "info": "Apply borders to individual FAQ items instead of the container"
+    },
+    {
+      "type": "header",
+      "content": "Question Padding"
+    },
+    {
+      "type": "range",
+      "id": "question_padding_top",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 15,
+      "label": "Question top padding (px)"
+    },
+    {
+      "type": "range",
+      "id": "question_padding_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 15,
+      "label": "Question bottom padding (px)"
+    },
+    {
+      "type": "range",
+      "id": "question_padding_left",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 20,
+      "label": "Question left padding (px)"
+    },
+    {
+      "type": "range",
+      "id": "question_padding_right",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 20,
+      "label": "Question right padding (px)"
+    },
+    {
+      "type": "header",
+      "content": "Answer Padding"
+    },
+    {
+      "type": "range",
+      "id": "answer_padding_top",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 15,
+      "label": "Answer top padding (px)"
+    },
+    {
+      "type": "range",
+      "id": "answer_padding_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 15,
+      "label": "Answer bottom padding (px)"
+    },
+    {
+      "type": "range",
+      "id": "answer_padding_left",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 20,
+      "label": "Answer left padding (px)"
+    },
+    {
+      "type": "range",
+      "id": "answer_padding_right",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 20,
+      "label": "Answer right padding (px)"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading font size (desktop)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading font size (mobile)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle font size (desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle font size (mobile)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "question_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Question font size (desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "question_font_size_mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Question font size (mobile)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "answer_font_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Answer font size (desktop)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "answer_font_size_mobile",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Answer font size (mobile)",
+      "default": 13
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How do I place an order?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>To place an order, simply browse our products, add items to your cart, and proceed to checkout. You can review your order before finalizing your purchase.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store FAQ",
+      "blocks": [
+        {
+          "type": "faq_item"
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What payment methods do you accept?",
+            "answer": "<p>We accept major credit cards, PayPal, Shop Pay, and Apple Pay for your convenience and security.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Standard shipping typically takes 3-5 business days within the continental US. International shipping times vary by location.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We offer a 30-day return policy. If you're not satisfied with your purchase, you can return it within 30 days for a full refund or exchange.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %} 

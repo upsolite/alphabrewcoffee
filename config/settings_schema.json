@@ -1,0 +1,3050 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Elixir",
+    "theme_version": "1.3.0",
+    "theme_author": "Elixir",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
+  },{
+    "name": "t:settings_schema.license.name",
+    "settings": [
+      {
+        "type": "text",
+        "id": "license_key",
+        "label": "t:settings_schema.license.settings.key.label",
+        "info": "t:settings_schema.license.settings.key.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.logo.name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "t:settings_schema.logo.settings.logo_image.label"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 50,
+        "max": 300,
+        "step": 10,
+        "default": 100,
+        "unit": "px",
+        "label": "t:settings_schema.logo.settings.logo_width.label"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "t:settings_schema.logo.settings.favicon.label",
+        "info": "t:settings_schema.logo.settings.favicon.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.colors.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Global Section Colors"
+      },
+      {
+        "type": "paragraph",
+        "content": "These colors are used throughout multiple sections and provide consistent styling across your store. For the most consistent experience, use these settings for your primary colors."
+      },
+      {
+        "type": "color",
+        "id": "global_section_background_color",
+        "label": "Section Background",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "global_section_text_color",
+        "label": "Section Text",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "global_section_accent_1_color",
+        "label": "Section Accent 1 (Dark)",
+        "default": "#007BFF",
+        "info": "Primary accent color for dark themes and background elements. Used for backgrounds, borders, and dark accents."
+      },
+      {
+        "type": "color",
+        "id": "global_section_accent_2_color",
+        "label": "Section Accent 2 (Light)",
+        "default": "#FFC107",
+        "info": "Secondary accent color for light themes and contrast elements. Used for buttons, links, and highlights."
+      },
+      {
+        "type": "color_background",
+        "id": "global_accent_text_gradient_light",
+        "label": "Global Accent Text Gradient (Light)",
+        "default": "linear-gradient(45deg, #FF6B9D, #FFC107)",
+        "info": "Global gradient for accent text on light backgrounds. Used when sections have 'Use Global Accent Typography' enabled and gradients are applied."
+      },
+      {
+        "type": "color_background",
+        "id": "global_accent_text_gradient_dark",
+        "label": "Global Accent Text Gradient (Dark)",
+        "default": "linear-gradient(45deg, #007BFF, #6A4C93)",
+        "info": "Global gradient for accent text on dark backgrounds. Used when sections have 'Use Global Accent Typography' enabled and gradients are applied."
+      },
+      {
+        "type": "color",
+        "id": "global_header_color",
+        "label": "Header",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "header_border_color",
+        "label": "Header Bottom Border",
+        "default": "#e5e5e5"
+      },
+      {
+        "type": "color",
+        "id": "global_footer_color",
+        "label": "Footer",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "global_drawer_color",
+        "label": "Menu Drawer",
+        "default": "#fff",
+        "info": "Background color for the navigation menu drawer only. Cart drawer has separate color settings."
+      },
+      {
+        "type": "color",
+        "id": "global_drawer_text_color",
+        "label": "Menu Drawer Text",
+        "default": "#111111",
+        "info": "Text color for menu drawer navigation, header, and footer elements."
+      },
+      {
+        "type": "color",
+        "id": "global_dropdown_color",
+        "label": "Dropdown",
+        "default": "#fff"
+      },
+      {
+        "type": "checkbox",
+        "id": "global_section_use_gradient_background",
+        "label": "Use Gradient Background",
+        "default": false,
+        "info": "When enabled, sections with theme colors will use gradient background instead of solid background color"
+      },
+      {
+        "type": "color_background",
+        "id": "global_section_gradient_background",
+        "label": "Section Background Gradient",
+        "default": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        "info": "Choose a gradient for section backgrounds when 'Use Gradient Background' is enabled"
+      },
+      {
+        "type": "header",
+        "content": "Button Colors"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_dedicated_button_colors",
+        "label": "Use Dedicated Button Colors",
+        "default": true,
+        "info": "When enabled, buttons will use dedicated button colors. When disabled, buttons will use Accent 1 color for background and Section Background color for text."
+      },
+      {
+        "type": "color",
+        "id": "global_section_button_color",
+        "label": "Button Background Color",
+        "default": "#EF4A65",
+        "info": "Primary background color for buttons in sections using theme colors"
+      },
+      {
+        "type": "color",
+        "id": "global_section_button_text_color",
+        "label": "Button Text Color",
+        "default": "#FFFFFF",
+        "info": "Text color for buttons in sections using theme colors"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.typography.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.typography.settings.header__1.content"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "default": "assistant_n4",
+        "label": "t:settings_schema.typography.settings.type_header_font.label"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale",
+        "min": 100,
+        "max": 150,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.typography.settings.heading_scale.label",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "heading_letter_spacing",
+        "min": -2,
+        "max": 5,
+        "step": 0.1,
+        "unit": "px",
+        "label": "Heading Letter Spacing",
+        "default": -0.3
+      },
+      {
+        "type": "header",
+        "content": "Font Weights"
+      },
+      {
+        "type": "range",
+        "id": "font_weight_regular",
+        "min": 300,
+        "max": 500,
+        "step": 100,
+        "default": 400,
+        "label": "Regular Font Weight"
+      },
+      {
+        "type": "range",
+        "id": "font_weight_semibold",
+        "min": 500,
+        "max": 600,
+        "step": 50,
+        "default": 600,
+        "label": "Semi-Bold Font Weight"
+      },
+      {
+        "type": "range",
+        "id": "font_weight_bold",
+        "min": 400,
+        "max": 800,
+        "step": 100,
+        "default": 700,
+        "label": "Bold Font Weight"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.typography.settings.header__2.content"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "default": "assistant_n4",
+        "label": "t:settings_schema.typography.settings.type_body_font.label"
+      },
+      {
+        "type": "range",
+        "id": "body_scale",
+        "min": 100,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.typography.settings.body_scale.label",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "body_letter_spacing",
+        "min": -2,
+        "max": 5,
+        "step": 0.1,
+        "unit": "px",
+        "label": "Body Text Letter Spacing",
+        "default": -0.3
+      },
+      {
+        "type": "header",
+        "content": "Accent Typography"
+      },
+      {
+        "type": "select",
+        "id": "type_accent_font",
+        "label": "Accent Font",
+        "options": [
+          {
+            "value": "inherit",
+            "label": "Body Font (Default)"
+          },
+          {
+            "value": "serif",
+            "label": "System Serif"
+          },
+          {
+            "value": "Georgia Pro",
+            "label": "Georgia Pro"
+          },
+          {
+            "value": "Bodoni Moda",
+            "label": "Bodoni Moda"
+          },
+          {
+            "value": "Instrument Serif",
+            "label": "Instrument Serif"
+          },
+          {
+            "value": "DM Serif Text",
+            "label": "DM Serif Text"
+          },
+          {
+            "value": "Nothing You Could Do",
+            "label": "Nothing You Could Do"
+          }
+        ],
+        "default": "inherit",
+        "info": "Special font for accents, highlights, and decorative text elements. Google Fonts will be automatically loaded when selected."
+      },
+      {
+        "type": "range",
+        "id": "accent_scale",
+        "min": 80,
+        "max": 150,
+        "step": 5,
+        "unit": "%",
+        "label": "Accent Font Scale",
+        "default": 100,
+        "info": "Scale the accent font size relative to its base size"
+      },
+      {
+        "type": "range",
+        "id": "accent_letter_spacing",
+        "min": -2,
+        "max": 8,
+        "step": 0.1,
+        "unit": "px",
+        "label": "Accent Letter Spacing",
+        "default": 0,
+        "info": "Letter spacing for accent font elements"
+      },
+      {
+        "type": "select",
+        "id": "accent_font_weight",
+        "label": "Accent Font Weight",
+        "options": [
+          {
+            "value": "300",
+            "label": "Light (300)"
+          },
+          {
+            "value": "400",
+            "label": "Regular (400)"
+          },
+          {
+            "value": "500",
+            "label": "Medium (500)"
+          },
+          {
+            "value": "600",
+            "label": "Semi-Bold (600)"
+          },
+          {
+            "value": "700",
+            "label": "Bold (700)"
+          },
+          {
+            "value": "800",
+            "label": "Extra Bold (800)"
+          }
+        ],
+        "default": "400",
+        "info": "Default font weight for accent typography"
+      },
+      {
+        "type": "select",
+        "id": "accent_text_transform",
+        "label": "Accent Text Transform",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "uppercase",
+            "label": "UPPERCASE"
+          },
+          {
+            "value": "lowercase",
+            "label": "lowercase"
+          },
+          {
+            "value": "capitalize",
+            "label": "Capitalize"
+          }
+        ],
+        "default": "none",
+        "info": "Choose text transformation for accent typography"
+      },
+      {
+        "type": "checkbox",
+        "id": "accent_font_style_italic",
+        "label": "Use Italic Style",
+        "default": false,
+        "info": "When enabled, accent typography will be italicized."
+      },
+      {
+        "type": "header",
+        "content": "Third-Party Apps Typography"
+      },
+      {
+        "type": "range",
+        "id": "app_letter_spacing",
+        "min": -2,
+        "max": 5,
+        "step": 0.1,
+        "unit": "px",
+        "label": "App Elements Letter Spacing",
+        "default": -0.3,
+        "info": "Controls letter spacing for third-party app elements"
+      },
+      {
+        "type": "header",
+        "content": "Heading Font Application"
+      },
+      {
+        "type": "paragraph",
+        "content": "Choose which heading levels should use the heading font. Unchecked headings will use the body font instead. This gives you precise control over your typography hierarchy."
+      },
+      {
+        "type": "checkbox",
+        "id": "h1_use_heading_font",
+        "label": "H1 - Use Heading Font",
+        "default": true,
+        "info": "Apply heading font to all h1 elements and .h1 classes"
+      },
+      {
+        "type": "checkbox",
+        "id": "h2_use_heading_font",
+        "label": "H2 - Use Heading Font",
+        "default": true,
+        "info": "Apply heading font to all h2 elements and .h2 classes"
+      },
+      {
+        "type": "checkbox",
+        "id": "h3_use_heading_font",
+        "label": "H3 - Use Heading Font",
+        "default": false,
+        "info": "Apply heading font to all h3 elements and .h3 classes (includes card titles, product titles, etc.)"
+      },
+      {
+        "type": "checkbox",
+        "id": "h4_use_heading_font",
+        "label": "H4 - Use Heading Font",
+        "default": false,
+        "info": "Apply heading font to all h4 elements and .h4 classes"
+      },
+      {
+        "type": "checkbox",
+        "id": "h5_use_heading_font",
+        "label": "H5 - Use Heading Font",
+        "default": false,
+        "info": "Apply heading font to all h5 elements and .h5 classes"
+      },
+      {
+        "type": "checkbox",
+        "id": "h6_use_heading_font",
+        "label": "H6 - Use Heading Font",
+        "default": false,
+        "info": "Apply heading font to all h6 elements and .h6 classes"
+      },
+      {
+        "type": "header",
+        "content": "Language Direction"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_rtl_support",
+        "label": "Enable Right-to-Left (RTL) Support",
+        "default": false,
+        "info": "Automatically enables RTL layout for Arabic, Hebrew, and other RTL languages. When enabled, the theme will detect the locale and apply RTL styles accordingly."
+      },
+      {
+        "type": "header",
+        "content": "Button Text"
+      }
+    ]
+  },
+  {
+    "name": "Button Styling",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General Button Styles"
+      },
+      {
+        "type": "range",
+        "id": "global_button_padding_y",
+        "min": 5,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Vertical Padding",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "global_button_font_size",
+        "min": 10,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Font Size",
+        "default": 14
+      },
+      {
+        "type": "select",
+        "id": "global_button_font_weight",
+        "label": "Font Weight",
+        "options": [
+          {
+            "value": "400",
+            "label": "Regular"
+          },
+          {
+            "value": "500",
+            "label": "Medium"
+          },
+          {
+            "value": "600",
+            "label": "Semi-bold"
+          },
+          {
+            "value": "700",
+            "label": "Bold"
+          },
+          {
+            "value": "800",
+            "label": "Extra-bold"
+          },
+          {
+            "value": "900",
+            "label": "Black"
+          }
+        ],
+        "default": "700"
+      },
+      {
+        "type": "checkbox",
+        "id": "disable_button_font_weight_override",
+        "label": "Disable Global Font Weight for Add to Cart Buttons",
+        "default": false,
+        "info": "When enabled, add to cart buttons will not use the global font weight, allowing price elements to keep their individual font weights"
+      },
+      {
+        "type": "range",
+        "id": "global_button_letter_spacing",
+        "min": -2,
+        "max": 5,
+        "step": 0.1,
+        "unit": "px",
+        "label": "Letter Spacing",
+        "default": 1.0
+      },
+      {
+        "type": "select",
+        "id": "global_button_text_transform",
+        "label": "Text Transform",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "uppercase",
+            "label": "UPPERCASE"
+          },
+          {
+            "value": "lowercase",
+            "label": "lowercase"
+          },
+          {
+            "value": "capitalize",
+            "label": "Capitalize"
+          }
+        ],
+        "default": "none",
+        "info": "Transform button text case"
+      },
+      {
+        "type": "header",
+        "content": "Border & Radius"
+      },
+      {
+        "type": "range",
+        "id": "global_button_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "Corner radius",
+        "default": 8
+      },
+      {
+        "type": "checkbox",
+        "id": "apply_button_radius_to_all",
+        "label": "Apply corner radius to all button elements",
+        "default": true,
+        "info": "If unchecked, radius will only apply to primary buttons"
+      },
+      {
+        "type": "header",
+        "content": "Button Color Options"
+      },
+      {
+        "type": "color",
+        "id": "global_button_background_color",
+        "label": "Button Background Color",
+        "default": "#EF4A65",
+        "info": "Primary background color for all buttons using global styling"
+      },
+      {
+        "type": "color",
+        "id": "global_button_text_color_primary",
+        "label": "Button Text Color",
+        "default": "#FFFFFF",
+        "info": "Text color for buttons using global styling"
+      },
+      {
+        "type": "color",
+        "id": "global_button_border_color",
+        "label": "Button Border Color",
+        "default": "#EF4A65",
+        "info": "Border color for buttons (when borders are enabled)"
+      },
+      {
+        "type": "range",
+        "id": "global_button_border_width",
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "unit": "px",
+        "label": "Button Border Width",
+        "default": 0,
+        "info": "Border thickness for buttons"
+      },
+      {
+        "type": "header",
+        "content": "Hover & Focus Effects"
+      },
+      {
+        "type": "color",
+        "id": "global_button_hover_bg_color",
+        "label": "Hover Background Color",
+        "default": "#D63953",
+        "info": "Background color when hovering over buttons"
+      },
+      {
+        "type": "color",
+        "id": "global_button_hover_text_color",
+        "label": "Hover Text Color",
+        "default": "#FFFFFF",
+        "info": "Text color when hovering over buttons"
+      },
+      {
+        "type": "range",
+        "id": "global_button_hover_brightness",
+        "min": 80,
+        "max": 120,
+        "step": 5,
+        "unit": "%",
+        "label": "Hover Brightness Adjustment",
+        "default": 90,
+        "info": "Automatically adjust brightness on hover (90% = darker, 110% = lighter)"
+      },
+      {
+        "type": "header",
+        "content": "Button Box Shadow"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_button_box_shadow",
+        "label": "Enable Button Box Shadow",
+        "default": false,
+        "info": "Adds a simple box shadow to make buttons stand out"
+      },
+      {
+        "type": "range",
+        "id": "button_shadow_intensity",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "label": "Shadow Intensity",
+        "default": 2,
+        "info": "Controls how prominent the shadow appears (1 = subtle, 5 = strong)"
+      },
+      {
+        "type": "header",
+        "content": "Gradient Effects"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_button_gradient",
+        "label": "Enable Gradient Background",
+        "default": false,
+        "info": "Use gradient colors instead of solid background color"
+      },
+      {
+        "type": "color",
+        "id": "button_gradient_start",
+        "label": "Gradient Start Color",
+        "default": "#EF4A65",
+        "info": "Starting color of the gradient"
+      },
+      {
+        "type": "color",
+        "id": "button_gradient_end",
+        "label": "Gradient End Color",
+        "default": "#D63953",
+        "info": "Ending color of the gradient"
+      },
+      {
+        "type": "select",
+        "id": "button_gradient_direction",
+        "label": "Gradient Direction",
+        "options": [
+          {
+            "value": "to bottom",
+            "label": "Top to Bottom"
+          },
+          {
+            "value": "to top",
+            "label": "Bottom to Top"
+          },
+          {
+            "value": "to right",
+            "label": "Left to Right"
+          },
+          {
+            "value": "to left",
+            "label": "Right to Left"
+          },
+          {
+            "value": "45deg",
+            "label": "Diagonal (Top-Left to Bottom-Right)"
+          },
+          {
+            "value": "-45deg",
+            "label": "Diagonal (Top-Right to Bottom-Left)"
+          },
+          {
+            "value": "135deg",
+            "label": "Diagonal (Bottom-Left to Top-Right)"
+          },
+          {
+            "value": "225deg",
+            "label": "Diagonal (Bottom-Right to Top-Left)"
+          }
+        ],
+        "default": "to bottom",
+        "info": "Direction of the gradient effect"
+      },
+      {
+        "type": "color",
+        "id": "button_gradient_hover_start",
+        "label": "Hover Gradient Start Color",
+        "default": "#D63953",
+        "info": "Starting color of the gradient on hover"
+      },
+      {
+        "type": "color",
+        "id": "button_gradient_hover_end",
+        "label": "Hover Gradient End Color",
+        "default": "#B8314A",
+        "info": "Ending color of the gradient on hover"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gradient_shine",
+        "label": "Enable Gradient Shine Effect",
+        "default": true,
+        "info": "Show a subtle shine animation when hovering over gradient buttons"
+      },
+      {
+        "type": "header",
+        "content": "Global Button System"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_global_button_styling",
+        "label": "Enable Global Button Styling for Sections",
+        "default": true,
+        "info": "When enabled, sections use global button colors and styling. When disabled, sections use custom colors but maintain global spacing and letter spacing for consistency."
+      },
+      {
+        "type": "paragraph",
+        "content": "Preview your button styles in the theme customizer after saving changes. Use the button preview section to test different combinations."
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.layout.name",
+    "settings": [
+      {
+        "type": "range",
+        "id": "page_width",
+        "min": 1000,
+        "max": 1600,
+        "step": 100,
+        "default": 1200,
+        "unit": "px",
+        "label": "t:settings_schema.layout.settings.page_width.label"
+      },
+      {
+        "type": "range",
+        "id": "spacing_sections",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:settings_schema.layout.settings.spacing_sections.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.layout.settings.header__grid.content"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.layout.settings.paragraph__grid.content"
+      },
+      {
+        "type": "range",
+        "id": "spacing_grid_horizontal",
+        "min": 4,
+        "max": 40,
+        "step": 4,
+        "default": 8,
+        "unit": "px",
+        "label": "t:settings_schema.layout.settings.spacing_grid_horizontal.label"
+      },
+      {
+        "type": "range",
+        "id": "spacing_grid_vertical",
+        "min": 4,
+        "max": 40,
+        "step": 4,
+        "default": 8,
+        "unit": "px",
+        "label": "t:settings_schema.layout.settings.spacing_grid_vertical.label"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.animations.name",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "animations_reveal_on_scroll",
+        "label": "t:settings_schema.animations.settings.animations_reveal_on_scroll.label",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "animations_hover_elements",
+        "options": [
+          {
+            "value": "default",
+            "label": "t:settings_schema.animations.settings.animations_hover_elements.options__1.label"
+          },
+          {
+            "value": "vertical-lift",
+            "label": "t:settings_schema.animations.settings.animations_hover_elements.options__2.label"
+          },
+          {
+            "value": "3d-lift",
+            "label": "t:settings_schema.animations.settings.animations_hover_elements.options__3.label"
+          }
+        ],
+        "default": "default",
+        "label": "t:settings_schema.animations.settings.animations_hover_elements.label",
+        "info": "t:settings_schema.animations.settings.animations_hover_elements.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.variant_pills.name",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.variant_pills.paragraph"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_border_thickness",
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 55
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 40
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_shadow_horizontal_offset",
+        "min": -12,
+        "max": 12,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_shadow_vertical_offset",
+        "min": -12,
+        "max": 12,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_shadow_blur",
+        "min": 0,
+        "max": 20,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.inputs.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "inputs_border_thickness",
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "inputs_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 55
+      },
+      {
+        "type": "range",
+        "id": "inputs_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 16
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "inputs_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "inputs_shadow_horizontal_offset",
+        "min": -12,
+        "max": 12,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "inputs_shadow_vertical_offset",
+        "min": -12,
+        "max": 12,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "inputs_shadow_blur",
+        "min": 0,
+        "max": 20,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.cards.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "card_style",
+        "options": [
+          {
+            "value": "standard",
+            "label": "t:settings_schema.cards.settings.style.options__1.label"
+          },
+          {
+            "value": "card",
+            "label": "t:settings_schema.cards.settings.style.options__2.label"
+          }
+        ],
+        "default": "standard",
+        "label": "t:settings_schema.cards.settings.style.label"
+      },
+      {
+        "type": "range",
+        "id": "card_image_padding",
+        "min": 0,
+        "max": 20,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.image_padding.label",
+        "default": 0
+      },
+      {
+        "type": "select",
+        "id": "card_text_alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
+          },
+          {
+            "value": "center",
+            "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
+          },
+          {
+            "value": "right",
+            "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
+          }
+        ],
+        "default": "left",
+        "label": "t:settings_schema.global.settings.text_alignment.label"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "card_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "card_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "card_corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "card_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "card_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "card_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "card_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.collection_cards.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "collection_card_style",
+        "options": [
+          {
+            "value": "standard",
+            "label": "t:settings_schema.collection_cards.settings.style.options__1.label"
+          },
+          {
+            "value": "card",
+            "label": "t:settings_schema.collection_cards.settings.style.options__2.label"
+          }
+        ],
+        "default": "standard",
+        "label": "t:settings_schema.collection_cards.settings.style.label"
+      },
+      {
+        "type": "range",
+        "id": "collection_card_image_padding",
+        "min": 0,
+        "max": 20,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.image_padding.label",
+        "default": 0
+      },
+      {
+        "type": "select",
+        "id": "collection_card_text_alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
+          },
+          {
+            "value": "center",
+            "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
+          },
+          {
+            "value": "right",
+            "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
+          }
+        ],
+        "default": "left",
+        "label": "t:settings_schema.global.settings.text_alignment.label"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "collection_card_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "collection_card_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "collection_card_corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "collection_card_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "collection_card_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "collection_card_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "collection_card_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.blog_cards.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "blog_card_style",
+        "options": [
+          {
+            "value": "standard",
+            "label": "t:settings_schema.blog_cards.settings.style.options__1.label"
+          },
+          {
+            "value": "card",
+            "label": "t:settings_schema.blog_cards.settings.style.options__2.label"
+          }
+        ],
+        "default": "standard",
+        "label": "t:settings_schema.blog_cards.settings.style.label"
+      },
+      {
+        "type": "range",
+        "id": "blog_card_image_padding",
+        "min": 0,
+        "max": 20,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.image_padding.label",
+        "default": 0
+      },
+      {
+        "type": "select",
+        "id": "blog_card_text_alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
+          },
+          {
+            "value": "center",
+            "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
+          },
+          {
+            "value": "right",
+            "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
+          }
+        ],
+        "default": "left",
+        "label": "t:settings_schema.global.settings.text_alignment.label"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "blog_card_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "blog_card_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "blog_card_corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "blog_card_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "blog_card_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "blog_card_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "blog_card_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.content_containers.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.media.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "media_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "media_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 5
+      },
+      {
+        "type": "range",
+        "id": "media_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "media_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "media_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "media_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "media_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.popups.name",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.popups.paragraph"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "popup_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "popup_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "popup_corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "popup_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "popup_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "popup_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "popup_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.drawers.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "drawer_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "drawer_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 10
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "drawer_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "drawer_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "drawer_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "drawer_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.badges.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "badge_position",
+        "options": [
+          {
+            "value": "bottom left",
+            "label": "t:settings_schema.badges.settings.position.options__1.label"
+          },
+          {
+            "value": "bottom right",
+            "label": "t:settings_schema.badges.settings.position.options__2.label"
+          },
+          {
+            "value": "top left",
+            "label": "t:settings_schema.badges.settings.position.options__3.label"
+          },
+          {
+            "value": "top right",
+            "label": "t:settings_schema.badges.settings.position.options__4.label"
+          }
+        ],
+        "default": "bottom left",
+        "label": "t:settings_schema.badges.settings.position.label"
+      },
+      {
+        "type": "range",
+        "id": "badge_corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 40
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.brand_information.name",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.brand_information.settings.paragraph.content"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "brand_headline",
+        "label": "t:settings_schema.brand_information.settings.brand_headline.label"
+      },
+      {
+        "type": "richtext",
+        "id": "brand_description",
+        "label": "t:settings_schema.brand_information.settings.brand_description.label"
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_image",
+        "label": "t:settings_schema.brand_information.settings.brand_image.label"
+      },
+      {
+        "type": "range",
+        "id": "brand_image_width",
+        "min": 50,
+        "max": 550,
+        "step": 5,
+        "default": 100,
+        "unit": "px",
+        "label": "t:settings_schema.brand_information.settings.brand_image_width.label"
+      }
+    ]
+  },
+  {
+    "name": "Free gift",
+    "settings": [
+      {
+        "type": "product",
+        "id": "rely_on_product",
+        "label": "Rely on gift product",
+        "info": "If this product is deleted from the cart all gifted product are gonna be removed"
+      },
+      {
+        "type": "header",
+        "content": "Free Products"
+      },
+      {
+        "type": "product",
+        "id": "item_1_product",
+        "label": "Item 1 Product"
+      },
+      {
+        "type": "product",
+        "id": "item_2_product",
+        "label": "Item 2 Product"
+      },
+      {
+        "type": "product",
+        "id": "item_3_product",
+        "label": "Item 3 Product"
+      },
+      {
+        "type": "product",
+        "id": "item_4_product",
+        "label": "Item 4 Product"
+      },
+      {
+        "type": "product",
+        "id": "item_5_product",
+        "label": "Item 5 Product"
+      },
+      {
+        "type": "product",
+        "id": "item_6_product",
+        "label": "Item 6 Product"
+      },
+      {
+        "type": "product",
+        "id": "item_7_product",
+        "label": "Item 7 Product"
+      },
+      {
+        "type": "product",
+        "id": "item_8_product",
+        "label": "Item 8 Product"
+      },
+      {
+        "type": "product",
+        "id": "item_9_product",
+        "label": "Item 9 Product"
+      },
+      {
+        "type": "product",
+        "id": "item_10_product",
+        "label": "Item 10 Product"
+      }
+    ]
+  },
+  {
+    "name": "Cart Drawer",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_customization_mode",
+        "label": "Cart Customization Mode",
+        "default": false,
+        "info": "When enabled, keeps the cart drawer rendered (visible) for easier customization and theme development. Disable in production."
+      },
+      {
+        "type": "checkbox",
+        "id": "use_theme_colors_cart_drawer",
+        "label": "Use Theme Colors for Cart Drawer",
+        "default": true,
+        "info": "When enabled, the cart drawer will use global theme colors. Disable to use specific cart drawer color settings below."
+      },
+      {
+        "type": "checkbox",
+        "id": "use_upsell_block",
+        "label": "Display Upsell Products in Cart Drawer",
+        "default": false,
+        "info": "When enabled, the cart drawer will display upsell products at the bottom of cart items."
+      },
+      {
+        "type": "checkbox",
+        "id": "upsell_carousel_mode",
+        "label": "Display Upsell Block in Carousel",
+        "default": false,
+        "info": "When enabled, the upsell block will be displayed in carousel."
+      },
+      {
+        "type": "textarea",
+        "id": "upsell_block_description",
+        "label": "Upsell Block Description Text",
+        "default": "Customers also add ..."
+      },
+      {
+        "type": "header",
+        "content": "Upsell Content Settings"
+      },
+      {
+        "type": "product",
+        "id": "upsell_product_1",
+        "label": "Select Upsell Product"
+      },
+      {
+        "type": "product",
+        "id": "upsell_product_2",
+        "label": "Select Upsell Product"
+      },
+      {
+        "type": "product",
+        "id": "upsell_product_3",
+        "label": "Select Upsell Product"
+      },
+      {
+        "type": "product",
+        "id": "upsell_product_4",
+        "label": "Select Upsell Product"
+      },
+      {
+        "type": "product",
+        "id": "upsell_product_5",
+        "label": "Select Upsell Product"
+      },
+      {
+        "type": "header",
+        "content": "Upsell Description Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_upsell_description",
+        "label": "Show Description",
+        "default": false
+      },
+      {
+        "type": "textarea",
+        "id": "upsell_description_text",
+        "label": "Description Text",
+        "default": "Short product description here"
+      },
+      {
+        "type": "color",
+        "id": "upsell_description_color",
+        "label": "Description Text Color",
+        "default": "#333333"
+      },
+      {
+        "type": "checkbox",
+        "id": "upsell_show_price",
+        "label": "Show the price inside the button",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "upsell_button_text",
+        "label": "Button Text",
+        "default": "Add +",
+        "info": "Upsell Button Text here"
+      },
+      {
+        "type": "text",
+        "id": "upsell_button_success_text",
+        "label": "Success Button Text",
+        "default": "Added!",
+        "info": "Text to display after the upsell product has been added to cart"
+      },
+      {
+        "type": "header",
+        "content": "Upsell Best Seller Tag"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_upsell_best_seller_tag",
+        "label": "Show 'Best Seller' Tag",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "upsell_best_seller_text",
+        "label": "Tag Text",
+        "default": "BEST SELLER"
+      },
+      {
+        "type": "color",
+        "id": "upsell_best_seller_tag_color",
+        "label": "Tag Background Color",
+        "default": "#e18942"
+      },
+      {
+        "type": "color",
+        "id": "upsell_best_seller_tag_text_color",
+        "label": "Tag Text Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "textarea",
+        "id": "upsell_custom_bestseller_svg",
+        "label": "Custom SVG Icon (Optional)",
+        "info": "Paste custom SVG code to replace the default star icon. Leave empty to use default."
+      },
+      {
+        "type": "header",
+        "content": "Upsell Style Settings"
+      },
+      {
+        "type": "color",
+        "id": "upsell_card_background_color",
+        "label": "Card Background Color",
+        "default": "#fcf9e6"
+      },
+      {
+        "type": "color",
+        "id": "upsell_product_image_background_color",
+        "label": "Product Image Background Color",
+        "default": "#fcf9e6"
+      },
+      {
+        "type": "color",
+        "id": "upsell_title_color",
+        "label": "Title Color",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "upsell_variant_text_color",
+        "label": "Variant Text Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "upsell_variant_background_color",
+        "label": "Variant Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "upsell_variant_border_color",
+        "label": "Variant Border Color",
+        "default": "#e0e0e0"
+      },
+      {
+        "type": "color",
+        "id": "upsell_button_background_color",
+        "label": "Button Background Color",
+        "default": "#e0e0e0"
+      },
+      {
+        "type": "color",
+        "id": "upsell_button_bg_color",
+        "label": "Button Background Color",
+        "default": "#000000",
+        "info": "Custom background color for upsell buttons (only applies when 'Use Theme Colors' is off)"
+      },
+      {
+        "type": "color",
+        "id": "upsell_button_text_color",
+        "label": "Button Text Color",
+        "default": "#ffffff",
+        "info": "Custom text color for upsell buttons (only applies when 'Use Theme Colors' is off)"
+      },
+      {
+        "type": "range",
+        "id": "upsell_button_border_radius",
+        "label": "Button Border Radius",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 2,
+        "info": "Border radius for upsell buttons"
+      },
+      {
+        "type": "header",
+        "content": "Upsell Other Options"
+      },
+      {
+        "type": "range",
+        "id": "upsell_card_border_radius",
+        "label": "Card Border Radius (px)",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "upsell_margin_top",
+        "label": "Top Margin (px)",
+        "min": -20,
+        "max": 20,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "upsell_margin_bottom",
+        "label": "Bottom Margin (px)",
+        "min": -20,
+        "max": 20,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "select",
+        "id": "upsell_border_style",
+        "label": "Border Style",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "solid",
+            "label": "Solid"
+          },
+          {
+            "value": "dashed",
+            "label": "Dashed"
+          },
+          {
+            "value": "dotted",
+            "label": "Dotted"
+          }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "range",
+        "id": "upsell_border_width",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Border Width",
+        "default": 0
+      },
+      {
+        "type": "color",
+        "id": "upsell_border_color",
+        "label": "Border Color",
+        "default": "#000000"
+      },
+      {
+        "type": "range",
+        "id": "upsell_image_border_radius",
+        "label": "Image Border Radius (px)",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "header",
+        "content": "Color Settings"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_primary_background_color",
+        "label": "Primary Background Color",
+        "default": "#FFFFFF",
+        "info": "Main background color for the cart drawer"
+      },
+      {
+        "type": "color_background",
+        "id": "cart_drawer_bg_gradient",
+        "label": "Background Gradient",
+        "default": "linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%)",
+        "info": "Background gradient for the cart drawer. Always uses this gradient, independent of theme colors setting."
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_primary_text_color",
+        "label": "Primary Text Color",
+        "default": "#121212",
+        "info": "Main text color for cart drawer"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_header_bg",
+        "label": "Header Background Color",
+        "default": "#F8F8F8",
+        "info": "Background color for the cart drawer header"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_product_bg",
+        "label": "Product Background Color",
+        "default": "#FFFFFF",
+        "info": "Background color for product items in cart"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_footer_bg",
+        "label": "Footer Background Color",
+        "default": "#F8F8F8",
+        "info": "Background color for the cart drawer footer with totals and checkout button"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_secondary_text",
+        "label": "Secondary Text Color",
+        "default": "#707070",
+        "info": "Used for subtitles, prices, and secondary information"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_accent_color",
+        "label": "Accent Color",
+        "default": "#EF4A65",
+        "info": "Used for highlights and special elements"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_divider_color",
+        "label": "Divider Color",
+        "default": "#E5E5E5",
+        "info": "Color for dividers and borders in the cart"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_checkout_button_bg",
+        "label": "Checkout Button Background",
+        "default": "#121212",
+        "info": "Background color for the checkout button"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_checkout_button_text",
+        "label": "Checkout Button Text Color",
+        "default": "#FFFFFF",
+        "info": "Text color for the checkout button"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_item_saving_text",
+        "label": "Item Saving Text Color",
+        "default": "#EF4A65"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_item_saving_bg",
+        "label": "Item Saving Background Color",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_free_product_label_bg",
+        "label": "Free Product Label Background",
+        "default": "#f4f4f4",
+        "info": "Background color for the free product label (always uses this color, independent of theme colors setting)"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_free_product_label_text",
+        "label": "Free Product Label Text & Icon",
+        "default": "#ffffff",
+        "info": "Text and icon color for the free product label (always uses this color, independent of theme colors setting)"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_free_product_label_border_radius",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Free Product Label Border Radius",
+        "default": 50,
+        "info": "Controls the roundness of the free product label corners"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_free_product_label_font_size",
+        "min": 8,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Free Product Label Font Size",
+        "default": 13,
+        "info": "Font size for the free product label text"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_free_product_label_padding_y",
+        "min": 1,
+        "max": 15,
+        "step": 1,
+        "unit": "px",
+        "label": "Free Product Label Vertical Padding",
+        "default": 2,
+        "info": "Top and bottom padding inside the free product label"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_free_product_label_padding_x",
+        "min": 2,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Free Product Label Horizontal Padding",
+        "default": 8,
+        "info": "Left and right padding inside the free product label"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_fs_icon_default_color",
+        "label": "Free Shipping Icon Default Color",
+        "default": "#808080",
+        "info": "When 'Use Theme Colors for Cart Drawer' is enabled, this will use Accent Color 2"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_fs_icon_active_color",
+        "label": "Free Shipping Icon Active Color",
+        "default": "#000000",
+        "info": "When 'Use Theme Colors for Cart Drawer' is enabled, this will use Accent Color 1"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_progress_active_color",
+        "label": "Progress Bar Active Color",
+        "default": "#000000",
+        "info": "When 'Use Theme Colors for Cart Drawer' is enabled, this will use Accent Color 1"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_progress_inactive_color",
+        "label": "Progress Bar Inactive Color",
+        "default": "#ECECEC",
+        "info": "When 'Use Theme Colors for Cart Drawer' is enabled, this will use Accent Color 2"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_progress_active_icon_fill_color",
+        "label": "Progress Bar Active Icon Fill",
+        "default": "#FFFFFF",
+        "info": "When 'Use Theme Colors for Cart Drawer' is enabled, this will use the background color"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_shipping_protection_bg",
+        "label": "Shipping Protection Background",
+        "default": "#F1F1F1"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_shipping_protection_border",
+        "label": "Shipping Protection Border Color",
+        "default": "#A3A3A3"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_shipping_protection_text",
+        "label": "Shipping Protection Text Color",
+        "default": "#121212"
+      },
+      {
+        "type": "header",
+        "content": "Discount Tag Styling"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_discount_bg_color",
+        "label": "Discount Tag Background Color",
+        "default": "#000000",
+        "info": "Background color for discount tags in the cart"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_discount_text_color",
+        "label": "Discount Tag Text Color",
+        "default": "#FFFFFF",
+        "info": "Text color for discount tags in the cart"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_discount_icon_color",
+        "label": "Discount Tag Icon Color",
+        "default": "#FFFFFF",
+        "info": "Color for the discount tag icon"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_discount_border_radius",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Discount Tag Border Radius",
+        "default": 4,
+        "info": "Controls the roundness of discount tag corners"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_border_radius",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Border Radius",
+        "default": 8,
+        "info": "Controls the roundness of elements in the cart drawer"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_image_border_radius",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Cart Item Image Border Radius",
+        "default": 8,
+        "info": "Controls the roundness of product images in the cart"
+      },
+      {
+        "type": "header",
+        "content": "Shipping Protection"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_shipping_protection",
+        "label": "Show Shipping Protection",
+        "default": true,
+        "info": "When disabled, the entire shipping protection container will be hidden in the cart drawer"
+      },
+      {
+        "type": "image_picker",
+        "id": "cart_drawer_sp_icon",
+        "label": "Icon Image",
+        "info": "Upload an image to replace the default shipping protection icon. Leave blank to use the default SVG shield."
+      },
+      {
+        "type": "text",
+        "id": "cart_drawer_sp_heading",
+        "label": "Heading Text",
+        "default": "Shipping Protection",
+        "info": "Customize the main heading for the shipping protection section."
+      },
+      {
+        "type": "textarea",
+        "id": "cart_drawer_sp_text",
+        "label": "Description Text",
+        "default": "Protect your order from damage, loss, or theft during shipping",
+        "info": "Customize the descriptive text below the heading."
+      },
+      {
+        "type": "product",
+        "id": "product_shipping_protection",
+        "label": "Shipping Protection product"
+      },
+      {
+        "type": "header",
+        "content": "Social Proof Bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social_proof_bar",
+        "label": "Show Social Proof Bar",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "social_proof_text",
+        "label": "Social Proof Text",
+        "default": "Join 10,000+ happy customers!"
+      },
+      {
+        "type": "select",
+        "id": "social_proof_icon",
+        "label": "Icon",
+        "options": [
+          {
+            "value": "stars",
+            "label": "Stars (Multiple)"
+          },
+          {
+            "value": "star",
+            "label": "Star (Single)"
+          },
+          {
+            "value": "checkmark",
+            "label": "Checkmark"
+          },
+          {
+            "value": "lock",
+            "label": "Lock"
+          },
+          {
+            "value": "truck",
+            "label": "Truck"
+          },
+          {
+            "value": "users",
+            "label": "Users"
+          },
+          {
+            "value": "none",
+            "label": "None"
+          }
+        ],
+        "default": "stars"
+      },
+      {
+        "type": "color",
+        "id": "social_proof_bg_color",
+        "label": "Background Color",
+        "default": "#f5f5f5"
+      },
+      {
+        "type": "color",
+        "id": "social_proof_text_color",
+        "label": "Text Color",
+        "default": "#121212"
+      },
+      {
+        "type": "color",
+        "id": "social_proof_icon_color",
+        "label": "Icon Color",
+        "default": "#121212"
+      },
+      {
+        "type": "header",
+        "content": "Checkout Button"
+      },
+      {
+        "type": "text",
+        "id": "cart_drawer_checkout_button_label",
+        "label": "Checkout Button Text",
+        "default": "SECURE CHECKOUT"
+      },
+      {
+        "type": "header",
+        "content": "Payment Icons"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_cart_drawer_payment_icons",
+        "label": "Show Payment Icons",
+        "default": false,
+        "info": "Display payment method icons below the checkout button in the cart drawer"
+      },
+      {
+        "type": "textarea",
+        "id": "custom_payment_icons",
+        "label": "Payment Methods to Display",
+        "default": "mastercard, american_express, apple_pay, google_pay, shopify_pay, discover, visa",
+        "info": "Enter payment brand names separated by commas to show their icons. Available brands include: visa, mastercard, american_express, apple_pay, google_pay, shopify_pay, paypal, discover, afterpay, dankort, diners_club, dwolla, klarna, maestro, sofort, unionpay"
+      },
+      {
+        "type": "select",
+        "id": "payment_icons_alignment",
+        "label": "Payment Icons Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center",
+        "info": "How to align the payment icons"
+      },
+      {
+        "type": "range",
+        "id": "payment_icon_height",
+        "min": 16,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "Icon Height",
+        "default": 24,
+        "info": "Height of payment icons"
+      },
+      {
+        "type": "range",
+        "id": "payment_icon_spacing",
+        "min": 2,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Icon Spacing",
+        "default": 8,
+        "info": "Space between payment icons"
+      },
+      {
+        "type": "range",
+        "id": "payment_icons_margin_top",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Top Margin",
+        "default": 8,
+        "info": "Space above the payment icons"
+      },
+      {
+        "type": "range",
+        "id": "payment_icons_margin_bottom",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Bottom Margin",
+        "default": 8,
+        "info": "Space below the payment icons"
+      },
+      {
+        "type": "header",
+        "content": "Money Back Guarantee"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_money_back_guarantee",
+        "label": "Show Money Back Guarantee",
+        "default": true,
+        "info": "Display the money back guarantee banner in the cart drawer"
+      },
+      {
+        "type": "text",
+        "id": "money_back_guarantee_text",
+        "label": "Money Back Guarantee Text",
+        "default": "30 Day Money Back Guarantee",
+        "info": "Complete text for the money back guarantee message"
+      },
+      {
+        "type": "select",
+        "id": "money_back_guarantee_icon",
+        "label": "Guarantee Icon",
+        "options": [
+          {
+            "value": "seal-check",
+            "label": "Seal with Checkmark"
+          },
+          {
+            "value": "checkmark",
+            "label": "Simple Checkmark"
+          },
+          {
+            "value": "shield",
+            "label": "Shield"
+          },
+          {
+            "value": "none",
+            "label": "No Icon"
+          }
+        ],
+        "default": "seal-check",
+        "info": "Icon to display next to the money back guarantee text"
+      },
+      {
+        "type": "color",
+        "id": "money_back_guarantee_color",
+        "label": "Text & Icon Color",
+        "default": "#000000",
+        "info": "Color for the guarantee text and icon. Leave blank to use current text color."
+      },
+      {
+        "type": "header",
+        "content": "Discount Banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_discount_banner",
+        "label": "Show Discount Banner",
+        "default": false,
+        "info": "Display a customizable discount banner in the cart drawer"
+      },
+      {
+        "type": "text",
+        "id": "discount_banner_prefix",
+        "label": "Banner Text (First Part)",
+        "default": "Congrats!",
+        "info": "First part of text, displayed in bold"
+      },
+      {
+        "type": "text",
+        "id": "discount_banner_middle",
+        "label": "Banner Text (Middle Part)",
+        "default": "You're saving",
+        "info": "Middle part of text, displayed in regular weight"
+      },
+      {
+        "type": "text",
+        "id": "discount_banner_suffix",
+        "label": "Banner Text (Last Part)",
+        "default": "on your first subscription",
+        "info": "Last part of text, displayed in regular weight"
+      },
+      {
+        "type": "color",
+        "id": "discount_banner_bg_color",
+        "label": "Background Color",
+        "default": "#e6f7ff",
+        "info": "Used when \"Use Theme Colors for Cart Drawer\" is disabled. Otherwise uses Accent Color 2."
+      },
+      {
+        "type": "color",
+        "id": "discount_banner_text_color",
+        "label": "Text Color",
+        "default": "#333333",
+        "info": "Used when \"Use Theme Colors for Cart Drawer\" is disabled. Otherwise uses Accent Color 1."
+      },
+      {
+        "type": "header",
+        "content": "Discount Banner Gradient Background"
+      },
+      {
+        "type": "checkbox",
+        "id": "discount_banner_use_gradient",
+        "label": "Use Gradient Background",
+        "default": false,
+        "info": "Enable gradient background for the discount banner (overrides background color)"
+      },
+      {
+        "type": "color",
+        "id": "discount_banner_gradient_start_color",
+        "label": "Gradient Start Color",
+        "default": "#e6f7ff",
+        "info": "Starting color for the gradient background"
+      },
+      {
+        "type": "color",
+        "id": "discount_banner_gradient_end_color",
+        "label": "Gradient End Color",
+        "default": "#b3e5fc",
+        "info": "Ending color for the gradient background"
+      },
+      {
+        "type": "range",
+        "id": "discount_banner_gradient_angle",
+        "min": 0,
+        "max": 360,
+        "step": 10,
+        "unit": "deg",
+        "label": "Gradient Angle",
+        "default": 90,
+        "info": "Direction of the gradient (0° = left to right, 90° = top to bottom)"
+      },
+      {
+        "type": "select",
+        "id": "discount_banner_icon",
+        "label": "Icon",
+        "options": [
+          {
+            "value": "celebration",
+            "label": "Celebration (🎉)"
+          },
+          {
+            "value": "star",
+            "label": "Star (⭐)"
+          },
+          {
+            "value": "gift",
+            "label": "Gift (🎁)"
+          },
+          {
+            "value": "discount",
+            "label": "Discount (💰)"
+          },
+          {
+            "value": "none",
+            "label": "No Icon"
+          }
+        ],
+        "default": "celebration"
+      },
+      {
+        "type": "header",
+        "content": "Free Product Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_free_show",
+        "label": "Show progress bar",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "shipping_away_text",
+        "label": "Shipping away text",
+        "default": "You're [missingAmount] away from Free Shipping",
+        "info": "Type [missingAmount] to display the missing amount"
+      },
+      {
+        "type": "text",
+        "id": "free_product_away_text",
+        "label": "Free product away text",
+        "default": "You're [missingAmount] away from [freeProduct]",
+        "info": "Type [freeProduct] and [missingAmount] to display the free product name and the missing amount"
+      },
+      {
+        "type": "text",
+        "id": "shipping_earn_text",
+        "label": "shipping earn text",
+        "default": "You've earned Free shipping"
+      },
+      {
+        "type": "text",
+        "id": "free_product_earn_text",
+        "label": "Free product earn text",
+        "default": "You've earned [freeProduct]",
+        "info": "Type [freeProduct] to display the free product name"
+      },
+      {
+        "type": "number",
+        "id": "product_free_shipping",
+        "label": "Amount limit for free shipping",
+        "info": "Enter product price. Ex. 40. Leave this field empty to disable. NOTE: You must set up an automatic discount in your Shopify admin for orders over this amount to actually provide free shipping."
+      },
+      {
+        "type": "text",
+        "id": "product_free_custom_id_title",
+        "label": "Custom free product title"
+      },
+      {
+        "type": "product",
+        "id": "product_free_id",
+        "label": "Free product"
+      },
+      {
+        "type": "number",
+        "id": "product_free_amount",
+        "label": "Amount limit for free product",
+        "info": "Enter product price. Ex. 40. Leave this field empty to disable. NOTE: For this to work, you need to add the product and set it as free in your product settings."
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_continue_shopping_text_color",
+        "label": "Continue Shopping Text Color",
+        "default": "#FFFFFF",
+        "info": "Text color for the continue shopping button when theme colors are disabled"
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook",
+        "placeholder": "https://facebook.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram",
+        "placeholder": "https://instagram.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "YouTube",
+        "placeholder": "https://youtube.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "TikTok",
+        "placeholder": "https://tiktok.com/@shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter",
+        "placeholder": "https://twitter.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "Snapchat",
+        "placeholder": "https://snapchat.com/add/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest",
+        "placeholder": "https://pinterest.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "Tumblr",
+        "placeholder": "https://shopify.tumblr.com"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "Vimeo",
+        "placeholder": "https://vimeo.com/shopify"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.search_input.name",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_header_search",
+        "default": false,
+        "label": "Show search in header",
+        "info": "Enable or disable the search bar in the header"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_search_enabled",
+        "default": true,
+        "label": "t:settings_schema.search_input.settings.predictive_search_enabled.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_search_show_vendor",
+        "default": false,
+        "label": "t:settings_schema.search_input.settings.predictive_search_show_vendor.label",
+        "info": "t:settings_schema.search_input.settings.predictive_search_show_vendor.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_search_show_price",
+        "default": false,
+        "label": "t:settings_schema.search_input.settings.predictive_search_show_price.label",
+        "info": "t:settings_schema.search_input.settings.predictive_search_show_price.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.currency_format.name",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.currency_format.settings.paragraph"
+      },
+      {
+        "type": "checkbox",
+        "id": "currency_code_enabled",
+        "label": "t:settings_schema.currency_format.settings.currency_code_enabled.label",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_notice_date_format",
+        "label": "Free Shipping Notice Date Format",
+        "info": "Customize the date format using standard codes (e.g., %d/%m/%Y for DD/MM/YYYY, %m-%d-%y for MM-DD-YY). Leave blank for default (Month Day with suffix). [Learn more](https://shopify.dev/api/liquid/filters/date#format-options)"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.cart.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart_type",
+        "options": [
+          {
+            "value": "drawer",
+            "label": "t:settings_schema.cart.settings.cart_type.drawer.label"
+          },
+          {
+            "value": "page",
+            "label": "t:settings_schema.cart.settings.cart_type.page.label"
+          },
+          {
+            "value": "notification",
+            "label": "t:settings_schema.cart.settings.cart_type.notification.label"
+          }
+        ],
+        "default": "notification",
+        "label": "t:settings_schema.cart.settings.cart_type.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "t:settings_schema.cart.settings.show_vendor.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_cart_note",
+        "label": "t:settings_schema.cart.settings.show_cart_note.label",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Text Settings"
+      },
+      {
+        "type": "text",
+        "id": "save_text",
+        "label": "Save Text",
+        "default": "SAVE",
+        "info": "Text displayed for discount/save amounts (e.g., 'SAVE 20%')"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.cart.settings.cart_drawer.header"
+      },
+      {
+        "type": "collection",
+        "id": "cart_drawer_collection",
+        "label": "t:settings_schema.cart.settings.cart_drawer.collection.label",
+        "info": "t:settings_schema.cart.settings.cart_drawer.collection.info"
+      }
+    ]
+  }
+]

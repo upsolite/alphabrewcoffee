@@ -1,0 +1,90 @@
+{%- comment -%}
+  Unique Rating Component
+  Parameters:
+  - star_color: Color for filled stars (default: #FFE24D)
+  - empty_star_color: Color for empty stars (default: #D3D3D3)
+  - background_start_color: Start color for gradient background (default: #DFF8FF)
+  - background_end_color: End color for gradient background (default: #BFF1FF)
+  - border_color: Color for the border (default: #00C7FF)
+  - text_color: Color for the text (default: #555555)
+  - rating_value: Numerical rating value (default: 4.8)
+  - rating_count: Number of reviews (default: 198)
+  - container_margin_top: Top margin in pixels (default: 15)
+  - container_margin_bottom: Bottom margin in pixels (default: -15)
+  - mobile_responsive: Enable responsive styles for mobile (default: true)
+{%- endcomment -%}
+
+{%- assign star_color = star_color | default: "#FFE24D" -%}
+{%- assign empty_star_color = empty_star_color | default: "#D3D3D3" -%}
+{%- assign background_start_color = background_start_color | default: "#DFF8FF" -%}
+{%- assign background_end_color = background_end_color | default: "#BFF1FF" -%}
+{%- assign border_color = border_color | default: "#00C7FF" -%}
+{%- assign text_color = text_color | default: "#555555" -%}
+{%- assign rating_value = rating_value | default: 4.8 -%}
+{%- assign rating_count = rating_count | default: 198 -%}
+{%- assign container_margin_top = container_margin_top | default: 15 -%}
+{%- assign container_margin_bottom = container_margin_bottom | default: -15 -%}
+
+<div class="unique-rating-component-wrapper" style="display: block; width: 100%; max-width: 517px; margin-top: {{ container_margin_top }}px; margin-bottom: {{ container_margin_bottom }}px; font-size: 11.5px !important; letter-spacing: -0.3px !important;" {{ block.shopify_attributes }}>
+  <div class="unique-rating-stars-container" style="display: inline-flex !important; align-items: center !important; background: linear-gradient(to right, {{ background_start_color }}, {{ background_end_color }}) !important; padding: 2px 8px !important; border-radius: 4px !important; box-shadow: none !important; border: 1px solid {{ border_color }} !important;">
+    <div class="unique-stars-wrapper" style="display: flex !important; margin-right: 5px !important;">
+      <span class="unique-star" style="color: {{ star_color }} !important; font-size: 15.5px !important; line-height: 1 !important; margin-right: -1px !important; display: inline-block !important;">★</span>
+      <span class="unique-star" style="color: {{ star_color }} !important; font-size: 15.5px !important; line-height: 1 !important; margin-right: -1px !important; display: inline-block !important;">★</span>
+      <span class="unique-star" style="color: {{ star_color }} !important; font-size: 15.5px !important; line-height: 1 !important; margin-right: -1px !important; display: inline-block !important;">★</span>
+      <span class="unique-star" style="color: {{ star_color }} !important; font-size: 15.5px !important; line-height: 1 !important; margin-right: -1px !important; display: inline-block !important;">★</span>
+      <span class="unique-star-half" style="position: relative !important; font-size: 15.5px !important; line-height: 1 !important; margin-right: -1px !important; display: inline-block !important;">
+        <span style="position: absolute !important; overflow: hidden !important; width: 50% !important; color: {{ star_color }} !important; display: inline-block !important;">★</span>
+        <span style="color: {{ empty_star_color }} !important; display: inline-block !important;">★</span>
+      </span>
+    </div>
+    <span class="unique-rating-text" style="font-size: 11.5px !important; font-weight: 500 !important; color: {{ text_color }} !important; display: inline-block !important; visibility: visible !important; margin-left: 5px !important; white-space: nowrap !important; font-family: var(--font-body-family-override) !important;">Rated {{ rating_value }} | {{ rating_count }} Reviews</span>
+  </div>
+</div>
+
+<style type="text/css">
+/* Using very specific selectors to avoid style conflicts */
+.unique-rating-component-wrapper {
+  font-family: var(--font-body-family-override) !important;
+  letter-spacing: -0.3px !important;
+  box-sizing: border-box !important;
+}
+.unique-rating-stars-container {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: linear-gradient(to right, {{ background_start_color }}, {{ background_end_color }}) !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  border: 1px solid {{ border_color }} !important;
+}
+.unique-rating-component-wrapper .unique-star,
+.unique-rating-component-wrapper .unique-star-half span:first-child {
+  color: {{ star_color }} !important;
+  font-style: normal !important;
+  text-decoration: none !important;
+}
+.unique-rating-component-wrapper .unique-star-half span:last-child {
+  color: {{ empty_star_color }} !important;
+  font-style: normal !important;
+  text-decoration: none !important;
+}
+.unique-rating-component-wrapper .unique-rating-text {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+  color: {{ text_color }} !important;
+}
+@media (max-width: 768px) {
+  .unique-rating-stars-container {
+    padding: 3px 6px !important;
+  }
+  
+  .unique-rating-component-wrapper .unique-star,
+  .unique-rating-component-wrapper .unique-star-half {
+    font-size: 14px !important;
+  }
+  
+  .unique-rating-component-wrapper .unique-rating-text {
+    font-size: 10.5px !important;
+  }
+}
+</style> 

@@ -1,0 +1,166 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement_bar_V6qkEm": {
+      "type": "announcement-bar",
+      "name": "Countdown Banner",
+      "settings": {
+        "use_theme_colors": false,
+        "sticky_with_header": true,
+        "announcement_text": "Early Black Friday Sale",
+        "show_days": false,
+        "custom_date": false,
+        "end_date": "2023-12-31 23:59:59",
+        "timezone": "America/New_York",
+        "days_label": "DAYS",
+        "hours_label": "HRS",
+        "minutes_label": "MIN",
+        "seconds_label": "SEC",
+        "text_color": "#f1e5c2",
+        "timer_bg_color": "#f1e5c2",
+        "timer_text_color": "#b98141",
+        "label_text_color": "#b98141",
+        "gradient_color_1": "#b98141",
+        "gradient_color_2": "#b98141",
+        "gradient_color_3": "#b98141",
+        "gradient_color_4": "#b98141"
+      }
+    },
+    "custom_announcement_bar_KbrQgt": {
+      "type": "custom-announcement-bar",
+      "settings": {
+        "use_theme_colors": false,
+        "text": "<p><strong>Worlds 1st BioFusion Technology™ Testosterone Coffee</strong></p>",
+        "background_color": "#f1e5c2",
+        "text_color": "#b98141",
+        "font_size": 14
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "use_theme_colors": true,
+        "use_global_gradient": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "cart_icon_type": "bag",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "benefits_carousel_rcnLnR": {
+      "type": "benefits-carousel",
+      "blocks": {
+        "benefit_dnKVWq": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "90 Day Money Back Guarantee",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\"></path></svg>"
+          }
+        },
+        "benefit_n8chyV": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Buy 2 Get 1 Free",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\"></path></svg>"
+          }
+        },
+        "benefit_fm4Yf9": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Up To 47% Off",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\"></path></svg>"
+          }
+        },
+        "benefit_JzCiwq": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "90 Day Money Back Guarantee",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\"></path></svg>"
+          }
+        },
+        "benefit_biBqVX": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Buy 2 Get 1 Free",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\"></path></svg>"
+          }
+        },
+        "benefit_jcYVwL": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Up To 47% Off",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\"></path></svg>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_dnKVWq",
+        "benefit_n8chyV",
+        "benefit_fm4Yf9",
+        "benefit_JzCiwq",
+        "benefit_biBqVX",
+        "benefit_jcYVwL"
+      ],
+      "disabled": true,
+      "name": "Benefits Carousel",
+      "settings": {
+        "heading": "",
+        "empty_text": "No benefits currently listed.",
+        "icon_size": 18,
+        "icon_size_mobile": 16,
+        "icon_color": "#b98141",
+        "icon_text_spacing": 8,
+        "icon_text_spacing_mobile": 6,
+        "margin_top": -20,
+        "margin_bottom": -20,
+        "scroll_speed": 20,
+        "heading_size": 26,
+        "heading_size_mobile": 20,
+        "heading_color": "#1383a0",
+        "heading_gradient_start": "#ffffff",
+        "heading_gradient_end": "#ffffff",
+        "use_theme_colors": false,
+        "background_color": "#f1e5c2",
+        "border_start_color": "#ffffff",
+        "border_end_color": "#ffb1be",
+        "item_background": "#f1e5c2",
+        "item_text_color": "#b98141",
+        "item_border_start": "#f1e5c2",
+        "item_border_end": "#f1e5c2",
+        "item_font_size_mobile": 14,
+        "empty_text_color": "#888888"
+      }
+    }
+  },
+  "order": [
+    "announcement_bar_V6qkEm",
+    "custom_announcement_bar_KbrQgt",
+    "header",
+    "benefits_carousel_rcnLnR"
+  ]
+}

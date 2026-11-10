@@ -1,0 +1,67 @@
+
+    
+    
+    <style {% if section.settings.section_preload == "false" %} class="gps-link gps-style" type="text/disabled-css" {% endif %}>.gps-632185057238319712.gps.gpsil [style*="--bg:"]{background:var(--bg)}.gps-632185057238319712.gps.gpsil [style*="--bga:"]{background-attachment:var(--bga)}.gps-632185057238319712.gps.gpsil [style*="--bgc:"]{background-color:var(--bgc)}.gps-632185057238319712.gps.gpsil [style*="--bgi:"]{background-image:var(--bgi)}.gps-632185057238319712.gps.gpsil [style*="--bgp:"]{background-position:var(--bgp)}.gps-632185057238319712.gps.gpsil [style*="--bgr:"]{background-repeat:var(--bgr)}.gps-632185057238319712.gps.gpsil [style*="--bgs:"]{background-size:var(--bgs)}.gps-632185057238319712.gps.gpsil [style*="--b:"]{border:var(--b)}.gps-632185057238319712.gps.gpsil [style*="--bb:"]{border-bottom:var(--bb)}.gps-632185057238319712.gps.gpsil [style*="--bc:"]{border-color:var(--bc)}.gps-632185057238319712.gps.gpsil [style*="--bblr:"]{border-bottom-left-radius:var(--bblr)}.gps-632185057238319712.gps.gpsil [style*="--bbrr:"]{border-bottom-right-radius:var(--bbrr)}.gps-632185057238319712.gps.gpsil [style*="--bs:"]{border-style:var(--bs)}.gps-632185057238319712.gps.gpsil [style*="--bt:"]{border-top:var(--bt)}.gps-632185057238319712.gps.gpsil [style*="--btlr:"]{border-top-left-radius:var(--btlr)}.gps-632185057238319712.gps.gpsil [style*="--btrr:"]{border-top-right-radius:var(--btrr)}.gps-632185057238319712.gps.gpsil [style*="--bw:"]{border-width:var(--bw)}.gps-632185057238319712.gps.gpsil [style*="--shadow:"]{box-shadow:var(--shadow)}.gps-632185057238319712.gps.gpsil [style*="--c:"]{color:var(--c)}.gps-632185057238319712.gps.gpsil [style*="--cg:"]{-moz-column-gap:var(--cg);column-gap:var(--cg)}.gps-632185057238319712.gps.gpsil [style*="--gtc:"]{grid-template-columns:var(--gtc)}.gps-632185057238319712.gps.gpsil [style*="--jc:"]{justify-content:var(--jc)}.gps-632185057238319712.gps.gpsil [style*="--op:"]{opacity:var(--op)}.gps-632185057238319712.gps.gpsil [style*="--o:"]{order:var(--o)}.gps-632185057238319712.gps.gpsil [style*="--pc:"]{place-content:var(--pc)}.gps-632185057238319712.gps.gpsil [style*="--p:"]{padding:var(--p)}.gps-632185057238319712.gps.gpsil [style*="--pb:"]{padding-bottom:var(--pb)}.gps-632185057238319712.gps.gpsil [style*="--pt:"]{padding-top:var(--pt)}.gps-632185057238319712.gps.gpsil [style*="--ta:"]{text-align:var(--ta)}.gps-632185057238319712.gps.gpsil [style*="--t:"]{transform:var(--t)}.gps-632185057238319712.gps.gpsil [style*="--w:"]{width:var(--w)}@media only screen and (max-width:1024px){.gps-632185057238319712.gps.gpsil [style*="--pb-tablet:"]{padding-bottom:var(--pb-tablet)}.gps-632185057238319712.gps.gpsil [style*="--pt-tablet:"]{padding-top:var(--pt-tablet)}.gps-632185057238319712.gps.gpsil [style*="--w-tablet:"]{width:var(--w-tablet)}}@media only screen and (max-width:767px){.gps-632185057238319712.gps.gpsil [style*="--pb-mobile:"]{padding-bottom:var(--pb-mobile)}.gps-632185057238319712.gps.gpsil [style*="--pt-mobile:"]{padding-top:var(--pt-mobile)}.gps-632185057238319712.gps.gpsil [style*="--w-mobile:"]{width:var(--w-mobile)}}.gps-632185057238319712 .gp-relative{position:relative}.gps-632185057238319712 .gp-mx-auto{margin-left:auto;margin-right:auto}.gps-632185057238319712 .gp-mb-0{margin-bottom:0}.gps-632185057238319712 .gp-flex{display:flex}.gps-632185057238319712 .gp-grid{display:grid}.gps-632185057238319712 .\!gp-hidden{display:none!important}.gps-632185057238319712 .gp-hidden{display:none}.gps-632185057238319712 .gp-max-w-full{max-width:100%}.gps-632185057238319712 .gp-grid-rows-\[1fr\]{grid-template-rows:1fr}.gps-632185057238319712 .gp-flex-col{flex-direction:column}.gps-632185057238319712 .gp-transition-colors{transition-duration:.15s;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1)}.gps-632185057238319712 .gp-duration-200{transition-duration:.2s}.gps-632185057238319712 .gp-ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}@media (max-width:1024px){.gps-632185057238319712 .tablet\:\!gp-hidden{display:none!important}.gps-632185057238319712 .tablet\:gp-hidden{display:none}}@media (max-width:767px){.gps-632185057238319712 .mobile\:\!gp-hidden{display:none!important}.gps-632185057238319712 .mobile\:gp-hidden{display:none}}.gps-632185057238319712 .\[\&_\*\]\:gp-max-w-full *{max-width:100%}</style>
+    
+  
+    
+    
+    
+
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+
+    
+        <section
+          class="gp-mx-auto gp-max-w-full [&_*]:gp-max-w-full {% if section.settings.section_preload == "false" %}gps-lazy {% endif %}"
+          style="--w:100%;--w-tablet:calc(var(--g-ct-w, 100%) + 2 * var(--g-ct-p, 15px));--w-mobile:calc(var(--g-ct-w, 100%) + 2 * var(--g-ct-p, 15px))"
+        >
+          
+    <gp-row
+      data-id="g_PgokD4ZG" id="g_PgokD4ZG" data-same-height-subgrid-container
+      class="g_PgokD4ZG gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
+      style="--bs:solid;--bw:0px;--bc:#121212;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--pt:0px;--pb:0px;--pt-mobile:0px;--pb-mobile:0px;--pt-tablet:0px;--pb-tablet:0px;--cg:0px;--gtc:minmax(0, 12fr);--w:100%;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start"
+    >
+      <script gp-data type="application/json">{"background":{"desktop":{"attachment":"scroll","color":"transparent","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"g_PgokD4ZG"}</script>
+      
+
+      <div
+      data-same-height-display-contents
+      style="--jc:start"
+      class="g_S3O8Z0X1 gp-relative gp-flex gp-flex-col"
+    >
+      
+  
+    <div
+      data-id="g_GnTCRYvo"
+      style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ta:left;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll"
+      data-keep-class="true"
+      class="g_GnTCRYvo gp-custom-code">
+      <div>
+    <div aria-label="Site header"><div class="gp-header"></div>
+    </div>
+    </div>
+  
+      <style id="custom-css-g_GnTCRYvo">
+        @import url("https://fonts.bunny.net/css?family=poppins:400,500,600,700&display=swap");.g_GnTCRYvo{--navy:#123456;--blue:#2e6096;--ink:#111315;--body:#33383e;--muted:#7b8592;--line:#e4e8ee;--green:#16a34a;--green-dk:#0f7a37;--hi:#fff3a3;--note:#fffbe8;--note-brd:#e8c95a;--sans:'Poppins',Arial,Helvetica,sans-serif;--serif:'Playfair Display',Georgia,serif;--wrap:660px}.g_GnTCRYvo *,.g_GnTCRYvo *::before,.g_GnTCRYvo *::after{box-sizing:border-box;margin:0;padding:0}.g_GnTCRYvo{font-family:var(--sans);background:#fff;color:var(--body);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}.g_GnTCRYvo img{max-width:100%;height:auto;display:block}.g_GnTCRYvo a{color:var(--blue)}.g_GnTCRYvo mark{background:var(--hi);color:inherit;padding:0 2px}.g_GnTCRYvo p{font-size:18px;line-height:1.68;margin:0 0 18px}.g_GnTCRYvo .gp-wrap{max-width:var(--wrap)!important;width:100%;margin:0 auto;padding:0 18px}.g_GnTCRYvo .gp-header{border-bottom:1px solid var(--line);padding:12px 0}
+      </style>
+    
+    </div>
+
+      
+    </gp-row>
+  
+        </section>
+      
+  
+    
+{% schema %}
+  {
+    
+    "name": "Section 1",
+    "tag": "section",
+    "class": "gps-632185057238319712 gps gpsil",
+    "settings": [{"type":"paragraph","content":"Section design by GemPages. [Click here to start design](https://admin.shopify.com/store/0ggrd6-bp/apps/gempages-cro/app/shopify/edit?pageType=GP_STATIC&editorId=632185057204765280&sectionId=632185057238319712)"},{"type":"select","label":"Section Preload","id":"section_preload","options":[{"label":"On","value":"true"},{"label":"Off","value":"false"},{"label":"Off Lazy Script","value":"off_lazy_script"}],"default":"false"},{"type":"text","label":"Checksum","id":"checksum"}],
+    "blocks": [{"type": "@app"}],
+    "locales": {}
+  }
+{% endschema %}

@@ -1,0 +1,747 @@
+/* ===================================== */
+/* COMPREHENSIVE GLOBAL BUTTON STYLING */
+/* ===================================== */
+
+:root {
+  /* Fallback values for compatibility */
+  --button-border-radius: var(--global-button-radius, 8px);
+  --button-text-transform: var(--global-button-text-transform, none);
+  --button-font-family: var(--font-body-family, sans-serif);
+  
+  /* Enhanced button color system with fallbacks to existing theme colors */
+  --button-bg-color: var(--global-button-bg-color, var(--global-section-button-color, #EF4A65));
+  --button-text-color: var(--global-button-text-color, var(--global-section-button-text-color, #FFFFFF));
+  --button-border-color: var(--global-button-border-color, var(--button-bg-color));
+  --button-hover-bg-color: var(--global-button-hover-bg-color, var(--button-bg-color));
+  --button-hover-text-color: var(--global-button-hover-text-color, var(--button-text-color));
+}
+
+/* ===================================== */
+/* GLOBAL BUTTON CLASSES */
+/* ===================================== */
+
+/* Base button styling - always applied for spacing consistency */
+.button-global-style,
+.use-global-button-styling,
+.button-global-typography {
+  /* Always use global spacing and consistency */
+  padding: var(--global-button-padding-y, 12px) 20px !important;
+  letter-spacing: var(--global-button-letter-spacing, 1px) !important;
+  font-family: var(--button-font-family) !important;
+  
+  /* Behavior */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  /* Remove default button styling */
+  box-shadow: none !important;
+  outline: none;
+}
+
+/* Complete global styling (includes colors) */
+.button-global-style,
+.use-global-button-styling {
+  /* Global Typography & Appearance */
+  font-size: var(--global-button-font-size, 14px) !important;
+  font-weight: var(--conditional-button-font-weight, var(--global-button-font-weight, 700)) !important;
+  text-transform: var(--global-button-text-transform, none) !important;
+  border-radius: var(--global-button-radius, 8px) !important;
+  border: var(--global-button-border-width, 0px) solid var(--button-border-color) !important;
+  background-color: var(--button-bg-color) !important;
+  color: var(--button-text-color) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-global-style:hover,
+.button-global-style:focus,
+.use-global-button-styling:hover,
+.use-global-button-styling:focus {
+  background-color: var(--button-hover-bg-color) !important;
+  color: var(--button-hover-text-color) !important;
+  text-decoration: none !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.button-global-style:active,
+.use-global-button-styling:active {
+  transform: translateY(0);
+}
+
+/* ===================================== */
+/* APPLY GLOBAL STYLING TO ALL BUTTON TYPES */
+/* ===================================== */
+
+/* 
+  All these button selectors automatically inherit global button styling.
+  This ensures consistent appearance across the entire theme.
+  Individual sections can override with conditional styling when needed.
+*/
+.button:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.btn:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+button[type="submit"]:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+input[type="submit"]:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.product-form__submit:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.shop-add-to-cart-button:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.cart__checkout-button:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.contact-button:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.contact__button:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.button--primary:not(.cart-remove-button):not(.disable-global-button-styling),
+.claim-button:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.shopify-payment-button .shopify-payment-button__button--unbranded:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.shopify-payment-button__button:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.newsletter-form__button:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.field__button:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.theme-button:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.guarantee-section__cta:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling),
+.custom-hero__button:not(.button--tertiary):not(.cart-remove-button):not(.disable-global-button-styling) {
+  /* Always use global spacing and consistency */
+  padding: var(--global-button-padding-y, 12px) 20px !important;
+  letter-spacing: var(--global-button-letter-spacing, 1px) !important;
+  font-family: var(--button-font-family) !important;
+  
+  /* Behavior */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  /* Remove default button styling */
+  box-shadow: none !important;
+  outline: none;
+  
+  /* Global Typography & Appearance */
+  font-size: var(--global-button-font-size, 14px) !important;
+  font-weight: var(--conditional-button-font-weight, var(--global-button-font-weight, 700)) !important;
+  text-transform: var(--global-button-text-transform, none) !important;
+  border-radius: var(--global-button-radius, 8px) !important;
+  border: var(--global-button-border-width, 0px) solid var(--button-border-color) !important;
+  background-color: var(--button-bg-color) !important;
+  color: var(--button-text-color) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===================================== */
+/* SECTION-SPECIFIC OVERRIDE UTILITIES */
+/* ===================================== */
+
+/* Utility class for sections that want to use custom button styling */
+.button-section-override {
+  /* Reset global styles to allow section-specific styling */
+  padding: unset !important;
+  font-size: unset !important;
+  font-weight: unset !important;
+  letter-spacing: unset !important;
+  text-transform: unset !important;
+  border-radius: unset !important;
+  background-color: unset !important;
+  color: unset !important;
+  border: unset !important;
+}
+
+/* Allow section-specific padding and border-radius while keeping global styling */
+.button-section-specific-sizing {
+  /* Override only padding and border-radius to allow section-specific values */
+  padding: unset !important;
+  border-radius: unset !important;
+}
+
+/* Reset font-weight and styling for compare price in buttons */
+.button:not(.button--tertiary):not(.cart-remove-button) .compare-price,
+.btn:not(.button--tertiary):not(.cart-remove-button) .compare-price,
+button[type="submit"]:not(.button--tertiary):not(.cart-remove-button) .compare-price,
+.product-form__submit:not(.button--tertiary):not(.cart-remove-button) .compare-price,
+.shop-add-to-cart-button:not(.button--tertiary):not(.cart-remove-button) .compare-price,
+.button-global-typography .compare-price,
+.use-global-button-styling .compare-price {
+  font-weight: 400 !important;
+  font-size: 0.85em !important;
+  opacity: 0.7 !important;
+  color: currentColor !important;
+  text-decoration: line-through !important;
+}
+
+/* 
+  .button-global-typography is now defined above with base spacing styles.
+  For sections that want global spacing but custom colors, add custom colors separately.
+*/
+
+/* ===================================== */
+/* SHOPIFY SPECIFIC ELEMENTS */
+/* ===================================== */
+
+/* Shopify accelerated checkout buttons */
+.shopify-payment-button .shopify-payment-button__button,
+.shopify-payment-button .shopify-payment-button__button--unbranded {
+  border-radius: var(--global-button-radius, 8px) !important;
+  font-family: var(--button-font-family) !important;
+}
+
+.shopify-payment-button .shopify-payment-button__more-options {
+  border-radius: calc(var(--global-button-radius, 8px) / 2) !important;
+  font-family: var(--button-font-family) !important;
+}
+
+/* ===================================== */
+/* CONDITIONAL GLOBAL APPLICATION */
+/* ===================================== */
+
+/* Apply to all button elements if setting is enabled */
+body[data-apply-button-radius-to-all="true"] button:not([class*="shopify"]):not([class*="tab-button"]),
+body[data-apply-button-radius-to-all="true"] .btn-secondary,
+body[data-apply-button-radius-to-all="true"] [class*="btn-"]:not([class*="tab-button"]),
+body[data-apply-button-radius-to-all="true"] select,
+body[data-apply-button-radius-to-all="true"] .disclosure__button,
+body[data-apply-button-radius-to-all="true"] .facet-checkbox,
+body[data-apply-button-radius-to-all="true"] .color-swatch {
+  border-radius: var(--global-button-radius, 8px) !important;
+}
+
+/* Special case for pill elements - always use pill shape */
+.pill:not(.pill-item),
+[class*="pill"]:not(.pill-item),
+.tag,
+[class*="tag-"] {
+  border-radius: 50px !important;
+}
+
+/* ===================================== */
+/* LEGACY SHOP-ADD-TO-CART-BUTTON STYLES */
+/* ===================================== */
+
+.shop-add-to-cart-wrapper {
+  width: 100% !important;
+  display: block;
+}
+
+.shop-add-to-cart-wrapper .product-form,
+.shop-add-to-cart-wrapper .form {
+  width: 100% !important;
+  display: block;
+}
+
+.shop-add-to-cart-button {
+  width: 100% !important;
+  gap: 10px;
+  position: relative;
+}
+
+.shop-add-to-cart-button .button-icon {
+  line-height: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .shop-add-to-cart-button,
+  .shop-add-to-cart-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Loading spinner for shop buttons */
+.shop-add-to-cart-button .loading__spinner {
+  position: absolute;
+  width: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shop-add-to-cart-button.loading span {
+  visibility: hidden;
+}
+
+.shop-add-to-cart-button .spinner {
+  animation: shop-atc-rotator 1.4s linear infinite;
+}
+
+@keyframes shop-atc-rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.shop-add-to-cart-button .path {
+  stroke: currentColor;
+  stroke-dasharray: 280;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: shop-atc-dash 1.4s ease-in-out infinite;
+}
+
+@keyframes shop-atc-dash {
+  0% {
+    stroke-dashoffset: 280;
+  }
+  50% {
+    stroke-dashoffset: 75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(450deg);
+  }
+}
+
+/* ===================================== */
+/* BUTTON VARIANTS */
+/* ===================================== */
+
+/* Primary button variant (uses global colors) */
+/* Inherits from base button styles defined above - no additional styling needed */
+
+/* Secondary button variant (inverted colors) */
+.button--secondary {
+  /* Base typography styles */
+  padding: var(--global-button-padding-y, 12px) 20px !important;
+  letter-spacing: var(--global-button-letter-spacing, 1px) !important;
+  font-family: var(--button-font-family) !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: none !important;
+  outline: none;
+  
+  background-color: transparent !important;
+  color: var(--button-bg-color) !important;
+  border: 2px solid var(--button-bg-color) !important;
+}
+
+.button--secondary:hover,
+.button--secondary:focus {
+  background-color: var(--button-bg-color) !important;
+  color: var(--button-text-color) !important;
+}
+
+/* Outline button variant */
+.button--outline {
+  /* Base typography styles */
+  padding: var(--global-button-padding-y, 12px) 20px !important;
+  letter-spacing: var(--global-button-letter-spacing, 1px) !important;
+  font-family: var(--button-font-family) !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: none !important;
+  outline: none;
+  
+  background-color: transparent !important;
+  color: var(--button-bg-color) !important;
+  border: 1px solid var(--button-bg-color) !important;
+}
+
+.button--outline:hover,
+.button--outline:focus {
+  background-color: var(--button-bg-color) !important;
+  color: var(--button-text-color) !important;
+}
+
+/* Text-only button variant */
+.button--text {
+  /* Base typography styles */
+  letter-spacing: var(--global-button-letter-spacing, 1px) !important;
+  font-family: var(--button-font-family) !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: underline !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: none !important;
+  outline: none;
+  
+  background-color: transparent !important;
+  color: var(--button-bg-color) !important;
+  border: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.button--text:hover,
+.button--text:focus {
+  color: var(--button-hover-bg-color) !important;
+  background-color: transparent !important;
+}
+
+/* ===================================== */
+/* BUTTON TEXT GLOBAL INTEGRATION */
+/* ===================================== */
+
+/* Ensure button-text elements inside globally styled buttons use global settings */
+.button-global-style .button-text,
+.use-global-button-styling .button-text {
+  font-size: var(--global-button-font-size, 14px) !important;
+  font-weight: var(--conditional-button-font-weight, var(--global-button-font-weight, 700)) !important;
+  letter-spacing: var(--global-button-letter-spacing, 1px) !important;
+  text-transform: var(--global-button-text-transform, none) !important;
+}
+
+/* Allow all button types to use custom button-text font size via CSS custom property */
+.shop-add-to-cart-button .button-text,
+.claim-button .button-text,
+.contact-button .button-text,
+.contact__button .button-text,
+.button--primary .button-text,
+.newsletter-form__button .button-text,
+.field__button .button-text {
+      font-size: var(--button-text-font-size, inherit) !important;
+  }
+  
+  /* ===================================== */
+  /* BUTTON EXCLUSIONS */
+  /* ===================================== */
+  
+  /*
+   * Exclusions: Cart Remove Buttons & Tertiary Buttons
+   * These buttons should NOT inherit global button styling - they need to remain subtle
+   * High specificity to override any applied classes
+   */
+  .cart-remove-button,
+  .button--tertiary,
+  button.button--tertiary,
+  .button.button--tertiary,
+  .cart-remove-button.button-box-shadow,
+  .cart-remove-button.button-gradient-effect,
+  .cart-remove-button.intensity-1,
+  .cart-remove-button.intensity-2,
+  .cart-remove-button.intensity-3,
+  .cart-remove-button.intensity-4,
+  .cart-remove-button.intensity-5,
+  .button--tertiary.button-box-shadow,
+  .button--tertiary.button-gradient-effect,
+  .button--tertiary.intensity-1,
+  .button--tertiary.intensity-2,
+  .button--tertiary.intensity-3,
+  .button--tertiary.intensity-4,
+  .button--tertiary.intensity-5,
+  button.button--tertiary.button-box-shadow,
+  button.button--tertiary.button-gradient-effect,
+  button.button--tertiary.intensity-1,
+  button.button--tertiary.intensity-2,
+  button.button--tertiary.intensity-3,
+  button.button--tertiary.intensity-4,
+  button.button--tertiary.intensity-5,
+  .button.button--tertiary.button-box-shadow,
+  .button.button--tertiary.button-gradient-effect,
+  .button.button--tertiary.intensity-1,
+  .button.button--tertiary.intensity-2,
+  .button.button--tertiary.intensity-3,
+  .button.button--tertiary.intensity-4,
+  .button.button--tertiary.intensity-5 {
+    /* Reset all global button styling */
+    padding: 5px !important;
+    letter-spacing: normal !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    text-transform: none !important;
+    border-radius: var(--global-button-radius, 4px) !important;
+    background-color: transparent !important;
+    color: inherit !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: opacity 0.2s ease !important;
+    transform: none !important;
+    position: static !important;
+    z-index: auto !important;
+  }
+  
+  .cart-remove-button:hover,
+  .button--tertiary:hover,
+  button.button--tertiary:hover,
+  .button.button--tertiary:hover,
+  .cart-remove-button.button-box-shadow:hover,
+  .cart-remove-button.button-gradient-effect:hover,
+  .cart-remove-button.intensity-1:hover,
+  .cart-remove-button.intensity-2:hover,
+  .cart-remove-button.intensity-3:hover,
+  .cart-remove-button.intensity-4:hover,
+  .cart-remove-button.intensity-5:hover,
+  .button--tertiary.button-box-shadow:hover,
+  .button--tertiary.button-gradient-effect:hover,
+  .button--tertiary.intensity-1:hover,
+  .button--tertiary.intensity-2:hover,
+  .button--tertiary.intensity-3:hover,
+  .button--tertiary.intensity-4:hover,
+  .button--tertiary.intensity-5:hover,
+  button.button--tertiary.button-box-shadow:hover,
+  button.button--tertiary.button-gradient-effect:hover,
+  button.button--tertiary.intensity-1:hover,
+  button.button--tertiary.intensity-2:hover,
+  button.button--tertiary.intensity-3:hover,
+  button.button--tertiary.intensity-4:hover,
+  button.button--tertiary.intensity-5:hover,
+  .button.button--tertiary.button-box-shadow:hover,
+  .button.button--tertiary.button-gradient-effect:hover,
+  .button.button--tertiary.intensity-1:hover,
+  .button.button--tertiary.intensity-2:hover,
+  .button.button--tertiary.intensity-3:hover,
+  .button.button--tertiary.intensity-4:hover,
+  .button.button--tertiary.intensity-5:hover {
+    background-color: transparent !important;
+    color: inherit !important;
+    border: none !important;
+    box-shadow: none !important;
+    opacity: 0.7 !important;
+    transform: none !important;
+  }
+  
+  .cart-remove-button:active,
+  .button--tertiary:active,
+  button.button--tertiary:active,
+  .button.button--tertiary:active,
+  .cart-remove-button.button-box-shadow:active,
+  .cart-remove-button.button-gradient-effect:active,
+  .cart-remove-button.intensity-1:active,
+  .cart-remove-button.intensity-2:active,
+  .cart-remove-button.intensity-3:active,
+  .cart-remove-button.intensity-4:active,
+  .cart-remove-button.intensity-5:active,
+  .button--tertiary.button-box-shadow:active,
+  .button--tertiary.button-gradient-effect:active,
+  .button--tertiary.intensity-1:active,
+  .button--tertiary.intensity-2:active,
+  .button--tertiary.intensity-3:active,
+  .button--tertiary.intensity-4:active,
+  .button--tertiary.intensity-5:active,
+  button.button--tertiary.button-box-shadow:active,
+  button.button--tertiary.button-gradient-effect:active,
+  button.button--tertiary.intensity-1:active,
+  button.button--tertiary.intensity-2:active,
+  button.button--tertiary.intensity-3:active,
+  button.button--tertiary.intensity-4:active,
+  button.button--tertiary.intensity-5:active,
+  .button.button--tertiary.button-box-shadow:active,
+  .button.button--tertiary.button-gradient-effect:active,
+  .button.button--tertiary.intensity-1:active,
+  .button.button--tertiary.intensity-2:active,
+  .button.button--tertiary.intensity-3:active,
+  .button.button--tertiary.intensity-4:active,
+  .button.button--tertiary.intensity-5:active {
+    background-color: transparent !important;
+    color: inherit !important;
+    border: none !important;
+    box-shadow: none !important;
+    opacity: 0.5 !important;
+    transform: none !important;
+  }
+  
+  /* Remove any pseudo-elements that might have been applied */
+  .cart-remove-button::before,
+  .button--tertiary::before,
+  button.button--tertiary::before,
+  .button.button--tertiary::before,
+  .cart-remove-button.button-gradient-effect::before,
+  .cart-remove-button.gradient-shine-enabled::before,
+  .button--tertiary.button-gradient-effect::before,
+  .button--tertiary.gradient-shine-enabled::before,
+  button.button--tertiary.button-gradient-effect::before,
+  button.button--tertiary.gradient-shine-enabled::before,
+  .button.button--tertiary.button-gradient-effect::before,
+  .button.button--tertiary.gradient-shine-enabled::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+  }
+  
+  /* ===================================== */
+/* BUTTON BOX SHADOW EFFECTS */
+/* ===================================== */
+
+/* Simple Box Shadow Effect - Applied when enabled in theme settings */
+.button-box-shadow {
+  transition: all 0.3s ease !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Shadow intensity levels */
+.button-box-shadow.intensity-1 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.button-box-shadow.intensity-2 {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.button-box-shadow.intensity-3 {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.button-box-shadow.intensity-4 {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25) !important;
+}
+
+.button-box-shadow.intensity-5 {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Hover effect - enhanced shadow */
+.button-box-shadow:hover,
+.button-box-shadow:focus {
+  transform: translateY(-2px) !important;
+}
+
+.button-box-shadow.intensity-1:hover,
+.button-box-shadow.intensity-1:focus {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.button-box-shadow.intensity-2:hover,
+.button-box-shadow.intensity-2:focus {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.button-box-shadow.intensity-3:hover,
+.button-box-shadow.intensity-3:focus {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25) !important;
+}
+
+.button-box-shadow.intensity-4:hover,
+.button-box-shadow.intensity-4:focus {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.button-box-shadow.intensity-5:hover,
+.button-box-shadow.intensity-5:focus {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Active/pressed state */
+.button-box-shadow:active {
+  transform: translateY(0) !important;
+}
+
+/* ===================================== */
+/* GRADIENT BUTTON EFFECTS */
+/* ===================================== */
+
+/* Gradient Background - Applied when enabled in theme settings */
+.button-gradient-effect {
+  background: linear-gradient(var(--button-gradient-direction), var(--button-gradient-start), var(--button-gradient-end)) !important;
+  background-size: 100% 100% !important;
+  transition: all 0.3s ease !important;
+}
+
+.button-gradient-effect:hover,
+.button-gradient-effect:focus {
+  background: linear-gradient(var(--button-gradient-direction), var(--button-gradient-hover-start), var(--button-gradient-hover-end)) !important;
+}
+
+/* Enhanced gradient with subtle animation - only when shine is enabled */
+.button-gradient-effect.gradient-shine-enabled::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.button-gradient-effect.gradient-shine-enabled:hover::before {
+  left: 100%;
+}
+
+/* Ensure text is above gradient overlay */
+.button-gradient-effect * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===================================== */
+/* COMBINED EFFECTS */
+/* ===================================== */
+
+/* When both box shadow and gradient are enabled */
+.button-box-shadow.button-gradient-effect {
+  /* Ensure proper stacking and transitions */
+  position: relative;
+  overflow: hidden;
+  /* The shadow and gradient work well together by default */
+}
+
+/* Ensure the gradient shine effect works with box shadow buttons */
+.button-box-shadow.button-gradient-effect.gradient-shine-enabled::before {
+  /* The shine effect should appear above the button */
+  z-index: 2;
+}
+
+/* Disable Global Button Styling Override */
+.disable-global-button-styling,
+.disable-global-button-styling.button,
+.disable-global-button-styling.btn,
+.disable-global-button-styling.button--primary,
+.disable-global-button-styling.button--secondary,
+.disable-global-button-styling.button--outline,
+.disable-global-button-styling.button--text {
+  /* Reset all global button styling */
+  padding: unset !important;
+  letter-spacing: unset !important;
+  font-family: unset !important;
+  font-size: unset !important;
+  font-weight: unset !important;
+  text-transform: unset !important;
+  border: unset !important;
+  background-color: unset !important;
+  color: unset !important;
+  box-shadow: unset !important;
+  transform: unset !important;
+  transition: unset !important;
+  position: unset !important;
+  z-index: unset !important;
+  /* border-radius and font-size are preserved from inline styles */
+}
+
+/* Remove any pseudo-elements from disabled global styling buttons */
+.disable-global-button-styling::before,
+.disable-global-button-styling::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Ensure hover and focus states are also reset */
+.disable-global-button-styling:hover,
+.disable-global-button-styling:focus,
+.disable-global-button-styling:active {
+  padding: unset !important;
+  letter-spacing: unset !important;
+  font-family: unset !important;
+  font-size: unset !important;
+  font-weight: unset !important;
+  text-transform: unset !important;
+  border: unset !important;
+  background-color: unset !important;
+  color: unset !important;
+  box-shadow: unset !important;
+  transform: unset !important;
+  transition: unset !important;
+  /* border-radius and font-size are preserved from inline styles */
+} 

@@ -1,0 +1,1435 @@
+{%- unless product.has_only_default_variant -%}
+  <div
+    class="simple-variant-picker"
+    style="
+      --label-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ block.settings.label_color }}{% endif %};
+      --label-size: {{ block.settings.label_size }}px;
+      --show-labels: {% if block.settings.show_labels == false %}none{% else %}block{% endif %};
+      --option-bg-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ block.settings.option_bg_color }}{% endif %};
+      --option-border-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ block.settings.option_border_color }}{% endif %};
+      --option-text-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ block.settings.option_text_color }}{% endif %};
+      --option-size: {{ block.settings.option_size }}px;
+      --option-border-radius: {{ block.settings.option_border_radius }}px;
+      --option-padding-vertical: {{ block.settings.option_padding_vertical | default: 8 }}px;
+      --option-padding-horizontal: {{ block.settings.option_padding_horizontal | default: 15 }}px;
+      --option-font-size: {{ block.settings.option_font_size | default: 14 }}px;
+      --option-image-size: {{ block.settings.image_variant_size | default: 30 }}px;
+      --container-margin-left: {{ block.settings.container_margin_left | default: 5 }}px;
+      --container-margin-right: {{ block.settings.container_margin_right | default: 0 }}px;
+      --selected-bg-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ block.settings.selected_bg_color }}{% endif %};
+      --selected-text-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ block.settings.selected_text_color }}{% endif %};
+      --selected-border-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ block.settings.selected_border_color }}{% endif %};
+      --swatch-size: {{ block.settings.swatch_size }}px;
+      --swatch-bg-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_2_color }}{% else %}{{ block.settings.swatch_bg_color }}{% endif %};
+      --outline-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ block.settings.outline_color | default: '#e5e5e5' }}{% endif %};
+      --image-variant-size: {{ block.settings.image_variant_size | default: 60 }}px;
+      --variant-image-border-width: {{ block.settings.variant_image_border_width | default: 1 }}px;
+      --variant-image-border-color: {{ block.settings.variant_image_border_color | default: '#e5e5e5' }};
+      --variant-image-border-radius: {{ block.settings.variant_image_border_radius | default: 4 }}px;
+      --variant-image-selected-border-color: {{ block.settings.variant_image_selected_border_color | default: '#007acc' }};
+      --variant-image-selected-border-width: {{ block.settings.variant_image_selected_border_width | default: 2 }}px;
+      --show-variant-shadows: {% if block.settings.show_variant_shadows %}1{% else %}0{% endif %};
+      margin-top: {{ margin_top }}px;
+      margin-bottom: {{ margin_bottom }}px;
+    "
+    data-show-variant-images="{{ block.settings.show_variant_images }}"
+    data-show-images-for-all-variants="{{ block.settings.show_images_for_all_variants }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- liquid
+      assign variants_available_arr = product.variants | map: 'available'
+      assign variants_option1_arr = product.variants | map: 'option1'
+      assign variants_option2_arr = product.variants | map: 'option2'
+      assign variants_option3_arr = product.variants | map: 'option3'
+
+      # Parse custom color mappings from theme settings
+      assign custom_color_mappings = block.settings.custom_color_mappings | newline_to_br | split: '<br />'
+
+      # We can't use complex hash manipulation in standard Liquid, so we'll use simpler approach
+      # Create arrays of variant IDs and their images
+      assign variant_ids = ''
+      assign variant_images_array = ''
+      for variant in product.variants
+        if variant.image != blank
+          assign variant_ids = variant_ids | append: variant.id | append: ','
+          assign variant_images_array = variant_images_array | append: variant.image.src | append: ','
+        endif
+      endfor
+
+      # Create arrays for option values and images
+      assign option_keys = ''
+      assign option_values = ''
+      assign option_images = ''
+      for variant in product.variants
+        if variant.image != blank
+          for option in product.options
+            assign option_index = forloop.index
+            assign option_key = option | downcase
+            assign option_value = variant | json | split: '"option' | append: option_index | append: '":"' | split: '"' | last | split: '"' | first
+
+            # Store this option data for lookup
+            assign option_keys = option_keys | append: option_key | append: ','
+            assign option_values = option_values | append: option_value | append: ','
+            assign option_images = option_images | append: variant.image.src | append: ','
+          endfor
+        endif
+      endfor
+    -%}
+
+    <div class="simple-variant-picker__container">
+      {%- for option in product.options_with_values -%}
+        {%- liquid
+          assign is_color_option = false
+          assign is_size_option = false
+          assign option_name_downcase = option.name | downcase
+          assign option_value = ''
+
+          if block.settings.first_variant_auto_selected
+            if option.position == 1
+              assign option_value = product.selected_or_first_available_variant.option1
+            elsif option.position == 2
+              assign option_value = product.selected_or_first_available_variant.option2
+            elsif option.position == 3
+              assign option_value = product.selected_or_first_available_variant.option3
+            endif
+          endif
+
+          if option_name_downcase contains 'color' or option_name_downcase contains 'colour' or option_name_downcase contains 'couleur'
+            assign is_color_option = true
+          endif
+
+          if option_name_downcase contains 'size' or option_name_downcase contains 'taille'
+            assign is_size_option = true
+          endif
+
+          if is_color_option and block.settings.enable_color_swatches == false
+            assign is_color_option = false
+          endif
+
+          if is_size_option and block.settings.enable_size_preset == false
+            assign is_size_option = false
+          endif
+
+          # Get custom label for this option
+          assign custom_label = ''
+          if is_color_option and block.settings.color_option_label != blank
+            assign custom_label = block.settings.color_option_label
+          elsif is_size_option and block.settings.size_option_label != blank
+            assign custom_label = block.settings.size_option_label
+          elsif option.position == 1 and block.settings.custom_option_label_1 != blank
+            assign custom_label = block.settings.custom_option_label_1
+          elsif option.position == 2 and block.settings.custom_option_label_2 != blank
+            assign custom_label = block.settings.custom_option_label_2
+          elsif option.position == 3 and block.settings.custom_option_label_3 != blank
+            assign custom_label = block.settings.custom_option_label_3
+          else
+            assign custom_label = option.name
+          endif
+        -%}
+
+        <div class="simple-variant-picker__error" style="display: none;" role="alert" aria-live="assertive">
+          <span>Please select a variant</span>
+        </div>
+
+        {% if use_dropdown %}
+          <div class="simple-variant-picker__option simple-variant-picker__dropdown-option">
+            <label class="simple-variant-picker__label" for="{{ section.id }}-{{ option.position }}-select">
+              {{ custom_label }}
+            </label>
+            <select
+              class="simple-variant-picker__select"
+              id="{{ section.id }}-{{ option.position }}-select"
+              name="options[{{ option.name | escape }}]"
+              form="{{ product_form_id }}"
+              data-option-position="{{ option.position }}"
+            >
+              {%- for value in option.values -%}
+                {%- liquid
+                  assign option_disabled = true
+                  assign option_exists = false
+
+                  # Determine if option is available based on current selections
+                  for option1_name in variants_option1_arr
+                    case option.position
+                      when 1
+                        if variants_option1_arr[forloop.index0] == value
+                          assign option_exists = true
+                          if variants_available_arr[forloop.index0]
+                            assign option_disabled = false
+                          endif
+                        endif
+                      when 2
+                        if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value
+                          assign option_exists = true
+                          if variants_available_arr[forloop.index0]
+                            assign option_disabled = false
+                          endif
+                        endif
+                      when 3
+                        if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value
+                          assign option_exists = true
+                          if variants_available_arr[forloop.index0]
+                            assign option_disabled = false
+                          endif
+                        endif
+                    endcase
+                  endfor
+                -%}
+
+                <option
+                  value="{{ value | escape }}"
+
+                  {% if option_disabled %}
+                    disabled
+                  {% endif %}
+                  {% if option_exists == false %}
+                    data-non-existent
+                  {% endif %}
+                >
+                  {{ value }}
+                  {% if option_disabled %} (Unavailable){% endif %}
+                </option>
+              {%- endfor -%}
+            </select>
+          </div>
+        {% else %}
+          <div class="simple-variant-picker__option{% if is_color_option %} option--color{% endif %}{% if is_size_option %} option--size{% endif %}">
+            <label
+              class="simple-variant-picker__label"
+              id="{{ section.id }}-{{ option.position }}-label"
+              for="{{ section.id }}-{{ option.position }}-0"
+            >
+              {{ custom_label }}:
+              <span
+                class="simple-variant-picker__selected-variant"
+                style="color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ block.settings.selected_variant_color }}{% endif %};"
+                data-option-position="{{ option.position }}"
+              >
+                {% if block.settings.first_variant_auto_selected -%}
+                  {{- option_value | default: option.values.first }}
+                {% else %}
+                  {{ option_value }}
+                {% endif %}
+              </span>
+            </label>
+
+            <div
+              class="simple-variant-picker__values"
+              role="radiogroup"
+              aria-labelledby="{{ section.id }}-{{ option.position }}-label"
+            >
+              {%- for value in option.values -%}
+                {%- liquid
+                  assign option_disabled = true
+                  assign option_exists = false
+                  assign color_hex = ''
+                  assign image_url = ''
+
+                  assign option_index = option.position | minus: 1
+                  for variant in product.variants
+                    if variant.options[option_index] == value
+                      assign option_image_url = variant.image
+                    endif
+                  endfor
+
+                  if is_color_option
+                    assign value_downcase = value | downcase
+
+                    # Find variant image for this color option if it exists
+                    for variant in product.variants
+                      case option.position
+                        when 1
+                          if variant.option1 == value and variant.image
+                            assign image_url = variant.image | img_url: '200x200'
+                            break
+                          endif
+                        when 2
+                          if variant.option2 == value and variant.image
+                            assign image_url = variant.image | img_url: '200x200'
+                            break
+                          endif
+                        when 3
+                          if variant.option3 == value and variant.image
+                            assign image_url = variant.image | img_url: '200x200'
+                            break
+                          endif
+                      endcase
+                    endfor
+
+                    # Look for this color in the custom color mappings
+                    for color in custom_color_mappings
+                      assign color_line = color | strip
+                      assign color_parts = color_line | split: '='
+
+                      if color_parts.size >= 2
+                        assign color_name = color_parts[0] | strip | downcase
+                        assign color_hex_value = color_parts[1] | strip
+
+                        if value_downcase == color_name
+                          assign color_hex = color_hex_value
+                          break
+                        endif
+                      endif
+                    endfor
+
+                    # Check if the value itself is a hex code
+                    assign first_char = value | slice: 0, 1
+                    assign value_size = value | size
+                    if color_hex == '' and first_char == '#' and value_size == 7
+                      assign color_hex = value
+                    endif
+
+                    # Fall back to default color if still none found
+                    if color_hex == '' and image_url == ''
+                      assign color_hex = block.settings.swatch_bg_color
+                    endif
+                  endif
+
+                  # For size options, prepare the abbreviated display value
+                  assign display_value = value
+                  if is_size_option
+                    assign value_downcase = value | downcase
+                    case value_downcase
+                      when 'small', 'small size'
+                        assign display_value = 'S'
+                      when 'medium', 'medium size'
+                        assign display_value = 'M'
+                      when 'large', 'large size'
+                        assign display_value = 'L'
+                      when 'extra large', 'extra-large', 'xlarge', 'x-large', 'xl', 'x large', 'extra large size'
+                        assign display_value = 'XL'
+                      when 'extra extra large', 'extra-extra-large', 'xxlarge', 'xx-large', 'xxl', 'xx large', '2xl', '2x large', 'extra extra large size'
+                        assign display_value = '2XL'
+                      when 'extra extra extra large', 'extra-extra-extra-large', 'xxxlarge', 'xxx-large', 'xxxl', 'xxx large', '3xl', '3x large', 'extra extra extra large size'
+                        assign display_value = '3XL'
+                      when 'extra small', 'extra-small', 'xsmall', 'x-small', 'xs', 'x small', 'extra small size'
+                        assign display_value = 'XS'
+                      when 'petite'
+                        assign display_value = 'P'
+                      when 'one size', 'one size fits all', 'one-size', 'one-size-fits-all'
+                        assign display_value = 'OS'
+                    endcase
+                  endif
+
+                  # Determine if option is available based on current selections
+                  for option1_name in variants_option1_arr
+                    case option.position
+                      when 1
+                        if variants_option1_arr[forloop.index0] == value
+                          assign option_exists = true
+                          if variants_available_arr[forloop.index0]
+                            assign option_disabled = false
+                          endif
+                        endif
+                      when 2
+                        if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value
+                          assign option_exists = true
+                          if variants_available_arr[forloop.index0]
+                            assign option_disabled = false
+                          endif
+                        endif
+                      when 3
+                        if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value
+                          assign option_exists = true
+                          if variants_available_arr[forloop.index0]
+                            assign option_disabled = false
+                          endif
+                        endif
+                    endcase
+                  endfor
+
+                  assign option_class = ''
+                  if option_exists == false
+                    assign option_class = 'non-existent'
+                  elsif option_disabled == true
+                    assign option_class = 'unavailable'
+                  endif
+                -%}
+
+                <div class="simple-variant-picker__value-container{% if is_color_option %} value--color{% endif %}{% if is_size_option %} value--size{% endif %}">
+                  <input
+                    type="radio"
+                    id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                    name="options[{{ option.name | escape }}]"
+                    value="{{ value | escape }}"
+                    form="{{ product_form_id }}"
+                    {% if block.settings.first_variant_auto_selected and option_value == value %}
+                      checked
+                    {% endif %}
+
+                    {% if option_disabled %}
+                      disabled
+                    {% endif %}
+                    data-option-position="{{ option.position }}"
+                    class="simple-variant-picker__radio {{ option_class }}"
+                    {% if image_url != blank %}
+                      data-image-url="{{ image_url }}"
+                    {% endif %}
+                  >
+                  {% if is_color_option %}
+                    <label
+                      for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                      class="simple-variant-picker__color-swatch {{ option_class }} "
+
+                      {% if image_url != blank and block.settings.show_variant_images %}
+                        style="background-image: url('{{ image_url }}'); width: var(--option-image-size); height: var(--option-image-size);"
+                      {% else %}
+                        style="background-color: {{ color_hex }} !important; width: var(--option-image-size) !important; height: var(--option-image-size) !important;"
+                      {% endif %}
+                      {% if value_downcase == 'white' %}
+                        data-white-swatch
+                      {% endif %}
+                    >
+                      <span class="visually-hidden">{{ value }}</span>
+                    </label>
+                  {% elsif option_image_url != blank and block.settings.show_images_for_all_variants %}
+                    <label
+                      for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                      class="simple-variant-picker__image-variant {{ option_class }}{% if is_size_option %} size-value{% endif %}"
+                    >
+                      <img src="{{ option_image_url | image_url: width: 120, height: 120 }}" alt="option 1">
+                    </label>
+                  {% else %}
+                    <label
+                      for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                      class="simple-variant-picker__value {{ option_class }}{% if is_size_option %} size-value{% endif %} "
+                    >
+                      <span>
+                        {% if is_size_option %}
+                          {{ display_value }}
+                        {% else %}
+                          {{ value }}
+                        {% endif %}
+                      </span>
+                    </label>
+                  {% endif %}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+        {% endif %}
+      {%- endfor -%}
+
+      {% if block.settings.show_selected_variant %}
+        <div
+          class="simple-variant-picker__selected"
+          style="color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ block.settings.text_color }}{% endif %}; display: none;"
+        >
+          <span
+            class="simple-variant-picker__selected-variant"
+            style="color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ block.settings.selected_variant_color }}{% endif %};"
+          >
+            {{- product.selected_or_first_available_variant.title -}}
+          </span>
+        </div>
+      {% endif %}
+    </div>
+
+    <script type="application/json" class="simple-variant-picker__variants-json">
+      {{ product.variants | json }}
+    </script>
+
+    <style>
+      .simple-variant-picker {
+        margin-bottom: 0px;
+        margin-left: var(--container-margin-left);
+        margin-right: var(--container-margin-right);
+      }
+
+      .simple-variant-picker__label {
+        display: var(--show-labels);
+        font-size: var(--label-size);
+        font-weight: var(--font-weight-bold);
+        color: var(--label-color);
+        margin-bottom: 10px;
+        width: 100%;
+        letter-spacing: var(--letter-spacing-body);
+      }
+
+      .simple-variant-picker__option {
+        margin-bottom: 15px;
+        width: 100%;
+        clear: both;
+        display: block;
+      }
+
+      .simple-variant-picker__error {
+        /* q i let you modify this css for the error if no variant is selected */
+        color: red;
+      }
+
+      /* Dropdown specific styling */
+      .simple-variant-picker__dropdown-option .simple-variant-picker__label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .simple-variant-picker__select {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid var(--option-border-color);
+        border-radius: var(--option-border-radius);
+        background-color: var(--option-bg-color);
+        color: var(--option-text-color);
+        font-size: var(--option-font-size);
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 8px center;
+        background-repeat: no-repeat;
+        background-size: 16px;
+        padding-right: 32px;
+      }
+
+      .simple-variant-picker__select:focus {
+        outline: none;
+        border-color: var(--selected-border-color);
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .simple-variant-picker__select option:disabled {
+        color: #999;
+        opacity: 0.6;
+      }
+
+      /* Adjust spacing when labels are hidden */
+      .simple-variant-picker[style*='--show-labels: none'] .simple-variant-picker__option {
+        margin-bottom: 10px;
+      }
+
+      .simple-variant-picker__values {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      /* Size options should have a smaller gap */
+      .option--size .simple-variant-picker__values {
+        gap: 8px;
+      }
+
+      /* Color options can have slightly larger gap */
+      .option--color .simple-variant-picker__values {
+        gap: 15px;
+      }
+
+      .simple-variant-picker__value-container {
+        position: relative;
+        display: flex;
+        gap: 3px;
+      }
+
+      .simple-variant-picker__radio {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+        cursor: pointer;
+      }
+
+      .simple-variant-picker__value {
+        padding: var(--option-padding-vertical) var(--option-padding-horizontal);
+        background-color: var(--option-bg-color);
+        border: 1px solid var(--option-border-color);
+        border-radius: var(--option-border-radius);
+        color: var(--option-text-color);
+        font-size: var(--option-font-size);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: center;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+      }
+
+      .simple-variant-image.simple-variant-picker__value {
+        line-height: var(--option-image-size);
+      }
+
+      .simple-variant-picker__radio:checked + .simple-variant-picker__value {
+        background-color: var(--selected-bg-color);
+        color: var(--selected-text-color);
+        border-color: var(--selected-border-color);
+      }
+
+      /* Size option styling */
+      .value--size .simple-variant-picker__value.size-value {
+        min-width: 32px;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-weight: var(--font-weight-regular);
+        text-transform: uppercase;
+        font-size: 13px;
+        margin: 0;
+      }
+
+      /* Improve size variant layout */
+      .value--size {
+        margin-right: 0;
+      }
+
+      /* Color swatch styling */
+      .simple-variant-picker__color-swatch {
+        display: block;
+        width: var(--swatch-size);
+        height: var(--swatch-size);
+        border-radius: 50%;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        transform: scale(1);
+      }
+
+      /* Add an outer circle that's 5px larger */
+      .simple-variant-picker__color-swatch::before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        border-radius: 50%;
+        border: 1px solid var(--outline-color);
+        pointer-events: none;
+      }
+
+      /* Variant image color swatches (when show_variant_images is enabled) */
+      .simple-variant-picker__color-swatch[style*='background-image'] {
+        border: var(--variant-image-border-width) solid var(--variant-image-border-color);
+        border-radius: var(--variant-image-border-radius);
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        overflow: hidden;
+      }
+
+      .simple-variant-picker__color-swatch[style*='background-image']::before {
+        border: var(--variant-image-border-width) solid var(--variant-image-border-color);
+        border-radius: var(--variant-image-border-radius);
+        top: calc(-1 * var(--variant-image-border-width) - 2px);
+        left: calc(-1 * var(--variant-image-border-width) - 2px);
+        right: calc(-1 * var(--variant-image-border-width) - 2px);
+        bottom: calc(-1 * var(--variant-image-border-width) - 2px);
+      }
+
+      [data-white-swatch] {
+      }
+
+      .simple-variant-picker__radio:checked + .simple-variant-picker__color-swatch {
+        box-shadow: calc(var(--show-variant-shadows) * 0px) calc(var(--show-variant-shadows) * 2px)
+          calc(var(--show-variant-shadows) * 8px) rgba(0, 0, 0, calc(var(--show-variant-shadows) * 0.12));
+        animation: fadeInSelected 0.2s ease-out;
+      }
+
+      .simple-variant-picker__color-swatch:hover:not(.unavailable) {
+        box-shadow: calc(var(--show-variant-shadows) * 0px) calc(var(--show-variant-shadows) * 1px)
+          calc(var(--show-variant-shadows) * 4px) rgba(0, 0, 0, calc(var(--show-variant-shadows) * 0.08));
+      }
+
+      .simple-variant-picker__radio:checked + .simple-variant-picker__color-swatch::before {
+        border-color: var(--selected-border-color);
+      }
+
+      /* Selected state for variant image color swatches */
+      .simple-variant-picker__radio:checked + .simple-variant-picker__color-swatch[style*='background-image'] {
+        border-color: var(--variant-image-selected-border-color) !important;
+        border-width: var(--variant-image-selected-border-width) !important;
+        animation: fadeInSelected 0.2s ease-out;
+      }
+
+      .simple-variant-picker__radio:checked + .simple-variant-picker__color-swatch[style*='background-image']::before {
+        border-color: var(--variant-image-selected-border-color) !important;
+        border-width: var(--variant-image-selected-border-width) !important;
+        top: calc(-1 * var(--variant-image-selected-border-width) - 2px) !important;
+        left: calc(-1 * var(--variant-image-selected-border-width) - 2px) !important;
+        right: calc(-1 * var(--variant-image-selected-border-width) - 2px) !important;
+        bottom: calc(-1 * var(--variant-image-selected-border-width) - 2px) !important;
+      }
+
+      /* Ensure variant images always take priority over default swatches */
+      .simple-variant-picker__color-swatch[style*='background-image'] {
+        background-color: transparent !important;
+      }
+
+      /* Force variant images to override any external swatch system */
+      .simple-variant-picker__color-swatch[style*='url'] {
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+      }
+
+      /* Maximum priority override for variant images */
+      .simple-variant-picker .simple-variant-picker__color-swatch[data-image-url] {
+        background-image: attr(data-image-url url) !important;
+        background-color: transparent !important;
+      }
+
+      /* Prevent any external CSS from overriding our variant images */
+      .simple-variant-picker__color-swatch[style*='background-image'] {
+        background-color: unset !important;
+        background: none !important;
+      }
+
+      /* THEME OVERRIDE: Prevent global swatch CSS from interfering */
+      .simple-variant-picker .simple-variant-picker__color-swatch.swatch,
+      .simple-variant-picker .simple-variant-picker__color-swatch {
+        background: none !important;
+        background-color: transparent !important;
+      }
+
+      /* Force our background images to take priority over theme swatch system */
+      .simple-variant-picker .simple-variant-picker__color-swatch[style*='background-image'] {
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-origin: padding-box !important;
+      }
+
+      /* Override any CSS custom properties that might interfere */
+      .simple-variant-picker .simple-variant-picker__color-swatch {
+        --swatch--background: none !important;
+      }
+
+      /* Specific override for variant images */
+      .simple-variant-picker__color-swatch[style*='url'] {
+        background: var(--variant-image-url) !important;
+        --swatch--background: none !important;
+      }
+
+      .simple-variant-picker__swatch-label {
+        display: none;
+      }
+
+      .option--color .simple-variant-picker__values {
+        align-items: flex-start;
+      }
+
+      .value--color {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .simple-variant-picker__value.unavailable,
+      .simple-variant-picker__color-swatch.unavailable {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .simple-variant-picker__value.unavailable {
+        text-decoration: line-through;
+      }
+
+      .simple-variant-picker__color-swatch.unavailable {
+        position: relative;
+      }
+
+      .simple-variant-picker__color-swatch.unavailable::before {
+        border-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .simple-variant-picker__color-swatch.unavailable::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -2px;
+        right: -2px;
+        height: 2px;
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: rotate(-45deg);
+      }
+
+      .simple-variant-picker__value.non-existent,
+      .simple-variant-picker__color-swatch.non-existent {
+        display: none;
+      }
+
+      .simple-variant-picker__selected {
+        margin-top: 15px;
+        font-size: 14px;
+      }
+
+      .simple-variant-picker__selected-variant {
+        font-weight: var(--font-weight-regular);
+        display: inline;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* ADDITIONAL THEME OVERRIDES - Maximum specificity */
+      .simple-variant-picker .simple-variant-picker__color-swatch.has-variant-image {
+        background-color: transparent !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-origin: padding-box !important;
+      }
+
+      /* Override any potential CSS custom property interference */
+      .simple-variant-picker {
+        --swatch--background: none !important;
+        --swatch-input--background: none !important;
+      }
+
+      /* Ensure our swatches don't inherit theme swatch properties */
+      .simple-variant-picker .simple-variant-picker__color-swatch {
+        background-origin: padding-box !important;
+        forced-color-adjust: none !important;
+      }
+
+      /* Final override for stubborn theme CSS */
+      [class*='simple-variant-picker'] .simple-variant-picker__color-swatch[data-image-url] {
+        background-image: var(--variant-image-url) !important;
+      }
+
+      /* Styles for non-color variant images */
+      .simple-variant-picker__image-variant {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        min-width: var(--image-variant-size);
+        height: var(--image-variant-size);
+        border: var(--variant-image-border-width) solid var(--variant-image-border-color);
+        border-radius: var(--variant-image-border-radius);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 0;
+        overflow: hidden;
+        transform: scale(1);
+      }
+
+      /* Ensure images inside variant containers fill completely */
+      .simple-variant-picker__image-variant img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: inherit !important;
+      }
+
+      .simple-variant-picker__image-variant .simple-variant-picker__variant-text {
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--option-text-color);
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: var(--option-font-size);
+        font-weight: 500;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+      }
+
+      .simple-variant-picker__radio:checked + .simple-variant-picker__image-variant {
+        border-color: var(--variant-image-selected-border-color) !important;
+        border-width: var(--variant-image-selected-border-width) !important;
+        box-shadow: calc(var(--show-variant-shadows) * 0px) calc(var(--show-variant-shadows) * 2px)
+          calc(var(--show-variant-shadows) * 8px) rgba(0, 0, 0, calc(var(--show-variant-shadows) * 0.12));
+        animation: fadeInSelected 0.2s ease-out;
+      }
+
+      .simple-variant-picker__image-variant:hover:not(.unavailable) {
+        box-shadow: calc(var(--show-variant-shadows) * 0px) calc(var(--show-variant-shadows) * 1px)
+          calc(var(--show-variant-shadows) * 4px) rgba(0, 0, 0, calc(var(--show-variant-shadows) * 0.08));
+      }
+
+      .simple-variant-picker__radio:checked
+        + .simple-variant-picker__image-variant
+        .simple-variant-picker__variant-text {
+        background: var(--selected-bg-color);
+        color: var(--selected-text-color);
+      }
+
+      .simple-variant-picker__image-variant.unavailable {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .simple-variant-picker__image-variant.non-existent {
+        display: none;
+      }
+
+      /* Responsive sizing for image variants */
+      @media screen and (max-width: 749px) {
+        .simple-variant-picker {
+          width: 100%;
+        }
+
+        .simple-variant-picker__option {
+          width: 100%;
+        }
+
+        .simple-variant-picker__values {
+          width: 100%;
+          gap: 8px;
+        }
+
+        .simple-variant-picker__image-variant {
+          width: 100%;
+          min-width: calc(var(--image-variant-size) * 0.8);
+          height: 0;
+          padding-bottom: 100%;
+          flex: 1;
+          max-width: none;
+          position: relative;
+        }
+
+        .simple-variant-picker__image-variant img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover !important;
+        }
+
+        .simple-variant-picker__image-variant .simple-variant-picker__variant-text {
+          font-size: calc(var(--option-font-size) * 0.9);
+          padding: 1px 6px;
+          position: absolute;
+          bottom: 4px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1;
+        }
+      }
+
+      /* Keyframe animations for variant selection */
+      @keyframes fadeInSelected {
+        0% {
+          opacity: 0.3;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const productForm = document.getElementById('{{ product_form_id }}');
+        var variantIdInput = null;
+        if (productForm) {
+          variantIdInput = productForm.querySelector('input[name="id"]') ?? productForm.querySelector('input[name="product-id"]');
+        }
+
+        const variantData = JSON.parse(document.querySelector('.simple-variant-picker__variants-json').textContent);
+        const radioInputs = document.querySelectorAll('.simple-variant-picker__radio');
+        const showVariantImages = document.querySelector('.simple-variant-picker').dataset.showVariantImages === 'true';
+        const atcButton = document.querySelector('.product-form__submit') || 
+                                      document.querySelector('.shop-add-to-cart-button')
+        const errorSpan = document.querySelector('.simple-variant-picker__error')
+        
+        
+        // Override the value of value attribute ( to make no selected option by default)
+        if (!{{ block.settings.first_variant_auto_selected }}) variantIdInput.value = "";
+           
+
+        atcButton.addEventListener('click', (event) => {
+          if (!variantIdInput.value) {
+          event.preventDefault();
+            errorSpan.style.display = 'block'
+            errorSpan.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            errorSpan.style.display = "none"
+          }
+        })
+        // Map option positions to their custom labels (if defined)
+        const customLabels = {
+          {% if block.settings.color_option_label != blank %}
+            'color': {{ block.settings.color_option_label | json }},
+            'colour': {{ block.settings.color_option_label | json }},
+          {% endif %}
+          {% if block.settings.size_option_label != blank %}
+            'size': {{ block.settings.size_option_label | json }},
+          {% endif %}
+          {% if block.settings.custom_option_label_1 != blank %}
+            'option1': {{ block.settings.custom_option_label_1 | json }},
+          {% endif %}
+          {% if block.settings.custom_option_label_2 != blank %}
+            'option2': {{ block.settings.custom_option_label_2 | json }},
+          {% endif %}
+          {% if block.settings.custom_option_label_3 != blank %}
+            'option3': {{ block.settings.custom_option_label_3 | json }},
+          {% endif %}
+        };
+        
+        // Map for size abbreviations
+        const sizeAbbreviations = {
+          'small': 'S',
+          'small size': 'S',
+          'medium': 'M',
+          'medium size': 'M',
+          'large': 'L',
+          'large size': 'L',
+          'extra large': 'XL',
+          'extra-large': 'XL',
+          'xlarge': 'XL',
+          'x-large': 'XL',
+          'xl': 'XL',
+          'x large': 'XL',
+          'extra large size': 'XL',
+          'extra extra large': '2XL',
+          'extra-extra-large': '2XL',
+          'xxlarge': '2XL',
+          'xx-large': '2XL',
+          'xxl': '2XL',
+          'xx large': '2XL',
+          '2xl': '2XL',
+          '2x large': '2XL',
+          'extra extra large size': '2XL',
+          'extra extra extra large': '3XL',
+          'extra-extra-extra-large': '3XL',
+          'xxxlarge': '3XL',
+          'xxx-large': '3XL',
+          'xxxl': '3XL',
+          'xxx large': '3XL',
+          '3xl': '3XL',
+          '3x large': '3XL',
+          'extra extra extra large size': '3XL',
+          'extra small': 'XS',
+          'extra-small': 'XS',
+          'xsmall': 'XS',
+          'x-small': 'XS',
+          'xs': 'XS',
+          'x small': 'XS',
+          'extra small size': 'XS',
+          'petite': 'P',
+          'one size': 'OS',
+          'one size fits all': 'OS',
+          'one-size': 'OS',
+          'one-size-fits-all': 'OS'
+        };
+        
+        if (!productForm || !variantIdInput) return;
+        
+        // Function to get abbreviated size if applicable
+        function getAbbreviatedSize(value, optionName) {
+          if (optionName && optionName.toLowerCase().includes('size')) {
+            const lowerValue = value.toLowerCase();
+            return sizeAbbreviations[lowerValue] || value;
+          }
+          return value;
+        }
+
+        function formatPrice(originPrice, newPriceValue) {
+          let priceValue = (newPriceValue / 100).toFixed(2).toString();
+          if (originPrice.includes(",")) priceValue = priceValue.replace(".", ",");
+          const originPriceNumber = originPrice.replace(/[^0-9.,]/g, '');
+
+          return originPrice.replace(originPriceNumber.toString(), priceValue);
+        }        
+
+        // Update variant ID when radio buttons change
+        radioInputs.forEach(radio => {
+          radio.addEventListener('change', updateVariantId);
+        });
+        
+        // Handle dropdown selects
+        const selectInputs = document.querySelectorAll('.simple-variant-picker__select');
+        selectInputs.forEach(select => {
+          select.addEventListener('change', updateVariantIdFromSelect);
+        });
+        
+        // Apply variant images with maximum priority
+        function applyVariantImage(swatch, imageUrl) {
+          if (imageUrl && showVariantImages) {
+            // Set multiple CSS properties to ensure override
+            swatch.style.setProperty('background-image', `url('${imageUrl}')`, 'important');
+            swatch.style.setProperty('background-color', 'transparent', 'important');
+            swatch.style.setProperty('background-size', 'cover', 'important');
+            swatch.style.setProperty('background-position', 'center', 'important');
+            swatch.style.setProperty('background-repeat', 'no-repeat', 'important');
+            swatch.style.setProperty('--swatch--background', 'none', 'important');
+            swatch.style.setProperty('--variant-image-url', `url('${imageUrl}')`, 'important');
+            
+            // Remove any conflicting attributes
+            swatch.removeAttribute('data-swatch-background');
+            
+            // Add a class to identify this as having a variant image
+            swatch.classList.add('has-variant-image');
+          }
+        }
+        
+        // Apply variant images on page load
+        radioInputs.forEach(radio => {
+          const imageUrl = radio.dataset.imageUrl;
+          const swatch = radio.nextElementSibling;
+          if (imageUrl && swatch && swatch.classList.contains('simple-variant-picker__color-swatch')) {
+            applyVariantImage(swatch, imageUrl);
+          }
+        });
+        
+        function updateVariantId() {
+          const selectedOptions = {};
+          
+          // Collect all selected options
+          radioInputs.forEach(radio => {
+            if (radio.checked) {
+              const optionPosition = radio.dataset.optionPosition;
+              const optionName = radio.name.replace('options[', '').replace(']', '');
+              selectedOptions[`option${optionPosition}`] = radio.value;
+              
+              // Update only the corresponding option label with the selected value
+              const selectedVariantLabel = document.querySelector(`.simple-variant-picker__selected-variant[data-option-position="${optionPosition}"]`);
+              if (selectedVariantLabel) {
+                const displayValue = optionName.toLowerCase().includes('size') ? 
+                  getAbbreviatedSize(radio.value, optionName) : radio.value;
+                selectedVariantLabel.textContent = displayValue;
+              }
+
+              const quantityBreakSelects = document.querySelectorAll(`.quantity-break-variant-select[data-option-selector="${optionPosition}"]`);
+              quantityBreakSelects.forEach((_select) => {
+                _select.value = radio.value;
+              });       
+            }
+          });
+          
+          // Find matching variant
+          const matchedVariant = variantData.find(variant => {
+            return Object.keys(selectedOptions).every(key => 
+              variant[key] === selectedOptions[key]
+            );
+          });
+          
+          if (matchedVariant) {
+            // Update variant ID in the form
+            variantIdInput.value = matchedVariant.id;
+            
+            try {
+              /**
+              * * update add to cart button price
+              */
+              const price = matchedVariant.price;
+              const comparePrice = matchedVariant.compare_at_price;
+
+              const totalPriceValue = formatPrice(originPrice, price);
+              const comparePriceValue = formatPrice(originPrice, comparePrice);
+
+              const productPriceLabel = document.querySelector(".shop-product-price-block");
+              const comparePriceLabel = document.querySelector(".shop-compare-price");
+
+              if (productPriceLabel)
+                productPriceLabel.innerHTML = totalPriceValue;
+              if (comparePrice > price && comparePriceLabel)
+                comparePriceLabel.innerText = comparePriceValue;
+              else if (comparePriceLabel)
+                comparePriceLabel.innerText = ""
+
+              let buttonText = addToCartButtonText;
+              buttonText += " - " + totalPriceValue;
+              if (comparePrice > price)
+                buttonText += ` <span class="compare-price">(${comparePriceValue})</span>`;
+              const addToCartButton = document.querySelector('.product-form__submit .button__text') || 
+                                      document.querySelector('.shop-add-to-cart-button .button-text') ||
+                                      document.querySelector('[data-add-to-cart-text]');
+              if (addToCartButton && showPriceButton)
+                addToCartButton.innerHTML = buttonText;
+              // * end of ACT price update handler
+            } catch (e) {
+              console.error("Error while updating ATC button price", e);
+            }
+            // Update product image if available and setting is enabled
+            if (showVariantImages && matchedVariant.featured_image) {
+              const toggledProductGallery = document.querySelector(".shop-thumbnails.toggle-product-variants");
+              if (toggledProductGallery) {
+                const oldVariantMedia = toggledProductGallery.querySelector(".current-variant-media");
+                const newVariantMedia = toggledProductGallery.querySelector(`.shop-thumbnail[data-media-id='${matchedVariant.featured_media?.id}']`);
+
+                if (oldVariantMedia) {
+                  oldVariantMedia.style.display = "none";
+                  oldVariantMedia.classList.add("visually-hidden");
+                  oldVariantMedia.classList.remove("current-variant-media");
+                }
+                if (newVariantMedia) {
+                  newVariantMedia.classList.remove("visually-hidden");
+                  newVariantMedia.classList.add("current-variant-media");
+                  newVariantMedia.style.display = "block";
+                }
+              }
+              
+              // Also try updating the main-image-wrapper if it exists (common pattern in product galleries)
+              const variantImageSrc = matchedVariant.featured_image.src;
+              const mainImageWrapper = document.querySelector('.shop-main-image-wrapper');
+              if (mainImageWrapper) {
+                const bgImageStyle = `background-image: url('${variantImageSrc}')`;
+                mainImageWrapper.setAttribute('style', '');
+              }
+              
+              // Dispatch a custom event that other components can listen for
+              document.dispatchEvent(new CustomEvent('variant:imageChanged', {
+                detail: {
+                  variantId: matchedVariant.id,
+                  image: matchedVariant.featured_image,
+                  mediaId: matchedVariant.featured_media.id
+                }
+              }));
+            }
+            
+            // Disable unavailable options for other option sets
+            updateAvailableOptions(selectedOptions);
+          }
+        }
+        
+        function updateVariantIdFromSelect() {
+          const selectedOptions = {};
+          
+          // Collect all selected options from dropdowns
+          selectInputs.forEach(select => {
+            const optionPosition = select.dataset.optionPosition;
+            selectedOptions[`option${optionPosition}`] = select.value;
+          });
+          
+          // Find matching variant
+          const matchedVariant = variantData.find(variant => {
+            return Object.keys(selectedOptions).every(key => 
+              variant[key] === selectedOptions[key]
+            );
+          });
+          
+          if (matchedVariant) {
+            // Update variant ID in the form
+            variantIdInput.value = matchedVariant.id;
+            
+
+            try {
+              // Update add to cart button price
+              const price = matchedVariant.price;
+              const comparePrice = matchedVariant.compare_at_price;
+
+              const totalPriceValue = formatPrice(originPrice, price);
+              const comparePriceValue = formatPrice(originPrice, comparePrice);
+
+              const productPriceLabel = document.querySelector(".shop-product-price-block");
+              const comparePriceLabel = document.querySelector(".shop-compare-price");
+
+              if (productPriceLabel)
+                productPriceLabel.innerHTML = totalPriceValue;
+              if (comparePrice > price && comparePriceLabel)
+                comparePriceLabel.innerText = comparePriceValue;
+              else if (comparePriceLabel)
+                comparePriceLabel.innerText = ""
+
+              let buttonText = addToCartButtonText;
+              buttonText += " - " + totalPriceValue;
+              if (comparePrice > price)
+                buttonText += ` <span class="compare-price">(${comparePriceValue})</span>`;
+              const addToCartButton = document.querySelector('.product-form__submit .button__text') || 
+              document.querySelector('.shop-add-to-cart-button .button-text') ||
+              document.querySelector('[data-add-to-cart-text]');
+              if (addToCartButton && showPriceButton)
+                addToCartButton.innerHTML = buttonText;
+            } catch (e) {
+              console.error("Error while updating ATC button price", e);
+            }
+            
+            // Update product image if available and setting is enabled
+            if (showVariantImages && matchedVariant.featured_image) {
+              
+              // Dispatch variant change event
+              document.dispatchEvent(new CustomEvent('variant:imageChanged', {
+                detail: {
+                  variantId: matchedVariant.id,
+                  image: matchedVariant.featured_image
+                }
+              }));
+            }
+            
+            // Update available options for other dropdowns
+            updateAvailableOptionsForDropdowns(selectedOptions);
+          }
+        }
+        
+        function updateAvailableOptionsForDropdowns(selectedOptions) {
+          const optionPositions = [1, 2, 3];
+          
+          optionPositions.forEach(position => {
+            const positionKey = `option${position}`;
+            
+            // Skip the option that was just changed
+            if (selectedOptions[positionKey]) return;
+            
+            // Get the select for this position
+            const positionSelect = document.querySelector(`.simple-variant-picker__select[data-option-position="${position}"]`);
+            
+            if (positionSelect) {
+              const options = positionSelect.querySelectorAll('option');
+              
+              options.forEach(option => {
+                if (option.value === '') return; // Skip empty option
+                
+                // Check if this option is available with the currently selected options
+                const isAvailable = variantData.some(variant => {
+                  const matchesSelected = Object.keys(selectedOptions).every(key => 
+                    variant[key] === selectedOptions[key]
+                  );
+                  
+                  return matchesSelected && variant[positionKey] === option.value && variant.available;
+                });
+                
+                option.disabled = !isAvailable;
+              });
+            }
+          });
+        }
+        
+        function updateAvailableOptions(selectedOptions) {
+          const optionPositions = [1, 2, 3];
+          
+          optionPositions.forEach(position => {
+            const positionKey = `option${position}`;
+              
+            // Skip the option that was just changed
+            if (selectedOptions[positionKey]) return;
+            
+            // Get all radio buttons for this position
+            const positionRadios = document.querySelectorAll(`.simple-variant-picker__radio[data-option-position="${position}"]`);
+            
+            positionRadios.forEach(radio => {
+              // Check if this option is available with the currently selected options
+              const optionValue = radio.value;
+              const isAvailable = variantData.some(variant => {
+                // Check if this variant matches all currently selected options
+                const matchesSelected = Object.keys(selectedOptions).every(key => 
+                  variant[key] === selectedOptions[key]
+                );
+                
+                // And also has this option value for the current position we're checking
+                return matchesSelected && variant[positionKey] === optionValue && variant.available;
+              });
+              
+              // Update disabled state and classes
+              radio.disabled = !isAvailable;
+              const label = radio.nextElementSibling;
+              
+              if (isAvailable) {
+                label.classList.remove('unavailable');
+              } else {
+                label.classList.add('unavailable');
+            }
+          });
+        });
+        }
+        
+        // Initialize the variant ID on page load
+
+        // Add listener for variant change events from radio inputs
+        radioInputs.forEach(radio => {
+          radio.addEventListener('change', function(e) {
+            // Stop the event from propagating to other variant systems
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            
+            updateVariantId();
+            
+            // Prevent default variant-selects from interfering
+            setTimeout(() => {
+              // Override any default swatch updates that might happen after this
+              const defaultSwatches = document.querySelectorAll('.swatch');
+              const simpleSwatches = document.querySelectorAll('.simple-variant-picker__color-swatch');
+              
+              // Ensure our simple variant picker swatches take priority
+              simpleSwatches.forEach(swatch => {
+                if (swatch.style.backgroundImage) {
+                  // Force our background image to stay
+                  const currentBg = swatch.style.backgroundImage;
+                  swatch.style.setProperty('background-image', currentBg, 'important');
+                  swatch.style.setProperty('background-color', 'transparent', 'important');
+                }
+              });
+            }, 10);
+          });
+        });
+
+        // Override the default variant-selects behavior
+        const variantSelects = document.querySelector('variant-selects');
+        if (variantSelects) {
+          // Disable the default variant-selects component
+          variantSelects.style.display = 'none';
+          
+          // Or alternatively, remove its event listeners
+          const defaultInputs = variantSelects.querySelectorAll('input, select');
+          defaultInputs.forEach(input => {
+            // Clone the element to remove all event listeners
+            const newInput = input.cloneNode(true);
+            input.parentNode.replaceChild(newInput, input);
+          });
+        }
+
+        // Also check for any swatch inputs that might override our system
+        const swatchInputs = document.querySelectorAll('.swatch-input__input');
+        swatchInputs.forEach(input => {
+          input.addEventListener('change', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            return false;
+          });
+        });
+
+        // Monitor for any external changes to our swatches and restore them
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+              const target = mutation.target;
+              if (target.classList.contains('simple-variant-picker__color-swatch') || target.classList.contains('simple-variant-picker__image-variant')) {
+                // Restore variant image if it was overridden
+                const radio = target.previousElementSibling;
+                const imageUrl = radio ? radio.dataset.imageUrl : null;
+                if (imageUrl && showVariantImages) {
+                  // Use our function to ensure proper application
+                  setTimeout(() => applyVariantImage(target, imageUrl), 0);
+                }
+              }
+            }
+          });
+        });
+
+        // Observe all simple variant picker swatches and image variants
+        document.querySelectorAll('.simple-variant-picker__color-swatch, .simple-variant-picker__image-variant').forEach(swatch => {
+          observer.observe(swatch, { attributes: true, attributeFilter: ['style', 'class'] });
+        });
+
+        // Force override any theme swatch initialization
+        setTimeout(() => {
+          radioInputs.forEach(radio => {
+            const imageUrl = radio.dataset.imageUrl;
+            const swatch = radio.nextElementSibling;
+            if (imageUrl && swatch && (swatch.classList.contains('simple-variant-picker__color-swatch') || swatch.classList.contains('simple-variant-picker__image-variant'))) {
+              applyVariantImage(swatch, imageUrl);
+            }
+          });
+        }, 100);
+
+        // Prevent default media gallery updates from other systems
+        document.addEventListener('variant:changed', function(e) {
+          e.stopPropagation();
+          e.preventDefault();
+        }, true);
+
+        document.addEventListener('variantImageSelected', function(e) {
+          e.stopPropagation(); 
+          e.preventDefault();
+        }, true);
+      });
+    </script>
+  </div>
+{%- endunless -%}

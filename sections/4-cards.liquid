@@ -1,0 +1,786 @@
+{{ '4-cards.css' | asset_url | stylesheet_tag }}
+
+{% unless section.settings.use_global_accent_typography %}
+  {% if section.settings.accent_font_family != 'inherit' and section.settings.accent_font_family != 'serif' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% case section.settings.accent_font_family %}
+      {% when 'Georgia Pro' %}
+        <link href="https://fonts.googleapis.com/css2?family=Georgia+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+      {% when 'Bodoni Moda' %}
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800&display=swap" rel="stylesheet">
+      {% when 'Instrument Serif' %}
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'DM Serif Text' %}
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'Nothing You Could Do' %}
+        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    {% endcase %}
+  {% endif %}
+{% endunless %}
+
+<style>
+  /* Section-specific heading and subtitle colors */
+  .section-{{ section.id }} .section-heading {
+    color: {{ section.settings.heading_color }} !important;
+    font-size: {{ section.settings.heading_size }}px !important;
+    text-align: {{ section.settings.heading_alignment }} !important;
+    font-family: var(--font-heading-family) !important;
+    font-weight: var(--font-weight-bold) !important;
+    letter-spacing: var(--letter-spacing-heading) !important;
+  }
+
+  .section-{{ section.id }} .four-cards-subtitle {
+    color: {{ section.settings.subtitle_color }} !important;
+    text-align: {{ section.settings.heading_alignment }} !important;
+  }
+
+  /* Section-specific card title and description colors */
+  .section-{{ section.id }} .card-title {
+    color: {{ section.settings.title_color }} !important;
+  }
+
+  .section-{{ section.id }} .card-description {
+    color: {{ section.settings.description_color }} !important;
+  }
+
+  /* Enhanced accent text styling */
+  .section-{{ section.id }} .section-heading .global-accent-text,
+  .section-{{ section.id }} .section-heading .custom-accent-text {
+    {% if section.settings.use_global_accent_typography %}
+      /* Use Global Accent Typography */
+      font-family: var(--font-accent-family) !important;
+      font-style: var(--font-accent-style) !important;
+      font-weight: var(--font-accent-weight) !important;
+      letter-spacing: var(--font-accent-letter-spacing) !important;
+      text-transform: var(--font-accent-text-transform) !important;
+    {% else %}
+      /* Use Section-Specific Accent Typography */
+      {% if section.settings.accent_font_family != 'inherit' %}
+        {% case section.settings.accent_font_family %}
+          {% when 'serif' %}
+            font-family: serif !important;
+          {% when 'Georgia Pro' %}
+            font-family: 'Georgia Pro', Georgia, serif !important;
+          {% when 'Bodoni Moda' %}
+            font-family: 'Bodoni Moda', Georgia, serif !important;
+          {% when 'Instrument Serif' %}
+            font-family: 'Instrument Serif', Georgia, serif !important;
+          {% when 'DM Serif Text' %}
+            font-family: 'DM Serif Text', Georgia, serif !important;
+          {% when 'Nothing You Could Do' %}
+            font-family: 'Nothing You Could Do', cursive !important;
+        {% endcase %}
+      {% endif %}
+      {% if section.settings.accent_font_style != 'normal' %}
+        font-style: {{ section.settings.accent_font_style }} !important;
+      {% endif %}
+      {% if section.settings.accent_font_weight != 400 %}
+        font-weight: {{ section.settings.accent_font_weight }} !important;
+      {% endif %}
+    {% endif %}
+    
+    /* Color and Gradient Application */
+    {% if section.settings.use_theme_colors %}
+      /* Use global dark gradient when theme colors are enabled */
+      background: {{ settings.global_accent_text_gradient_dark }};
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    {% elsif section.settings.use_accent_gradient and section.settings.accent_text_gradient != blank %}
+      background: {{ section.settings.accent_text_gradient }};
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    {% else %}
+      color: {{ section.settings.accent_color | default: '#ef4a65' }};
+    {% endif %}
+    
+    /* Layout and spacing */
+    margin-left: {{ section.settings.accent_left_margin | default: 0 }}px !important;
+    display: inline-block !important;
+    position: relative !important;
+    z-index: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Ensure the heading container doesn't clip text */
+  .section-{{ section.id }} .section-heading {
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+</style>
+
+<div class="four-cards-section section-{{ section.id }}{% if section.settings.horizontal_layout %} horizontal-layout{% endif %}{% for block in section.blocks %}{% if block.settings.bullet_container %} has-bullet-containers{% break %}{% endif %}{% endfor %}" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; padding-left: {{ section.settings.padding_left }}px; padding-right: {{ section.settings.padding_right }}px; background: {{ section.settings.section_background_gradient }}; --title-size-desktop: {{ section.settings.title_size }}px; --title-size-mobile: {{ section.settings.title_size_mobile }}px; --description-size-desktop: {{ section.settings.description_size }}px; --description-size-mobile: {{ section.settings.description_size_mobile }}px; --bullet-size-desktop: {{ section.settings.bullet_size }}px; --bullet-size-mobile: {{ section.settings.bullet_size_mobile }}px; --card-background: {{ section.settings.card_background_gradient }}; --card-border-color: {{ section.settings.card_border_color }}; --card-border-width: {{ section.settings.card_border_width }}px; --card-border-style: {{ section.settings.card_border_style }}; --card-border-radius: {{ section.settings.card_border_radius }}px;">
+  <div class="container">
+    {% if section.settings.heading != blank or section.settings.subtitle != blank %}
+      <div class="four-cards-header">
+        {% if section.settings.heading != blank %}
+          <h2 class="section-heading">
+            {{ section.settings.heading }}
+            {% if section.settings.accent_text != blank %}
+              <span class="{% if section.settings.override_global_accent %}custom-accent-text{% else %}global-accent-text{% endif %}">{{ section.settings.accent_text }}</span>
+            {% endif %}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="four-cards-subtitle">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+      </div>
+    {% endif %}
+    
+    <div class="cards-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'card' %}
+          <div class="card-item" {{ block.shopify_attributes }}>
+            <div class="card-image-container">
+              {% if block.settings.card_image != blank %}
+                <img 
+                  src="{{ block.settings.card_image | img_url: '400x400' }}" 
+                  alt="{{ block.settings.card_title | escape }}"
+                  class="card-image"
+                  loading="lazy" width="" height=""
+                >
+              {% else %}
+                <div class="card-image-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21,15 16,10 5,21"></polyline>
+                  </svg>
+                </div>
+              {% endif %}
+            </div>
+            
+            <div class="card-content">
+              {% if block.settings.card_title != blank %}
+                <h3 class="card-title">
+                  {{ block.settings.card_title }}
+                </h3>
+              {% endif %}
+              
+              {% if block.settings.card_description != blank and section.settings.hide_description == false %}
+                <p class="card-description">
+                  {{ block.settings.card_description }}
+                </p>
+              {% endif %}
+              
+              {% if block.settings.show_bullets and block.settings.bullet_points != blank %}
+                <div class="card-bullets">
+                  {% assign bullet_list = block.settings.bullet_points | split: ',' %}
+                  {% for bullet_text in bullet_list %}
+                    {% assign trimmed_bullet = bullet_text | strip %}
+                    {% if trimmed_bullet != blank %}
+                      <div class="bullet-item{% if block.settings.bullet_container %} has-container{% endif %}"{% if block.settings.bullet_container %} style="background-color: {{ block.settings.bullet_container_bg }}; border: {{ block.settings.bullet_container_border_width }}px {{ block.settings.bullet_container_border_style }} {{ block.settings.bullet_container_border_color }}; border-radius: {{ block.settings.bullet_container_border_radius }}px; padding: 2px 6px;"{% endif %}>
+                        <div class="bullet-icon" style="color: {{ block.settings.bullet_icon_color }};">
+                          {% if block.settings.bullet_icon != blank %}
+                            {{ block.settings.bullet_icon }}
+                          {% else %}
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+                              <path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-52.2,6.84-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/>
+                            </svg>
+                          {% endif %}
+                        </div>
+                        <span class="bullet-text" style="color: {{ block.settings.bullet_text_color }};">
+                          {{ trimmed_bullet }}
+                        </span>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cards",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_theme_colors",
+      "label": "Use Theme Colors",
+      "default": false,
+      "info": "Enable to use global theme colors for this section"
+    },
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Our Features"
+    },
+    {
+      "type": "text",
+      "id": "accent_text",
+      "label": "Accent text",
+      "placeholder": "Text to highlight with accent styling",
+      "info": "This text will appear with gradient/accent styling within the heading"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Section subtitle",
+      "placeholder": "Add a subtitle to provide additional context"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "default": 32,
+      "label": "Heading font size"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "default": 18,
+      "label": "Card title font size (Desktop)"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 14,
+      "label": "Card title font size (Mobile)"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Card title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "label": "Card description font size (Desktop)"
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "default": 10,
+      "label": "Card description font size (Mobile)"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Card description color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "bullet_size",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "default": 13,
+      "label": "Bullet text font size (Desktop)"
+    },
+    {
+      "type": "range",
+      "id": "bullet_size_mobile",
+      "min": 6,
+      "max": 14,
+      "step": 1,
+      "default": 9,
+      "label": "Bullet text font size (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Accent Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "override_global_accent",
+      "label": "Override global accent text",
+      "default": false,
+      "info": "Enable to customize accent text independently from theme settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_global_accent_typography",
+      "label": "Use Global Accent Typography",
+      "default": false,
+      "info": "When enabled, the accent text will use the global accent typography settings from Theme Settings > Typography > Accent Typography. When disabled, the section-specific settings below will be used."
+    },
+    {
+      "type": "checkbox",
+      "id": "use_accent_gradient",
+      "label": "Use Accent Gradient",
+      "default": false,
+      "info": "Apply gradient effect to the accent text. This will override the solid accent color."
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Text Color",
+      "default": "#ef4a65",
+      "info": "Solid color for accent text (used when gradient is disabled)"
+    },
+    {
+      "type": "color_background",
+      "id": "accent_text_gradient",
+      "label": "Accent text gradient",
+      "default": "linear-gradient(45deg, #EF4A65, #FF6B9D)"
+    },
+    {
+      "type": "range",
+      "id": "accent_left_margin",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Accent left margin",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Accent Font Settings"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_family",
+      "label": "Accent font family",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Default (Inherit)"
+        },
+        {
+          "value": "serif",
+          "label": "System Serif"
+        },
+        {
+          "value": "Georgia Pro",
+          "label": "Georgia Pro"
+        },
+        {
+          "value": "Bodoni Moda",
+          "label": "Bodoni Moda"
+        },
+        {
+          "value": "Instrument Serif",
+          "label": "Instrument Serif"
+        },
+        {
+          "value": "DM Serif Text",
+          "label": "DM Serif Text"
+        },
+        {
+          "value": "Nothing You Could Do",
+          "label": "Nothing You Could Do"
+        }
+      ],
+      "default": "inherit",
+      "info": "Choose a custom font family for the accent text (only used when Global Accent Typography is disabled)"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_style",
+      "label": "Accent font style",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "italic",
+          "label": "Italic"
+        }
+      ],
+      "default": "normal",
+      "info": "Choose the font style for the accent text (only used when Global Accent Typography is disabled)"
+    },
+    {
+      "type": "range",
+      "id": "accent_font_weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "label": "Accent font weight",
+      "default": 400,
+      "info": "Choose the font weight (boldness) for the accent text (only used when Global Accent Typography is disabled)"
+    },
+    {
+      "type": "header",
+      "content": "Layout Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "horizontal_layout",
+      "label": "Use horizontal layout",
+      "default": false,
+      "info": "Cards will display horizontally with image on the left and text on the right in a single column on all screen sizes"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_description",
+      "label": "Hide card descriptions",
+      "default": false,
+      "info": "Hide the description text to show only titles and bullet points"
+    },
+    {
+      "type": "header",
+      "content": "Card Styling"
+    },
+    {
+      "type": "color_background",
+      "id": "card_background_gradient",
+      "label": "Card background",
+      "default": "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border color",
+      "default": "#f0f0f0"
+    },
+    {
+      "type": "select",
+      "id": "card_border_style",
+      "label": "Card border style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Card border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Card border radius",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "label": "Top padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "label": "Bottom padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "label": "Left padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "label": "Right padding"
+    },
+    {
+      "type": "header",
+      "content": "Section Background"
+    },
+    {
+      "type": "color_background",
+      "id": "section_background_gradient",
+      "label": "Section background",
+      "default": "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Card Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card image"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card title",
+          "default": "Card Title"
+        },
+        {
+          "type": "textarea",
+          "id": "card_description",
+          "label": "Card description",
+          "default": "Add your card description here to explain the benefits or features."
+        },
+        {
+          "type": "header",
+          "content": "Bullet Points"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_bullets",
+          "label": "Show bullet points",
+          "default": false
+        },
+        {
+          "type": "html",
+          "id": "bullet_icon",
+          "label": "Custom bullet icon (SVG)",
+          "info": "Paste your custom SVG code here. Leave empty to use default bullet."
+        },
+        {
+          "type": "textarea",
+          "id": "bullet_points",
+          "label": "Bullet points",
+          "placeholder": "Feature 1, Feature 2, Feature 3",
+          "info": "Enter your bullet points separated by commas. You can add as many as you want."
+        },
+        {
+          "type": "header",
+          "content": "Bullet Point Styling"
+        },
+        {
+          "type": "color",
+          "id": "bullet_icon_color",
+          "label": "Icon color",
+          "default": "#333333"
+        },
+        {
+          "type": "color",
+          "id": "bullet_text_color",
+          "label": "Bullet text color",
+          "default": "#666666"
+        },
+        {
+          "type": "header",
+          "content": "Bullet Point Container"
+        },
+        {
+          "type": "checkbox",
+          "id": "bullet_container",
+          "label": "Add background container to bullet points",
+          "default": false,
+          "info": "Adds a background container around each bullet point with padding"
+        },
+        {
+          "type": "color",
+          "id": "bullet_container_bg",
+          "label": "Container background color",
+          "default": "#f8f9fa"
+        },
+        {
+          "type": "color",
+          "id": "bullet_container_border_color",
+          "label": "Container border color",
+          "default": "#e9ecef"
+        },
+        {
+          "type": "select",
+          "id": "bullet_container_border_style",
+          "label": "Container border style",
+          "options": [
+            {
+              "value": "solid",
+              "label": "Solid"
+            },
+            {
+              "value": "dashed",
+              "label": "Dashed"
+            },
+            {
+              "value": "dotted",
+              "label": "Dotted"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "default": "solid"
+        },
+        {
+          "type": "range",
+          "id": "bullet_container_border_width",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "unit": "px",
+          "label": "Container border width",
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "bullet_container_border_radius",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Container border radius",
+          "default": 4
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cards",
+      "category": "Content",
+      "settings": {
+        "heading": "Our Premium",
+        "accent_text": "Features",
+        "section_background_gradient": "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
+        "card_background_gradient": "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
+        "accent_text_gradient": "linear-gradient(45deg, #EF4A65, #FF6B9D)",
+        "card_border_color": "#f0f0f0",
+        "card_border_style": "solid",
+        "card_border_width": 1,
+        "card_border_radius": 12
+      },
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "card_title": "Premium Quality",
+            "card_description": "Experience the finest quality with our carefully curated selection of premium products designed to exceed your expectations.",
+            "show_bullets": true,
+            "bullet_points": "Handpicked materials, Expert craftsmanship, Quality guaranteed"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "card_title": "Fast Shipping",
+            "card_description": "Get your orders delivered quickly with our expedited shipping options. Free shipping available on orders over $50.",
+            "show_bullets": true,
+            "bullet_points": "Next-day delivery, Free shipping over $50, Express options available"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "card_title": "24/7 Support",
+            "card_description": "Our dedicated customer support team is available around the clock to help you with any questions or concerns.",
+            "show_bullets": true,
+            "bullet_points": "Live chat support, Phone assistance, Email help, FAQ resources"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "card_title": "Easy Returns",
+            "card_description": "Not satisfied with your purchase? Return it within 30 days for a full refund. No questions asked, hassle-free process.",
+            "show_bullets": true,
+            "bullet_points": "30-day returns, No questions asked, Full refund, Free return shipping"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %} 

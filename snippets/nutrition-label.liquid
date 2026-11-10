@@ -1,0 +1,153 @@
+{{ 'nutrition-label.css' | asset_url | stylesheet_tag }}
+
+<div class="nutrition-label">
+  <div class="nutrition-label__container">
+    <button class="nutrition-label__trigger">View Nutrition Label</button>
+
+    <div class="nutrition-label__modal">
+      <div class="nutrition-label__modal__background"></div>
+
+      <div class="nutrition-label__modal__content">
+        <button class="nutrition-label__close">✕</button>
+        <div class="alpha-brew-spec">
+          <div class="alpha-brew-spec__hero">
+            <div class="alpha-brew-spec__logo">ALPHA BREW</div>
+
+            <h2>Unlock Your Edge</h2>
+
+            <p>
+              Alpha Brew is a carefully crafted daily coffee blend designed to support energy, focus, performance and
+              overall vitality. Built with premium functional ingredients and intended for consistent daily use as part
+              of an active lifestyle.
+            </p>
+          </div>
+
+          <div class="alpha-brew-spec__section">
+            <h3 class="alpha-brew-spec__title">Ingredients</h3>
+
+            <div class="alpha-brew-spec__ingredients">
+              <span class="alpha-brew-spec__ingredient">Tongkat Ali</span>
+              <span class="alpha-brew-spec__ingredient">Ashwagandha</span>
+              <span class="alpha-brew-spec__ingredient">Black Maca</span>
+              <span class="alpha-brew-spec__ingredient">Shilajit</span>
+              <span class="alpha-brew-spec__ingredient">Arabica Coffee</span>
+              <span class="alpha-brew-spec__ingredient">L-Theanine</span>
+              <span class="alpha-brew-spec__ingredient">Cacao</span>
+              <span class="alpha-brew-spec__ingredient">L-Citrulline</span>
+              <span class="alpha-brew-spec__ingredient">Horny Goat Weed</span>
+              <span class="alpha-brew-spec__ingredient">Tribulus Terrestris</span>
+              <span class="alpha-brew-spec__ingredient">Fenugreek</span>
+            </div>
+          </div>
+
+          <div class="alpha-brew-spec__section">
+            <h3 class="alpha-brew-spec__title">Nutrition Facts</h3>
+
+            <table class="alpha-brew-spec__table">
+              <thead>
+                <tr>
+                  <th>Ingredient</th>
+                  <th>Amount Per Serving</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Arabica Coffee</td>
+                  <td>8000 mg</td>
+                </tr>
+                <tr>
+                  <td>Tongkat Ali</td>
+                  <td>400 mg</td>
+                </tr>
+                <tr>
+                  <td>Ashwagandha</td>
+                  <td>600 mg</td>
+                </tr>
+                <tr>
+                  <td>Black Maca</td>
+                  <td>1000 mg</td>
+                </tr>
+                <tr>
+                  <td>Shilajit</td>
+                  <td>200 mg</td>
+                </tr>
+                <tr>
+                  <td>L-Theanine</td>
+                  <td>200 mg</td>
+                </tr>
+                <tr>
+                  <td>Cacao</td>
+                  <td>2000 mg</td>
+                </tr>
+                <tr>
+                  <td>L-Citrulline</td>
+                  <td>6000 mg</td>
+                </tr>
+                <tr>
+                  <td>Horny Goat Weed</td>
+                  <td>800 mg</td>
+                </tr>
+                <tr>
+                  <td>Tribulus Terrestris</td>
+                  <td>500 mg</td>
+                </tr>
+                <tr>
+                  <td>Fenugreek</td>
+                  <td>1000 mg</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="alpha-brew-spec__section">
+            <h3 class="alpha-brew-spec__title">Suggested Use</h3>
+
+            <div class="alpha-brew-spec__usage">
+              Mix one serving with hot water and enjoy daily. Best used consistently as part of a balanced diet and
+              active lifestyle. Store in a cool, dry place away from direct sunlight. Keep out of reach of children.
+            </div>
+          </div>
+
+          <div class="alpha-brew-spec__footer">
+            <div><strong>Storage:</strong> Store in a cool and dry place.</div>
+
+            <div class="alpha-brew-spec__badge">Best Before: {{ 'now' | date: '%B %d, %Y' }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.nutrition-label');
+
+    if (!container) return;
+
+    const trigger = container.querySelector('.nutrition-label__trigger');
+    const modal = container.querySelector('.nutrition-label__modal');
+    const backdrop = container.querySelector('.nutrition-label__modal__background');
+    const closeBtn = container.querySelector('.nutrition-label__close');
+
+    trigger.addEventListener('click', function () {
+      modal.classList.add('active');
+      document.body.classList.add('nutrition-modal-open');
+    });
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.classList.remove('nutrition-modal-open');
+    }
+
+    backdrop.addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  });
+</script>

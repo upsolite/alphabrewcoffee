@@ -1,0 +1,1822 @@
+{{ 'section-steps.css' | asset_url | stylesheet_tag }}
+
+{% comment %} Google Fonts for accent text customization {% endcomment %}
+{% if section.settings.override_global_accent %}
+  {% if section.settings.accent_font_family != 'inherit' and section.settings.accent_font_family != 'serif' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% case section.settings.accent_font_family %}
+      {% when 'Georgia Pro' %}
+        <link href="https://fonts.googleapis.com/css2?family=Georgia+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+      {% when 'Bodoni Moda' %}
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800&display=swap" rel="stylesheet">
+      {% when 'Instrument Serif' %}
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'DM Serif Text' %}
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'Nothing You Could Do' %}
+        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    {% endcase %}
+  {% endif %}
+{% endif %}
+
+{% comment %}
+  Steps Results Section
+  - Shows a process in numbered steps with images
+  - Responsive layout: horizontal on desktop, vertical on mobile
+  - Fully customizable colors, typography, and spacing
+  - Supports theme color system or custom colors
+{% endcomment %}
+
+<style>
+  .section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-horizontal: {{ section.settings.padding_horizontal }}px;
+    
+    --title-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.title_color }}{% endif %};
+    --highlight-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.highlight_color }}{% endif %};
+    --subtitle-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.subtitle_color }}{% endif %};
+    
+    --card-border-radius: {{ section.settings.card_border_radius }}px;
+    --card-border-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.card_border_color }}{% endif %};
+    --card-border-style: {{ section.settings.card_border_style }};
+    --card-border-width: {{ section.settings.card_border_width }}px;
+    
+    --step-title-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.step_title_color }}{% endif %};
+    --description-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.description_color }}{% endif %};
+    
+    --number-border-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.number_border_color }}{% endif %};
+    --number-border-width: {{ section.settings.number_border_width }}px;
+    --number-border-style: {{ section.settings.number_border_style }};
+    --number-border-radius: {{ section.settings.number_border_radius }}px;
+    --number-background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.number_background_color }}{% endif %};
+    --number-font-weight: {{ section.settings.number_font_weight }};
+    --label-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.label_color }}{% endif %};
+    
+    --title-size: {{ section.settings.title_size_desktop }}px;
+    --title-size-mobile: {{ section.settings.title_size_mobile }}px;
+    --subtitle-size: {{ section.settings.subtitle_size_desktop }}px;
+    --subtitle-size-mobile: {{ section.settings.subtitle_size_mobile }}px;
+    
+    --step-title-size: {{ section.settings.step_title_size_desktop }}px;
+    --step-title-size-mobile: {{ section.settings.step_title_size_mobile }}px;
+    --step-description-size: {{ section.settings.step_description_size_desktop }}px;
+    --step-description-size-mobile: {{ section.settings.step_description_size_mobile }}px;
+    
+    --number-size: {{ section.settings.number_size_desktop }}px;
+    --number-size-mobile: {{ section.settings.number_size_mobile }}px;
+    --number-circle-size: {{ section.settings.number_circle_size_desktop }}px;
+    --number-circle-size-mobile: {{ section.settings.number_circle_size_mobile }}px;
+    
+    --title-margin-bottom: {{ section.settings.title_margin_bottom }}px;
+    --title-margin-bottom-tablet: {{ section.settings.title_margin_bottom_tablet }}px;
+    --title-margin-bottom-mobile: {{ section.settings.title_margin_bottom_mobile }}px;
+    --subtitle-margin-top: {{ section.settings.subtitle_margin_top }}px;
+    --subtitle-margin-bottom: {{ section.settings.subtitle_margin_bottom }}px;
+    
+    --step-item-max-width-750px: {{ section.settings.step_item_max_width_750px }}px;
+    --mobile-card-layout: {{ section.settings.mobile_card_layout }};
+    
+    --accent-text-style: {{ settings.accent_text_style }};
+    --accent-text-font-family: {{ settings.accent_text_font.family }}, {{ settings.accent_text_font.fallback_families }};
+    --accent-text-weight: {{ settings.accent_text_weight }};
+    
+    /* Default card background colors */
+    --default-card-bg: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.default_card_background }}{% endif %};
+    --default-image-bg: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.default_image_background }}{% endif %};
+  }
+
+  /* Mobile carousel image layout - only for horizontal layout */
+  {% if section.settings.mobile_image_layout == 'compact' and section.settings.mobile_card_layout == 'horizontal' %}
+  @media (max-width: 768px) {
+    .section-{{ section.id }} .steps-container.has-carousel-mobile[data-mobile-layout="horizontal"] .step-image-container {
+      width: 33% !important;
+      min-width: 30% !important;
+    }
+  }
+  
+  @media (max-width: 410px) {
+    .section-{{ section.id }} .steps-container.has-carousel-mobile[data-mobile-layout="horizontal"] .step-image-container {
+      width: 37% !important;
+    }
+  }
+  {% endif %}
+
+  /* Mobile carousel image layout - wide option for horizontal layout */
+  {% if section.settings.mobile_image_layout == 'wide' and section.settings.mobile_card_layout == 'horizontal' %}
+  @media (max-width: 768px) {
+    .section-{{ section.id }} .steps-container.has-carousel-mobile[data-mobile-layout="horizontal"] .step-image-container {
+      width: 50% !important;
+      min-width: 50% !important;
+      flex: 0 0 50% !important;
+    }
+  }
+  {% endif %}
+
+  /* Regular mobile layout image sizing - compact option */
+  {% if section.settings.mobile_image_layout == 'compact' %}
+  @media (max-width: 768px) {
+    .section-{{ section.id }} .steps-regular-layout .step-image-container {
+      width: 33% !important;
+      min-width: 30% !important;
+    }
+  }
+  
+  @media (max-width: 410px) {
+    .section-{{ section.id }} .steps-regular-layout .step-image-container {
+      width: 37% !important;
+    }
+  }
+  {% endif %}
+
+  /* Regular mobile layout image sizing - wide option (50/50 split) */
+  {% if section.settings.mobile_image_layout == 'wide' %}
+  @media (max-width: 768px) {
+    .section-{{ section.id }} .steps-regular-layout .step-image-container {
+      width: 50% !important;
+      min-width: 50% !important;
+      flex: 0 0 50% !important;
+    }
+  }
+  {% endif %}
+
+  /* Desktop vs Mobile Carousel Logic */
+  /* Hide mobile-only carousel on desktop */
+  @media (min-width: 769px) {
+    .section-{{ section.id }} .carousel-container.mobile-carousel:not(.desktop-carousel) {
+      display: none !important;
+    }
+    .section-{{ section.id }} .carousel-container.mobile-carousel:not(.desktop-carousel) + .steps-navigation-container {
+      display: none !important;
+    }
+  }
+
+  /* Hide desktop-only carousel on mobile */
+  @media (max-width: 768px) {
+    .section-{{ section.id }} .carousel-container.desktop-carousel:not(.mobile-carousel) {
+      display: none !important;
+    }
+    .section-{{ section.id }} .carousel-container.desktop-carousel:not(.mobile-carousel) + .steps-navigation-container {
+      display: none !important;
+    }
+  }
+
+  /* Desktop Layout Logic */
+  @media (min-width: 769px) {
+    /* Show regular layout on desktop when only mobile carousel is enabled (desktop carousel hidden) */
+    .section-{{ section.id }} .has-carousel-mobile:not(.has-carousel-desktop) .steps-regular-layout {
+      display: block !important;
+    }
+    
+    /* Hide regular layout on desktop when desktop carousel is active (>4 steps) */
+    .section-{{ section.id }} .has-carousel-desktop .steps-regular-layout {
+      display: none !important;
+    }
+  }
+
+  /* Mobile Layout Logic */
+  @media (max-width: 768px) {
+    /* Show regular layout on mobile when only desktop carousel is enabled (mobile carousel hidden) */
+    .section-{{ section.id }} .has-carousel-desktop:not(.has-carousel-mobile) .steps-regular-layout {
+      display: block !important;
+    }
+    
+    /* Hide regular layout on mobile when mobile carousel is active */
+    .section-{{ section.id }} .has-carousel-mobile .steps-regular-layout {
+      display: none !important;
+    }
+  }
+
+  /* Apply section background */
+  .section-{{ section.id }}.results-steps-section {
+    {% if section.settings.use_theme_colors %}
+      background: {{ settings.global_section_background_color }} !important;
+    {% else %}
+      {% if section.settings.background_type == 'gradient' %}
+        {% if section.settings.section_background_gradient != blank %}
+          background: {{ section.settings.section_background_gradient }} !important;
+        {% else %}
+          background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%) !important;
+        {% endif %}
+      {% else %}
+        background: {{ section.settings.section_background_color | default: '#FFFFFF' }} !important;
+      {% endif %}
+    {% endif %}
+    padding-top: var(--padding-top) !important;
+    padding-bottom: var(--padding-bottom) !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Content container with proper width constraints */
+  .section-{{ section.id }}.results-steps-section .steps-content-wrapper {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: var(--padding-horizontal) !important;
+    padding-right: var(--padding-horizontal) !important;
+  }
+
+  /* Override global classes for custom colors */
+  .section-{{ section.id }}.results-steps-section .section-title.global-heading,
+  .section-{{ section.id }}.results-steps-section .section-title {
+    color: var(--title-color) !important;
+    font-size: var(--title-size) !important;
+    margin-bottom: var(--title-margin-bottom) !important;
+  }
+
+  .section-{{ section.id }}.results-steps-section .section-title .global-accent-text,
+  .section-{{ section.id }}.results-steps-section .section-title span {
+    color: var(--highlight-color) !important;
+  }
+
+  .section-{{ section.id }}.results-steps-section .section-subtitle {
+    color: var(--subtitle-color) !important;
+    font-size: var(--subtitle-size) !important;
+    text-align: center !important;
+    margin-bottom: var(--subtitle-margin-bottom) !important;
+    margin-top: var(--subtitle-margin-top) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 800px !important;
+    display: block !important;
+  }
+
+  .section-{{ section.id }}.results-steps-section .step-title {
+    color: var(--step-title-color) !important;
+    font-size: var(--step-title-size) !important;
+  }
+
+  .section-{{ section.id }}.results-steps-section .step-description,
+  .section-{{ section.id }}.results-steps-section .step-description.global-text {
+    color: var(--description-color) !important;
+    font-size: var(--step-description-size) !important;
+  }
+
+  .section-{{ section.id }}.results-steps-section .number-icon {
+    color: var(--label-color) !important;
+    border: var(--number-border-width) var(--number-border-style) var(--number-border-color) !important;
+    border-radius: var(--number-border-radius) !important;
+    background-color: var(--number-background-color) !important;
+    font-weight: var(--number-font-weight) !important;
+    font-size: var(--number-size) !important;
+    width: var(--number-circle-size) !important;
+    height: var(--number-circle-size) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Mobile responsive styles */
+  @media (max-width: 768px) {
+    .section-{{ section.id }}.results-steps-section .section-title.global-heading,
+    .section-{{ section.id }}.results-steps-section .section-title {
+      font-size: var(--title-size-mobile) !important;
+      margin-bottom: var(--title-margin-bottom-mobile) !important;
+    }
+
+    .section-{{ section.id }}.results-steps-section .section-subtitle {
+      font-size: var(--subtitle-size-mobile) !important;
+    }
+
+    .section-{{ section.id }}.results-steps-section .step-title {
+      font-size: var(--step-title-size-mobile) !important;
+    }
+
+    .section-{{ section.id }}.results-steps-section .step-description,
+    .section-{{ section.id }}.results-steps-section .step-description.global-text {
+      font-size: var(--step-description-size-mobile) !important;
+    }
+
+    .section-{{ section.id }}.results-steps-section .number-icon {
+      font-size: var(--number-size-mobile) !important;
+      width: var(--number-circle-size-mobile) !important;
+      height: var(--number-circle-size-mobile) !important;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .section-{{ section.id }}.results-steps-section .section-title.global-heading,
+    .section-{{ section.id }}.results-steps-section .section-title {
+      margin-bottom: var(--title-margin-bottom-tablet) !important;
+    }
+  }
+
+  /* Styles for when images are hidden */
+  {% unless section.settings.show_step_images %}
+  .section-{{ section.id }} .step-card {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .section-{{ section.id }} .step-content {
+    width: 100% !important;
+    max-width: none !important;
+    text-align: center !important;
+  }
+
+  .section-{{ section.id }} .step-title-container {
+    justify-content: center !important;
+  }
+
+  /* Mobile adjustments when no images */
+  @media (max-width: 768px) {
+    .section-{{ section.id }} .step-card {
+      text-align: center !important;
+    }
+    
+    .section-{{ section.id }} .step-content {
+      padding: 20px !important;
+    }
+  }
+  {% endunless %}
+
+  /* Ensure card backgrounds are applied with proper specificity */
+  .section-{{ section.id }}.results-steps-section .step-content {
+    background-color: var(--content-bg-color, var(--default-card-bg)) !important;
+  }
+  
+  .section-{{ section.id }}.results-steps-section .step-image-container {
+    background-color: var(--image-bg-color, var(--default-image-bg)) !important;
+  }
+
+  /* Enhanced accent text styling with global and local customization options */
+  .section-{{ section.id }}.results-steps-section .global-accent-text,
+  .section-{{ section.id }}.results-steps-section .custom-accent-text {
+    {% comment %} Always apply core accent text styling {% endcomment %}
+    padding: 2px 4px !important;
+    margin: -2px -4px !important;
+    display: inline-block !important;
+    margin-left: {{ section.settings.accent_text_margin_left }}px !important;
+    
+    {% comment %} Check for theme colors first - use global dark gradient when enabled {% endcomment %}
+    {% if section.settings.use_theme_colors %}
+      background: {{ settings.global_accent_text_gradient_dark }} !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      color: transparent !important;
+      line-height: 1.3 !important;
+    {% elsif section.settings.use_accent_gradient %}
+      background: {{ section.settings.accent_text_gradient }} !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      color: transparent !important;
+      line-height: 1.3 !important;
+    {% else %}
+      {% comment %} Apply solid color {% endcomment %}
+      color: {{ section.settings.highlight_color }} !important;
+    {% endif %}
+    
+    {% if section.settings.override_global_accent %}
+      {% comment %} Use section-specific typography settings when override is enabled {% endcomment %}
+      {% if section.settings.accent_font_family != 'inherit' %}
+        {% case section.settings.accent_font_family %}
+          {% when 'serif' %}
+            font-family: serif !important;
+          {% when 'Georgia Pro' %}
+            font-family: 'Georgia Pro', Georgia, serif !important;
+          {% when 'Bodoni Moda' %}
+            font-family: 'Bodoni Moda', Georgia, serif !important;
+          {% when 'Instrument Serif' %}
+            font-family: 'Instrument Serif', Georgia, serif !important;
+          {% when 'DM Serif Text' %}
+            font-family: 'DM Serif Text', Georgia, serif !important;
+          {% when 'Nothing You Could Do' %}
+            font-family: 'Nothing You Could Do', cursive !important;
+        {% endcase %}
+      {% else %}
+        font-family: var(--font-accent-family, var(--font-body-family)) !important;
+      {% endif %}
+      
+      font-style: {% if section.settings.accent_font_style != 'normal' %}{{ section.settings.accent_font_style }}{% else %}var(--font-accent-style, normal){% endif %} !important;
+      font-weight: {% if section.settings.accent_font_weight != 'inherit' %}{{ section.settings.accent_font_weight }}{% else %}var(--font-accent-weight, inherit){% endif %} !important;
+      
+    {% else %}
+      {% comment %} Use global accent typography system {% endcomment %}
+      font-family: var(--font-accent-family, var(--font-body-family)) !important;
+      font-style: var(--font-accent-style, normal) !important;
+      font-weight: var(--font-accent-weight, inherit) !important;
+      letter-spacing: var(--font-accent-letter-spacing, inherit) !important;
+      text-transform: var(--font-accent-text-transform, none) !important;
+    {% endif %}
+  }
+</style>
+
+<section class="results-steps-section section-{{ section.id }}">
+  <div class="steps-content-wrapper">
+  <h2 class="section-title global-heading">{{ section.settings.title }} <span class="{% if section.settings.override_global_accent %}custom-accent-text{% else %}global-accent-text{% endif %}">{{ section.settings.title_highlight }}</span></h2>
+  
+  {% if section.settings.subtitle != blank %}
+    <div class="section-subtitle">{{ section.settings.subtitle }}</div>
+  {% endif %}
+  
+{% comment %} Desktop and Mobile containers {% endcomment %}
+<div class="steps-container-desktop desktop-only">
+  {% comment %} Desktop Layout {% endcomment %}
+  {% if section.blocks.size > 4 %}
+    <div class="steps-container has-carousel-desktop" data-total-steps="{{ section.blocks.size }}" data-show-numbers="{{ section.settings.show_step_numbers }}">
+      <div class="carousel-container desktop-carousel">
+        <div class="carousel-track-container">
+          <div class="carousel-track">
+            {% for block in section.blocks %}
+              {% if block.type == 'step' %}
+                <div class="step-item carousel-slide" {{ block.shopify_attributes }} data-step="{{ forloop.index }}">
+                  {% comment %} Step Card Content {% endcomment %}
+                  <div class="step-card">
+                    <style>
+                      .step-item[data-step="{{ forloop.index }}"] .step-image-container {
+                        --image-bg-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ block.settings.image_background_color | default: section.settings.default_image_background }}{% endif %};
+                      }
+                      .step-item[data-step="{{ forloop.index }}"] .step-content {
+                        --content-bg-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ block.settings.content_background_color | default: section.settings.default_card_background }}{% endif %};
+                      }
+                    </style>
+                    {% if section.settings.show_step_images %}
+                    <div class="  ">
+                      {% if block.settings.step_image != blank %}
+                        <img
+                        src="{{ block.settings.step_image | img_url: '309x' }}"
+                        srcset="
+                          {{ block.settings.step_image | img_url: '309x' }} 1x,
+                          {{ block.settings.step_image | img_url: '618x' }} 2x
+                        "
+                        alt="{{ block.settings.step_title }}"
+                        class="step-image"
+                        width=""
+                        height=""
+                        loading="lazy"
+                      >
+                      {% else %}
+                        <div class="step-image placeholder-image"></div>
+                      {% endif %}
+                    </div>
+                    {% endif %}
+                    <div class="step-content">
+                      <div class="step-title-container">
+                        {% if section.settings.show_step_numbers %}
+                          <div class="number-icon">{{ forloop.index }}</div>
+                        {% endif %}
+                        <h3 class="step-title">{{ block.settings.step_title }}</h3>
+                      </div>
+                      <p class="step-description global-text">{{ block.settings.step_description }}</p>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="steps-navigation-container">
+        {% comment %} Navigation Buttons {% endcomment %}
+        <div class="steps-navigation">
+          <button class="nav-button prev" aria-label="Previous steps"
+                  style="background: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.prev_button_bg | default: '#ffffff' }}{% endif %}; 
+                         color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.prev_button_color | default: '#000000' }}{% endif %}; 
+                         border-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color | color_lighten: 70 }}{% else %}{{ section.settings.prev_button_border | default: '#e0e0e0' }}{% endif %};">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="nav-button next" aria-label="Next steps"
+                  style="background: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.next_button_bg | default: '#EF4A65' }}{% endif %}; 
+                         color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.next_button_color | default: '#ffffff' }}{% endif %}; 
+                         border-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.next_button_border | default: '#EF4A65' }}{% endif %};">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="steps-container" data-show-numbers="{{ section.settings.show_step_numbers }}">
+      <div class="steps-regular-layout">
+        {% for block in section.blocks %}
+          {% if block.type == 'step' %}
+            <div class="step-item" {{ block.shopify_attributes }}>
+              {% comment %} Step Card Content {% endcomment %}
+              <div class="step-card">
+                <style>
+                  .step-item[data-step="{{ forloop.index }}"] .step-image-container {
+                    --image-bg-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ block.settings.image_background_color | default: section.settings.default_image_background }}{% endif %};
+                  }
+                  .step-item[data-step="{{ forloop.index }}"] .step-content {
+                    --content-bg-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ block.settings.content_background_color | default: section.settings.default_card_background }}{% endif %};
+                  }
+                </style>
+                {% if section.settings.show_step_images %}
+                <div class="step-image-container">
+                  {% if block.settings.step_image != blank %}
+                    <img
+                      src="{{ block.settings.step_image | img_url: '309x' }}"
+                      srcset="
+                        {{ block.settings.step_image | img_url: '309x' }} 1x,
+                        {{ block.settings.step_image | img_url: '618x' }} 2x
+                      "
+                      alt="{{ block.settings.step_title }}"
+                      class="step-image"
+                      width=""
+                      height=""
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <div class="step-image placeholder-image"></div>
+                  {% endif %}
+                </div>
+                {% endif %}
+                <div class="step-content">
+                  <div class="step-title-container">
+                    {% if section.settings.show_step_numbers %}
+                      <div class="number-icon">{{ forloop.index }}</div>
+                    {% endif %}
+                    <h3 class="step-title">{{ block.settings.step_title }}</h3>
+                  </div>
+                  <p class="step-description global-text">{{ block.settings.step_description }}</p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<div class="steps-container-mobile mobile-only">
+  {% comment %} Mobile Layout {% endcomment %}
+  {% if section.settings.enable_mobile_carousel %}
+    <div class="steps-container has-carousel-mobile" data-total-steps="{{ section.blocks.size }}" data-mobile-layout="{{ section.settings.mobile_card_layout }}" data-show-numbers="{{ section.settings.show_step_numbers }}">
+      <div class="carousel-container mobile-carousel">
+        <div class="carousel-track-container">
+          <div class="carousel-track">
+            {% for block in section.blocks %}
+              {% if block.type == 'step' %}
+                <div class="step-item carousel-slide" {{ block.shopify_attributes }} data-step="{{ forloop.index }}">
+                  {% comment %} Step Card Content {% endcomment %}
+                  <div class="step-card">
+                    <style>
+                      .step-item[data-step="{{ forloop.index }}"] .step-image-container {
+                        --image-bg-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ block.settings.image_background_color | default: section.settings.default_image_background }}{% endif %};
+                      }
+                      .step-item[data-step="{{ forloop.index }}"] .step-content {
+                        --content-bg-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ block.settings.content_background_color | default: section.settings.default_card_background }}{% endif %};
+                      }
+                    </style>
+                    {% if section.settings.show_step_images %}
+                    <div class="step-image-container">
+                      {% if block.settings.step_image != blank %}
+                        <img
+                        src="{{ block.settings.step_image | img_url: '309x' }}"
+                        srcset="
+                          {{ block.settings.step_image | img_url: '309x' }} 1x,
+                          {{ block.settings.step_image | img_url: '618x' }} 2x
+                        "
+                        alt="{{ block.settings.step_title }}"
+                        class="step-image"
+                        width=""
+                        height=""
+                        loading="lazy"
+                      >
+                      {% else %}
+                        <div class="step-image placeholder-image"></div>
+                      {% endif %}
+                    </div>
+                    {% endif %}
+                    <div class="step-content">
+                      <div class="step-title-container">
+                        {% if section.settings.show_step_numbers %}
+                          <div class="number-icon">{{ forloop.index }}</div>
+                        {% endif %}
+                        <h3 class="step-title">{{ block.settings.step_title }}</h3>
+                      </div>
+                      <p class="step-description global-text">{{ block.settings.step_description }}</p>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="steps-navigation-container">
+        {% comment %} Navigation Buttons {% endcomment %}
+        <div class="steps-navigation">
+          <button class="nav-button prev" aria-label="Previous steps"
+                  style="background: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.prev_button_bg | default: '#ffffff' }}{% endif %}; 
+                         color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.prev_button_color | default: '#000000' }}{% endif %}; 
+                         border-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color | color_lighten: 70 }}{% else %}{{ section.settings.prev_button_border | default: '#e0e0e0' }}{% endif %};">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="nav-button next" aria-label="Next steps"
+                  style="background: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.next_button_bg | default: '#EF4A65' }}{% endif %}; 
+                         color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.next_button_color | default: '#ffffff' }}{% endif %}; 
+                         border-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.next_button_border | default: '#EF4A65' }}{% endif %};">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="steps-container" data-mobile-layout="{{ section.settings.mobile_card_layout }}" data-show-numbers="{{ section.settings.show_step_numbers }}">
+      <div class="steps-regular-layout">
+        {% for block in section.blocks %}
+          {% if block.type == 'step' %}
+            <div class="step-item" {{ block.shopify_attributes }}>
+              {% comment %} Step Card Content {% endcomment %}
+              <div class="step-card">
+                <style>
+                  .step-item[data-step="{{ forloop.index }}"] .step-image-container {
+                    --image-bg-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ block.settings.image_background_color | default: section.settings.default_image_background }}{% endif %};
+                  }
+                  .step-item[data-step="{{ forloop.index }}"] .step-content {
+                    --content-bg-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ block.settings.content_background_color | default: section.settings.default_card_background }}{% endif %};
+                  }
+                </style>
+                {% if section.settings.show_step_images %}
+                <div class="step-image-container">
+                  {% if block.settings.step_image != blank %}
+                    <img
+                      src="{{ block.settings.step_image | img_url: '309x' }}"
+                      srcset="
+                        {{ block.settings.step_image | img_url: '309x' }} 1x,
+                        {{ block.settings.step_image | img_url: '618x' }} 2x
+                      "
+                      alt="{{ block.settings.step_title }}"
+                      class="step-image"
+                      width=""
+                      height=""
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <div class="step-image placeholder-image"></div>
+                  {% endif %}
+                </div>
+                {% endif %}
+                <div class="step-content">
+                  <div class="step-title-container">
+                    {% if section.settings.show_step_numbers %}
+                      <div class="number-icon">{{ forloop.index }}</div>
+                    {% endif %}
+                    <h3 class="step-title">{{ block.settings.step_title }}</h3>
+                  </div>
+                  <p class="step-description global-text">{{ block.settings.step_description }}</p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const stepsSection = document.querySelector('.section-{{ section.id }}.results-steps-section');
+  if (!stepsSection) return;
+
+  // Get both desktop and mobile containers
+  const desktopContainer = stepsSection.querySelector('.steps-container-desktop .steps-container');
+  const mobileContainer = stepsSection.querySelector('.steps-container-mobile .steps-container');
+  
+  // Determine which container to use based on screen size and carousel settings
+  function getActiveContainer() {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile && mobileContainer) {
+      return mobileContainer;
+    } else if (!isMobile && desktopContainer) {
+      return desktopContainer;
+    }
+    return null;
+  }
+  
+  // Initialize carousel for both containers
+  function initializeCarousel(container) {
+    if (!container || (!container.classList.contains('has-carousel-desktop') && !container.classList.contains('has-carousel-mobile'))) return null;
+
+    const track = container.querySelector('.carousel-track');
+    const slides = container.querySelectorAll('.carousel-slide');
+    const prevBtn = container.closest('.steps-container-desktop, .steps-container-mobile').querySelector('.nav-button.prev');
+    const nextBtn = container.closest('.steps-container-desktop, .steps-container-mobile').querySelector('.nav-button.next');
+
+    if (!track || !slides.length || !prevBtn || !nextBtn) return null;
+
+    const hasDesktopCarousel = container.classList.contains('has-carousel-desktop');
+    const hasMobileCarousel = container.classList.contains('has-carousel-mobile');
+    
+    return {
+      container,
+      track,
+      slides,
+      prevBtn,
+      nextBtn,
+      hasDesktopCarousel,
+      hasMobileCarousel,
+      currentSlide: 0
+    };
+  }
+
+  // Initialize both carousels
+  let desktopCarousel = desktopContainer ? initializeCarousel(desktopContainer) : null;
+  let mobileCarousel = mobileContainer ? initializeCarousel(mobileContainer) : null;
+  
+  // Get the active carousel based on screen size
+  function getActiveCarousel() {
+    const isMobile = window.innerWidth <= 768;
+    return isMobile ? mobileCarousel : desktopCarousel;
+  }
+  
+  function isCarouselActive(carousel) {
+    if (!carousel) return false;
+    const isMobile = window.innerWidth <= 768;
+    return (isMobile && carousel.hasMobileCarousel) || (!isMobile && carousel.hasDesktopCarousel);
+  }
+
+  function getSlidesPerView(carousel) {
+    if (!carousel) return 1;
+    if (window.innerWidth <= 768 && carousel.hasMobileCarousel) {
+      return 1; // Mobile carousel: 1 slide at a time
+    }
+    return Math.min(4, carousel.slides.length); // Desktop: max 4 slides
+  }
+
+  function updateCarousel(carousel) {
+    if (!carousel || !isCarouselActive(carousel)) {
+      return;
+    }
+
+    const slidesPerView = getSlidesPerView(carousel);
+    const slideWidth = 100 / slidesPerView;
+    const maxSlide = carousel.slides.length - slidesPerView;
+    
+    // Ensure currentSlide is within bounds
+    carousel.currentSlide = Math.max(0, Math.min(carousel.currentSlide, maxSlide));
+    
+    const offset = -(carousel.currentSlide * slideWidth);
+    carousel.track.style.transform = `translateX(${offset}%)`;
+
+    // Update button states
+    carousel.prevBtn.disabled = carousel.currentSlide === 0;
+    carousel.nextBtn.disabled = carousel.currentSlide >= maxSlide;
+  }
+
+  function nextSlide() {
+    const carousel = getActiveCarousel();
+    if (!carousel || !isCarouselActive(carousel)) return;
+    
+    const slidesPerView = getSlidesPerView(carousel);
+    const maxSlide = carousel.slides.length - slidesPerView;
+    if (carousel.currentSlide < maxSlide) {
+      carousel.currentSlide += (window.innerWidth <= 768 && carousel.hasMobileCarousel) ? 1 : slidesPerView;
+      updateCarousel(carousel);
+    }
+  }
+
+  function prevSlide() {
+    const carousel = getActiveCarousel();
+    if (!carousel || !isCarouselActive(carousel)) return;
+    
+    if (carousel.currentSlide > 0) {
+      const slidesPerView = getSlidesPerView(carousel);
+      carousel.currentSlide -= (window.innerWidth <= 768 && carousel.hasMobileCarousel) ? 1 : slidesPerView;
+      updateCarousel(carousel);
+    }
+  }
+
+  // Setup event listeners for a carousel
+  function setupCarouselEvents(carousel) {
+    if (!carousel) return;
+    
+    // Touch/swipe variables for this carousel
+    let isDown = false;
+    let startX = 0;
+    let currentX = 0;
+    let initialTransform = 0;
+    let isDragging = false;
+    const movementThreshold = 10; // Minimum pixels to detect intentional movement
+    
+    // Get current transform value
+    function getCurrentTransform() {
+      const slidesPerView = getSlidesPerView(carousel);
+      const slideWidth = 100 / slidesPerView;
+      return -(carousel.currentSlide * slideWidth);
+    }
+
+    // Touch/Mouse event handlers
+    function handleStart(e) {
+      if (!isCarouselActive(carousel)) return;
+      
+      // Reset all tracking variables
+      isDown = true;
+      isDragging = false;
+      currentX = 0;
+      
+      // Get initial position for both X and Y
+      startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+      const startY = e.type === 'mousedown' ? e.clientY : e.touches[0].clientY;
+      
+      // Store initial Y position for vertical scroll detection
+      carousel.startY = startY;
+      carousel.hasVerticalMovement = false;
+      
+      initialTransform = getCurrentTransform();
+      
+      // Add transition temporarily for smooth start
+      carousel.track.style.transition = 'none';
+      carousel.track.style.cursor = 'grabbing';
+    }
+
+    function handleMove(e) {
+      if (!isDown || !isCarouselActive(carousel)) return;
+      
+      // Get current position
+      currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+      const currentY = e.type === 'mousemove' ? e.clientY : e.touches[0].clientY;
+      
+      // Calculate movement
+      const deltaX = currentX - startX;
+      const deltaY = currentY - carousel.startY;
+      
+      // Determine if this is primarily vertical or horizontal movement
+      const absX = Math.abs(deltaX);
+      const absY = Math.abs(deltaY);
+      
+      // If vertical movement is greater than horizontal, allow default scrolling
+      if (absY > absX && absY > movementThreshold) {
+        carousel.hasVerticalMovement = true;
+        return; // Don't interfere with vertical scrolling
+      }
+      
+      // Only prevent default and handle carousel if horizontal movement is detected
+      if (absX > movementThreshold && absX > absY) {
+        e.preventDefault();
+        isDragging = true;
+        
+      const movePercent = (deltaX / carousel.track.offsetWidth) * 100;
+      
+      // Apply transform with movement
+      const newTransform = initialTransform + movePercent;
+      carousel.track.style.transform = `translateX(${newTransform}%)`;
+      }
+    }
+
+    function handleEnd(e) {
+      if (!isDown || !isCarouselActive(carousel)) return;
+      
+      // Reset interaction state
+      isDown = false;
+      carousel.track.style.cursor = 'grab';
+      carousel.track.style.transition = 'transform 0.3s ease';
+      
+      // If there was vertical movement, don't process as carousel interaction
+      if (carousel.hasVerticalMovement) {
+        updateCarousel(carousel); // Reset to current position
+        isDragging = false;
+        carousel.hasVerticalMovement = false; // Reset for next interaction
+        return;
+      }
+      
+      if (isDragging) {
+        // Calculate swipe distance and direction
+        const deltaX = currentX - startX;
+        const threshold = 50; // Minimum distance for swipe
+        
+        if (Math.abs(deltaX) > threshold) {
+          if (deltaX > 0) {
+            // Swiped right, go to previous slide
+            prevSlide();
+          } else {
+            // Swiped left, go to next slide
+            nextSlide();
+          }
+        } else {
+          // Snap back to current position
+          updateCarousel(carousel);
+        }
+        
+        // Prevent click events after drag
+        setTimeout(() => {
+          isDragging = false;
+        }, 100);
+      } else {
+        // No significant movement, snap back
+        updateCarousel(carousel);
+      }
+      
+      // Reset movement tracking for next interaction
+      carousel.hasVerticalMovement = false;
+    }
+
+    // Prevent click events during drag
+    function handleClick(e) {
+      if (isDragging) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }
+
+    // Event listeners for buttons
+    carousel.nextBtn.addEventListener('click', nextSlide);
+    carousel.prevBtn.addEventListener('click', prevSlide);
+
+    // Touch events for mobile (passive start, dynamic move)
+    carousel.track.addEventListener('touchstart', handleStart, { passive: true });
+    carousel.track.addEventListener('touchmove', handleMove, { passive: false });
+    carousel.track.addEventListener('touchend', handleEnd, { passive: true });
+
+    // Mouse events for desktop (only if not a touch device)
+    if (!('ontouchstart' in window)) {
+    carousel.track.addEventListener('mousedown', handleStart);
+    carousel.track.addEventListener('mousemove', handleMove);
+    carousel.track.addEventListener('mouseup', handleEnd);
+    carousel.track.addEventListener('mouseleave', handleEnd);
+    }
+
+    // Prevent unwanted clicks during drag
+    carousel.track.addEventListener('click', handleClick, true);
+
+    // Set initial cursor
+    carousel.track.style.cursor = 'grab';
+    
+    // Initialize this carousel
+    updateCarousel(carousel);
+  }
+
+  // Setup both carousels
+  if (desktopCarousel) {
+    setupCarouselEvents(desktopCarousel);
+  }
+  if (mobileCarousel) {
+    setupCarouselEvents(mobileCarousel);
+  }
+
+  // Handle resize
+  window.addEventListener('resize', function() {
+    // Reset both carousels to first slide when switching between desktop/mobile
+    if (desktopCarousel) {
+      desktopCarousel.currentSlide = 0;
+      updateCarousel(desktopCarousel);
+    }
+    if (mobileCarousel) {
+      mobileCarousel.currentSlide = 0;
+      updateCarousel(mobileCarousel);
+    }
+  });
+});
+</script>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Steps Results Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_theme_colors",
+      "label": "Use Theme Colors",
+      "default": true,
+      "info": "Apply the global theme colors to this section"
+    },
+    {
+      "type": "header",
+      "content": "Section Background"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        }
+      ],
+      "default": "gradient",
+      "info": "Choose between a solid color or gradient background"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF",
+      "info": "Used when 'Solid Color' is selected"
+    },
+    {
+      "type": "color_background",
+      "id": "section_background_gradient",
+      "label": "Background Gradient",
+      "default": "linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%)",
+      "info": "Used when 'Gradient' is selected"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Horizontal Padding",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Section Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "How"
+    },
+    {
+      "type": "text",
+      "id": "title_highlight",
+      "label": "Highlighted Title Text",
+      "default": "It Works"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Learn how our process works in three simple steps",
+      "info": "Optional subtitle to display below the main title"
+    },
+    {
+      "type": "header",
+      "content": "Section Colors"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight Color",
+      "default": "#EF4A65"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#4A4A4A"
+    },
+    {
+      "type": "header",
+      "content": "Text Sizing"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Size (Desktop)",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "min": 20,
+      "max": 46,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Size (Mobile)",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_desktop",
+      "min": 14,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "step_title_size_desktop",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Title Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "step_title_size_mobile",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Title Size (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "step_description_size_desktop",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Description Size (Desktop)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "step_description_size_mobile",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Description Size (Mobile)",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "number_size_desktop",
+      "min": 16,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Number Size (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "number_size_mobile",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Number Size (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "number_circle_size_desktop",
+      "min": 10,
+      "max": 70,
+      "step": 5,
+      "unit": "px",
+      "label": "Number Circle Size (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "number_circle_size_mobile",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Number Circle Size (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Bottom Margin (Desktop)",
+      "default": 16,
+      "info": "Space below the main title"
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom_tablet",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Bottom Margin (Tablet)",
+      "default": 12,
+      "info": "Space below the main title on tablet"
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom_mobile",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Bottom Margin (Mobile)",
+      "default": 10,
+      "info": "Space below the main title on mobile"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_margin_top",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Subtitle Top Margin",
+      "default": 0,
+      "info": "Space above the subtitle"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_margin_bottom",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Subtitle Bottom Margin",
+      "default": 30,
+      "info": "Space below the subtitle before the steps"
+    },
+    {
+      "type": "range",
+      "id": "step_item_max_width_750px",
+      "min": 150,
+      "max": 350,
+      "step": 10,
+      "unit": "px",
+      "label": "Step Item Max Width (Desktop)",
+      "default": 250,
+      "info": "Maximum width of each step item on screens 750px and wider"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_step_numbers",
+      "label": "Show Step Numbers",
+      "default": true,
+      "info": "Display numbered circles next to each step title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_step_images",
+      "label": "Show Step Images",
+      "default": true,
+      "info": "Display images for each step. When disabled, only titles and descriptions are shown."
+    },
+    {
+      "type": "header",
+      "content": "Carousel Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_mobile_carousel",
+      "label": "Enable Mobile Carousel",
+      "default": false,
+      "info": "Mobile Only: Enable to show one step at a time with navigation arrows on mobile devices. Desktop layout remains unchanged."
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_layout",
+      "label": "Mobile Image Layout",
+      "options": [
+        {
+          "value": "compact",
+          "label": "Compact"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ],
+      "default": "compact",
+      "info": "Choose image layout for mobile screens. Compact: Fixed width (33%), Wide: Flexible width (50/50 split). Applies to both carousel and regular mobile layouts."
+    },
+    {
+      "type": "select",
+      "id": "mobile_card_layout",
+      "label": "Mobile Card Layout",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "Horizontal (Image Left, Content Right)"
+        },
+        {
+          "value": "vertical",
+          "label": "Vertical (Image Top, Content Bottom)"
+        }
+      ],
+      "default": "horizontal",
+      "info": "Choose the layout direction for mobile carousel cards"
+    },
+    {
+      "type": "header",
+      "content": "Navigation Buttons"
+    },
+    {
+      "type": "color",
+      "id": "prev_button_bg",
+      "label": "Previous Button Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "prev_button_color",
+      "label": "Previous Button Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "prev_button_border",
+      "label": "Previous Button Border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "next_button_bg",
+      "label": "Next Button Background",
+      "default": "#EF4A65"
+    },
+    {
+      "type": "color",
+      "id": "next_button_color",
+      "label": "Next Button Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "next_button_border",
+      "label": "Next Button Border",
+      "default": "#EF4A65"
+    },
+    {
+      "type": "header",
+      "content": "Step Colors"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Number Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "number_border_color",
+      "label": "Number Border Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "number_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Number Border Width",
+      "default": 2
+    },
+    {
+      "type": "select",
+      "id": "number_border_style",
+      "label": "Number Border Style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "number_background_color",
+      "label": "Number Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "number_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Number Border Radius",
+      "default": 50,
+      "info": "0 = square, 50 = circle"
+    },
+    {
+      "type": "select",
+      "id": "number_font_weight",
+      "label": "Number Font Weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light (300)"
+        },
+        {
+          "value": "400",
+          "label": "Normal (400)"
+        },
+        {
+          "value": "500",
+          "label": "Medium (500)"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold (600)"
+        },
+        {
+          "value": "700",
+          "label": "Bold (700)"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold (800)"
+        },
+        {
+          "value": "900",
+          "label": "Black (900)"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "step_title_color",
+      "label": "Step Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Card Styling"
+    },
+    {
+      "type": "color",
+      "id": "default_card_background",
+      "label": "Default Card Background",
+      "default": "#FFFFFF",
+      "info": "Default background color for all card content areas (can be overridden per step)"
+    },
+    {
+      "type": "color",
+      "id": "default_image_background",
+      "label": "Default Image Background",
+      "default": "#F5F5F5",
+      "info": "Default background color for all image areas (can be overridden per step)"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card Border Color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "select",
+      "id": "card_border_style",
+      "label": "Card Border Style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "dashed"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Border Width",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Accent Text Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "override_global_accent",
+      "label": "Override Global Accent Typography",
+      "default": false,
+      "info": "When enabled, use section-specific accent typography settings below. When disabled, use the global accent typography from Theme Settings > Typography > Accent Typography."
+    },
+    {
+      "type": "checkbox",
+      "id": "use_accent_gradient",
+      "label": "Use Accent Gradient",
+      "default": false,
+      "info": "Apply gradient effect to the accent text instead of solid color"
+    },
+    {
+      "type": "color_background",
+      "id": "accent_text_gradient",
+      "label": "Accent Text Gradient",
+      "default": "linear-gradient(45deg, #EF4A65, #FF6B9D)",
+      "info": "Choose a gradient for the accent text. This setting is only used when 'Use Accent Gradient' is enabled above."
+    },
+    {
+      "type": "header",
+      "content": "Section-Specific Accent Font Settings"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_family",
+      "label": "Section Accent Font Family",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Use Global Setting"
+        },
+        {
+          "value": "serif",
+          "label": "System Serif"
+        },
+        {
+          "value": "Georgia Pro",
+          "label": "Georgia Pro"
+        },
+        {
+          "value": "Bodoni Moda",
+          "label": "Bodoni Moda"
+        },
+        {
+          "value": "Instrument Serif",
+          "label": "Instrument Serif"
+        },
+        {
+          "value": "DM Serif Text",
+          "label": "DM Serif Text"
+        },
+        {
+          "value": "Nothing You Could Do",
+          "label": "Nothing You Could Do"
+        }
+      ],
+      "default": "inherit",
+      "info": "Choose a custom font family for the accent text (only used when Override Global Accent Typography is enabled)"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_style",
+      "label": "Accent Text Font Style",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "italic",
+          "label": "Italic"
+        }
+      ],
+      "default": "normal",
+      "info": "Choose the font style for the accent text"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_weight",
+      "label": "Accent Text Font Weight",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Default (Inherit)"
+        },
+        {
+          "value": "300",
+          "label": "Light (300)"
+        },
+        {
+          "value": "400",
+          "label": "Normal (400)"
+        },
+        {
+          "value": "500",
+          "label": "Medium (500)"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold (600)"
+        },
+        {
+          "value": "700",
+          "label": "Bold (700)"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold (800)"
+        },
+        {
+          "value": "900",
+          "label": "Black (900)"
+        }
+      ],
+      "default": "inherit",
+      "info": "Choose the font weight (boldness) for the accent text"
+    },
+    {
+      "type": "range",
+      "id": "accent_text_margin_left",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Accent Text Left Margin",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "step_image",
+          "label": "Step Image"
+        },
+        {
+          "type": "color",
+          "id": "image_background_color",
+          "label": "Image Background Color",
+          "default": "#F5F5F5",
+          "info": "Background color behind the step image. Leave empty to use section default."
+        },
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title",
+          "default": "Enter Step Here"
+        },
+        {
+          "type": "textarea",
+          "id": "step_description",
+          "label": "Step Description",
+          "default": "Add full step description here."
+        },
+        {
+          "type": "color",
+          "id": "content_background_color",
+          "label": "Content Background Color",
+          "default": "#FFFFFF",
+          "info": "Background color for the step content area. Leave empty to use section default."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Steps Results Section",
+      "settings": {
+        "title": "How",
+        "title_highlight": "It Works",
+        "subtitle": "Follow these simple steps to get started",
+        "background_type": "gradient",
+        "section_background_color": "#FFFFFF",
+        "section_background_gradient": "linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%)",
+        "accent_text_gradient": "linear-gradient(45deg, #EF4A65, #FF6B9D)",
+        "card_border_style": "dashed",
+        "card_border_width": 1,
+        "number_border_width": 2,
+        "number_border_style": "solid",
+        "number_background_color": "#FFFFFF",
+        "title_margin_bottom": 16,
+        "title_margin_bottom_tablet": 12,
+        "title_margin_bottom_mobile": 10,
+        "subtitle_margin_top": 0,
+        "subtitle_margin_bottom": 30,
+        "number_border_radius": 50,
+        "number_font_weight": "600",
+        "show_step_numbers": true,
+        "enable_mobile_carousel": false,
+        "mobile_image_layout": "compact",
+        "mobile_card_layout": "horizontal"
+      },
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "step_title": "Choose Your Product",
+            "step_description": "Browse our collection and select the perfect product for your needs."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_title": "Customize Options", 
+            "step_description": "Personalize your selection with available customization options."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_title": "Complete Purchase",
+            "step_description": "Secure checkout process with fast shipping to your door."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_title": "Track & Enjoy",
+            "step_description": "Track your order and enjoy your new purchase with our satisfaction guarantee."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_title": "Share Experience",
+            "step_description": "Share your experience and help others discover the quality and value we provide."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

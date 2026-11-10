@@ -1,0 +1,71 @@
+{{ 'custom-announcement-bar.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .announcement-bar-section-{{ section.id }} {
+    {% if section.settings.use_theme_colors %}
+      background: {{ settings.global_section_background_color }} !important;
+    {% else %}
+      background: {{ section.settings.background_color }} !important;
+    {% endif %}
+    background-image: none !important;
+  }
+  
+  .announcement-bar-section-{{ section.id }},
+  .announcement-bar-section-{{ section.id }} * {
+    color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.text_color }}{% endif %} !important;
+    font-size: {{ section.settings.font_size }}px;
+  }
+</style>
+
+<div class="announcement-bar-section announcement-bar-section-{{ section.id }}">
+  {{ section.settings.text }}
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_theme_colors",
+      "label": "Use Theme Colors",
+      "default": true,
+      "info": "Apply the global theme colors to this section (inverted)"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Announcement text",
+      "default": "<p>LIMITED TIME: SAVE UP TO 48%</p>"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar",
+      "category": "Promotional"
+    }
+  ]
+}
+{% endschema %} 

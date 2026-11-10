@@ -1,0 +1,143 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "order": [
+    "collection_grid_page_hDiTDB",
+    "banner",
+    "product-grid"
+  ],
+  "sections": {
+    "banner": {
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false
+      },
+      "type": "main-collection-banner"
+    },
+    "collection_grid_page_hDiTDB": {
+      "block_order": [
+        "collection_WrhcNq"
+      ],
+      "blocks": {
+        "collection_WrhcNq": {
+          "settings": {
+            "collection": "g-01-products"
+          },
+          "type": "collection"
+        }
+      },
+      "name": "Collection Grid",
+      "settings": {
+        "background_color": "#fafafa",
+        "badge_background": "#ffe9e7",
+        "badge_color": "#f93822",
+        "badge_gradient": false,
+        "badge_gradient_color": "#d7ed96",
+        "badge_radius": 2,
+        "card_background": "#ffffff",
+        "card_radius": 4,
+        "collection": "coffee-enhancer",
+        "collection_all_text": "Shop All",
+        "compare_price_color": "#9ca3af",
+        "dot_active_color": "#1d1d1d",
+        "dot_color": "#cccccc",
+        "dot_size": 10,
+        "enable_url_collection_detection": true,
+        "full_card_clickable": false,
+        "heading": "Featured Collection",
+        "heading_alignment": "center",
+        "heading_color": "#13341b",
+        "heading_size": 28,
+        "image_background": "#ffffff",
+        "image_fit": "contain",
+        "metadata_field_1": "",
+        "metadata_field_2": "",
+        "metadata_font_size": 12,
+        "metadata_label_1": "",
+        "metadata_label_2": "",
+        "metadata_label_color": "#506d52",
+        "metadata_label_weight": "normal",
+        "metadata_rating_color": "#506d52",
+        "metadata_value_color": "#506d52",
+        "mobile_filters_per_row": 3,
+        "nav_active_color": "#13341b",
+        "nav_border_color": "#cccccc",
+        "nav_text_color": "#cccccc",
+        "padding_bottom": 40,
+        "padding_top": 40,
+        "price_color": "#2e2e2e",
+        "price_size": 15,
+        "rating_number": "",
+        "rating_text_color": "#506d52",
+        "rating_text_weight": "normal",
+        "rating_value": 5,
+        "sale_badge_off_text": "",
+        "sale_badge_save_text": "",
+        "sale_badge_text": "",
+        "search_placeholder": "Search products...",
+        "show_all_collections": false,
+        "show_metadata_labels": false,
+        "show_navigation": true,
+        "show_percentage_off": false,
+        "show_product_metadata": true,
+        "show_rating": true,
+        "show_rating_text": true,
+        "show_sale_badge": false,
+        "show_search_bar": false,
+        "show_shop_all_tab": true,
+        "show_sorting": true,
+        "show_view_product": true,
+        "show_view_product_icon": true,
+        "sort_dropdown_bg": "#ffffff",
+        "sort_dropdown_border": "#cccccc",
+        "sort_dropdown_radius": 4,
+        "sort_dropdown_text": "#506d52",
+        "sort_label": "Sort by:",
+        "sort_label_color": "#506d52",
+        "star_color": "#506d52",
+        "star_size": 18,
+        "title_color": "#1d1d1d",
+        "use_product_rating": false,
+        "use_theme_colors": false,
+        "view_product_background": "#d7ed96",
+        "view_product_color": "#13341b",
+        "view_product_custom_svg": "",
+        "view_product_font_size": 14,
+        "view_product_icon_size": 16,
+        "view_product_icon_type": "bag",
+        "view_product_padding_y": 12,
+        "view_product_radius": 2,
+        "view_product_text": "View Product"
+      },
+      "type": "collection-grid-page"
+    },
+    "product-grid": {
+      "disabled": true,
+      "settings": {
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "filter_type": "horizontal",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "padding_bottom": 36,
+        "padding_top": 36,
+        "products_per_page": 16,
+        "quick_add": "none",
+        "show_rating": false,
+        "show_secondary_image": false,
+        "show_vendor": false
+      },
+      "type": "main-collection-product-grid"
+    }
+  }
+}

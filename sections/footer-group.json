@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "custom-footer",
+      "blocks": {
+        "menu_column_1": {
+          "type": "menu_column",
+          "settings": {
+            "heading": "Products",
+            "menu": ""
+          }
+        },
+        "menu_column_2": {
+          "type": "menu_column",
+          "settings": {
+            "heading": "Company",
+            "menu": ""
+          }
+        },
+        "custom_links_1": {
+          "type": "custom_links",
+          "settings": {
+            "heading": "Support",
+            "link_1_text": "Help Center",
+            "link_1_url": "/pages/help",
+            "link_2_text": "Track Your Order",
+            "link_2_url": "/account/login",
+            "link_3_text": "Contact Us",
+            "link_3_url": "/pages/contact",
+            "link_4_text": "FAQs",
+            "link_4_url": "/pages/faq",
+            "link_5_text": "Shipping Info",
+            "link_5_url": "/pages/shipping",
+            "link_6_text": "Returns",
+            "link_6_url": "/pages/returns"
+          }
+        },
+        "social_column_1": {
+          "type": "social_column",
+          "settings": {
+            "heading": "Follow Us"
+          }
+        }
+      },
+      "block_order": [
+        "menu_column_1",
+        "menu_column_2",
+        "custom_links_1",
+        "social_column_1"
+      ],
+      "settings": {
+        "use_theme_colors": true,
+        "show_newsletter": true,
+        "newsletter_title": "Subscribe to our emails",
+        "newsletter_subtitle": "Get the latest updates and special offers",
+        "newsletter_placeholder": "Enter your email address",
+        "newsletter_button_text": "Subscribe",
+        "show_brand_column": true,
+        "logo": "shopify://shop_images/Frame_38_8.png",
+        "logo_width": 150,
+        "brand_name": "",
+        "logo_description": "",
+        "brand_description": "",
+        "footer_columns": "4",
+        "show_footer_bottom": true,
+        "copyright_text": "",
+        "show_payment_icons": true,
+        "show_localization": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "show_social": true,
+        "show_copyright": true,
+        "newsletter_bg_color": "#fdffff",
+        "newsletter_text_color": "#333333",
+        "newsletter_button_color": "#007bff",
+        "footer_bg_color": "#181b1d",
+        "footer_text_color": "#b0b0b0",
+        "footer_heading_color": "#fdffff",
+        "footer_border_color": "#333333",
+        "footer_menu_color": "#b0b0b0",
+        "footer_menu_hover_color": "#ffffff",
+        "footer_divider_color": "#666666",
+        "localization_label_color": "#b0b0b0",
+        "footer_heading_size": 22,
+        "footer_text_size": 14,
+        "newsletter_title_size": 32,
+        "newsletter_subtitle_size": 16,
+        "copyright_text_size": 11,
+        "localization_label_size": 14
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

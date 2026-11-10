@@ -1,0 +1,337 @@
+<script>
+  function initUpsellOnCart() {
+        const parser = new DOMParser();
+
+        const formIdList = [
+          "cart-upsell-form-1",
+          "cart-upsell-form-2",
+          "cart-upsell-form-3",
+          "cart-upsell-form-4",
+          "cart-upsell-form-5",
+        ];
+
+        formIdList.forEach((_formId) => {
+          const form = document.getElementById(_formId);
+          if (form) {
+              // Setup variant selection
+              const selects = form.querySelectorAll('select[name^="options["]');
+              const hiddenIdInput = form.querySelector('input[name="id"]');
+              const productJson = JSON.parse(form.querySelector("#upsell-product-json").text);
+
+              const updateVariantId = () => {
+                  let selectedOptions = [];
+                  selects.forEach(select => {
+                    selectedOptions.push(select.value);
+                  });
+                  
+                  if (productJson.variants) {
+                  const selectedVariant = productJson.variants.find(variant => {
+                      return selectedOptions.every((option, index) => {
+                      return variant.options[index] === option;
+                      });
+                  });
+
+                  if (selectedVariant) {
+                      hiddenIdInput.value = selectedVariant.id;
+                      // Update button text with new variant price
+                      const buttonTextElement = form.querySelector('.upsell-button-text');
+                      if (buttonTextElement && selectedVariant.price) {
+                      // Use Shopify's money format for the current market/currency
+                      const currentCurrency = '{{ current_currency }}';
+                      
+                      // Convert price from cents to currency units
+                      const price = selectedVariant.price / 100;
+                      
+                      // Format based on current currency
+                      let formattedPrice;
+                      if (currentCurrency === 'USD') {
+                          // US format: $9.95
+                          formattedPrice = '$' + price.toFixed(2);
+                      } else if (currentCurrency === 'EUR') {
+                          // European format: €9,95
+                          formattedPrice = '€' + price.toFixed(2).replace('.', ',');
+                      } else if (currentCurrency === 'GBP') {
+                          // British format: £9.95
+                          formattedPrice = '£' + price.toFixed(2);
+                      } else if (currentCurrency === 'CAD') {
+                          // Canadian format: $9.95 CAD
+                          formattedPrice = '$' + price.toFixed(2) + ' CAD';
+                      } else {
+                          // Generic fallback: CURRENCY 9.95
+                          formattedPrice = currentCurrency + ' ' + price.toFixed(2);
+                      }
+                      
+                      // Wrap price in span with price color
+                      buttonTextElement.innerHTML = '+<span class="upsell-price" style="color: {{ button_text_color | default: '#FFFFFF' }}">' + formattedPrice + '</span>';
+                      }
+                  }
+                  }
+              };
+
+              selects.forEach(select => {
+                  select.addEventListener('change', updateVariantId);
+              });
+              
+              // Initialize
+              if (selects.length > 0) {
+                  updateVariantId();
+              }
+          }
+        });
+
+        const cartDrawerContainer = document.querySelector("cart-drawer");
+        const submitButtonList = document.querySelectorAll(
+          '.upsell-product-container button[name="upsell-add"]'
+        );
+
+        submitButtonList.forEach((submitButton) => {
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const form = submitButton.closest(".upsell-form");
+
+            const addButton = form.querySelector(`.upsell-add-button`);
+            const originalButtonText = addButton.querySelector(
+              ".upsell-button-text"
+            ).textContent;
+
+            // Show loading state - replace text with spinner
+            addButton.innerHTML = '<span class="button-spinner"></span>';
+            addButton.classList.add("is-loading");
+            addButton.disabled = true;
+
+            // Get the variant ID
+            const hiddenIdInput = form.querySelector('input[name="id"]');
+            const variantId = hiddenIdInput.value;
+
+            try {
+              // Add to cart using fetch API
+              fetch(`${window.routes.cart_add_url}.js`, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+                },
+                body: JSON.stringify({
+                  items: [
+                    {
+                      id: variantId,
+                      quantity: 1,
+                    },
+                  ],
+                }),
+              })
+                .then((response) => {
+                  if (!response.ok) {
+                    return response.json().then((errorData) => {
+                      throw new Error(
+                        `Error ${response.status}: ${
+                          errorData.description || response.statusText
+                        }`
+                      );
+                    });
+                  }
+                  return response.json();
+                })
+                .then((data) => {
+                  // Success - restore button content properly
+                  const successText = {{ upsell_success_text | json }};
+
+                  addButton.innerHTML =
+                    '<span class="upsell-button-text">' +
+                    (successText ?? originalButtonText) +
+                    "</span>";
+                  addButton.classList.remove("is-loading");
+                  addButton.classList.add("upsell-add-success");
+
+                  setTimeout(() => {
+                    addButton.innerHTML = '<span class="upsell-button-text">' +
+                    originalButtonText +
+                    "</span>";
+                  }, 2000);
+
+                  // Update cart count and drawer (existing logic here)
+                  if (typeof window.updateCartCount === "function") {
+                    window.updateCartCount();
+                  }
+                  if (typeof window.refreshCart === "function") {
+                    window.refreshCart();
+                  }
+                  document.dispatchEvent(new CustomEvent("cart:refresh"));
+                  document.dispatchEvent(new CustomEvent("cart:update"));
+                  if (
+                    typeof window.THEME !== "undefined" &&
+                    window.THEME.updateCartCount
+                  ) {
+                    window.THEME.updateCartCount();
+                  } else if (typeof window.refreshMiniCart === "function") {
+                    window.refreshMiniCart();
+                  }
+
+                  fetch(routes.cart_url + "?view=drawer")
+                    .then((response) => response.text())
+                    .then((html) => {
+                      const parsedCartHtml = parser.parseFromString(
+                        html,
+                        "text/html"
+                      );
+                      const newCartDrawer =
+                        parsedCartHtml.querySelector("#CartDrawer");
+                      if (cartDrawerContainer && newCartDrawer) {
+                        updateCartDrawer(cartDrawerContainer, newCartDrawer);
+                      }
+                    });
+
+                  // Reset button after 2 seconds
+                  setTimeout(() => {
+                    addButton.disabled = false;
+                    addButton.classList.remove("upsell-add-success");
+                  }, 2000);
+                })
+                .catch((error) => {
+                  console.error("Add to cart error:", error);
+                  addButton.innerHTML =
+                    '<span class="upsell-button-text">' +
+                    originalButtonText +
+                    "</span>";
+                  addButton.classList.remove("is-loading");
+                  addButton.classList.add("upsell-add-error");
+
+                  // Reset button after 2 seconds
+                  setTimeout(() => {
+                    addButton.disabled = false;
+                    addButton.classList.remove("upsell-add-error");
+                  }, 2000);
+                });
+            } catch (err) {
+              console.error("Synchronous error in form submission:", err);
+              addButton.innerHTML =
+                '<span class="upsell-button-text">' + originalButtonText + "</span>";
+              addButton.classList.remove("is-loading");
+              addButton.disabled = false;
+            }
+
+            return false; // Explicitly return false to be absolutely sure
+          });
+        });
+
+        const sliderContainer = document.querySelector('.upsell_slider');
+        if (!sliderContainer) return;
+
+        const slider = sliderContainer.querySelector('.upsell_block_container');
+        const dotsContainer = sliderContainer.querySelector('.dots-and-arrows');
+        const dots = dotsContainer.querySelectorAll('.slide_item');
+        const prevArrow = dotsContainer.querySelector('#slide-arrow-prev');
+        const nextArrow = dotsContainer.querySelector('#slide-arrow-next');
+        
+        if (!slider || !dotsContainer || !prevArrow || !nextArrow) return;
+
+        let slideWidth = 0;
+
+        const calculateSlideWidth = () => {
+          const firstSlide = slider.querySelector('.upsell-product-container');
+          if (firstSlide) {
+            slideWidth = firstSlide.offsetWidth;
+          }
+        };
+
+        const updateDots = () => {
+          calculateSlideWidth();
+          if (slideWidth === 0) return;
+
+          const activeIndex = Math.round(slider.scrollLeft / slideWidth);
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === activeIndex);
+          });
+        };
+
+        // Use Intersection Observer to run logic only when cart is visible
+        const observer = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+            calculateSlideWidth();
+            updateDots();
+          }
+        }, { threshold: 0.1 });
+
+        const cartDrawer = document.querySelector('cart-drawer');
+        if (cartDrawer) {
+          observer.observe(cartDrawer);
+        }
+
+        slider.addEventListener('scroll', updateDots);
+        window.addEventListener('resize', updateDots);
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            if (slideWidth === 0) calculateSlideWidth();
+            slider.scrollTo({
+              left: index * slideWidth,
+              behavior: 'smooth'
+            });
+          });
+        });
+
+        prevArrow.addEventListener('click', () => {
+          if (slideWidth === 0) calculateSlideWidth();
+          slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+        });
+
+        nextArrow.addEventListener('click', () => {
+          if (slideWidth === 0) calculateSlideWidth();
+          slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+        });
+
+        const slideItems = document.querySelectorAll(".slide_item");
+        // Optional function to update active dot styling
+        function updateActiveDot(activeSlide) {
+          slideItems.forEach((item) => {
+            if (parseInt(item.getAttribute("data-slide")) === activeSlide) {
+              item.classList.add("active");
+            } else {
+              item.classList.remove("active");
+            }
+          });
+        }
+
+        // Select the slider container
+        const upsellContainer = document.querySelector(".upsell_block_container");
+        if (!upsellContainer) return;
+        // Add click event to each dot
+        slideItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const slideIndex = parseInt(this.getAttribute("data-slide")) - 1;
+            // Calculate scroll position
+            const scrollPosition = slideIndex * slideWidth;
+            // Smooth scroll to the selected slide
+            sliderContainer.scrollTo({
+              left: scrollPosition,
+              behavior: "smooth",
+            });
+            // Optional: Update active dot styling
+            updateActiveDot(slideIndex + 1); // Convert back to 1-based for data-slide
+          });
+        });
+      }
+
+ 
+  function detectDiscountWrap() {
+    const container = document.querySelector('.cart-drawer .discount_price-container');
+    const discount = container?.querySelector('.discount_discount-value');
+    const price = container?.querySelector('.totals__total-value');
+
+    if (!container || !discount || !price) return;
+    const discountTop = discount.getBoundingClientRect().top;
+    const priceTop = price.getBoundingClientRect().top;
+    console.log(discountTop, priceTop);
+    if (discountTop + 5 < priceTop) {
+      container.classList.add('wrap');
+    } else {
+      container.classList.remove('wrap');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initUpsellOnCart();
+    detectDiscountWrap();
+  });
+</script>

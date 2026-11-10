@@ -1,0 +1,1087 @@
+{% comment %}
+  💡 Cart Drawer Structure & Organization
+
+  ➤ Each part of the cart drawer is rendered via separate snippets.
+    Example:
+      - {% render 'cart-header' %}             → file: snippets/cart-header.liquid
+      - {% render 'cart-items' %}              → file: snippets/cart-items.liquid
+      - {% render 'cart-discount-banner' %}    → file: snippets/cart-discount-banner.liquid
+      - {% render 'cart-social_proof_bar' %}   → file: snippets/cart-social_proof_bar.liquid
+      - {% render 'cart-drawer-upsell' %}      → file: snippets/cart-drawer-upsell.liquid
+
+  ➤ Cart-specific styles are centralized in a dedicated snippet.
+    Example:
+      - {% render 'cart-drawer_css' %} → file: snippets/cart-drawer_css.liquid
+
+    This file defines all dynamic CSS variables (colors, backgrounds, etc.)
+    and is injected inside a <style> tag to allow Liquid variables to be interpreted by Shopify.
+
+
+  ➤ Necessary script rendered via snippets
+      - {% render 'cart-drawer-script' %} → file: snippets/cart-drawer-script.liquid
+
+  🔁 Tip: Use consistent naming like `cart-nameOfBlock` for your snippets
+          to keep your cart components modular and easy to navigate.
+{% endcomment %}
+
+{{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+
+{% liquid
+  assign enabled_upsell_block = settings.use_upsell_block
+  assign upsell_carousel_mode = settings.upsell_carousel_mode | default: false
+
+  assign free_product_price = settings.product_free_amount | default: 0 | times: 100
+  assign free_shipping_price = settings.product_free_shipping | default: 0 | times: 100
+
+  if free_product_price > free_shipping_price and free_shipping_price > 0
+    assign shipping_protection_percent = 100 | times: free_shipping_price | divided_by: free_product_price
+    assign shipping_protection_pixel = 70 | times: free_shipping_price | divided_by: free_product_price
+  elsif free_shipping_price > free_product_price and free_product_price > 0
+    assign shipping_protection_percent = 100 | times: free_product_price | divided_by: free_shipping_price
+    assign shipping_protection_pixel = 70 | times: free_product_price | divided_by: free_shipping_price
+  endif
+%}
+
+{% render 'cart-drawer_style',
+  enabled_upsell_block: enabled_upsell_block,
+  upsell_carousel_mode: upsell_carousel_mode,
+  free_product_price: free_product_price,
+  free_shipping_price: free_shipping_price,
+  shipping_protection_percent: shipping_protection_percent,
+  shipping_protection_pixel: shipping_protection_pixel
+%}
+
+{% if settings.cart_customization_mode %}
+  <script src="{{ 'cart_customization_mode.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+{% render 'cart-drawer-script' %}
+
+<cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}{% if settings.cart_customization_mode %} customization-mode{% endif %}">
+  <div id="CartDrawer" class="gb-cart-drawer-lb cart-drawer">
+    <div id="CartDrawer-Overlay" class="cart-drawer__overlay"></div>
+    <div
+      class="drawer__inner gradient"
+      {{ block.shopify_attributes }}
+      role="dialog"
+      aria-modal="true"
+      aria-label="{{ 'sections.cart.title' | t }}"
+      tabindex="-1"
+      style="background: var(--cart-drawer-background-gradient); background-color: var(--cart-drawer-primary-background-color); color: var(--cart-drawer-primary-text-color);"
+    >
+      {%- if cart == empty -%}
+        {% render 'cart-empty' %}
+      {%- endif -%}
+      {% render 'cart-header' %}
+
+      {% comment %} Discount Banner - Start {% endcomment %}
+      {% if settings.show_discount_banner and cart != empty %}
+        {% render 'cart-discount-banner' %}
+      {% endif %}
+      {% comment %} Discount Banner - End {% endcomment %}
+
+      {% if settings.show_social_proof_bar and cart != empty %}
+        {% render 'cart-social_proof_bar' %}
+      {% endif %}
+
+      <cart-drawer-items
+        {% if cart == empty %}
+          class=" is-empty"
+        {% endif %}
+      >
+        <div class="scrollable-contents {% if upsell_carousel_mode %}upsell_slider{% endif %}">
+          <form
+            action="{{ routes.cart_url }}"
+            id="CartDrawer-Form"
+            class="cart__contents cart-drawer__form"
+            method="post"
+          >
+            {% if settings.product_free_show == true %}
+              <div class="free-product-progress-bar-main">
+                <div class="free-product-progress-bar-successfull">
+                  {% assign total_pending_value = free_shipping_price
+                    | minus: cart.total_price
+                    | money_without_trailing_zeros
+                  %}
+                  {% assign freeproduct = free_product_price | minus: cart.total_price | money_without_trailing_zeros %}
+                  {% assign custom_free_product_title = settings.product_free_custom_id_title
+                    | default: settings.product_free_id.title
+                  %}
+                  {% comment %} Custom progress bar text {% endcomment %}
+                  {% assign shipping_away_text = settings.shipping_away_text
+                    | replace: '[missingAmount]', total_pending_value
+                  %}
+                  {% assign free_product_away_text = settings.free_product_away_text
+                    | replace: '[freeProduct]', custom_free_product_title
+                    | replace: '[missingAmount]', freeproduct
+                    | escape
+                  %}
+                  {% assign shipping_earn_text = settings.shipping_earn_text %}
+                  {% assign free_product_earn_text = custom_free_product_title
+                    | replace: '[freeProduct]', settings.product_free_id.title
+                    | escape
+                  %}
+
+                  {% if freeproduct > total_pending_value %}
+                    {% if cart.total_price >= free_shipping_price and cart.total_price >= free_product_price %}
+                      {% comment %}🎉 Hooray!{% endcomment %}
+                      {%- if free_shipping_price > 0 %}
+                        {{ shipping_earn_text }}
+                      {%- else %}
+                        {{ free_product_earn_text }}
+                      {%- endif %}
+                    {% elsif freeproduct
+                      and cart.total_price <= free_product_price
+                      and cart.total_price >= free_shipping_price
+                    %}
+                      {{ free_product_away_text }}
+                    {% elsif free_shipping_price > 0 %}
+                      {{ shipping_away_text }}
+                    {% endif %}
+                  {% else %}
+                    {% if cart.total_price >= free_product_price and cart.total_price >= free_shipping_price %}
+                      {% comment %}🎉 Hooray!{% endcomment %}
+                      {% if free_shipping_price > 0 %}
+                        {{ shipping_earn_text }}
+                      {%- else %}
+                        {{ free_product_earn_text }}
+                      {%- endif %}
+                    {% elsif cart.total_price <= free_shipping_price
+                      and cart.total_price >= free_product_price
+                      and free_shipping_price > 0
+                    %}
+                      {{ shipping_away_text }}
+                    {% else %}
+                      {{ free_product_away_text }}
+                    {% endif %}
+                  {% endif %}
+                </div>
+                <div class="free-product-progress-bar">
+                  {% if free_product_price > free_shipping_price and free_shipping_price > 0 %}
+                    <progress id="file" value="{{ cart.total_price }}" max="{{ free_product_price }}"></progress>
+                  {% else %}
+                    {% if free_shipping_price > 0 %}
+                      <progress id="file" value="{{ cart.total_price }}" max="{{ free_shipping_price }}"></progress>
+                    {% else %}
+                      <progress id="file" value="{{ cart.total_price }}" max="{{free_product_price}}"></progress>
+                    {% endif %}
+                  {% endif %}
+                  {% comment %}{{settings.product_free_amount | money_without_trailing_zeros}}{% endcomment %}
+                  {% if free_shipping_price > 0 %}
+                    <div class="free-shipping-main {% if cart.total_price  >=  free_shipping_price %} free-shipping-main-color {% endif %} {% if free_product_price > free_shipping_price %}first-gift{% else %}second-gift{% endif %}">
+                      {% render 'free-shipping-icon' %}
+                      <span class="reward-name">Free Shipping</span>
+                    </div>
+                  {% endif %}
+                  {% if free_product_price > 0 %}
+                    <div class="free-gift-main {% if cart.total_price  >=  free_product_price %} free-gift-main-color {% endif %} {% if free_product_price > free_shipping_price %}second-gift{% else %}first-gift{% endif %}">
+                      {% render 'free-gift-icon' %}
+                      {% if settings.product_free_id != blank %}
+                        <span class="reward-name">{{ custom_free_product_title | escape }}</span>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+            <div id="CartDrawer-CartItems" class="drawer__contents js-contents">
+              {%- if cart != empty -%}
+                {% render 'cart-items' %}
+              {%- endif -%}
+
+              <p id="CartDrawer-LiveRegionText" class="visually-hidden" role="status"></p>
+              <p id="CartDrawer-LineItemStatus" class="visually-hidden" aria-hidden="true" role="status">
+                {{ 'accessibility.loading' | t }}
+              </p>
+            </div>
+
+            <div id="CartDrawer-CartErrors" role="alert"></div>
+          </form>
+          {%- if enabled_upsell_block -%}
+            {% liquid
+              assign upsell_block_description = settings.upsell_block_description
+
+              assign upsell_product_1 = settings.upsell_product_1
+              if upsell_product_1 != blank
+                assign upsell_product_1 = all_products[upsell_product_1]
+                assign product_form_id_1 = 'cart-upsell-form-1'
+              endif
+              assign upsell_product_2 = settings.upsell_product_2
+              if upsell_product_2 != blank
+                assign upsell_product_2 = all_products[upsell_product_2]
+                assign product_form_id_2 = 'cart-upsell-form-2'
+              endif
+              assign upsell_product_3 = settings.upsell_product_3
+              if upsell_product_3 != blank
+                assign upsell_product_3 = all_products[upsell_product_3]
+                assign product_form_id_3 = 'cart-upsell-form-3'
+              endif
+              assign upsell_product_4 = settings.upsell_product_4
+              if upsell_product_4 != blank
+                assign upsell_product_4 = all_products[upsell_product_4]
+                assign product_form_id_4 = 'cart-upsell-form-4'
+              endif
+              assign upsell_product_5 = settings.upsell_product_5
+              if upsell_product_5 != blank
+                assign upsell_product_5 = all_products[upsell_product_5]
+                assign product_form_id_5 = 'cart-upsell-form-5'
+              endif
+
+              assign show_best_seller_tag = settings.show_upsell_best_seller_tag
+              assign best_seller_text = settings.upsell_best_seller_text
+              assign best_seller_tag_color = settings.upsell_best_seller_tag_color
+              assign best_seller_tag_text_color = settings.upsell_best_seller_tag_text_color | default: '#FFFFFF'
+              assign card_bg_color = settings.upsell_card_background_color
+              assign product_image_bg_color = settings.upsell_product_image_background_color
+              assign image_border_radius = settings.upsell_image_border_radius | default: 4
+
+              assign title_color = settings.upsell_title_color | default: '#111111'
+              assign description_color = title_color
+              if settings.upsell_description_color
+                assign description_color = settings.upsell_description_color
+              endif
+
+              assign variant_bg_color = settings.upsell_variant_background_color
+              assign variant_border_color = settings.upsell_variant_border_color
+
+              assign button_text = settings.upsell_button_text | default: 'Add +'
+              assign button_text_color = settings.upsell_button_text_color | default: '#FFFFFF'
+              assign show_price = settings.upsell_show_price
+
+              assign card_border_radius = settings.upsell_card_border_radius
+              assign top_margin = settings.upsell_margin_top
+              assign bottom_margin = settings.upsell_margin_bottom
+
+              assign border_color = settings.upsell_border_color | default: 'transparent'
+              assign border_style = settings.upsell_border_style | default: 'none'
+              assign border_width = settings.upsell_border_width | default: 0
+
+              assign show_description = settings.show_upsell_description | default: false
+              assign description_text = settings.upsell_description_text
+            %}
+            <style>
+              .cart-drawer .upsell-product-container {
+                margin-top: {{ top_margin }}px;
+                margin-bottom: {{ bottom_margin }}px;
+                width: 100%;
+              }
+
+              .cart-drawer .upsell-product-card {
+                display: flex;
+                align-items: stretch;
+                background-color: {{ card_bg_color }};
+                padding: 0;
+                border-radius: {{ card_border_radius }}px;
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                min-height: 80px;
+                {% if border_style != 'none' and border_width > 0 %}
+                border: {{ border_width }}px {{ border_style }} {{ border_color }};
+                {% endif %}
+              }
+
+              .cart-drawer .upsell-best-seller-tag {
+                position: absolute;
+                top: 0px;
+                right: 6px;
+                background-color: {{ best_seller_tag_color }};
+                color: {{ best_seller_tag_text_color }};
+                padding: 2px 6px;
+                font-size: 11px;
+                border-radius: 0 0 3px 3px !important;
+                z-index: 1;
+                font-weight: var(--font-weight-bold) !important;
+                letter-spacing: var(--letter-spacing-body);
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 3px;
+              }
+
+              .cart-drawer .upsell-best-seller-tag svg {
+                  display: inline-block;
+                  vertical-align: middle;
+                  width: 10px;
+                  height: 10px;
+                  margin-right: 2px;
+                  fill: currentColor;
+                }
+
+                .cart-drawer .upsell-form {
+                  display: flex;
+                  width: 100%;
+                  height: 100%;
+                  align-items: stretch;
+                }
+
+                .cart-drawer .upsell-product-image-column {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 80px;
+                  min-width: 80px;
+                  max-width: 80px;
+                  height: 80px;
+                  min-height: 80px;
+                  max-height: 80px;
+                  z-index: 1;
+                  overflow: hidden;
+                  background-color: {{ product_image_bg_color }};
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border-radius: {{ image_border_radius }}px;
+                }
+
+                .cart-drawer .upsell-product-img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: {{ image_border_radius }}px;
+                }
+                 .cart-drawer .upsell-product-info-column {
+                  flex: 1;
+                  min-width: 0;
+                  margin-right: 2px;
+                  margin-left: 90px;
+                  padding: 8px 5px 8px 8px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-start;
+                  min-height: 0;
+                  max-width: calc(100% - 160px); /* Account for 80px image + 80px action column */
+                }
+
+                .cart-drawer .upsell-product-header {
+                  display: block;
+                  width: 100%;
+                  margin-bottom: 2px;
+                }
+
+                .cart-drawer .upsell-product-title {
+                  font-weight: var(--font-weight-bold) !important;
+                  font-size: 15px;
+                  line-height: 1.2;
+                  margin-bottom: 2px;
+                  letter-spacing: var(--letter-spacing-body);
+                  color: {{ title_color }} !important;
+                  width: 100%;
+                  overflow-wrap: break-word;
+                  word-wrap: break-word;
+                  -ms-word-break: break-word;
+                  word-break: break-word;
+                  max-width: calc(100% - 15px); /* Allow room for the badge */
+                }
+
+                .cart-drawer .upsell-product-description {
+                  font-size: 11px;
+                  line-height: 1.3;
+                  letter-spacing: var(--letter-spacing-body);
+                  margin-bottom: 4px;
+                  color: {{ description_color }} !important;
+                  opacity: 0.85;
+                  overflow: hidden;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 2;
+                  -webkit-box-orient: vertical;
+                }
+
+                .cart-drawer .upsell-variant-options {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 5px;
+                  margin-bottom: 0;
+                }
+
+                .cart-drawer .upsell-variant-select {
+                  font-size: 9px;
+                  padding: 1px 4px;
+                  border: 1px solid {{ variant_border_color }} !important;
+                  border-radius: 3px;
+                  background-color: {{ variant_bg_color }} !important;
+                  color: {{ variant_text_color }} !important;
+                  height: 18px;
+                  max-width: 100%;
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  appearance: none;
+                  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='{{ variant_text_color | url_encode }}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+                  background-repeat: no-repeat;
+                  background-position: right 4px center;
+                  padding-right: 18px;
+                  text-overflow: ellipsis;
+                  line-height: 1;
+                }
+
+                /* Remove default focus outline and add custom one */
+                .cart-drawer .upsell-variant-select:focus {
+                  outline: none;
+                  box-shadow: 0 0 0 1px {{ variant_border_color }};
+                  border-color: {{ variant_border_color }} !important;
+                }
+
+                /* Remove blue highlight on iOS */
+                .cart-drawer .upsell-variant-select,
+                .cart-drawer .upsell-variant-select:focus,
+                .cart-drawer .upsell-variant-select:hover,
+                .cart-drawer .upsell-variant-select:active {
+                  -webkit-tap-highlight-color: transparent;
+                }
+
+                .cart-drawer .upsell-product-action-column {
+                  display: flex;
+                  align-items: flex-start;
+                  justify-content: flex-end;
+                  flex-shrink: 0;
+                  width: 80px;
+                  padding: 18px 8px 8px 0 !important;
+                }
+
+                /* Desktop styling for action column - override padding */
+                @media (min-width: 767px) {
+                  .cart-drawer .upsell-product-action-column {
+                    padding: 30px 8px 8px 0 !important;
+                  }
+                }
+
+                /* Override mobile browser styling */
+                @media (max-width: 767px) {
+                  .cart-drawer .upsell-variant-select {
+                    font-size: 9px;
+                    color: {{ variant_text_color }} !important;
+                    background-color: {{ variant_bg_color }} !important;
+                    border-color: {{ variant_border_color }} !important;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='{{ variant_text_color | url_encode }}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+                    background-repeat: no-repeat !important;
+                    background-position: right 4px center !important;
+                    padding-right: 18px !important;
+                  }
+
+                  .cart-drawer .upsell-product-card {
+                    display: flex;
+                    min-height: 80px;
+                    position: relative;
+                  }
+
+                  .cart-drawer .upsell-form {
+                    display: flex;
+                    width: 100%;
+                    position: relative;
+                    padding-left: 80px; /* Make space for the absolutely positioned image */
+                  }
+
+                  .cart-drawer .upsell-best-seller-tag {
+                    z-index: 2; /* Ensure badge is above other elements */
+                    right: 8px; /* Adjust position as needed */
+                  }
+
+                  .cart-drawer .upsell-product-image-column {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 80px;
+                    height: 100%;
+                    z-index: 1;
+                  }
+
+                  .cart-drawer .upsell-product-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: {{ image_border_radius }}px;
+                  }
+
+                  /* Ensure info column takes full width minus the image width */
+                  .cart-drawer .upsell-product-info-column {
+                    width: 100%;
+                    padding-left: 8px;
+                    margin-left: 10px;
+                    padding-right: 75px; /* Make space for the larger action column */
+                    max-width: calc(100% - 10px); /* Override to fit mobile layout */
+                  }
+
+                  .cart-drawer .upsell-product-title {
+                    max-width: calc(100% - 50px); /* Allow room for the badge on mobile */
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                  }
+
+                  /* Position the action column */
+                  .cart-drawer .upsell-product-action-column {
+                    position: absolute;
+                    right: 8px;
+                    top: 10px;
+                    width: 70px;
+                    padding: 0;
+                    z-index: 1;
+                  }
+                }
+
+                /* Additional fixed-width layout for very small screens */
+                @media (max-width: 375px) {
+                  .cart-drawer .upsell-product-image-column {
+                    width: 70px;
+                  }
+
+                  .cart-drawer .upsell-form {
+                    padding-left: 70px;
+                  }
+
+                  .cart-drawer .upsell-product-info-column {
+                    padding-right: 100px;
+                    padding-left: 20px !important;
+                  }
+
+                  .cart-drawer .upsell-product-action-column {
+                    width: 75px;
+                  }
+                }
+
+                /* Smaller text sizing for very small viewport widths */
+                @media (max-width: 426px) {
+                  .cart-drawer .upsell-product-title {
+                    font-size: 14px !important;
+                    line-height: 1.15 !important;
+                  }
+
+                  .cart-drawer .upsell-product-description {
+                    font-size: 11px !important;
+                    line-height: 1.25 !important;
+                  }
+
+                  .cart-drawer .upsell-product-info-column {
+                    padding-left: 10px !important;
+                  }
+
+                  .cart-drawer .upsell-variant-select {
+                    height: 18px !important;
+                    font-size: 9px !important;
+                  }
+                }
+
+                .cart-drawer .upsell-product-action-column .upsell-add-button,
+                .cart-drawer button.upsell-add-button,
+                .cart-drawer .upsell-product-action-column [class^="upsell-add-button-"],
+                button[class^="upsell-add-button-"] {
+                  background-color: {% if settings.use_theme_colors %}{{ settings.global_section_button_color | default: settings.global_section_accent_1_color }}{% else %}{{ settings.upsell_button_bg_color | default: '#000000' }}{% endif %} !important;
+                  color: {% if settings.use_theme_colors %}{{ settings.global_section_button_text_color | default: '#ffffff' }}{% else %}{{ settings.upsell_button_text_color | default: '#ffffff' }}{% endif %} !important;
+                  border: none !important;
+                  border-radius: {{ settings.upsell_button_border_radius | default: 2 }}px !important;
+                  padding: 0 6px !important;
+                  font-size: 12px !important;
+                  font-weight: var(--font-weight-semibold);
+                  cursor: pointer !important;
+                  transition: all 0.2s !important;
+                  width: fit-content !important;
+                  text-align: center !important;
+                  letter-spacing: var(--letter-spacing-body) !important;
+                  height: 22px !important;
+                  line-height: 22px !important;
+                  white-space: nowrap !important;
+                  display: flex !important;
+                  align-items: center !important;
+                  justify-content: center !important;
+                }
+
+                .cart-drawer .upsell-product-action-column .upsell-add-button:hover,
+                .cart-drawer button.upsell-add-button:hover,
+                .upsell-product-action-column [class^="upsell-add-button-"]:hover,
+                .cart-drawer button[class^="upsell-add-button-"]:hover {
+                  background-color: {% if settings.use_theme_colors %}{{ settings.global_section_button_color | default: settings.global_section_accent_1_color | color_darken: 5 }}{% else %}{{ settings.upsell_button_bg_color | default: '#000000' | color_darken: 5 }}{% endif %} !important;
+                  opacity: 0.9 !important;
+                }
+
+                /* Override for upsell button text specifically */
+                .cart-drawer .upsell-button-text,
+                .cart-drawer button[class^="upsell-add-button-"] .upsell-button-text,
+                .cart-drawer .upsell-add-button .upsell-button-text,
+                .upsell-product-action-column .upsell-button-text {
+                  color: {% if settings.use_theme_colors %}{{ settings.global_section_button_text_color | default: '#ffffff' }}{% else %}{{ settings.upsell_button_text_color | default: '#ffffff' }}{% endif %} !important;
+                }
+
+                /* Override for upsell price within button */
+                .cart-drawer .upsell-price,
+                .cart-drawer button[class^="upsell-add-button-"] .upsell-price,
+                .cart-drawer .upsell-add-button .upsell-price,
+                .upsell-product-action-column .upsell-price {
+                  color: {% if settings.use_theme_colors %}{{ settings.global_section_button_text_color | default: '#ffffff' }}{% else %}{{ settings.upsell_button_text_color | default: '#ffffff' }}{% endif %} !important;
+                }
+
+                .cart-drawer .upsell-add-success {
+                  background-color: #4CAF50 !important;
+                  animation: pulse-success 0.5s;
+                }
+
+                .cart-drawer .upsell-add-error {
+                  background-color: #f44336 !important;
+                  animation: pulse-error 0.5s;
+                }
+
+                .upsell-block-description, .upsell-product-container {
+                  margin-bottom: 4px;
+                  padding: 2px 15px;
+                  text-align: left;
+                  font-size: 14px;
+                  font-weight: var(--font-weight-semibold) !important;
+                }
+
+                @media screen and (max-width: 749px) {
+                  .upsell-block-description {
+                    padding-bottom: 0px;
+                    padding: 0px 15px;
+                  }
+                }
+
+                .upsell_slider {
+                  width: 100%;
+                  overflow-x: hidden;
+                }
+
+                .upsell_slider .dots-and-arrows {
+                  width: 100%;
+                  overflow-x: hidden;
+                  text-align: center;
+                }
+
+                .upsell_slider .upsell_block_container {
+                  display: flex;
+                  text-align: center;
+                  overflow-x: auto;
+                  scroll-snap-type: x mandatory;
+                  scroll-behavior: smooth;
+                  -webkit-overflow-scrolling: touch;
+                }
+                .upsell_block_container::-webkit-scrollbar {
+                  display: none;
+                }
+
+                .upsell_slider .upsell_block_container > div.upsell-product-container {
+                  scroll-snap-align: start;
+                  flex-shrink: 0;
+                  margin-top: {{ top_margin }}px;
+                  margin-bottom: {{ bottom_margin }}px;
+                  margin-right: 0px;
+                  transform-origin: center center;
+                  transform: scale(1);
+                  transition: transform 0.5s;
+                  position: relative;
+
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-size: 100px;
+                }
+
+                .upsell_slider .slide_item {
+                  display: inline-flex;
+                  margin-left: 4px;
+                  margin-right: 4px;
+                  width: 8px;
+                  height: 8px;
+                  background: #d7d7d7;
+                  border-radius: 50%;
+                  text-decoration: none;
+                  align-items: center;
+                  justify-content: center;
+                  position: relative;
+                  cursor: pointer;
+                }
+                .upsell_slider .slide_item.active {
+                  background: #333;
+                }
+
+                .is-empty .upsell_block_container, .is-empty .upsell-block-description, .is-empty  .upsell_slider > span.slide_item, .is-empty .dots-and-arrows {
+                  display: none !important;
+                }
+            </style>
+
+            {%- if upsell_block_description != '' -%}
+              <div class="upsell-block-description">
+                {{ upsell_block_description }}
+              </div>
+            {%- endif -%}
+            <div class="upsell_block_container">
+              {%- if upsell_product_1 != blank -%}
+                {% render 'cart-drawer-upsell',
+                  block_id: 1,
+                  product_form_id: product_form_id_1,
+                  upsell_product: upsell_product_1,
+                  show_description: show_description,
+                  description_text: description_text,
+                  upsell_button_text: button_text,
+                  button_text_color: button_text_color,
+                  upsell_custom_bestseller_svg: settings.upsell_custom_bestseller_svg,
+                  title_color: title_color,
+                  description_color: description_color,
+                  show_best_seller_tag: show_best_seller_tag,
+                  best_seller_text: best_seller_text,
+                  show_price: show_price
+                %}
+              {%- endif -%}
+              {%- if upsell_product_2 != blank -%}
+                {% render 'cart-drawer-upsell',
+                  block_id: 2,
+                  product_form_id: product_form_id_2,
+                  upsell_product: upsell_product_2,
+                  show_description: show_description,
+                  description_text: description_text,
+                  upsell_button_text: button_text,
+                  button_text_color: button_text_color,
+                  upsell_custom_bestseller_svg: settings.upsell_custom_bestseller_svg,
+                  title_color: title_color,
+                  description_color: description_color,
+                  show_best_seller_tag: show_best_seller_tag,
+                  best_seller_text: best_seller_text,
+                  show_price: show_price
+                %}
+              {%- endif -%}
+              {%- if upsell_product_3 != blank -%}
+                {% render 'cart-drawer-upsell',
+                  block_id: 3,
+                  product_form_id: product_form_id_3,
+                  upsell_product: upsell_product_3,
+                  show_description: show_description,
+                  description_text: description_text,
+                  upsell_button_text: button_text,
+                  button_text_color: button_text_color,
+                  upsell_custom_bestseller_svg: settings.upsell_custom_bestseller_svg,
+                  title_color: title_color,
+                  description_color: description_color,
+                  show_best_seller_tag: show_best_seller_tag,
+                  best_seller_text: best_seller_text,
+                  show_price: show_price
+                %}
+              {%- endif -%}
+              {%- if upsell_product_4 != blank -%}
+                {% render 'cart-drawer-upsell',
+                  block_id: 4,
+                  product_form_id: product_form_id_4,
+                  upsell_product: upsell_product_4,
+                  show_description: show_description,
+                  description_text: description_text,
+                  upsell_button_text: button_text,
+                  button_text_color: button_text_color,
+                  upsell_custom_bestseller_svg: settings.upsell_custom_bestseller_svg,
+                  title_color: title_color,
+                  description_color: description_color,
+                  show_best_seller_tag: show_best_seller_tag,
+                  best_seller_text: best_seller_text,
+                  show_price: show_price
+                %}
+              {%- endif -%}
+              {%- if upsell_product_5 != blank -%}
+                {% render 'cart-drawer-upsell',
+                  block_id: 5,
+                  product_form_id: product_form_id_5,
+                  upsell_product: upsell_product_5,
+                  show_description: show_description,
+                  description_text: description_text,
+                  upsell_button_text: button_text,
+                  button_text_color: button_text_color,
+                  upsell_custom_bestseller_svg: settings.upsell_custom_bestseller_svg,
+                  title_color: title_color,
+                  description_color: description_color,
+                  show_best_seller_tag: show_best_seller_tag,
+                  best_seller_text: best_seller_text,
+                  show_price: show_price
+                %}
+              {%- endif -%}
+            </div>
+            {%- if upsell_carousel_mode -%}
+              <div class="dots-and-arrows">
+                <button id="slide-arrow-prev" class="slide-arrow prev">
+                  <svg viewBox="0 0 20 20">
+                    <path d="M14 5l-5 5 5 5-1 2-7-7 7-7z"/>
+                  </svg>
+                </button>
+                {%- if upsell_product_1 != blank -%}
+                  <span class="slide_item active" data-slide="1"></span>
+                {%- endif -%}
+                {%- if upsell_product_2 != blank -%}
+                  <span class="slide_item" data-slide="2"></span>
+                {%- endif -%}
+                {%- if upsell_product_3 != blank -%}
+                  <span class="slide_item" data-slide="3"></span>
+                {%- endif -%}
+                {%- if upsell_product_4 != blank -%}
+                  <span class="slide_item" data-slide="4"></span>
+                {%- endif -%}
+                {%- if upsell_product_5 != blank -%}
+                  <span class="slide_item" data-slide="5"></span>
+                {%- endif -%}
+                <button id="slide-arrow-next" class="slide-arrow next">
+                  <svg viewBox="0 0 20 20">
+                    <path d="M6 15l5-5-5-5 1-2 7 7-7 7z"/>
+                  </svg>
+                </button>
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+      </cart-drawer-items>
+
+      <div class="drawer__footer">
+        {%- if settings.show_cart_note -%}
+          <details id="Details-CartDrawer">
+            <summary>
+              <span class="summary__title">
+                {{ 'sections.cart.note' | t }}
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
+            </summary>
+            <cart-note class="cart__note field">
+              <label class="visually-hidden" for="CartDrawer-Note">{{ 'sections.cart.note' | t }}</label>
+              <textarea
+                id="CartDrawer-Note"
+                class="text-area text-area--resize-vertical field__input"
+                name="note"
+                placeholder="{{ 'sections.cart.note' | t }}"
+              >{{ cart.note }}</textarea>
+            </cart-note>
+          </details>
+        {%- endif -%}
+
+        <!-- Start blocks -->
+        <!-- Subtotals -->
+
+        <div class="cart-drawer__footer" style="display:none;" {{ block.shopify_attributes }}>
+          <div>
+            {%- if cart.cart_level_discount_applications.size > 0 -%}
+              <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                {%- for discount in cart.cart_level_discount_applications -%}
+                  <li class="discounts__discount discounts__discount--end">
+                    {{- 'icon-discount.svg' | inline_asset_content -}}
+                    {{ discount.title | escape }}
+                    (-{{ discount.total_allocated_amount | money }})
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+
+          <div class="totals" role="status">
+            <h2 class="totals__total">
+              <p class="gb-totals-total-value" style="display:none;">{{ cart.total_price }}</p>
+              {{ 'sections.cart.estimated_total' | t }}
+            </h2>
+
+            <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+          </div>
+
+          <small class="tax-note caption-large rte">
+            {%- if cart.duties_included and cart.taxes_included -%}
+              {%- if shop.shipping_policy.body == blank -%}
+                {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
+              {%- else -%}
+                {{
+                  'sections.cart.duties_and_taxes_included_shipping_at_checkout_with_policy_html'
+                  | t: link: shop.shipping_policy.url
+                }}
+              {%- endif -%}
+            {%- elsif cart.duties_included == false and cart.taxes_included -%}
+              {%- if shop.shipping_policy.body == blank -%}
+                {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+              {%- else -%}
+                {{
+                  'sections.cart.taxes_included_shipping_at_checkout_with_policy_html'
+                  | t: link: shop.shipping_policy.url
+                }}
+              {%- endif -%}
+            {%- elsif cart.duties_included and cart.taxes_included == false -%}
+              {%- if shop.shipping_policy.body == blank -%}
+                {{ 'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+              {%- else -%}
+                {{
+                  'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                  | t: link: shop.shipping_policy.url
+                }}
+              {%- endif -%}
+            {%- elsif cart.duties_included == false and cart.taxes_included == false -%}
+              {%- if shop.shipping_policy.body == blank -%}
+                {{ 'sections.cart.taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+              {%- else -%}
+                {{
+                  'sections.cart.taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                  | t: link: shop.shipping_policy.url
+                }}
+              {%- endif -%}
+            {%- endif -%}
+          </small>
+        </div>
+
+        {% capture get_shipping_pro_id %}
+          {% assign found = false %}
+          {%- for item in cart.items -%}
+            {% if item.id == settings.product_shipping_protection.selected_or_first_available_variant.id %}
+              {% assign found = true %}
+              checked
+              {% break %}
+            {% endif %}
+          {%- endfor -%}
+          {% if found == false %}
+            unchecked
+          {% endif %}
+        {% endcapture %}
+        {% if settings.show_shipping_protection %}
+          <div class="gb-shipping-protection">
+            <div class="gb-shipping-protection-icon">
+              {% if settings.cart_drawer_sp_icon != blank -%}
+                <img
+                  src="{{ settings.cart_drawer_sp_icon | image_url: width: 46 }}"
+                  alt="{{ settings.cart_drawer_sp_heading | default: 'Shipping Protection' | escape }}"
+                  width="46"
+                  height="46"
+                >
+              {% else %}
+                <svg
+                  width="46"
+                  height="46"
+                  viewBox="0 0 46 46"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect width="46" height="46" fill="url(#pattern0_1_81)"/>
+                  <defs>
+                  <pattern id="pattern0_1_81" patternContentUnits="objectBoundingBox" width="1" height="1">
+                  <use xlink:href="#image0_1_81" transform="scale(0.00195312)"/>
+                  </pattern>
+                  <image id="image0_1_81" width="512" height="512" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                  </defs>
+                </svg>
+              {% endif %}
+            </div>
+            <div class="gb-shipping-protection-icontext">
+              <h2>
+                {{ settings.cart_drawer_sp_heading | default: 'Shipping Protection' | escape }}
+                <span>
+                  {{- settings.product_shipping_protection.selected_or_first_available_variant.price | money -}}
+                </span>
+              </h2>
+              <p>
+                {{
+                  settings.cart_drawer_sp_text
+                  | default: 'Protect your order from damage, loss, or theft during shipping'
+                  | escape
+                }}
+              </p>
+            </div>
+            <div class="gb-shipping-protection-button">
+              <label class="switch {{ get_shipping_pro_id }}">
+                <input type="checkbox" {{ get_shipping_pro_id }}>
+                <span class="slider round"></span>
+                <div class="spin-animation border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600">
+                  <span></span>
+                </div>
+                <div class="complete-check">
+                  <svg fill="#fff" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1743.858 267.012 710.747 1300.124 176.005 765.382 0 941.387l710.747 710.871 1209.24-1209.116z" fill-rule="evenodd"/>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </div>
+        {% endif %}
+        <!-- CTAs -->
+        <div
+          class="totals gb-discounts-cart-values"
+          role="status"
+          style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 5px;"
+        >
+          <div class="totals__total">
+            <span class="total_count">
+              {{ 'sections.cart.items_total' | t: item_count: cart.item_count }}
+            </span>
+          </div>
+          <div class="discount_price-container">
+            {% if cart.total_discount != 0 %}
+              <div class="discount_discount-value" style="margin-left: 8px;">
+                {% if total_discount_msg != '' %}
+                  <span class="discount_discount-label">{{ total_discount_msg }}</span>
+                {% endif %}
+                <span style="font-weight: var(--font-weight-regular);">-{{ cart.total_discount | money }}</span>
+              </div>
+            {% endif %}
+            {%- liquid
+              assign cart_total_compare_at_price = 0
+              for item_loop_var in cart.items
+                assign item_price_for_calc = item_loop_var.variant.price
+                assign item_display_price_before_any_discount = item_price_for_calc
+                if item_loop_var.variant.compare_at_price and item_loop_var.variant.compare_at_price > item_price_for_calc
+                  assign item_display_price_before_any_discount = item_loop_var.variant.compare_at_price
+                endif
+                assign line_total_compare_price = item_display_price_before_any_discount | times: item_loop_var.quantity
+                assign cart_total_compare_at_price = cart_total_compare_at_price | plus: line_total_compare_price
+              endfor
+            -%}
+            <div style="display: flex; align-items: baseline;">
+              {% if cart_total_compare_at_price > cart.total_price %}
+                <s
+                  class="cart-item__old-price product-option"
+                  style="margin-right: 3px; font-size: 14px; color: currentColor; opacity: 0.7;"
+                >
+                  {{ cart_total_compare_at_price | money }}
+                </s>
+              {% endif %}
+
+              <div class="totals__total-value">
+                {{ cart.total_price | money }}
+              </div>
+            </div>
+          </div>
+          <p class="gb-totals-total-value" style="display:none;">{{ cart.total_price }}</p>
+        </div>
+        <div class="cart__ctas" {{ block.shopify_attributes }}>
+          <button
+            type="submit"
+            id="CartDrawer-Checkout"
+            class="cart__checkout-button button"
+            name="checkout"
+            form="CartDrawer-Form"
+            {% if cart == empty %}
+              disabled
+            {% endif %}
+          >
+            <svg
+              class="icon icon-lock"
+              aria-hidden="true"
+              focusable="false"
+              role="presentation"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span class="button-text">
+              {{- settings.cart_drawer_checkout_button_label | default: 'SECURE CHECKOUT' | escape -}}
+            </span>
+          </button>
+
+          {%- if settings.show_cart_drawer_payment_icons -%}
+            <div class="cart-drawer-payment-icons">
+              {% render 'payment-icons' %}
+            </div>
+          {%- endif -%}
+        </div>
+        {% if settings.show_money_back_guarantee != false %}
+          {% render 'cart-money_back_guarantee' %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</cart-drawer>

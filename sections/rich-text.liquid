@@ -1,0 +1,608 @@
+{%- style -%}
+  .rich-text-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-left: {{ section.settings.padding_horizontal }}px;
+    padding-right: {{ section.settings.padding_horizontal }}px;
+    text-align: {{ section.settings.text_alignment }};
+    background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.section_bg_color }}{% endif %};
+    {% if section.settings.section_border_radius > 0 %}
+      border-radius: {{ section.settings.section_border_radius }}px;
+    {% endif %}
+  }
+
+  .rich-text-section-{{ section.id }} .rich-text-title {
+    color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.title_color }}{% endif %};
+    font-family: var(--font-heading-family) !important;
+    font-weight: var(--font-weight-bold) !important;
+    letter-spacing: var(--letter-spacing-heading) !important;
+    font-size: {{ section.settings.title_font_size }}px;
+    line-height: {{ section.settings.title_line_height }};
+    margin-bottom: {{ section.settings.title_margin_bottom }}px;
+  }
+
+  .rich-text-section-{{ section.id }} .rich-text-title .accent {
+    {% if section.settings.use_accent_gradient %}
+      background: linear-gradient({{ section.settings.accent_gradient_angle }}deg, {{ section.settings.accent_gradient_start }}, {{ section.settings.accent_gradient_end }});
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+    {% elsif section.settings.use_theme_colors %}
+      color: {{ settings.global_section_accent_1_color | default: '#ef4a65' }};
+    {% else %}
+      color: {{ section.settings.accent_color | default: '#ef4a65' }};
+    {% endif %}
+    display: inline-block;
+  }
+
+  .rich-text-section-{{ section.id }} .rich-text-subtitle {
+    color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.subtitle_color }}{% endif %};
+    font-size: {{ section.settings.subtitle_font_size }}px;
+    line-height: {{ section.settings.subtitle_line_height }};
+    letter-spacing: var(--letter-spacing-body);
+    margin-bottom: {{ section.settings.subtitle_margin_bottom }}px;
+    max-width: {{ section.settings.subtitle_max_width }}px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rich-text-section-{{ section.id }} .rich-text-subtitle p {
+    margin: 0 0 1rem 0;
+  }
+
+  .rich-text-section-{{ section.id }} .rich-text-subtitle p:last-child {
+    margin-bottom: 0;
+  }
+
+  .rich-text-section-{{ section.id }} .rich-text-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-top: {{ section.settings.button_margin_top }}px;
+    {% if settings.enable_global_button_styling and section.settings.use_global_button_styling %}
+      /* Use Global Button Styling System */
+      padding: var(--global-button-padding-y, 12px) var(--global-button-padding-x, 24px);
+      font-size: var(--global-button-font-size, 14px);
+      font-weight: var(--global-button-font-weight, 700);
+      letter-spacing: var(--global-button-letter-spacing, 1px);
+      text-transform: var(--global-button-text-transform, none);
+      background-color: var(--global-button-bg-color);
+      color: var(--global-button-text-color);
+      border: var(--global-button-border-width, 0px) solid var(--global-button-border-color, transparent);
+      border-radius: var(--global-button-radius, 4px);
+      min-width: 120px;
+    {% else %}
+      /* Use Custom Button Styling */
+      padding: {{ section.settings.button_padding_vertical }}px {{ section.settings.button_padding_horizontal }}px;
+      background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.button_bg_color }}{% endif %};
+      color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.button_text_color }}{% endif %};
+      font-weight: var(--font-weight-bold);
+      letter-spacing: var(--letter-spacing-body);
+      text-transform: none;
+      min-width: 120px;
+      font-size: {{ section.settings.button_font_size }}px;
+      border-radius: {{ section.settings.button_border_radius }}px;
+      {% if section.settings.button_border_width > 0 %}
+        border: {{ section.settings.button_border_width }}px solid {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.button_border_color }}{% endif %} !important;
+      {% else %}
+        border: none !important;
+      {% endif %}
+    {% endif %}
+  }
+
+  .rich-text-section-{{ section.id }} .rich-text-button:hover {
+    {% if settings.enable_global_button_styling and section.settings.use_global_button_styling %}
+      /* Use Global Button Hover Styling */
+      background-color: var(--global-button-hover-bg-color);
+      color: var(--global-button-hover-text-color);
+      border-color: var(--global-button-hover-border-color, var(--global-button-border-color, transparent));
+    {% else %}
+      /* Use Custom Button Hover Styling */
+      {% if section.settings.use_theme_colors %}
+        background-color: {{ settings.global_section_accent_2_color | default: settings.global_section_text_color }};
+      {% else %}
+        background-color: {{ section.settings.button_hover_bg_color }};
+        color: {{ section.settings.button_hover_text_color }};
+      {% endif %}
+    {% endif %}
+    transform: translateY(-2px);
+  }
+
+  /* Mobile Responsive */
+  @media screen and (max-width: 768px) {
+    .rich-text-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+      text-align: {{ section.settings.mobile_text_alignment }};
+    }
+
+    .rich-text-section-{{ section.id }} .rich-text-title {
+      font-size: {{ section.settings.title_font_size_mobile }}px;
+      margin-bottom: {{ section.settings.title_margin_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    .rich-text-section-{{ section.id }} .rich-text-subtitle {
+      font-size: {{ section.settings.subtitle_font_size_mobile }}px;
+      margin-bottom: {{ section.settings.subtitle_margin_bottom | times: 0.75 | round: 0 }}px;
+      max-width: 100%;
+    }
+
+    .rich-text-section-{{ section.id }} .rich-text-button {
+      margin-top: {{ section.settings.button_margin_top | times: 0.75 | round: 0 }}px;
+      {% if settings.enable_global_button_styling and section.settings.use_global_button_styling %}
+        /* Global button styling handles mobile responsiveness */
+        font-size: var(--global-button-font-size-mobile, var(--global-button-font-size, 14px));
+        padding: var(--global-button-padding-y-mobile, var(--global-button-padding-y, 12px)) var(--global-button-padding-x-mobile, var(--global-button-padding-x, 24px));
+      {% else %}
+        /* Custom mobile styling */
+        font-size: {{ section.settings.button_font_size_mobile }}px;
+        padding: {{ section.settings.button_padding_vertical | times: 0.85 | round: 0 }}px {{ section.settings.button_padding_horizontal | times: 0.85 | round: 0 }}px;
+      {% endif %}
+    }
+  }
+{%- endstyle -%}
+
+<div class="rich-text-section-{{ section.id }}">
+  <div class="page-width">
+    {% if section.settings.title != blank or section.settings.accent_text != blank %}
+      <h2 class="rich-text-title">
+        {% if section.settings.title != blank %}{{ section.settings.title }}{% endif %}
+        {% if section.settings.accent_text != blank %}
+          <span class="accent">{{ section.settings.accent_text }}</span>
+        {% endif %}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.subtitle != blank %}
+      <div class="rich-text-subtitle rte">
+        {{ section.settings.subtitle }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.button_text != blank %}
+      <div class="rich-text-button-wrapper">
+        <a href="{{ section.settings.button_link | default: '#' }}" class="rich-text-button"
+           {% if section.settings.button_open_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rich Text",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_theme_colors",
+      "label": "Use Theme Colors",
+      "default": true,
+      "info": "Apply the global theme colors to this section"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Rich Text Section"
+    },
+    {
+      "type": "text",
+      "id": "accent_text",
+      "label": "Accent Text",
+      "info": "Optional accent text that will be styled differently"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Add your rich text content here. You can use <strong>bold</strong>, <em>italic</em>, and other formatting.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_global_button_styling",
+      "label": "Use Global Button Styling",
+      "default": true,
+      "info": "When enabled, button will use theme's global button styling. When disabled, use custom settings below."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_open_new_tab",
+      "label": "Open link in new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Layout & Spacing"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Desktop Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_alignment",
+      "label": "Mobile Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal Padding",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Title Styling"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 16,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop Title Size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "min": 14,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile Title Size",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "title_line_height",
+      "min": 0.8,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Title Line Height",
+      "default": 1.3
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Title Bottom Margin",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000",
+      "info": "Only applies when 'Use Theme Colors' is disabled"
+    },
+    {
+      "type": "header",
+      "content": "Accent Text Styling"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_accent_gradient",
+      "label": "Use Gradient for Accent Text",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#ef4a65",
+      "info": "Only applies when gradient is disabled and 'Use Theme Colors' is disabled"
+    },
+    {
+      "type": "color",
+      "id": "accent_gradient_start",
+      "label": "Gradient Start Color",
+      "default": "#ef4a65",
+      "info": "Only applies when gradient is enabled"
+    },
+    {
+      "type": "color",
+      "id": "accent_gradient_end",
+      "label": "Gradient End Color",
+      "default": "#ff6b35",
+      "info": "Only applies when gradient is enabled"
+    },
+    {
+      "type": "range",
+      "id": "accent_gradient_angle",
+      "min": 0,
+      "max": 360,
+      "step": 15,
+      "unit": "deg",
+      "label": "Gradient Angle",
+      "default": 45,
+      "info": "Only applies when gradient is enabled"
+    },
+    {
+      "type": "header",
+      "content": "Subtitle Styling"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Desktop Subtitle Size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Subtitle Size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subtitle_line_height",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Subtitle Line Height",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "subtitle_margin_bottom",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Subtitle Bottom Margin",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "subtitle_max_width",
+      "min": 400,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "label": "Subtitle Max Width",
+      "default": 700,
+      "info": "Maximum width for subtitle text (auto-centered)"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#666666",
+      "info": "Only applies when 'Use Theme Colors' is disabled"
+    },
+    {
+      "type": "header",
+      "content": "Button Styling"
+    },
+    {
+      "type": "paragraph",
+      "content": "The settings below only apply when 'Use Global Button Styling' is disabled."
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Desktop Button Font Size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Button Font Size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Vertical Padding",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Button Horizontal Padding",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Border Radius",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Border Width",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Button Top Margin",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#000000",
+      "info": "Only applies when 'Use Theme Colors' is disabled"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff",
+      "info": "Only applies when 'Use Theme Colors' is disabled"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#000000",
+      "info": "Only applies when border width > 0 and 'Use Theme Colors' is disabled"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button Hover Background",
+      "default": "#333333",
+      "info": "Only applies when 'Use Theme Colors' is disabled"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button Hover Text Color",
+      "default": "#ffffff",
+      "info": "Only applies when 'Use Theme Colors' is disabled"
+    },
+    {
+      "type": "header",
+      "content": "Section Background"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#ffffff",
+      "info": "Only applies when 'Use Theme Colors' is disabled"
+    },
+    {
+      "type": "range",
+      "id": "section_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Section Border Radius",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich Text"
+    }
+  ]
+}
+{% endschema %} 

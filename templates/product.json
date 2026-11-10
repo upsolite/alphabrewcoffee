@@ -1,0 +1,2949 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "shop-product-details",
+      "blocks": {
+        "size_chart_NijMRG": {
+          "type": "size_chart",
+          "disabled": true,
+          "settings": {
+            "trigger_text": "View Nutrition Label",
+            "trigger_font_size": 18,
+            "trigger_width": 245,
+            "trigger_height": 25,
+            "trigger_bg_color": "#f1e5c2",
+            "trigger_text_color": "#333333",
+            "trigger_hover_bg_color": "#f5f5f5",
+            "trigger_hover_text_color": "#333333",
+            "trigger_border_width": 0,
+            "trigger_border_color": "#e0e0e0",
+            "trigger_border_radius": 50,
+            "icon_size": 18,
+            "icon_margin": 8,
+            "show_icon": false,
+            "use_custom_icon": true,
+            "custom_icon": "",
+            "popup_title": "Nutrition Label",
+            "popup_content_type": "image",
+            "popup_max_width": 600,
+            "popup_bg_color": "#ffffff",
+            "popup_border_radius": 8,
+            "popup_border_color": "#e0e0e0",
+            "popup_backdrop_color": "#00000080",
+            "close_button_color": "#666666",
+            "close_button_hover_color": "#333333",
+            "close_button_hover_bg": "#0000000d",
+            "popup_header_bg_color": "#f8f9fa",
+            "popup_header_text_color": "#333333",
+            "popup_header_font_size": 20,
+            "popup_header_padding": 20,
+            "popup_body_text_color": "#333333",
+            "popup_body_font_size": 14,
+            "popup_body_padding": 20,
+            "table_border_color": "#e0e0e0",
+            "table_header_bg": "#0000000d",
+            "table_header_text_color": "#333333",
+            "table_row_hover_bg": "#00000005",
+            "table_text_color": "#333333",
+            "note_bg_color": "#0000000d",
+            "note_border_color": "#007bff",
+            "note_text_color": "#555555",
+            "scrollbar_track_color": "#f1f1f1",
+            "scrollbar_thumb_color": "#cccccc",
+            "scrollbar_thumb_hover_color": "#999999",
+            "popup_note": "",
+            "table_header_1": "Size",
+            "table_header_2": "Chest (in)",
+            "table_header_3": "Waist (in)",
+            "table_header_4": "",
+            "table_header_5": "",
+            "table_row_1_col_1": "XS",
+            "table_row_1_col_2": "32-34",
+            "table_row_1_col_3": "26-28",
+            "table_row_1_col_4": "",
+            "table_row_1_col_5": "",
+            "table_row_2_col_1": "S",
+            "table_row_2_col_2": "34-36",
+            "table_row_2_col_3": "28-30",
+            "table_row_2_col_4": "",
+            "table_row_2_col_5": "",
+            "table_row_3_col_1": "M",
+            "table_row_3_col_2": "38-40",
+            "table_row_3_col_3": "32-34",
+            "table_row_3_col_4": "",
+            "table_row_3_col_5": "",
+            "table_row_4_col_1": "L",
+            "table_row_4_col_2": "42-44",
+            "table_row_4_col_3": "36-38",
+            "table_row_4_col_4": "",
+            "table_row_4_col_5": "",
+            "table_row_5_col_1": "",
+            "table_row_5_col_2": "",
+            "table_row_5_col_3": "",
+            "table_row_5_col_4": "",
+            "table_row_5_col_5": "",
+            "size_chart_image": "shopify://shop_images/CB693358-A73C-444B-9816-4A4B1097BE7A.jpg",
+            "custom_content": "",
+            "margin_top": 8,
+            "margin_bottom": 16
+          }
+        },
+        "custom_text_L4tTeC": {
+          "type": "custom_text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>⚛︎ <strong>Science Backed Ingredients  </strong></p>",
+            "show_description": true,
+            "description": "<p>Developed from the most up- date research  findings. Proven Ingredients </p>",
+            "description_font_size": 15,
+            "description_spacing": 6,
+            "description_color": "#1d1d1d",
+            "description_opacity": 0.8,
+            "show_icon": false,
+            "custom_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" class=\"bi bi-stars\"><path d=\"M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z\"></path></svg>",
+            "icon_color": "#333333",
+            "icon_size": 20,
+            "icon_spacing": 8,
+            "icon_alignment": "center",
+            "text_align": "left",
+            "font_size": 15,
+            "text_color": "#333333",
+            "margin_top": 8,
+            "margin_bottom": 16,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "use_container": true,
+            "container_bg_type": "color",
+            "container_bg": "#f1e5c2",
+            "container_bg_gradient": "linear-gradient(180deg, rgba(241, 229, 194, 1), rgba(229, 229, 229, 1) 100%)",
+            "container_padding_top": 0,
+            "container_padding_bottom": 0,
+            "container_padding_h": 4,
+            "border_radius": 0,
+            "show_divider": false,
+            "divider_color": "#f1e5c2",
+            "divider_height": 1,
+            "divider_style": "solid",
+            "divider_spacing": 8
+          }
+        },
+        "nutrition_label_fhtHPD": {
+          "type": "nutrition_label",
+          "disabled": true,
+          "settings": {}
+        },
+        "custom_liquid_QQiQXy": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"nl-wrap\">\n  <button type=\"button\" class=\"nl-btn\" id=\"nlOpen\" aria-haspopup=\"dialog\" aria-controls=\"nlModal\">View Nutrition Label</button>\n</div>\n\n<div class=\"nl-modal\" id=\"nlModal\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Nutrition label\" hidden>\n  <div class=\"nl-panel\">\n    <button type=\"button\" class=\"nl-close\" id=\"nlClose\" aria-label=\"Close nutrition label\">&times;</button>\n    <img class=\"nl-img\" src=\"{{ 'nutrition-label.jpg' | file_url }}\" alt=\"Supplement Facts nutrition label\" loading=\"lazy\">\n  </div>\n</div>\n\n<style>\n  .nl-wrap,\n  .nl-wrap *,\n  .nl-modal,\n  .nl-modal * {\n    box-sizing: border-box;\n  }\n  .nl-wrap {\n    width: 100%;\n    padding: 8px 16px;\n    text-align: left;              /* button sits on the left */\n  }\n  .nl-btn {\n    display: inline-block;\n    margin: 0;\n    padding: 7px 12px;\n    background: #F1E5C2;           /* button color */\n    color: #4a3512;\n    border: 1px solid #d9c896;\n    border-radius: 4px;            /* set to 0 for fully sharp corners */\n    font-family: inherit;\n    font-size: 12px;\n    font-weight: 600;\n    line-height: 1;\n    letter-spacing: .02em;\n    cursor: pointer;\n    -webkit-appearance: none;\n    appearance: none;\n  }\n  .nl-btn:hover { background: #ebdcae; }\n  .nl-btn:focus-visible,\n  .nl-close:focus-visible {\n    outline: 2px solid #B98141;\n    outline-offset: 2px;\n  }\n\n  .nl-modal {\n    position: fixed;\n    inset: 0;\n    z-index: 99999;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 16px;\n    background: rgba(0, 0, 0, .65);\n  }\n  .nl-modal[hidden] { display: none; }\n  .nl-panel {\n    position: relative;\n    max-width: min(92vw, 620px);\n    max-height: 92vh;\n    line-height: 0;\n  }\n  .nl-img {\n    display: block;\n    width: auto;\n    height: auto;\n    max-width: 100%;\n    max-height: 92vh;\n    border-radius: 10px;\n    background: #fbf5e6;\n  }\n  .nl-close {\n    position: absolute;\n    top: 8px;\n    right: 8px;\n    width: 32px;\n    height: 32px;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background: #F1E5C2;\n    color: #4a3512;\n    border: 1px solid #d9c896;\n    border-radius: 4px;\n    font-family: Arial, sans-serif;\n    font-size: 22px;\n    line-height: 1;\n    cursor: pointer;\n  }\n  .nl-close:hover { background: #ebdcae; }\n</style>\n\n<script>\n  (function () {\n    var openBtn = document.getElementById('nlOpen');\n    var closeBtn = document.getElementById('nlClose');\n    var modal = document.getElementById('nlModal');\n    if (!openBtn || !closeBtn || !modal) return;\n\n    function openModal() {\n      modal.hidden = false;\n      document.body.style.overflow = 'hidden';\n      closeBtn.focus();\n    }\n    function closeModal() {\n      modal.hidden = true;\n      document.body.style.overflow = '';\n      openBtn.focus();\n    }\n\n    openBtn.addEventListener('click', openModal);\n    closeBtn.addEventListener('click', closeModal);\n    modal.addEventListener('click', function (e) {\n      if (e.target === modal) closeModal();     // click on the dark backdrop\n    });\n    document.addEventListener('keydown', function (e) {\n      if (modal.hidden) return;\n      if (e.key === 'Escape') closeModal();\n      if (e.key === 'Tab') e.preventDefault();  // keep focus inside the popup\n    });\n  })();\n</script>"
+          }
+        },
+        "custom_liquid_cpMQhc": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<svg width=\"0\" height=\"0\" style=\"position:absolute\" aria-hidden=\"true\" focusable=\"false\">\n  <defs>\n    <symbol id=\"ccStar\" viewBox=\"0 0 24 24\">\n      <path d=\"M12 2.2l2.9 6.2 6.8.8-5 4.7 1.3 6.7L12 17.2 6 20.6l1.3-6.7-5-4.7 6.8-.8z\"/>\n    </symbol>\n  </defs>\n</svg>\n\n<div class=\"cc-wrap\">\n  <div class=\"cc-bar\">\n\n    <div class=\"cc-stars\" role=\"img\" aria-label=\"Rated 4.7 out of 5\">\n      <div class=\"cc-row cc-empty\">\n        <svg class=\"cc-star\"><use href=\"#ccStar\"/></svg>\n        <svg class=\"cc-star\"><use href=\"#ccStar\"/></svg>\n        <svg class=\"cc-star\"><use href=\"#ccStar\"/></svg>\n        <svg class=\"cc-star\"><use href=\"#ccStar\"/></svg>\n        <svg class=\"cc-star\"><use href=\"#ccStar\"/></svg>\n      </div>\n      <!-- Fill width = rating ÷ 5 × 100  (4.7 → 94%) -->\n      <div class=\"cc-fill\" style=\"width: 94%;\">\n        <div class=\"cc-row cc-full\">\n          <svg class=\"cc-star\"><use href=\"#ccStar\"/></svg>\n          <svg class=\"cc-star\"><use href=\"#ccStar\"/></svg>\n          <svg class=\"cc-star\"><use href=\"#ccStar\"/></svg>\n          <svg class=\"cc-star\"><use href=\"#ccStar\"/></svg>\n          <svg class=\"cc-star\"><use href=\"#ccStar\"/></svg>\n        </div>\n      </div>\n    </div>\n\n    <p class=\"cc-label\"><strong>100k+ Vitalized Men</strong></p>\n\n    <div class=\"cc-faces\">\n      <span class=\"cc-av\"><img src=\"https://cdn.shopify.com/s/files/1/0653/0908/1645/files/alpha_customer_1_300x300_df6404f1-c120-43cd-9e63-4346b1f37467.jpg?v=1791769535\" alt=\"Happy customer\" loading=\"lazy\"></span>\n      <span class=\"cc-av\"><img src=\"https://cdn.shopify.com/s/files/1/0653/0908/1645/files/alpha_customer_2_300x300_62d2acff-0ea8-4205-b11c-6cd918d2020a.jpg?v=1791769535\" alt=\"Happy customer\" loading=\"lazy\"></span>\n      <span class=\"cc-av\"><img src=\"https://cdn.shopify.com/s/files/1/0653/0908/1645/files/alpha_customer_3_300x300_3e3faacb-1e78-4179-a972-4674084a7b1d.jpg?v=1791769535\" alt=\"Happy customer\" loading=\"lazy\"></span>\n      <span class=\"cc-av\"><img src=\"https://cdn.shopify.com/s/files/1/0653/0908/1645/files/bearded_man_forest_300x300_c316528e-de45-4621-bd1c-77f16455e51b.jpg?v=1791770304\" alt=\"Happy customer\" loading=\"lazy\"></span>\n      <span class=\"cc-av\"><img src=\"https://cdn.shopify.com/s/files/1/0653/0908/1645/files/Doctor_s_Clinic_Selfie.png?v=1791769538\" alt=\"Happy customer\" loading=\"lazy\"></span>\n    </div>\n\n  </div>\n</div>\n\n<style>\n  .cc-wrap,\n  .cc-wrap * {\n    box-sizing: border-box;\n  }\n  .cc-wrap {\n    --cc-gold: #B98141;             /* star color */\n    --cc-gray: #e2e2e2;             /* empty star color */\n    --cc-star: clamp(11px, 3.8vw, 24px);  /* star size, scales with screen width */\n    --cc-face: clamp(16px, 5.4vw, 32px);  /* face circle size, scales with screen width */\n    width: 100%;\n    padding: 10px 8px;\n    color: #111111;\n  }\n  .cc-bar {\n    display: flex;\n    align-items: center;\n    justify-content: center;        /* use flex-start to align left */\n    flex-wrap: nowrap;\n    gap: clamp(4px, 1.6vw, 12px);\n  }\n\n  /* Stars */\n  .cc-stars {\n    position: relative;\n    flex: none;\n    width: calc(var(--cc-star) * 5);\n    height: var(--cc-star);\n  }\n  .cc-row {\n    display: flex;\n    width: calc(var(--cc-star) * 5);\n  }\n  .cc-star {\n    flex: none;\n    width: var(--cc-star);\n    height: var(--cc-star);\n    display: block;\n  }\n  .cc-empty { color: var(--cc-gray); }\n  .cc-full  { color: var(--cc-gold); }\n  .cc-star use { fill: currentColor; }\n  .cc-fill {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    overflow: hidden;\n  }\n\n  /* Text */\n  .cc-label {\n    flex: none;\n    margin: 0;\n    font-family: inherit;\n    font-size: clamp(9px, 3.4vw, 19px);\n    line-height: 1.2;\n    white-space: nowrap;\n    color: #111111;\n  }\n  .cc-label strong { font-weight: 700; }\n\n  /* Faces */\n  .cc-faces {\n    flex: none;\n    display: flex;\n    align-items: center;\n  }\n  .cc-av {\n    flex: none;\n    width: var(--cc-face);\n    height: var(--cc-face);\n    margin-left: calc(var(--cc-face) * -0.27);\n    border: 2px solid #ffffff;      /* outline so overlapping faces stay separated */\n    border-radius: 50%;\n    overflow: hidden;\n    background: #d9cfae;\n  }\n  .cc-av:first-child { margin-left: 0; }\n  .cc-av img {\n    display: block;\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    object-position: 50% 30%;       /* keeps faces near the top of the circle */\n  }\n</style>"
+          }
+        },
+        "reviews_k4EJhH": {
+          "type": "reviews",
+          "disabled": true,
+          "settings": {
+            "star_color": "#b98141",
+            "empty_star_color": "#e0e0e0",
+            "rating_text_content": "<p>Rated Excellent &nbsp;<strong>4.7</strong> (100,<em>377</em>)</p>",
+            "rating_text_color": "#000000",
+            "satisfaction_text": "Vitalized Men",
+            "satisfaction_text_color": "#1d1d1d",
+            "satisfaction_bg_color": "#f1e5c2",
+            "rating_text_size": 12,
+            "rating_text_size_mobile": 10,
+            "satisfaction_text_size": 11,
+            "satisfaction_text_size_mobile": 9,
+            "margin_top": 0,
+            "margin_bottom": 15,
+            "element_gap": 4
+          }
+        },
+        "custom_content_XDggJB": {
+          "type": "custom_content",
+          "disabled": true,
+          "settings": {
+            "custom_content": ""
+          }
+        },
+        "custom_text_Qra839": {
+          "type": "custom_text",
+          "name": "Top Badge (Custom Text)",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>New Product Release</strong></p>",
+            "show_description": true,
+            "description": "<p>Developed from the most up-to-date research findings.<br/>Undergone Independent Lab Testing.</p>",
+            "description_font_size": 14,
+            "description_spacing": 4,
+            "description_color": "#002106",
+            "description_opacity": 0.5,
+            "show_icon": true,
+            "custom_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12 12V12.0099M8.71136 6.30454C8.26263 7.92073 7.99964 9.88359 7.99964 12C7.99964 12.7739 8.03481 13.5273 8.10136 14.2507M8.71136 6.30454C9.43362 3.70324 10.6371 2 11.9996 2C13.3622 2 14.5656 3.70322 15.2879 6.30451M8.71136 6.30454C6.09744 5.62938 4.02067 5.81998 3.33938 7C2.6581 8.18001 3.5314 10.0738 5.42303 11.9999M8.71136 6.30454C9.74152 6.57063 10.8551 6.97118 11.9996 7.49862M18.5761 11.9999C17.4008 10.8033 15.8325 9.59409 13.9996 8.5359C13.3294 8.14893 12.6594 7.80269 11.9996 7.49862M18.5761 11.9999C20.4678 13.9261 21.3412 15.82 20.6599 17C19.9786 18.18 17.9018 18.3706 15.2879 17.6955M18.5761 11.9999C17.8306 12.759 16.9269 13.5232 15.8979 14.2506M18.5761 11.9999C20.4678 10.0738 21.3411 8.18 20.6598 6.99999C19.9785 5.81998 17.9018 5.62937 15.2879 6.30451M8.71136 17.6954C6.09739 18.3706 4.02058 18.18 3.33929 17C2.65799 15.82 3.53134 13.9261 5.42303 11.9999M8.71136 17.6954C10.3354 17.2759 12.1667 16.5223 13.9995 15.4641C14.6698 15.0771 15.3047 14.67 15.8979 14.2506M8.71136 17.6954C9.43361 20.2967 10.6371 22 11.9996 22C13.3622 22 14.5657 20.2968 15.2879 17.6955M8.71136 17.6954C8.42672 16.6702 8.21681 15.5056 8.10136 14.2507M15.2879 6.30451C14.2577 6.57059 13.1441 6.97116 11.9996 7.49862M15.8979 14.2506C15.7825 15.5055 15.5726 16.6702 15.2879 17.6955M5.42303 11.9999C6.16857 12.7591 7.07229 13.5232 8.10136 14.2507\" stroke=\"#506D52\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon_color": "rgba(0,0,0,0)",
+            "icon_size": 20,
+            "icon_spacing": 8,
+            "icon_alignment": "center",
+            "text_align": "left",
+            "font_size": 14,
+            "text_color": "#506d52",
+            "margin_top": 0,
+            "margin_bottom": 4,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "use_container": true,
+            "container_bg_type": "color",
+            "container_bg": "#fafafa",
+            "container_bg_gradient": "linear-gradient(180deg, rgba(248, 248, 248, 1), rgba(229, 229, 229, 1) 100%)",
+            "container_padding_top": 10,
+            "container_padding_bottom": 10,
+            "container_padding_h": 14,
+            "border_radius": 4,
+            "show_divider": false,
+            "divider_color": "#506d52",
+            "divider_height": 1,
+            "divider_style": "solid",
+            "divider_spacing": 12
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "use_custom_title": true,
+            "custom_title": "Daily Coffee For Energy, Blood Flow & Sex Drive",
+            "font_size": 28,
+            "margin_top": -3,
+            "margin_bottom": 7,
+            "title_color": "#1d1d1d",
+            "line_height": 1
+          }
+        },
+        "product_description_R9MapE": {
+          "type": "product_description",
+          "settings": {
+            "icon_size": 22,
+            "icon_border_radius": 20,
+            "icon_show_background": false,
+            "product_name_color": "#b98141",
+            "product_name_font_size": 12,
+            "serving_info_color": "#b98141",
+            "serving_info_font_size": 12,
+            "margin_top": -16,
+            "margin_bottom": -13
+          }
+        },
+        "custom_liquid_KG6Hyt": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<svg width=\"0\" height=\"0\" style=\"position:absolute\" aria-hidden=\"true\" focusable=\"false\">\n  <defs>\n    <symbol id=\"csBranch\" viewBox=\"-6 -8 50 124\">\n      <g fill=\"currentColor\" stroke=\"none\">\n        <path d=\"M24 106C4 86 2 40 20 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>\n        <path transform=\"translate(18.5 99.3) rotate(-73.4)\" d=\"M0 0Q3.6 -6.5 0 -13.0Q-3.6 -6.5 0 0Z\"/>\n        <path transform=\"translate(18.5 99.3) rotate(6.6)\" d=\"M0 0Q3.6 -6.5 0 -13.0Q-3.6 -6.5 0 0Z\"/>\n        <path transform=\"translate(13.6 89.9) rotate(-62.5)\" d=\"M0 0Q3.45 -6.1 0 -12.2Q-3.45 -6.1 0 0Z\"/>\n        <path transform=\"translate(13.6 89.9) rotate(17.5)\" d=\"M0 0Q3.45 -6.1 0 -12.2Q-3.45 -6.1 0 0Z\"/>\n        <path transform=\"translate(10.2 79.2) rotate(-53.6)\" d=\"M0 0Q3.3 -5.8 0 -11.5Q-3.3 -5.8 0 0Z\"/>\n        <path transform=\"translate(10.2 79.2) rotate(26.4)\" d=\"M0 0Q3.3 -5.8 0 -11.5Q-3.3 -5.8 0 0Z\"/>\n        <path transform=\"translate(8.2 67.4) rotate(-45.9)\" d=\"M0 0Q3.15 -5.4 0 -10.8Q-3.15 -5.4 0 0Z\"/>\n        <path transform=\"translate(8.2 67.4) rotate(34.1)\" d=\"M0 0Q3.15 -5.4 0 -10.8Q-3.15 -5.4 0 0Z\"/>\n        <path transform=\"translate(7.7 54.9) rotate(-39.0)\" d=\"M0 0Q3.0 -5.0 0 -10.0Q-3.0 -5.0 0 0Z\"/>\n        <path transform=\"translate(7.7 54.9) rotate(41.0)\" d=\"M0 0Q3.0 -5.0 0 -10.0Q-3.0 -5.0 0 0Z\"/>\n        <path transform=\"translate(8.7 42.1) rotate(-32.4)\" d=\"M0 0Q2.85 -4.6 0 -9.2Q-2.85 -4.6 0 0Z\"/>\n        <path transform=\"translate(8.7 42.1) rotate(47.6)\" d=\"M0 0Q2.85 -4.6 0 -9.2Q-2.85 -4.6 0 0Z\"/>\n        <path transform=\"translate(11.2 29.1) rotate(-25.7)\" d=\"M0 0Q2.7 -4.2 0 -8.5Q-2.7 -4.2 0 0Z\"/>\n        <path transform=\"translate(11.2 29.1) rotate(54.3)\" d=\"M0 0Q2.7 -4.2 0 -8.5Q-2.7 -4.2 0 0Z\"/>\n        <path transform=\"translate(15.2 16.5) rotate(-18.7)\" d=\"M0 0Q2.55 -3.9 0 -7.8Q-2.55 -3.9 0 0Z\"/>\n        <path transform=\"translate(15.2 16.5) rotate(61.3)\" d=\"M0 0Q2.55 -3.9 0 -7.8Q-2.55 -3.9 0 0Z\"/>\n        <path transform=\"translate(20.0 6.0) rotate(27.9)\" d=\"M0 0Q2.9 -5.0 0 -10.0Q-2.9 -5.0 0 0Z\"/>\n      </g>\n    </symbol>\n  </defs>\n</svg>\n\n<div class=\"cs-wrap\">\n  <div class=\"cs-box\">\n\n    <div class=\"cs-badge\">\n      <svg class=\"cs-laurel\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#csBranch\"/></svg>\n      <p class=\"cs-title\">Clinically Studied<br>Ingredients</p>\n      <svg class=\"cs-laurel cs-right\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#csBranch\"/></svg>\n    </div>\n\n    <p class=\"cs-text\"><strong>11 performance-focused ingredients</strong> to support men's energy, vitality, and hormonal health.*</p>\n\n  </div>\n\n  <!-- Optional footnote for the asterisk: remove the comment markers to show it -->\n  <!-- <p class=\"cs-note\">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p> -->\n</div>\n\n<style>\n  .cs-wrap,\n  .cs-wrap * {\n    box-sizing: border-box;\n  }\n  .cs-wrap {\n    --cs-color: #4d4d4d;            /* text + laurel color (try #B98141 for gold) */\n    --cs-border: #d6d6d6;           /* box border */\n    width: 100%;\n    max-width: 540px;               /* overall width, centered */\n    margin: 0 auto;\n    padding: 8px 12px;\n    color: var(--cs-color);\n  }\n  .cs-box {\n    display: grid;\n    grid-template-columns: auto minmax(0, 1fr);\n    align-items: center;\n    column-gap: clamp(10px, 3vw, 18px);\n    padding: clamp(10px, 2.6vw, 14px) clamp(12px, 3.4vw, 20px);\n    background: #ffffff;\n    border: 1px solid var(--cs-border);\n    border-radius: 12px;\n  }\n  .cs-badge {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 4px;\n  }\n  .cs-laurel {\n    display: block;\n    flex: none;\n    width: clamp(15px, 4.2vw, 20px);\n    height: clamp(38px, 10.5vw, 50px);\n    color: var(--cs-color);\n  }\n  .cs-right {\n    transform: scaleX(-1);\n  }\n  .cs-title {\n    margin: 0;\n    font-family: inherit;\n    font-size: clamp(13px, 3.9vw, 18px);\n    font-weight: 700;\n    line-height: 1.15;\n    text-align: center;\n    color: var(--cs-color);\n  }\n  .cs-text {\n    margin: 0;\n    font-family: inherit;\n    font-size: clamp(11px, 3.1vw, 13.5px);\n    font-weight: 400;\n    line-height: 1.35;\n    text-align: center;\n    text-wrap: balance;\n    color: var(--cs-color);\n  }\n  .cs-text strong {\n    font-weight: 700;\n  }\n  .cs-note {\n    margin: 6px 4px 0;\n    font-family: inherit;\n    font-size: 10px;\n    line-height: 1.35;\n    text-align: center;\n    color: var(--cs-color);\n  }\n</style>"
+          }
+        },
+        "custom_liquid_VmCydN": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"bl-wrap\">\n  <ul class=\"bl-list\">\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <path d=\"M12 2.5c3 4 6 7.9 6 11.3a6 6 0 1 1-12 0c0-3.4 3-7.3 6-11.3Z\"/>\n        <path d=\"M9.5 14.2a2.6 2.6 0 0 0 2.6 2.6\"/>\n      </svg>\n      <span class=\"bl-text\">Supports Healthy Blood Flow &amp; Circulation</span>\n    </li>\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <path d=\"M13 2 4.5 13.2h5.7L9 22l9.5-11.6h-5.8L13 2Z\"/>\n      </svg>\n      <span class=\"bl-text\">Boosts Energy &amp; Supports Lasting Stamina</span>\n    </li>\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <path d=\"M9.5 3.2A3.3 3.3 0 0 0 6.2 6.5c0 .5.1 1 .3 1.4A3.4 3.4 0 0 0 4 11.2c0 1.2.6 2.3 1.6 3a3.4 3.4 0 0 0 3.1 4.8h.2v1.3a1.7 1.7 0 0 0 3.4 0V6.5A3.3 3.3 0 0 0 9.5 3.2Z\"/>\n        <path d=\"M14.5 3.2a3.3 3.3 0 0 1 3.3 3.3c0 .5-.1 1-.3 1.4A3.4 3.4 0 0 1 20 11.2c0 1.2-.6 2.3-1.6 3a3.4 3.4 0 0 1-3.1 4.8h-.2v1.3a1.7 1.7 0 0 1-3.4 0V6.5a3.3 3.3 0 0 1 3.3-3.3\"/>\n        <path d=\"M9.3 9.4c.7.5 1.6.8 2.7.8s2-.3 2.7-.8M8.6 14.3c1 .6 2.1 1 3.4 1s2.4-.4 3.4-1\"/>\n      </svg>\n      <span class=\"bl-text\">Sharpens Focus &amp; Supports Mental Clarity</span>\n    </li>\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <circle cx=\"12\" cy=\"6\" r=\"2.6\"/>\n        <path d=\"M12 8.6V13M8 21l2.4-5.3a2 2 0 0 1 3.2 0L16 21M5.5 13c1.8 1 4.2 1.6 6.5 1.6s4.7-.6 6.5-1.6\"/>\n      </svg>\n      <span class=\"bl-text\">Helps Manage Stress &amp; Supports Healthy Cortisol Levels</span>\n    </li>\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <path d=\"M12 20.5c-4-2.3-7-5.3-7-9A4.3 4.3 0 0 1 9.3 7a4 4 0 0 1 2.7 1.3A4 4 0 0 1 14.7 7 4.3 4.3 0 0 1 19 11.5c0 3.7-3 6.7-7 9Z\"/>\n      </svg>\n      <span class=\"bl-text\">Supports Sex Drive &amp; Sexual Vitality</span>\n    </li>\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <circle cx=\"10\" cy=\"14\" r=\"6.2\"/>\n        <path d=\"M14.4 9.6 20 4M15 4h5v5\"/>\n      </svg>\n      <span class=\"bl-text\">Supports Healthy Testosterone &amp; Male Performance</span>\n    </li>\n\n  </ul>\n</div>\n\n<style>\n  .bl-wrap,\n  .bl-wrap * {\n    box-sizing: border-box;\n  }\n  .bl-wrap {\n    width: 100%;\n    max-width: 560px;\n    margin: 0 auto;\n    padding: 14px 16px;\n  }\n  .bl-list {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    display: flex;\n    flex-direction: column;\n    gap: 14px;\n  }\n  .bl-item {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n  }\n  .bl-icon {\n    flex: none;\n    width: 24px;\n    height: 24px;\n    color: #B98141;      /* icon color */\n  }\n  .bl-text {\n    font-family: inherit;\n    font-size: 17px;\n    font-weight: 700;\n    line-height: 1.35;\n    color: #000000;      /* text color */\n  }\n  @media (max-width: 480px) {\n    .bl-wrap { padding: 10px 12px; }\n    .bl-list { gap: 11px; }\n    .bl-icon { width: 20px; height: 20px; }\n    .bl-text { font-size: 15px; }\n  }\n</style>"
+          }
+        },
+        "divider_Kh6UcP": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "color": "#090909",
+            "style": "solid",
+            "thickness": 2,
+            "width": "100%",
+            "max_width": "100%",
+            "alignment": "center",
+            "margin_top": 10,
+            "margin_bottom": 10
+          }
+        },
+        "bullet_list_N9LXq7": {
+          "type": "bullet_list",
+          "settings": {
+            "bullet_1": "SUPPORT HEALTHY TESTOSTERONE",
+            "bullet_2": "BOOST BLOOD FLOW & CIRCULATION",
+            "bullet_3": "SUPPORT SEX DRIVE & VITALITY",
+            "bullet_4": "FEEL STRONGER. LAST LONGER",
+            "bullet_5": "",
+            "bullet_6": "",
+            "layout_style": "vertical",
+            "row_gap": 15,
+            "use_custom_icon_1": false,
+            "custom_icon_1": "",
+            "use_custom_icon_2": false,
+            "custom_icon_2": "",
+            "use_custom_icon_3": false,
+            "custom_icon_3": "",
+            "use_custom_icon_4": false,
+            "custom_icon_4": "",
+            "use_custom_icon_5": false,
+            "custom_icon_5": "",
+            "use_custom_icon_6": false,
+            "custom_icon_6": "",
+            "icon_color": "#b98141",
+            "text_color": "#333333",
+            "icon_size": 17,
+            "text_size": 17,
+            "spacing": 12,
+            "icon_text_gap": 10,
+            "show_bg": false,
+            "bg_color": "#f5f5f5",
+            "border_radius": 4,
+            "margin_top": 10,
+            "margin_bottom": 10
+          }
+        },
+        "benefits_grid_cPjrLb": {
+          "type": "benefits_grid",
+          "disabled": true,
+          "settings": {
+            "benefit_1_text": "Satisfy Her Fully",
+            "benefit_1_use_image": true,
+            "benefit_1_image": "shopify://shop_images/4_61e75d1b-4cf9-4658-bb4b-477d2d1a9296.png",
+            "benefit_1_use_custom_icon": false,
+            "benefit_1_custom_icon": "",
+            "benefit_2_text": "Last Longer",
+            "benefit_2_use_image": false,
+            "benefit_2_image": "shopify://shop_images/Untitled_design_3_e3848075-e54f-4f3f-8b2d-92ec9b5fc88f.png",
+            "benefit_2_use_custom_icon": false,
+            "benefit_2_custom_icon": "",
+            "benefit_3_text": "Feel Stronger",
+            "benefit_3_use_image": true,
+            "benefit_3_image": "shopify://shop_images/8_346206ae-9457-488c-9f57-209178b5c31e.png",
+            "benefit_3_use_custom_icon": false,
+            "benefit_3_custom_icon": "",
+            "benefit_4_text": "Clinically Proven Results",
+            "benefit_4_use_image": false,
+            "benefit_4_image": "shopify://shop_images/Untitled_design_3_copy_6.png",
+            "benefit_4_use_custom_icon": false,
+            "benefit_4_custom_icon": "",
+            "icon_bg_color": "#f1e5c2",
+            "enable_icon_circle_stroke": false,
+            "icon_circle_stroke_color": "#f1e5c2",
+            "icon_circle_stroke_width": 2,
+            "icon_stroke_color": "#b98141",
+            "text_color": "#13341b",
+            "font_size": 15,
+            "icon_size": 26,
+            "icon_container_size": 36,
+            "grid_gap": 15,
+            "container_margin_top": 15,
+            "container_margin_bottom": 15
+          }
+        },
+        "bullet_list_hFikNj": {
+          "type": "bullet_list",
+          "disabled": true,
+          "settings": {
+            "bullet_1": "Blocks Cortisol = LOWERS STRESS",
+            "bullet_2": "Boosts Metabolism = BURN FAT",
+            "bullet_3": "Feel Stronger= FASTER RECOVERY",
+            "bullet_4": "Increases Libido = BETTER SEX",
+            "bullet_5": "",
+            "bullet_6": "",
+            "layout_style": "vertical",
+            "row_gap": 15,
+            "use_custom_icon_1": false,
+            "custom_icon_1": "",
+            "use_custom_icon_2": false,
+            "custom_icon_2": "",
+            "use_custom_icon_3": false,
+            "custom_icon_3": "",
+            "use_custom_icon_4": false,
+            "custom_icon_4": "",
+            "use_custom_icon_5": false,
+            "custom_icon_5": "",
+            "use_custom_icon_6": false,
+            "custom_icon_6": "",
+            "icon_color": "#b98141",
+            "text_color": "#333333",
+            "icon_size": 20,
+            "text_size": 17,
+            "spacing": 12,
+            "icon_text_gap": 10,
+            "show_bg": false,
+            "bg_color": "#f5f5f5",
+            "border_radius": 4,
+            "margin_top": 10,
+            "margin_bottom": 10
+          }
+        },
+        "custom_liquid_yeqLKW": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"bl-wrap\">\n  <ul class=\"bl-list\">\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <path d=\"M12 2.5c3 4 6 7.9 6 11.3a6 6 0 1 1-12 0c0-3.4 3-7.3 6-11.3Z\"/>\n        <path d=\"M9.5 14.2a2.6 2.6 0 0 0 2.6 2.6\"/>\n      </svg>\n      <span class=\"bl-text\">Supports Healthy Blood Flow &amp; Circulation</span>\n    </li>\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <path d=\"M13 2 4.5 13.2h5.7L9 22l9.5-11.6h-5.8L13 2Z\"/>\n      </svg>\n      <span class=\"bl-text\">Boosts Energy &amp; Supports Lasting Stamina</span>\n    </li>\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <path d=\"M9.5 3.2A3.3 3.3 0 0 0 6.2 6.5c0 .5.1 1 .3 1.4A3.4 3.4 0 0 0 4 11.2c0 1.2.6 2.3 1.6 3a3.4 3.4 0 0 0 3.1 4.8h.2v1.3a1.7 1.7 0 0 0 3.4 0V6.5A3.3 3.3 0 0 0 9.5 3.2Z\"/>\n        <path d=\"M14.5 3.2a3.3 3.3 0 0 1 3.3 3.3c0 .5-.1 1-.3 1.4A3.4 3.4 0 0 1 20 11.2c0 1.2-.6 2.3-1.6 3a3.4 3.4 0 0 1-3.1 4.8h-.2v1.3a1.7 1.7 0 0 1-3.4 0V6.5a3.3 3.3 0 0 1 3.3-3.3\"/>\n        <path d=\"M9.3 9.4c.7.5 1.6.8 2.7.8s2-.3 2.7-.8M8.6 14.3c1 .6 2.1 1 3.4 1s2.4-.4 3.4-1\"/>\n      </svg>\n      <span class=\"bl-text\">Sharpens Focus &amp; Supports Mental Clarity</span>\n    </li>\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <circle cx=\"12\" cy=\"6\" r=\"2.6\"/>\n        <path d=\"M12 8.6V13M8 21l2.4-5.3a2 2 0 0 1 3.2 0L16 21M5.5 13c1.8 1 4.2 1.6 6.5 1.6s4.7-.6 6.5-1.6\"/>\n      </svg>\n      <span class=\"bl-text\">Helps Manage Stress &amp; Supports Healthy Cortisol Levels</span>\n    </li>\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <path d=\"M12 20.5c-4-2.3-7-5.3-7-9A4.3 4.3 0 0 1 9.3 7a4 4 0 0 1 2.7 1.3A4 4 0 0 1 14.7 7 4.3 4.3 0 0 1 19 11.5c0 3.7-3 6.7-7 9Z\"/>\n      </svg>\n      <span class=\"bl-text\">Supports Sex Drive &amp; Sexual Vitality</span>\n    </li>\n\n    <li class=\"bl-item\">\n      <svg class=\"bl-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n        <circle cx=\"10\" cy=\"14\" r=\"6.2\"/>\n        <path d=\"M14.4 9.6 20 4M15 4h5v5\"/>\n      </svg>\n      <span class=\"bl-text\">Supports Healthy Testosterone &amp; Male Performance</span>\n    </li>\n\n  </ul>\n</div>\n\n<style>\n  .bl-wrap,\n  .bl-wrap * {\n    box-sizing: border-box;\n  }\n  .bl-wrap {\n    width: 100%;\n    max-width: 560px;\n    margin: 0 auto;\n    padding: 14px 16px;\n  }\n  .bl-list {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    display: flex;\n    flex-direction: column;\n    gap: 14px;\n  }\n  .bl-item {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n  }\n  .bl-icon {\n    flex: none;\n    width: 24px;\n    height: 24px;\n    color: #B98141;      /* icon color */\n  }\n  .bl-text {\n    font-family: inherit;\n    font-size: 15px;\n    font-weight: 500;\n    line-height: 1.35;\n    color: #000000;      /* text color */\n  }\n  @media (max-width: 480px) {\n    .bl-wrap { padding: 10px 12px; }\n    .bl-list { gap: 11px; }\n    .bl-icon { width: 20px; height: 20px; }\n    .bl-text { font-size: 13.5px; }\n  }\n</style>"
+          }
+        },
+        "custom_liquid_7HbwYb": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"pb-wrap\">\n  <div class=\"pb-card\">\n    <div style=\"flex: 1 1 auto !important; min-width: 60px !important; height: 10px !important; border-radius: 999px !important; background-color: #e8e6ec !important; overflow: hidden !important; display: block !important;\">\n      <div style=\"height: 100% !important; width: 93% !important; background-color: #B98141 !important; border-radius: 999px !important; display: block !important;\"></div>\n    </div>\n    <p class=\"pb-label\"><strong>93%</strong> Sold</p>\n  </div>\n</div>\n\n<style>\n  .pb-wrap,\n  .pb-wrap * {\n    box-sizing: border-box;\n  }\n  .pb-wrap {\n    width: 100%;\n    max-width: 640px;\n    margin: 0 auto;\n    padding: 14px 16px;\n  }\n  .pb-card {\n    display: flex;\n    align-items: center;\n    gap: 18px;\n    padding: 20px 26px;\n    background: #ffffff;\n    border-radius: 16px;\n    box-shadow: 0 1px 3px rgba(0, 0, 0, .06);\n  }\n  .pb-label {\n    flex: none;\n    margin: 0;\n    font-family: inherit;\n    font-size: 19px;\n    font-weight: 700;\n    color: #B98141;\n    white-space: nowrap;\n  }\n  @media (max-width: 480px) {\n    .pb-wrap { padding: 10px 12px; }\n    .pb-card { padding: 14px 18px; gap: 12px; border-radius: 14px; }\n    .pb-label { font-size: 16px; }\n  }\n</style>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
+            "price_color": "#1d1d1d",
+            "compare_price_color": "#9ca3af",
+            "sale_badge_bg_color": "#ffe9e7",
+            "sale_badge_text_color": "#f93822",
+            "save_badge_enable_border": false,
+            "save_badge_border_color": "#f93822",
+            "save_badge_border_width": 1,
+            "save_badge_border_style": "solid",
+            "price_font_size": 28,
+            "compare_price_font_size": 21,
+            "save_badge_font_size": 12,
+            "price_font_weight": "600",
+            "price_margin_top": 0,
+            "price_margin_bottom": 0,
+            "show_save_icon": true,
+            "save_icon_size_ratio": 0.8,
+            "save_icon_position_y": 0,
+            "save_badge_padding_v": 4,
+            "save_badge_padding_h": 8,
+            "custom_save_text": "SAVE",
+            "save_badge_display_type": "percentage",
+            "custom_save_amount": ""
+          }
+        },
+        "kaching_bundles_app_block_LeH766": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "",
+            "manual_deal_block_id": ""
+          }
+        },
+        "divider_wt4Jib": {
+          "type": "divider",
+          "settings": {
+            "color": "#e0e0e0",
+            "style": "solid",
+            "thickness": 1,
+            "width": "100%",
+            "max_width": "100%",
+            "alignment": "center",
+            "margin_top": 10,
+            "margin_bottom": 10
+          }
+        },
+        "add_to_cart": {
+          "type": "add_to_cart",
+          "settings": {
+            "use_theme_colors": false,
+            "show_fast_payment": false,
+            "button_behavior": "skip_to_checkout",
+            "button_text_override": "Add To Cart",
+            "show_price_in_button": false,
+            "button_icon": "bag",
+            "custom_icon": "",
+            "icon_size": 15,
+            "buy_box_button_bg_color": "#506d52",
+            "button_text_color": "#ffffff",
+            "buy_box_button_hover_color": "#ef4a65",
+            "price_color": "#ffffff",
+            "use_global_button_styling": true,
+            "custom_button_padding_y": 12,
+            "custom_button_font_size": 14,
+            "card_border_radius": 0
+          }
+        },
+        "payment_icons_D8JNK4": {
+          "type": "payment_icons",
+          "settings": {
+            "custom_payment_icons": "visa, master, Discover, google_pay, apple_pay, shopify_pay,paypal, shop",
+            "alignment": "center",
+            "icon_height": 28,
+            "icon_spacing": 20,
+            "margin_top": 8,
+            "margin_bottom": 0
+          }
+        },
+        "custom_money_back_TiCTCH": {
+          "type": "custom_money_back",
+          "disabled": true,
+          "settings": {
+            "title_text": "30-Day Money Back Guarantee",
+            "description_text": "That's how confident we are in your results. But if you're not thrilled, send it back and we'll refund your purchase.",
+            "badge_svg": "",
+            "use_svg_badge": false,
+            "badge_size": 50,
+            "gradient_start_color": "#b98141",
+            "gradient_end_color": "#f1e5c2",
+            "title_color": "#000000",
+            "text_color": "#000000",
+            "title_font_size": 15,
+            "description_font_size": 13,
+            "border_style": "dotted",
+            "border_color": "#000000",
+            "border_radius": 6,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "enable_shine": true,
+            "padding_top": 3,
+            "padding_right": 10,
+            "padding_bottom": 3,
+            "padding_left": 10
+          }
+        },
+        "custom_liquid_PdwNgU": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div id='ss-trust-badges'></div>"
+          }
+        },
+        "custom_liquid_333qj6": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "delivery_date_8biaJi": {
+          "type": "delivery_date",
+          "settings": {
+            "heading": "Delivery Information",
+            "heading_color": "#000000",
+            "heading_size": 16,
+            "shipping_days": 5,
+            "text_before": "Arrives by",
+            "text_after": ".",
+            "show_icon": true,
+            "accent_color": "#ef4a65",
+            "subtext": "Free shipping on all orders",
+            "subtext_color": "#666666",
+            "subtext_size": 13,
+            "background_color": "#ffffff",
+            "border_radius": 4,
+            "padding": 15,
+            "margin_top": 0,
+            "margin_bottom": 15
+          }
+        },
+        "custom_liquid_JDMFBc": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div id='ss-trust-badges'></div>"
+          }
+        },
+        "money_back_guarantee_kbK7cN": {
+          "type": "money_back_guarantee",
+          "name": "Money-Back Guarantee",
+          "disabled": true,
+          "settings": {
+            "text_small": "Less than 2%",
+            "text_large": "of customers return their order.",
+            "container_bg_color": "#ffffff",
+            "border_color": "#211a28",
+            "enable_container_border": true,
+            "container_border_width": 1,
+            "container_border_style": "solid",
+            "container_border_color": "#211a28",
+            "container_border_radius": 10,
+            "text_small_color": "#211a28",
+            "text_large_color": "#211a28",
+            "padding": 15,
+            "badge_size": 45,
+            "icon_size": 30,
+            "text_small_size": 13,
+            "text_large_size": 13,
+            "margin_top": -10,
+            "margin_bottom": 10
+          }
+        },
+        "custom_liquid_CTRXzx": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"tb-wrap\">\n  <div class=\"tb-inner\">\n\n    <div class=\"tb-item\">\n      <div class=\"tb-box\">\n        <svg class=\"tb-icon\" viewBox=\"0 0 100 100\" role=\"img\" aria-label=\"Money back guarantee\">\n          <path d=\"M50 6A7.4 7.4 0 0 1 63.6 8.15A7.4 7.4 0 0 1 75.86 14.4A7.4 7.4 0 0 1 85.6 24.14A7.4 7.4 0 0 1 91.85 36.4A7.4 7.4 0 0 1 94 50A7.4 7.4 0 0 1 91.85 63.6A7.4 7.4 0 0 1 85.6 75.86A7.4 7.4 0 0 1 75.86 85.6A7.4 7.4 0 0 1 63.6 91.85A7.4 7.4 0 0 1 50 94A7.4 7.4 0 0 1 36.4 91.85A7.4 7.4 0 0 1 24.14 85.6A7.4 7.4 0 0 1 14.4 75.86A7.4 7.4 0 0 1 8.15 63.6A7.4 7.4 0 0 1 6 50A7.4 7.4 0 0 1 8.15 36.4A7.4 7.4 0 0 1 14.4 24.14A7.4 7.4 0 0 1 24.14 14.4A7.4 7.4 0 0 1 36.4 8.15A7.4 7.4 0 0 1 50 6Z\" fill=\"#2E8B3D\"/>\n          <circle cx=\"50\" cy=\"50\" r=\"38\" fill=\"#1F6F32\" stroke=\"#fff\" stroke-width=\"1.6\"/>\n          <polygon points=\"38.00,21.40 38.88,23.79 41.42,23.89 39.43,25.46 40.12,27.91 38.00,26.50 35.88,27.91 36.57,25.46 34.58,23.89 37.12,23.79\" fill=\"#fff\"/>\n          <polygon points=\"50.00,19.40 50.88,21.79 53.42,21.89 51.43,23.46 52.12,25.91 50.00,24.50 47.88,25.91 48.57,23.46 46.58,21.89 49.12,21.79\" fill=\"#fff\"/>\n          <polygon points=\"62.00,21.40 62.88,23.79 65.42,23.89 63.43,25.46 64.12,27.91 62.00,26.50 59.88,27.91 60.57,25.46 58.58,23.89 61.12,23.79\" fill=\"#fff\"/>\n          <text x=\"50\" y=\"42\" text-anchor=\"middle\" font-family=\"Arial, Helvetica, sans-serif\" font-weight=\"800\" font-size=\"15\" fill=\"#fff\">MONEY</text>\n          <text x=\"50\" y=\"56\" text-anchor=\"middle\" font-family=\"Arial, Helvetica, sans-serif\" font-weight=\"800\" font-size=\"15\" fill=\"#fff\">BACK</text>\n          <text x=\"50\" y=\"66\" text-anchor=\"middle\" font-family=\"Arial, Helvetica, sans-serif\" font-weight=\"700\" font-size=\"7.4\" letter-spacing=\".4\" fill=\"#fff\">GUARANTEE</text>\n          <circle cx=\"50\" cy=\"77\" r=\"7.5\" fill=\"#7CC242\" stroke=\"#fff\" stroke-width=\"1.4\"/>\n          <path d=\"M46.2 77.2 49 80l5-5.8\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </div>\n      <p class=\"tb-text\">90 Days Money Back<br>Guarantee</p>\n    </div>\n\n    <div class=\"tb-item\">\n      <div class=\"tb-box\">\n        <svg class=\"tb-icon\" viewBox=\"0 0 64 64\" role=\"img\" aria-label=\"Package\">\n          <path d=\"M8 20 32 32V58L8 46Z\" fill=\"#D9A05B\"/>\n          <path d=\"M56 20 32 32V58L56 46Z\" fill=\"#B5763A\"/>\n          <path d=\"M32 8 56 20 32 32 8 20Z\" fill=\"#E8B878\"/>\n          <path d=\"M41.1 12.56 49.1 16.56 26.9 27.44 18.9 23.44Z\" fill=\"#F3DDAE\"/>\n          <path d=\"M18.9 23.44 26.9 27.44V41.44L18.9 37.44Z\" fill=\"#F3DDAE\"/>\n          <path d=\"M8 20 32 32 56 20\" fill=\"none\" stroke=\"#8A5527\" stroke-width=\"1\" stroke-linejoin=\"round\" opacity=\".35\"/>\n        </svg>\n      </div>\n      <p class=\"tb-text\">Fast &amp; Free<br>Shipping</p>\n    </div>\n\n    <div class=\"tb-item\">\n      <div class=\"tb-box\">\n        <svg class=\"tb-icon\" viewBox=\"0 0 64 48\" role=\"img\" aria-label=\"American flag\">\n          <defs>\n            <clipPath id=\"tbFlagClip\"><rect width=\"64\" height=\"48\" rx=\"4\"/></clipPath>\n            <polygon id=\"tbStar\" points=\"0.00,-1.90 0.47,-0.65 1.81,-0.59 0.76,0.25 1.12,1.54 0.00,0.80 -1.12,1.54 -0.76,0.25 -1.81,-0.59 -0.47,-0.65\" fill=\"#fff\"/>\n          </defs>\n          <g clip-path=\"url(#tbFlagClip)\">\n            <rect width=\"64\" height=\"48\" fill=\"#fff\"/>\n            <rect y=\"0.00\" width=\"64\" height=\"3.69\" fill=\"#D62839\"/><rect y=\"7.38\" width=\"64\" height=\"3.69\" fill=\"#D62839\"/><rect y=\"14.77\" width=\"64\" height=\"3.69\" fill=\"#D62839\"/><rect y=\"22.15\" width=\"64\" height=\"3.69\" fill=\"#D62839\"/><rect y=\"29.54\" width=\"64\" height=\"3.69\" fill=\"#D62839\"/><rect y=\"36.92\" width=\"64\" height=\"3.69\" fill=\"#D62839\"/><rect y=\"44.31\" width=\"64\" height=\"3.69\" fill=\"#D62839\"/>\n            <rect width=\"27\" height=\"25.85\" fill=\"#1F3A93\"/>\n            <use href=\"#tbStar\" x=\"3.20\" y=\"3.40\"/><use href=\"#tbStar\" x=\"8.25\" y=\"3.40\"/><use href=\"#tbStar\" x=\"13.30\" y=\"3.40\"/><use href=\"#tbStar\" x=\"18.35\" y=\"3.40\"/><use href=\"#tbStar\" x=\"23.40\" y=\"3.40\"/><use href=\"#tbStar\" x=\"5.72\" y=\"8.15\"/><use href=\"#tbStar\" x=\"10.77\" y=\"8.15\"/><use href=\"#tbStar\" x=\"15.82\" y=\"8.15\"/><use href=\"#tbStar\" x=\"20.87\" y=\"8.15\"/><use href=\"#tbStar\" x=\"3.20\" y=\"12.90\"/><use href=\"#tbStar\" x=\"8.25\" y=\"12.90\"/><use href=\"#tbStar\" x=\"13.30\" y=\"12.90\"/><use href=\"#tbStar\" x=\"18.35\" y=\"12.90\"/><use href=\"#tbStar\" x=\"23.40\" y=\"12.90\"/><use href=\"#tbStar\" x=\"5.72\" y=\"17.65\"/><use href=\"#tbStar\" x=\"10.77\" y=\"17.65\"/><use href=\"#tbStar\" x=\"15.82\" y=\"17.65\"/><use href=\"#tbStar\" x=\"20.87\" y=\"17.65\"/><use href=\"#tbStar\" x=\"3.20\" y=\"22.40\"/><use href=\"#tbStar\" x=\"8.25\" y=\"22.40\"/><use href=\"#tbStar\" x=\"13.30\" y=\"22.40\"/><use href=\"#tbStar\" x=\"18.35\" y=\"22.40\"/><use href=\"#tbStar\" x=\"23.40\" y=\"22.40\"/>\n          </g>\n          <rect x=\".6\" y=\".6\" width=\"62.8\" height=\"46.8\" rx=\"3.6\" fill=\"none\" stroke=\"#C9CED6\" stroke-width=\"1.2\"/>\n        </svg>\n      </div>\n      <p class=\"tb-text\">Proudly Made<br>In USA</p>\n    </div>\n\n  </div>\n</div>\n\n<style>\n  .tb-wrap,\n  .tb-wrap * {\n    box-sizing: border-box;\n  }\n  .tb-wrap {\n    width: 100%;\n    margin: 0 auto;\n    padding: 14px 0;\n    background: #ffffff;\n    color: #111111;\n  }\n  .tb-inner {\n    width: 100%;\n    max-width: 620px;          /* total width of the 3 badges, centered */\n    margin: 0 auto;\n    padding: 0 12px;\n    display: flex;\n    justify-content: center;\n    align-items: flex-start;\n    gap: 24px;\n  }\n  .tb-item {\n    flex: 1 1 0;\n    min-width: 0;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    text-align: center;\n    gap: 8px;\n  }\n  .tb-box {\n    width: 64px;\n    height: 64px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background: #f5f5f5;\n    border: 1.5px solid #e3e3e3;\n    border-radius: 10px;\n  }\n  .tb-icon {\n    width: 44px;\n    height: 44px;\n    display: block;\n  }\n  .tb-text {\n    margin: 0;\n    font-family: inherit;\n    font-size: 13px;\n    font-weight: 600;\n    line-height: 1.3;\n    color: #111111;\n  }\n  @media (max-width: 749px) {\n    .tb-wrap { padding: 10px 0; }\n    .tb-inner { gap: 6px; padding: 0 8px; }\n    .tb-box { width: 52px; height: 52px; border-radius: 9px; }\n    .tb-icon { width: 36px; height: 36px; }\n    .tb-text { font-size: 10.5px; }\n  }\n</style>"
+          }
+        },
+        "divider_yp8EHi": {
+          "type": "divider",
+          "settings": {
+            "color": "#cccccc",
+            "style": "solid",
+            "thickness": 1,
+            "width": "100%",
+            "max_width": "100%",
+            "alignment": "center",
+            "margin_top": 0,
+            "margin_bottom": 10
+          }
+        },
+        "custom_liquid_4iBwVf": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"wn-wrap\">\n  <div class=\"wn-box\">\n    <span class=\"wn-icon\" aria-hidden=\"true\">!</span>\n    <div class=\"wn-content\">\n      <p class=\"wn-title\">WARNING: Low Stock Notice</p>\n      <p class=\"wn-text\">This product sold out 12 times this year. We encourage you to take advantage of the limited sale and buy now. Subscribing protects you against future stockouts. PS: Only available here, don't buy fakes on Amazon/eBay.</p>\n    </div>\n  </div>\n</div>\n\n<style>\n  .wn-wrap,\n  .wn-wrap * {\n    box-sizing: border-box;\n  }\n  .wn-wrap {\n    width: 100%;\n    max-width: 640px;\n    margin: 0 auto;\n    padding: 14px 16px;\n  }\n  .wn-box {\n    display: flex;\n    align-items: flex-start;\n    gap: 14px;\n    padding: 18px 22px;\n    background: #fbe9e7;           /* light red background */\n    border: 2px dashed #e8958a;    /* dashed red border */\n    border-radius: 14px;\n  }\n  .wn-icon {\n    flex: none;\n    width: 26px;\n    height: 26px;\n    margin-top: 1px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background: #c0392b;           /* red circle */\n    color: #ffffff;\n    border-radius: 50%;\n    font-family: inherit;\n    font-size: 15px;\n    font-weight: 800;\n    line-height: 1;\n  }\n  .wn-content {\n    flex: 1 1 auto;\n    min-width: 0;\n  }\n  .wn-title {\n    margin: 0 0 8px;\n    font-family: inherit;\n    font-size: 19px;\n    font-weight: 700;\n    line-height: 1.25;\n    color: #9c2a1f;                /* dark red heading */\n  }\n  .wn-text {\n    margin: 0;\n    font-family: inherit;\n    font-size: 15.5px;\n    font-weight: 400;\n    line-height: 1.5;\n    color: #9c2a1f;                /* dark red body text */\n  }\n  @media (max-width: 599px) {\n    .wn-wrap { padding: 10px 12px; }\n    .wn-box { padding: 14px 16px; gap: 10px; border-radius: 12px; }\n    .wn-icon { width: 22px; height: 22px; font-size: 13px; }\n    .wn-title { font-size: 16px; margin-bottom: 6px; }\n    .wn-text { font-size: 13.5px; }\n  }\n</style>"
+          }
+        },
+        "custom_liquid_yWHx4F": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"st-wrap\">\n  <div class=\"st-card\">\n\n    <p class=\"st-title\">After 90 Days Customer-Reported Results</p>\n\n    <div class=\"st-grid\">\n\n      <div class=\"st-item\">\n        <p class=\"st-label\">Daily Energy</p>\n        <p class=\"st-num\">87%</p>\n        <p class=\"st-desc\">Reported improved daily energy</p>\n      </div>\n\n      <div class=\"st-item\">\n        <p class=\"st-label\">Physical Stamina</p>\n        <p class=\"st-num\">93%</p>\n        <p class=\"st-desc\">Reported improved stamina</p>\n      </div>\n\n      <div class=\"st-item\">\n        <p class=\"st-label\">Mental Focus</p>\n        <p class=\"st-num\">73%</p>\n        <p class=\"st-desc\">Reported improved focus</p>\n      </div>\n\n      <div class=\"st-item\">\n        <p class=\"st-label\">Men's Vitality</p>\n        <p class=\"st-num\">97%</p>\n        <p class=\"st-desc\">Reported improved vitality</p>\n      </div>\n\n    </div>\n\n    <!-- Optional source line: remove the comment markers and fill it in with your real data -->\n    <!-- <p class=\"st-source\">Based on a survey of ___ customers over ___ weeks.</p> -->\n\n  </div>\n</div>\n\n<style>\n  .st-wrap,\n  .st-wrap * {\n    box-sizing: border-box;\n  }\n  .st-wrap {\n    max-width: 1000px;\n    margin: 0 auto;\n    padding: 12px;\n  }\n  .st-card {\n    background: #fbf7ee;           /* card background */\n    border: 2px solid #e6d3b8;     /* card border */\n    border-radius: 16px;\n    padding: 18px 10px 16px;\n    text-align: center;\n    overflow: hidden;\n  }\n  .st-title {\n    margin: 0 0 12px;\n    font-family: inherit;\n    font-size: 12px;\n    font-weight: 600;\n    letter-spacing: .16em;\n    text-transform: uppercase;\n    color: #6b4a1e;                /* deeper shade for readability */\n  }\n  .st-grid {\n    display: grid;\n    grid-template-columns: repeat(4, minmax(0, 1fr));\n  }\n  .st-item {\n    min-width: 0;\n    padding: 2px 10px;\n  }\n  .st-item + .st-item {\n    border-left: 1px solid #e6d3b8;   /* divider between stats */\n  }\n  .st-label {\n    margin: 0 0 4px;\n    font-family: inherit;\n    font-size: 13px;\n    font-weight: 700;\n    line-height: 1.2;\n    color: #6b4a1e;\n  }\n  .st-num {\n    margin: 0 0 4px;\n    font-family: inherit;\n    font-size: 40px;\n    font-weight: 400;\n    line-height: 1;\n    letter-spacing: -.02em;\n    color: #B98141;                /* your gold */\n  }\n  .st-desc {\n    margin: 0 auto;\n    max-width: 170px;\n    font-family: inherit;\n    font-size: 13px;\n    line-height: 1.3;\n    color: #6b4a1e;\n  }\n  .st-source {\n    margin: 12px 0 0;\n    font-family: inherit;\n    font-size: 12px;\n    font-weight: 500;\n    color: #6b4a1e;\n  }\n  @media (max-width: 749px) {\n    .st-wrap { padding: 8px; }\n    .st-card { padding: 12px 4px 12px; border-radius: 12px; }\n    .st-title { font-size: 10px; letter-spacing: .1em; margin-bottom: 10px; }\n    .st-item { padding: 0 5px; overflow-wrap: break-word; }\n    .st-label {\n      font-size: 10.5px;\n      min-height: 2.4em;              /* keeps the numbers lined up */\n      display: flex;\n      align-items: flex-end;\n      justify-content: center;\n    }\n    .st-num { font-size: 26px; margin-bottom: 3px; }\n    .st-desc { font-size: 10px; line-height: 1.25; }\n  }\n</style>"
+          }
+        },
+        "custom_liquid_HRPx87": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "carousel_default_video_akUGBF": {
+          "type": "carousel_default_video",
+          "disabled": true,
+          "settings": {
+            "enable_autoplay": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "carousel_default_video_6k7bGt": {
+          "type": "carousel_default_video",
+          "settings": {
+            "enable_autoplay": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "carousel_default_video_DX3XK4": {
+          "type": "carousel_default_video",
+          "settings": {
+            "enable_autoplay": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "carousel_default_video_eH4e7V": {
+          "type": "carousel_default_video",
+          "settings": {
+            "enable_autoplay": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "faq": {
+          "type": "product_faq",
+          "disabled": true,
+          "settings": {
+            "use_theme_colors": true,
+            "items_limit": 5,
+            "image_size": 30,
+            "image_border_radius": 4,
+            "image_fit": "cover",
+            "text_size": 14,
+            "answer_text_size": 17,
+            "item_padding": 3,
+            "question_padding": 8,
+            "margin_top": 5,
+            "margin_bottom": 5,
+            "border_radius": 4,
+            "border_color": "#cccccc",
+            "border_style": "full",
+            "question_color": "#1d1d1d",
+            "question_bg_color": "#ffffff",
+            "answer_color": "#2e2e2e",
+            "answer_bg_color": "#fafafa",
+            "accordion_mode": true,
+            "question_1": "How Soon Will I See Results?",
+            "use_product_description_for_question_1": false,
+            "answer_1": "<p>Most men report feeling more natural energy and focus within the first few days. <strong>Bedroom benefits like improved stamina and performance can be noticed within 6-8 weeks</strong> of consistent use. Remember — Alpha Brew isn’t a “magic pill.” It works by supporting healthy testosterone and blood flow naturally over time.</p>",
+            "question_2": "How to Use?",
+            "answer_2": "<p>Enjoy once daily.</p><ul><li>Add <strong>1 scoop</strong> to 3-5oz Of Hot Water.</li><li>Mix it with for 10-15 second </li></ul><p><em>* Relates Alpha Brew Coffee.</em></p>",
+            "question_3": "What makes Alpha Brew different from pills or supplements?",
+            "answer_3": "<p>Most <strong>pills are underdosed,& only absorb 20-33% of the nutrients, </strong> Alpha Brew coffee absorbs 70% of the nutrients and works 4x faster then any pills or supplements.</p>",
+            "question_4": "What if Alpha Brew doesn’t work for me?",
+            "answer_4": "<p>It has been proven to work for all types  but we do understand that every man is different, which is why Alpha Brew comes with a <strong>100% money-back guarantee. </strong>If you don’t notice improved energy, drive, or performance, just contact us for a full refund — no questions asked</p>",
+            "question_5": "How Does It Taste?",
+            "answer_5": "<p>Like coffee - but smoother and less bitter </p><p>The Caco & Coffee Combination gives it a delicious perfect coffee taste. Most guys say it tastes like the perfect cup of coffee. </p>",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        }
+      },
+      "block_order": [
+        "size_chart_NijMRG",
+        "custom_text_L4tTeC",
+        "nutrition_label_fhtHPD",
+        "custom_liquid_QQiQXy",
+        "custom_liquid_cpMQhc",
+        "reviews_k4EJhH",
+        "custom_content_XDggJB",
+        "custom_text_Qra839",
+        "title",
+        "product_description_R9MapE",
+        "custom_liquid_KG6Hyt",
+        "custom_liquid_VmCydN",
+        "divider_Kh6UcP",
+        "bullet_list_N9LXq7",
+        "benefits_grid_cPjrLb",
+        "bullet_list_hFikNj",
+        "custom_liquid_yeqLKW",
+        "custom_liquid_7HbwYb",
+        "price",
+        "kaching_bundles_app_block_LeH766",
+        "divider_wt4Jib",
+        "add_to_cart",
+        "payment_icons_D8JNK4",
+        "custom_money_back_TiCTCH",
+        "custom_liquid_PdwNgU",
+        "custom_liquid_333qj6",
+        "delivery_date_8biaJi",
+        "custom_liquid_JDMFBc",
+        "money_back_guarantee_kbK7cN",
+        "custom_liquid_CTRXzx",
+        "divider_yp8EHi",
+        "custom_liquid_4iBwVf",
+        "custom_liquid_yWHx4F",
+        "custom_liquid_HRPx87",
+        "carousel_default_video_akUGBF",
+        "carousel_default_video_6k7bGt",
+        "carousel_default_video_DX3XK4",
+        "carousel_default_video_eH4e7V",
+        "faq"
+      ],
+      "custom_css": [
+        ".upsell-product-image-column-product_upsell_FPpHVA,.upsell-product-image-column-product_upsell_PBFnh8 {border-right: 1px solid #cccccc;}",
+        ".premium-attachment-kit {border-radius: 4px;}",
+        ".free-badge {border-radius: 24px;}"
+      ],
+      "name": "Product Details",
+      "settings": {
+        "use_theme_colors": false,
+        "current_product": "",
+        "section_bg_color": "#ffffff",
+        "blocks_spacing": 2,
+        "text_color": "#b98141",
+        "accent_color": "#506d52",
+        "divider_color": "#cccccc",
+        "show_product_info": true,
+        "show_product_gallery": true,
+        "show_product_variants": true,
+        "thumbnail_border_color": "#cccccc",
+        "thumbnail_active_border_color": "#506d52",
+        "dots_color": "#cccccc",
+        "enable_full_width_image": false,
+        "enable_mobile_full_width_image": false,
+        "hide_thumbnails": false,
+        "dot_size": 8,
+        "dot_color": "#cccccc",
+        "dot_active_color": "#000000",
+        "show_desktop_arrows": true,
+        "desktop_arrow_background": "#ffffff",
+        "desktop_arrow_border": "#e0e0e0",
+        "desktop_arrow_icon": "#000000",
+        "desktop_arrow_hover_background": "#f5f5f5",
+        "desktop_arrow_hover_border": "#d0d0d0",
+        "arrow_border_radius": 50,
+        "arrow_opacity": 90,
+        "desktop_arrow_placement": "overlaid",
+        "show_mobile_arrows": true,
+        "mobile_arrow_placement": "below",
+        "mobile_thumbnails_2x2_grid": true
+      }
+    },
+    "3_bars_stacks_JgUJBc": {
+      "type": "3-bars-stacks",
+      "blocks": {
+        "expect_PWYAjX": {
+          "type": "expect",
+          "settings": {
+            "title": "What Happens After You Boost Testosterone With Alpha Brew",
+            "block_1_day": "DAY 7",
+            "block_1_title": "Week 1 - Your Body Wakes Up",
+            "block_1_description": "<ul><li>Tongkat Ali blocks stress hormones</li><li>Shilajit feeds starving testosterone cells</li><li>Workouts feel intense again</li><li>Clean energy hits without the crash</li></ul>",
+            "block_2_day": "DAY 7",
+            "block_2_title": "Month 1 - The Shift Gets Real",
+            "block_2_description": "<ul><li>Workouts feel intense again</li><li>Libido quietly starts coming back</li><li>Mood stabilizes, irritability fades</li><li>Start to feel that all-day energy</li></ul>",
+            "block_3_day": "DAY 7",
+            "block_3_title": "Month 3 - The New You",
+            "block_3_description": "<ul><li>Beer belly starts visibly shrinking</li><li>Sleep deeper than you have in years</li><li> Drive and confidence return naturally</li><li>Feel like yourself again — 10 years younger</li></ul>"
+          }
+        },
+        "faq_K87RV3": {
+          "type": "faq",
+          "settings": {
+            "faq_1_question": "How Soon Will I See Results?",
+            "faq_1_answer": "<p>Most men report feeling more natural energy and focus within the first few days. <strong>Bedroom benefits like improved stamina and performance can be noticed within 6-8 weeks</strong> of consistent use. Remember — Alpha Brew isn’t a “magic pill.” It works by supporting healthy testosterone and blood flow naturally over time.</p>",
+            "faq_2_question": "How to Use?",
+            "faq_2_answer": "<p>Enjoy once daily.</p><ul><li>Add <strong>1 scoop</strong> to 3-5oz Of Hot Water.</li><li>Mix it with for 10-15 second</li></ul><p><em>* Relates Alpha Brew Coffee.</em></p>",
+            "faq_3_question": "What makes Alpha Brew different from pills or supplements?",
+            "faq_3_answer": "<p>Most <strong>pills are underdosed,& only absorb 20-33% of the nutrients, </strong> Alpha Brew coffee absorbs 70% of the nutrients and works 4x faster then any pills or supplements.</p>",
+            "faq_4_question": "What if Alpha Brew doesn’t work for me?",
+            "faq_4_answer": "<p>It has been proven to work for all types but we do understand that every man is different, which is why Alpha Brew comes with a <strong>100% money-back guarantee. </strong>If you don’t notice improved energy, drive, or performance, just contact us for a full refund — no questions asked</p>",
+            "faq_5_question": "How Does It Taste?",
+            "faq_5_answer": "<p>Like coffee - but smoother and less bitter</p><p>The Caco & Coffee Combination gives it a delicious perfect coffee taste. Most guys say it tastes like the perfect cup of coffee.</p>"
+          }
+        },
+        "reviews_Un4Mn6": {
+          "type": "reviews",
+          "settings": {
+            "review_1_title": "Better than ANYTHING I TRIED",
+            "review_1_text": "<p><strong> It is working well on me. Yes more energy more erections if that's what you wanted to know. I have 2 cups a day, one in the morning, one in the evening! I add a dab of honey just for some sweetness. So far so good! If you are on the fence, give it a try!</strong></p>",
+            "review_1_author": "Jacob Brown",
+            "review_2_title": "My Wife DIDN'T WANT ME TO STOP",
+            "review_2_text": "<p><strong>My Wife didn't want me to leave, went 4 rounds with her<br/>I had more stamina, wasn't tired</strong></p>",
+            "review_2_author": "Yaniq Rodeo",
+            "review_3_title": "The BEST",
+            "review_3_text": "<p><strong>I'm 55 years old and I have been drinking other supplements and mushroom coffee similar to this and this is the best by far</strong></p>",
+            "review_3_author": "Mike Charles"
+          }
+        }
+      },
+      "block_order": [
+        "expect_PWYAjX",
+        "faq_K87RV3",
+        "reviews_Un4Mn6"
+      ],
+      "name": "Bars Stacks",
+      "settings": {}
+    },
+    "customer_reviews_carousel_cWGaEy": {
+      "type": "customer-reviews-carousel",
+      "blocks": {
+        "review_7a3pU7": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/11_copy_3.png",
+            "image_position": "center center",
+            "wrap_image": true,
+            "rating": 4,
+            "review_text": "I love how this Coffee taste, is supper good , I drink it every morning with my coffee and i feel the difference i definitely noticed I've been enjoying sex more because I've been lasting  a little longer then usual plus the focus and energy this coffee gives me is balanced no heart racing feeling like regular coffee",
+            "reviewer_name": "Mathew",
+            "reviewer_age": "43",
+            "show_verified_badge": true,
+            "show_purchased_product": false,
+            "product_reference": "heat-activated-testosterone-coffee",
+            "product_title": "Product Name",
+            "product_price": "$49.99",
+            "product_compare_price": "$59.99",
+            "show_purchase_date": true,
+            "purchase_date": "sep 4th, 2025"
+          }
+        },
+        "review_e74FXA": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/12_copy_2.png",
+            "image_position": "center center",
+            "wrap_image": true,
+            "rating": 5,
+            "review_text": "I like it This coffee t has completely transformed my  morning routine. i look forward every morning to drink it the taste is delicious , i did notice feeling more energetic throughout the day .and couldn't be happier with my purchase.",
+            "reviewer_name": "Damien",
+            "reviewer_age": "46",
+            "show_verified_badge": true,
+            "show_purchased_product": false,
+            "product_reference": "heat-activated-testosterone-coffee",
+            "product_title": "Product Name",
+            "product_price": "$79.99",
+            "product_compare_price": "$119.99",
+            "show_purchase_date": true,
+            "purchase_date": "October 19th, 2025"
+          }
+        },
+        "review_BmfNq7": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/13_copy.png",
+            "image_position": "center center",
+            "wrap_image": true,
+            "rating": 5,
+            "review_text": "The Best Coffee Ever Great Taste I love How it actually works i drink it in the morning i and i get a  hard when its time , my ejaculations have been delaying lately I felt  i been lasting longer Plus the energy and focus it gives it noticeable",
+            "reviewer_name": "Jason",
+            "reviewer_age": "39",
+            "show_verified_badge": true,
+            "show_purchased_product": false,
+            "product_reference": "heat-activated-testosterone-coffee",
+            "product_title": "Product Name",
+            "product_price": "$39.99",
+            "product_compare_price": "$49.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        },
+        "review_Lrxdxw": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/15.png",
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 4,
+            "review_text": "Definitely Love this coffee i will order again, I feel it in bed all the time its real this coffee is awesome it does what it says plus it tastes good",
+            "reviewer_name": "Carter",
+            "reviewer_age": "42",
+            "show_verified_badge": true,
+            "show_purchased_product": false,
+            "product_reference": "heat-activated-testosterone-coffee",
+            "product_title": "Product Name",
+            "product_price": "$99.99",
+            "product_compare_price": "$149.99",
+            "show_purchase_date": true,
+            "purchase_date": "september  6h, 2025"
+          }
+        },
+        "review_RL3JYq": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/14_copy_2.png",
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 4,
+            "review_text": "my obsession over this coffee is un real, I love how it actually works, i feel my body changing when i drink it its almost like magic, I feel the focus and energy when i drink it plus Ive felt stronger and less weak and drained throughout the day",
+            "reviewer_name": "Andrew",
+            "reviewer_age": "38",
+            "show_verified_badge": true,
+            "show_purchased_product": false,
+            "product_reference": "heat-activated-testosterone-coffee",
+            "product_title": "Product Name",
+            "product_price": "$79.99",
+            "product_compare_price": "$119.99",
+            "show_purchase_date": true,
+            "purchase_date": "November  14th, 2025"
+          }
+        },
+        "review_yf8FmB": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/IMG_8773.heic",
+            "image_position": "top center",
+            "wrap_image": false,
+            "rating": 4,
+            "review_text": "i work out in construction It actually works i felt the difference in energy plus everything else it says it does. i drink this every morning instead of regular coffee and this is a better alternative",
+            "reviewer_name": "Miguel",
+            "reviewer_age": "44",
+            "show_verified_badge": true,
+            "show_purchased_product": false,
+            "product_reference": "heat-activated-testosterone-coffee",
+            "product_title": "Product Name",
+            "product_price": "$69.99",
+            "product_compare_price": "$19.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        },
+        "review_NDwzni": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/456723C0-2FC2-49EC-BE88-31802BB020AB.jpg",
+            "image_position": "top center",
+            "wrap_image": false,
+            "rating": 4,
+            "review_text": "The best Coffee , I will buy again this coffee tastes amazing and helps with steady clean energy",
+            "reviewer_name": "Carter",
+            "reviewer_age": "47",
+            "show_verified_badge": true,
+            "show_purchased_product": false,
+            "product_reference": "heat-activated-testosterone-coffee",
+            "product_title": "Product Name",
+            "product_price": "$119.99",
+            "product_compare_price": "$159.99",
+            "show_purchase_date": true,
+            "purchase_date": "August 13th, 2025"
+          }
+        },
+        "review_EDeVY7": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/IMG_8854.jpg",
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 5,
+            "review_text": "I was skeptical at first, but after using this for a month, I'm a true believer. The quality is outstanding!",
+            "reviewer_name": "Mathew",
+            "reviewer_age": "56",
+            "show_verified_badge": true,
+            "show_purchased_product": false,
+            "product_reference": "heat-activated-testosterone-coffee",
+            "product_title": "Product Name",
+            "product_price": "$69.99",
+            "product_compare_price": "$119.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        },
+        "review_FmnETK": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/IMG_8829.heic",
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 4,
+            "review_text": "Great product that delivers on its promises. Would definitely recommend to friends and family. I will buy more",
+            "reviewer_name": "Carter",
+            "reviewer_age": "46",
+            "show_verified_badge": true,
+            "show_purchased_product": false,
+            "product_reference": "heat-activated-testosterone-coffee",
+            "product_title": "Product Name",
+            "product_price": "$49.99",
+            "product_compare_price": "$49.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        }
+      },
+      "block_order": [
+        "review_7a3pU7",
+        "review_e74FXA",
+        "review_BmfNq7",
+        "review_Lrxdxw",
+        "review_RL3JYq",
+        "review_yf8FmB",
+        "review_NDwzni",
+        "review_EDeVY7",
+        "review_FmnETK"
+      ],
+      "name": "Customer Reviews",
+      "settings": {
+        "use_theme_colors": false,
+        "section_width": 1200,
+        "section_background": "#ffffff",
+        "title_text": "Customer",
+        "accent_text": "Reviews",
+        "title_color": "#b98141",
+        "accent_color": "#b98141",
+        "override_global_accent": false,
+        "accent_text_margin_left": 0,
+        "use_accent_gradient": false,
+        "accent_text_gradient": "radial-gradient(rgba(185, 129, 65, 1), rgba(255, 107, 157, 1) 100%)",
+        "accent_font_family": "inherit",
+        "accent_font_style": "normal",
+        "accent_font_weight": "inherit",
+        "custom_heading_styling": false,
+        "heading_font_size": 56,
+        "heading_font_size_mobile": 48,
+        "heading_line_height": 1.2,
+        "show_description": false,
+        "description_text": "See what our customers are saying about our products",
+        "description_color": "#000000",
+        "prev_button_bg": "#ffffff",
+        "prev_button_color": "#000000",
+        "prev_button_border": "#e0e0e0",
+        "next_button_bg": "#f1e5c2",
+        "next_button_color": "#ffffff",
+        "next_button_border": "#b98141",
+        "scroll_amount": 360,
+        "card_width": 390,
+        "card_border_radius": 10,
+        "card_border_color": "#e0e0e0",
+        "card_background": "#ffffff",
+        "card_margin_top": 0,
+        "card_margin_right": 0,
+        "card_margin_bottom": 0,
+        "card_margin_left": 0,
+        "star_filled_color": "#b98141",
+        "star_empty_color": "#e0e0e0",
+        "carousel_review_star_size": 16,
+        "review_text_color": "#000000",
+        "review_text_size": 14,
+        "review_text_size_mobile": 12,
+        "reviewer_info_color": "#000000",
+        "reviewer_info_bg_color": "#f5f5f5",
+        "reviewer_info_font_size": 12,
+        "verified_badge_text": "Verified Buyer",
+        "verified_badge_color": "#b98141",
+        "verified_icon_color": "#f1e5c2",
+        "verified_badge_font_size": 10,
+        "enable_reviewer_info_border": false,
+        "reviewer_info_border_width": 1,
+        "reviewer_info_border_style": "solid",
+        "reviewer_info_border_color": "#e0e0e0",
+        "reviewer_info_border_radius": 8,
+        "product_label": "Item Purchased",
+        "product_label_color": "#000000",
+        "product_title_color": "#000000",
+        "product_price_color": "#b98141",
+        "product_bg_color": "#f9f9f9",
+        "product_title_font_size": 12,
+        "product_price_font_size": 12,
+        "product_compare_price_font_size": 10,
+        "purchase_date_font_size": 10,
+        "product_border_color": "#eeeeee",
+        "product_border_width": 1,
+        "product_border_style": "solid",
+        "summary_star_color": "#b98141",
+        "summary_text_color": "#000000",
+        "rating_summary_text": "<p>Rated 4.8/5 based on 100k Total Ratings</p>",
+        "rating_summary_font_size": 13,
+        "rating_summary_bg_color": "#fef6e6",
+        "purchase_date_prefix": "Purchased on",
+        "purchase_date_color": "#000000",
+        "purchase_date_icon_color": "#000000",
+        "rating_summary_gradient": "",
+        "enable_rating_summary_border": false,
+        "rating_summary_border_width": 1,
+        "rating_summary_border_style": "solid",
+        "rating_summary_border_color": "#b98141",
+        "rating_summary_border_radius": 50
+      }
+    },
+    "ingredient_filterv2_gPmdgG": {
+      "type": "ingredient-filterv2",
+      "blocks": {
+        "ingredient_group_HnzXCM": {
+          "type": "ingredient_group",
+          "settings": {
+            "category_title": "Testosterone Production",
+            "category_description": "Supports your body's natural testosterone production pathways",
+            "items_count": "3",
+            "item_1_image": "shopify://shop_images/Tongcat_Ali-removebg-preview.png",
+            "item_1_amount": "400 mg",
+            "item_1_title": "Tongcat Ali",
+            "item_1_description": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth",
+            "item_2_image": "shopify://shop_images/Ashwaganda-removebg-preview.png",
+            "item_2_amount": "600 mg",
+            "item_2_title": "Ashwaganda",
+            "item_2_description": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth",
+            "item_3_image": "shopify://shop_images/Black_Maca-removebg-preview.png",
+            "item_3_amount": "1000 mg",
+            "item_3_title": "Black Maca",
+            "item_3_description": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth"
+          }
+        },
+        "ingredient_group_4zPVfC": {
+          "type": "ingredient_group",
+          "settings": {
+            "category_title": "Energy & Focus",
+            "category_description": "Supports energy, focus and daily performance",
+            "items_count": "3",
+            "item_1_image": "shopify://shop_images/Shilajit.png",
+            "item_1_amount": "200 mg",
+            "item_1_title": "Shilajit",
+            "item_1_description": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth",
+            "item_2_image": "shopify://shop_images/Arabica_Coffee.png",
+            "item_2_amount": "8000 mg",
+            "item_2_title": "Arabica Coffee",
+            "item_2_description": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth",
+            "item_3_image": "shopify://shop_images/L-_theanine-removebg-preview.png",
+            "item_3_amount": "200 mg",
+            "item_3_title": "L- theanine",
+            "item_3_description": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth"
+          }
+        },
+        "ingredient_group_GxYcXL": {
+          "type": "ingredient_group",
+          "settings": {
+            "category_title": "Performance Support",
+            "category_description": "Supports vitality, circulation, and daily performance",
+            "items_count": "3",
+            "item_1_image": "shopify://shop_images/Cacao-removebg-preview.png",
+            "item_1_amount": "2000 mg",
+            "item_1_title": "Cacao",
+            "item_1_description": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth",
+            "item_2_image": "shopify://shop_images/L-_Citruline.png",
+            "item_2_amount": "6000 mg",
+            "item_2_title": "L- Citruline",
+            "item_2_description": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth",
+            "item_3_image": "shopify://shop_images/Horney_Goat_Weed.png",
+            "item_3_amount": "800 mg",
+            "item_3_title": "Horney Goat Weed",
+            "item_3_description": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth"
+          }
+        },
+        "ingredient_group_qR7kLm": {
+          "type": "ingredient_group",
+          "settings": {
+            "category_title": "Vitality Support",
+            "category_description": "Supports strength, stamina, and overall vitality",
+            "items_count": "2",
+            "item_1_image": "shopify://shop_images/Tribulus_Terrestris.png",
+            "item_1_amount": "500 mg",
+            "item_1_title": "Tribulus Terrestris",
+            "item_1_description": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth",
+            "item_2_image": "shopify://shop_images/Fenugreek.png",
+            "item_2_amount": "1000 mg",
+            "item_2_title": "Fenugreek",
+            "item_2_description": "Boosts testosterone, enhances libido, improves fertility & supports muscle growth",
+            "item_3_amount": "",
+            "item_3_title": "",
+            "item_3_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_group_HnzXCM",
+        "ingredient_group_4zPVfC",
+        "ingredient_group_GxYcXL",
+        "ingredient_group_qR7kLm"
+      ],
+      "name": "Ingredient Filter V2",
+      "settings": {
+        "heading": "11 INGREDIENTS IN 1 POWERFUL FORMULA",
+        "subheading": "clinically dosed + EFFECTIVE",
+        "desktop_columns": 4,
+        "background_color": "#ffffff",
+        "convert_grid_to_scrollable": true
+      }
+    },
+    "4_benefits_Li9ngV": {
+      "type": "4-benefits",
+      "blocks": {
+        "benefit_JJEpMk": {
+          "type": "benefit",
+          "settings": {
+            "title": "Increase Testosterone",
+            "description": "Boost your master hormone — for strength, drive, and vitality.",
+            "preset_icon": "lightning",
+            "use_custom_icon": true,
+            "custom_icon_svg": "",
+            "icon_image": "shopify://shop_images/6_06c8ddb2-c133-450c-ae94-f5a0157019ab.png",
+            "icon_size_mobile": 28,
+            "icon_size_desktop": 32,
+            "vertical_spacing": 14
+          }
+        },
+        "benefit_dfFzDM": {
+          "type": "benefit",
+          "settings": {
+            "title": "Feel StrongerSupport",
+            "description": "lean muscle, recovery, and raw masculine power.",
+            "preset_icon": "shield",
+            "use_custom_icon": true,
+            "custom_icon_svg": "",
+            "icon_image": "shopify://shop_images/6_8ac1dc02-2272-4fa2-b3cf-c496017211d8.png",
+            "icon_size_mobile": 28,
+            "icon_size_desktop": 32,
+            "vertical_spacing": 20
+          }
+        },
+        "benefit_HikTLz": {
+          "type": "benefit",
+          "settings": {
+            "title": "Higher Sex Drive",
+            "description": "Natural ingredients to fuel stamina, libido, and performance.",
+            "preset_icon": "refresh",
+            "use_custom_icon": true,
+            "custom_icon_svg": "",
+            "icon_image": "shopify://shop_images/4_61e75d1b-4cf9-4658-bb4b-477d2d1a9296.png",
+            "icon_size_mobile": 28,
+            "icon_size_desktop": 32,
+            "vertical_spacing": 20
+          }
+        },
+        "benefit_pULqPN": {
+          "type": "benefit",
+          "settings": {
+            "title": "Increases Energy",
+            "description": "Smooth, sustained energy all day — no jitters, no crash.",
+            "preset_icon": "check",
+            "use_custom_icon": true,
+            "custom_icon_svg": "",
+            "icon_image": "shopify://shop_images/9.png",
+            "icon_size_mobile": 28,
+            "icon_size_desktop": 32,
+            "vertical_spacing": 20
+          }
+        }
+      },
+      "block_order": [
+        "benefit_JJEpMk",
+        "benefit_dfFzDM",
+        "benefit_HikTLz",
+        "benefit_pULqPN"
+      ],
+      "name": "4 Benefits",
+      "settings": {
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_left_desktop": 20,
+        "padding_right_desktop": 20,
+        "heading_regular": "Ingredients Verified",
+        "heading_accent": "By Scientists",
+        "subtitle": "",
+        "use_theme_colors": false,
+        "section_background": "linear-gradient(180deg, rgba(241, 229, 194, 1), rgba(248, 248, 248, 1) 100%)",
+        "heading_color": "#000000",
+        "subtitle_color": "#1d1d1d",
+        "heading_size_mobile": 32,
+        "heading_size_desktop": 48,
+        "subtitle_size_mobile": 24,
+        "subtitle_size_desktop": 32,
+        "desktop_layout": "grid",
+        "benefit_alignment": "center",
+        "icon_color": "#b98141",
+        "benefit_title_color": "#000000",
+        "benefit_description_color": "#000000",
+        "benefit_title_size_mobile": 16,
+        "benefit_title_size_desktop": 18,
+        "benefit_description_size_mobile": 14,
+        "benefit_description_size_desktop": 15,
+        "icon_background": "linear-gradient(54deg, rgba(241, 229, 194, 1) 14%, rgba(241, 237, 196, 1) 85%, rgba(255, 250, 99, 1) 97%)",
+        "icon_border_width": 2,
+        "icon_border_style": "solid",
+        "icon_border_color": "#b98141",
+        "show_image": true,
+        "section_image": "shopify://shop_images/Doctor_neww.png",
+        "image_border_radius": 15,
+        "override_global_accent": false,
+        "accent_color": "#1d1d1d",
+        "use_accent_gradient": false,
+        "accent_text_gradient": "",
+        "accent_font_family": "inherit",
+        "accent_font_style": "normal",
+        "accent_font_weight": "inherit",
+        "accent_text_margin_left": 0
+      }
+    },
+    "product_benefits_9n4igV": {
+      "type": "product-benefits",
+      "blocks": {
+        "benefit_VVEHFE": {
+          "type": "benefit",
+          "settings": {
+            "title": "Testosterone Support",
+            "description": "Formulated with powerful natural ingredients that help optimize T-levels for strength and vitality.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "preset_icon": "check",
+            "use_custom_icon": false,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"></path></svg>"
+          }
+        },
+        "benefit_7PpXXD": {
+          "type": "benefit",
+          "settings": {
+            "title": "Performance EnhancementPerformance",
+            "description": "Enhancement Supports stamina, endurance, and confidence — in the bedroom.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "preset_icon": "clock",
+            "use_custom_icon": false,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"></path></svg>"
+          }
+        },
+        "benefit_LUVxER": {
+          "type": "benefit",
+          "settings": {
+            "title": "Masculine Edge",
+            "description": "A daily ritual that helps you feel sharper, stronger, and more unstoppable over time.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "preset_icon": "sparkle",
+            "use_custom_icon": false,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"></path></svg>"
+          }
+        },
+        "benefit_BVcCg3": {
+          "type": "benefit",
+          "settings": {
+            "title": "Smooth Energy",
+            "description": "BoostDelivers clean, sustained energy without jitters or mid-day crashes.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "icon_image": "shopify://shop_images/9.png",
+            "preset_icon": "check",
+            "use_custom_icon": false,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"></path></svg>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_VVEHFE",
+        "benefit_7PpXXD",
+        "benefit_LUVxER",
+        "benefit_BVcCg3"
+      ],
+      "name": "Product Benefits",
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_left": 25,
+        "padding_right": 25,
+        "image_position_desktop": "right",
+        "heading_size_mobile": 34,
+        "heading_size_desktop": 35,
+        "subtitle_size_mobile": 13,
+        "subtitle_size_desktop": 13,
+        "benefit_title_size_mobile": 14,
+        "benefit_title_size_desktop": 14,
+        "benefit_description_size_mobile": 12,
+        "benefit_description_size_desktop": 12,
+        "accent_color": "#b98141",
+        "use_theme_colors": false,
+        "override_global_accent": false,
+        "accent_font_family": "inherit",
+        "accent_font_style": "normal",
+        "accent_font_weight": "inherit",
+        "use_accent_gradient": false,
+        "accent_text_gradient": "linear-gradient(45deg, rgba(239, 74, 101, 1), rgba(255, 107, 157, 1) 100%)",
+        "accent_text_margin_left": 0,
+        "list_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(240, 240, 240, 1) 100%)",
+        "list_border_radius": 20,
+        "border_color": "#e0e0e0",
+        "heading_accent": "Premium Product Ingredients",
+        "heading_regular": "",
+        "subtitle": "Alpha Brew Ingredients Absorb 70% More Nutrients Then Pills & Supplements",
+        "show_image": true,
+        "media_type": "image",
+        "feature_image": "shopify://shop_images/Copy_of_Static_Templates_1080_copy.png",
+        "image_alt": "Feature product image",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "heading_color": "#b98141",
+        "subtitle_color": "#b98141",
+        "description_color": "#1d1d1d",
+        "section_background": "linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(248, 248, 248, 1) 100%)"
+      }
+    },
+    "scrolling_features_bar_AhP6EL": {
+      "type": "scrolling-features-bar",
+      "blocks": {
+        "feature_item_WJdNbm": {
+          "type": "feature_item",
+          "settings": {
+            "text": "PREMIUM QUALITY",
+            "icon_type": "svg",
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "feature_item_CJxhgK": {
+          "type": "feature_item",
+          "settings": {
+            "text": "FAST SHIPPING",
+            "icon_type": "svg",
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "feature_item_VMc6KP": {
+          "type": "feature_item",
+          "settings": {
+            "text": "SATISFACTION GUARANTEED",
+            "icon_type": "svg",
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_WJdNbm",
+        "feature_item_CJxhgK",
+        "feature_item_VMc6KP"
+      ],
+      "disabled": true,
+      "settings": {
+        "use_theme_colors": false,
+        "vertical_padding": 15,
+        "item_gap": 60,
+        "mobile_item_gap": 30,
+        "font_size": 14,
+        "mobile_font_size": 12,
+        "letter_spacing": 0.5,
+        "uppercase_text": true,
+        "icon_size": 20,
+        "mobile_icon_size": 16,
+        "icon_spacing": 10,
+        "icon_type": "svg",
+        "slider_direction": "left",
+        "scrolling_velocity": 15,
+        "pause_on_hover": true,
+        "background_color": "#211a28",
+        "text_color": "#ffffff",
+        "icon_color": "#ffffff",
+        "use_gradient_background": false,
+        "background_gradient": ""
+      }
+    },
+    "sticky_add_to_cart_NJqgUd": {
+      "type": "sticky-add-to-cart",
+      "disabled": true,
+      "settings": {
+        "satc_toggle_variant": false,
+        "select_button_behavior": "scrollup",
+        "button_text": "CLAIM OFFER",
+        "delivery_days": 5,
+        "title_color": "#121212",
+        "title_desktop_font_size": 16,
+        "title_letter_spacing": 0,
+        "rating_text": "Excellent 4.8 | 1319 reviews",
+        "use_theme_colors": false,
+        "use_global_button_styling": true,
+        "custom_button_padding_y": 15,
+        "custom_button_font_size": 14,
+        "button_bg_color": "#211a28",
+        "button_hover_color": "#211a28",
+        "button_text_color": "#ffffff",
+        "star_color": "#211a28",
+        "background_color": "#ffffff",
+        "border_radius": 6,
+        "transparent_background": false,
+        "z_index": 9900,
+        "rating_text_color": "#211a28",
+        "rating_text_font_weight": "var(--font-weight-regular)",
+        "rating_text_desktop_font_size": 14,
+        "rating_text_letter_spacing": 0,
+        "delivery_text_color": "#211a28",
+        "delivery_text_font_weight": "var(--font-weight-bold)",
+        "delivery_text_desktop_font_size": 14,
+        "delivery_text_mobile_font_size": 12,
+        "delivery_text_letter_spacing": 0,
+        "delivery_date_display_format": "weekday_month_day",
+        "turn_off_delivery_date": false,
+        "delivery_text_prefix": "Get It By"
+      }
+    },
+    "product_benefits_NWiWMe": {
+      "type": "product-benefits",
+      "blocks": {
+        "benefit_HkrEf3": {
+          "type": "benefit",
+          "settings": {
+            "title": "High Quality Materials",
+            "description": "Made with premium materials that are built to last and deliver exceptional performance.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "preset_icon": "check",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_FhNtL9": {
+          "type": "benefit",
+          "settings": {
+            "title": "Easy to Use Design",
+            "description": "Intuitive design makes this product simple to use, saving you valuable time and effort.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "preset_icon": "clock",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_GRe7dT": {
+          "type": "benefit",
+          "settings": {
+            "title": "Multiple Configuration Options",
+            "description": "Customize your experience with various settings to meet your specific needs.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "preset_icon": "sparkle",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "custom_benefits_grid": {
+          "type": "benefit",
+          "settings": {
+            "title": "Long-Term Value",
+            "description": "A smart investment that pays for itself over time with its durability and efficiency.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "preset_icon": "heart",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_HkrEf3",
+        "benefit_FhNtL9",
+        "benefit_GRe7dT",
+        "custom_benefits_grid"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_left": 25,
+        "padding_right": 25,
+        "image_position_desktop": "right",
+        "heading_size_mobile": 40,
+        "heading_size_desktop": 35,
+        "subtitle_size_mobile": 13,
+        "subtitle_size_desktop": 13,
+        "benefit_title_size_mobile": 14,
+        "benefit_title_size_desktop": 14,
+        "benefit_description_size_mobile": 12,
+        "benefit_description_size_desktop": 12,
+        "accent_color": "#ffffff",
+        "use_theme_colors": false,
+        "override_global_accent": true,
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "inherit",
+        "use_accent_gradient": false,
+        "accent_text_gradient": "linear-gradient(45deg, #EF4A65, #FF6B9D)",
+        "accent_text_margin_left": 0,
+        "list_background": "linear-gradient(to bottom, #FFFFFF, #F0F0F0)",
+        "list_border_radius": 8,
+        "border_color": "#ffffff",
+        "heading_accent": "Beauty Products.",
+        "heading_regular": "Redefining",
+        "subtitle": "<p>Discover the outstanding features that make our product stand out from the competition.</p>",
+        "show_image": true,
+        "media_type": "image",
+        "image_alt": "Feature product image",
+        "video_autoplay": true,
+        "video_muted": true,
+        "video_loop": true,
+        "video_controls": false,
+        "heading_color": "#ffffff",
+        "subtitle_color": "#ffffff",
+        "description_color": "#ffffff",
+        "section_background": "linear-gradient(to right, #FFFFFF, #F8F8F8)"
+      }
+    },
+    "before_after_comparison_dg6PAy": {
+      "type": "before-after-comparison",
+      "disabled": true,
+      "settings": {
+        "use_theme_colors": false,
+        "title": "The",
+        "title_accent": "Versa Difference.",
+        "override_global_accent": false,
+        "accent_color": "#ef4a65",
+        "use_accent_gradient": false,
+        "accent_text_gradient": "linear-gradient(45deg, rgba(239, 74, 101, 1), rgba(255, 107, 157, 1) 100%)",
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "inherit",
+        "accent_letter_spacing": 0,
+        "accent_text_transform": "none",
+        "accent_text_margin_left": 0,
+        "description": "See the stunning transformations our products deliver — real results from real customers.",
+        "instructions_text": "Drag the slider to see the difference",
+        "before_label": "Before",
+        "after_label": "After",
+        "initial_position": 50,
+        "container_max_width": 800,
+        "container_border_radius": 8,
+        "title_font_size": 34,
+        "description_font_size": 12,
+        "instructions_font_size": 14,
+        "label_font_size": 12,
+        "image_aspect_ratio": "4/3",
+        "image_min_height": 250,
+        "image_max_height": 500,
+        "mobile_aspect_ratio": "4/3",
+        "mobile_min_height": 200,
+        "mobile_max_height": 400,
+        "mobile_container_width": 320,
+        "section_background_color": "#ffffff",
+        "title_color": "#211a28",
+        "description_color": "#211a28",
+        "instructions_color": "#211a28",
+        "slider_button_bg": "",
+        "slider_button_border": "",
+        "slider_button_icon": "#211a28",
+        "image_label_bg": "#211a28",
+        "image_label_text": "#ffffff",
+        "contain_section": true,
+        "container_padding_top": 0,
+        "container_padding_right": 0,
+        "container_padding_bottom": 0,
+        "container_padding_left": 0,
+        "container_padding_top_mobile": 20,
+        "container_padding_right_mobile": 0,
+        "container_padding_bottom_mobile": 20,
+        "container_padding_left_mobile": 0,
+        "container_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(248, 248, 248, 1) 100%)",
+        "enable_border": true,
+        "border_width": 1,
+        "border_style": "solid",
+        "border_color": "#e5e7eb",
+        "enable_shadow": false
+      }
+    },
+    "4_benefits_CXdAtD": {
+      "type": "4-benefits",
+      "blocks": {
+        "benefit_V8ef8E": {
+          "type": "benefit",
+          "settings": {
+            "title": "asfasdf",
+            "description": "Short benefit description.",
+            "preset_icon": "lightning",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "icon_size_mobile": 38,
+            "icon_size_desktop": 46,
+            "vertical_spacing": 20
+          }
+        },
+        "benefit_jMwAFX": {
+          "type": "benefit",
+          "settings": {
+            "title": "Benefit 2",
+            "description": "Short benefit description.",
+            "preset_icon": "shield",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "icon_size_mobile": 38,
+            "icon_size_desktop": 46,
+            "vertical_spacing": 20
+          }
+        },
+        "benefit_QctFK4": {
+          "type": "benefit",
+          "settings": {
+            "title": "Benefits 3",
+            "description": "Short benefit description.",
+            "preset_icon": "refresh",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "icon_size_mobile": 42,
+            "icon_size_desktop": 46,
+            "vertical_spacing": 20
+          }
+        },
+        "benefit_jh4bTD": {
+          "type": "benefit",
+          "settings": {
+            "title": "Benefits 4",
+            "description": "Short benefit description.",
+            "preset_icon": "check",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "icon_size_mobile": 42,
+            "icon_size_desktop": 46,
+            "vertical_spacing": 20
+          }
+        }
+      },
+      "block_order": [
+        "benefit_V8ef8E",
+        "benefit_jMwAFX",
+        "benefit_QctFK4",
+        "benefit_jh4bTD"
+      ],
+      "disabled": true,
+      "name": "4 Benefits",
+      "settings": {
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_left_desktop": 20,
+        "padding_right_desktop": 20,
+        "heading_regular": "Made Of The",
+        "heading_accent": "Highest Quality.",
+        "subtitle": "Not like every other beauty brand.",
+        "use_theme_colors": false,
+        "section_background": "linear-gradient(180deg, #FFFFFF, #F8F8F8)",
+        "heading_color": "#ffffff",
+        "subtitle_color": "#ffffff",
+        "heading_size_mobile": 40,
+        "heading_size_desktop": 34,
+        "subtitle_size_mobile": 16,
+        "subtitle_size_desktop": 16,
+        "desktop_layout": "grid",
+        "benefit_alignment": "center",
+        "icon_color": "#ffffff",
+        "benefit_title_color": "#ffffff",
+        "benefit_description_color": "#ffffff",
+        "benefit_title_size_mobile": 16,
+        "benefit_title_size_desktop": 18,
+        "benefit_description_size_mobile": 14,
+        "benefit_description_size_desktop": 15,
+        "icon_background": "linear-gradient(135deg, #EF4A65, #FF6B9D)",
+        "icon_border_width": 1,
+        "icon_border_style": "solid",
+        "icon_border_color": "#ffffff",
+        "show_image": true,
+        "image_border_radius": 8,
+        "override_global_accent": true,
+        "accent_color": "#ef4a65",
+        "use_accent_gradient": false,
+        "accent_text_gradient": "linear-gradient(45deg, #EF4A65, #FF6B9D)",
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "300",
+        "accent_text_margin_left": 2
+      }
+    },
+    "statistics_column_7jDNhp": {
+      "type": "statistics-column",
+      "blocks": {
+        "statistic_HEaymL": {
+          "type": "statistic",
+          "settings": {
+            "number": "27K+",
+            "title": "Healthier Customers",
+            "description": "Join them on their journey to healthier living today."
+          }
+        },
+        "statistic_TchiiK": {
+          "type": "statistic",
+          "settings": {
+            "number": "98.4%",
+            "title": "Satisfaction Rate",
+            "description": "Less than 2% of customers return their order."
+          }
+        },
+        "statistic_r3qN6d": {
+          "type": "statistic",
+          "settings": {
+            "number": "71.9%",
+            "title": "Returning Clientele Rate",
+            "description": "Our products help our customers. Nearly 72% of them buy more than once."
+          }
+        }
+      },
+      "block_order": [
+        "statistic_HEaymL",
+        "statistic_TchiiK",
+        "statistic_r3qN6d"
+      ],
+      "disabled": true,
+      "name": "Statistics Column",
+      "settings": {
+        "use_theme_colors": false,
+        "heading": "Impressed? You're not alone.",
+        "heading_accent": "",
+        "subtitle": "",
+        "heading_color": "#13341b",
+        "heading_size_mobile": 40,
+        "heading_size_desktop": 36,
+        "subtitle_color": "#2e2e2e",
+        "subtitle_size_mobile": 14,
+        "subtitle_size_desktop": 16,
+        "override_global_accent": true,
+        "accent_color": "#ef4a65",
+        "use_accent_gradient": false,
+        "accent_text_gradient": "linear-gradient(45deg, #EF4A65, #FF6B9D)",
+        "accent_text_margin_left": 0,
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "inherit",
+        "number_color": "#506d52",
+        "number_gradient": "linear-gradient(135deg, #000000, #666666)",
+        "number_size_mobile": 36,
+        "number_size_desktop": 48,
+        "title_color": "#13341b",
+        "title_size_mobile": 16,
+        "title_size_desktop": 16,
+        "description_color": "#506d52",
+        "description_size_mobile": 13,
+        "description_size_desktop": 14,
+        "image_border_radius": 8,
+        "image_position_desktop": "right",
+        "image_position_mobile": "above",
+        "show_disclaimer": true,
+        "disclaimer_text": "* For additional information on our statistics, please contact us regarding our 'Statistic Transparency'",
+        "disclaimer_color": "#cccccc",
+        "disclaimer_icon_color": "#007acc",
+        "disclaimer_background_color": "#fafafa",
+        "disclaimer_size_mobile": 14,
+        "disclaimer_size_desktop": 16,
+        "disclaimer_line_height": 1.4,
+        "disclaimer_padding_top": 16,
+        "disclaimer_padding_bottom": 16,
+        "disclaimer_padding_left": 16,
+        "disclaimer_padding_right": 16,
+        "disclaimer_border_radius": 8,
+        "disclaimer_border_style": "none",
+        "disclaimer_border_width": 1,
+        "disclaimer_border_color": "#e0e0e0",
+        "padding_top": 60,
+        "padding_bottom": 20,
+        "section_background": "linear-gradient(135deg, #F8F8F8, #FFFFFF)",
+        "divider_color": "#cccccc"
+      }
+    },
+    "image_with_text_9Vm4Bn": {
+      "type": "image-with-text",
+      "blocks": {
+        "subtitle_ab6MLf": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle_text": "We don't. Here's Why.",
+            "subtitle_size": 1.5,
+            "subtitle_color": "#ffffff",
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "use_background": true,
+            "background_color": "#211a28",
+            "padding_vertical": 4,
+            "padding_horizontal": 12,
+            "border_radius": 20,
+            "border_width": 0,
+            "border_style": "solid",
+            "border_color": "#211a28"
+          }
+        },
+        "paragraph_xdBbmd": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph_text": "<p><strong>Add your paragraph text here. Th</strong>is can include formatting such as <strong>bold</strong> or <em>italic</em> text. Add your paragraph text here. This can include formatting such as <strong>bold</strong> or <em>italic</em> text. Add your paragraph text here. This can include formatting such as <strong>bold</strong> or <em>italic</em> text.</p>",
+            "margin_top": -13,
+            "margin_bottom": 0,
+            "paragraph_color": "#211a28"
+          }
+        },
+        "bullet_list_4nhqWM": {
+          "type": "bullet_list",
+          "settings": {
+            "two_columns": true,
+            "list_title": "",
+            "list_item_1": "First feature or benefit",
+            "list_item_1_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "list_item_2": "Second feature or benefit",
+            "list_item_2_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "list_item_3": "Third feature or benefit",
+            "list_item_3_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "list_item_4": "Fourth feature or benefit",
+            "list_item_4_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "list_item_5": "Fifth feature or benefit",
+            "list_item_5_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "list_item_6": "Sixth feature or benefit",
+            "list_item_6_svg": "<svg viewbox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"currentColor\" opacity=\"0.1\"></circle><path d=\"M9 12l2 2 4-4\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\"></path></svg>",
+            "list_color": "#333333",
+            "list_title_color": "#333333",
+            "pill_style": false,
+            "pill_bg_color": "#f5f5f5",
+            "pill_text_color": "#333333",
+            "pill_border_color": "#e0e0e0",
+            "pill_border_width": 1,
+            "pill_border_radius": 20,
+            "pill_padding_vertical": 8,
+            "pill_padding_horizontal": 16,
+            "pill_spacing": 8,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_ab6MLf",
+        "paragraph_xdBbmd",
+        "bullet_list_4nhqWM"
+      ],
+      "disabled": true,
+      "name": "Image with Text",
+      "settings": {
+        "use_theme_colors": false,
+        "inverse_theme_colors": false,
+        "image_position": "left",
+        "image_position_mobile": "top",
+        "text_align": "left",
+        "center_align_with_media": false,
+        "column_width": 50,
+        "margin_top_mobile": 40,
+        "margin_bottom_mobile": 40,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "container_padding_mobile": 20,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "container_padding_desktop": 40,
+        "content_spacing": 30,
+        "desktop_content_spacing": 40,
+        "section_border_radius": 0,
+        "section_max_width": 1200,
+        "heading": "Most Brands Use",
+        "heading_accent": "Low-Quality Materials.",
+        "video_autoplay": true,
+        "video_loop": true,
+        "video_muted": true,
+        "video_controls": false,
+        "heading_font_size_mobile": 3.5,
+        "heading_font_size_desktop": 2.9,
+        "text_font_size_mobile": 1.1,
+        "text_font_size_desktop": 1.2,
+        "content_elements_spacing": 15,
+        "desktop_content_elements_spacing": 20,
+        "heading_bottom_margin": 20,
+        "desktop_heading_bottom_margin": 25,
+        "text_bottom_margin": 25,
+        "desktop_text_bottom_margin": 25,
+        "text_padding_vertical": 0,
+        "text_padding_left": 0,
+        "text_padding_right": 0,
+        "mobile_text_padding_vertical": 0,
+        "mobile_text_padding_horizontal": 0,
+        "button_padding_vertical": 12,
+        "button_padding_horizontal": 24,
+        "button_border_radius": 4,
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "heading_color": "#211a28",
+        "accent_color": "#211a28",
+        "text_color": "#211a28",
+        "button_bg_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "image_max_width": 800,
+        "image_max_height": 0,
+        "image_border_radius": 8,
+        "image_padding": 0,
+        "mobile_image_full_width": false,
+        "heading_size_desktop": 48,
+        "heading_letter_spacing": "heading",
+        "subtitle_size_mobile": 18,
+        "override_global_accent": false,
+        "accent_font_family": "inherit",
+        "accent_font_style": "inherit",
+        "accent_font_weight": "inherit",
+        "use_accent_gradient": false,
+        "accent_text_gradient": "linear-gradient(45deg, #EF4A65, #FF6B9D)",
+        "accent_text_margin_left": 0
+      }
+    },
+    "benefits_carousel_eXPzCJ": {
+      "type": "benefits-carousel",
+      "blocks": {
+        "benefit_H7w9ta": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Improved Sleep",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_aMXFYf": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Reduced Stress",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_tUJQE6": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Enhanced Focus",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_ybHHta": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Better Mood",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_jYzLxy": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Increased Energy",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_H7w9ta",
+        "benefit_aMXFYf",
+        "benefit_tUJQE6",
+        "benefit_ybHHta",
+        "benefit_jYzLxy"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "You Can Expect",
+        "empty_text": "No benefits currently listed.",
+        "icon_size": 18,
+        "icon_size_mobile": 16,
+        "icon_color": "#ef4a65",
+        "icon_text_spacing": 8,
+        "icon_text_spacing_mobile": 6,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "scroll_speed": 20,
+        "heading_size": 32,
+        "heading_size_mobile": 27,
+        "heading_color": "#211a28",
+        "heading_gradient_start": "#ffffff",
+        "heading_gradient_end": "#ffffff",
+        "use_theme_colors": false,
+        "background_color": "#ffffff",
+        "border_start_color": "#5d5aaf",
+        "border_end_color": "#f42e75",
+        "item_background": "#ffffff",
+        "item_text_color": "#211a28",
+        "item_border_start": "#5d5aaf",
+        "item_border_end": "#f42e75",
+        "item_font_size_mobile": 14,
+        "empty_text_color": "#888888"
+      }
+    },
+    "product_comparison_ahRqAP": {
+      "type": "product-comparison",
+      "blocks": {
+        "product_column_HQQ9kd": {
+          "type": "product_column",
+          "settings": {
+            "product_name": "Our Product",
+            "product_subtitle": "Original",
+            "product_image_size": 80,
+            "product_image_size_tablet": 80,
+            "product_image_size_mobile": 75,
+            "subtitle_custom_icon": "",
+            "show_subtitle_icon": true,
+            "use_subtitle_background": true,
+            "subtitle_border_color": "#ffffff",
+            "highlight_column": true,
+            "highlight_color": "#c2e9fb",
+            "use_highlight_gradient": true,
+            "highlight_gradient_start_color": "#f42e75",
+            "highlight_gradient_end_color": "#5d5aaf",
+            "highlight_gradient_angle": 90,
+            "subtitle_glass_color": "#ffffff",
+            "subtitle_icon_color": "#000000"
+          }
+        },
+        "product_column_DF3TFg": {
+          "type": "product_column",
+          "settings": {
+            "product_name": "Others",
+            "product_subtitle": "Knock-off",
+            "product_image_size": 80,
+            "product_image_size_tablet": 60,
+            "product_image_size_mobile": 50,
+            "subtitle_custom_icon": "",
+            "show_subtitle_icon": true,
+            "use_subtitle_background": true,
+            "subtitle_border_color": "#ffffff",
+            "highlight_column": false,
+            "highlight_color": "#ef4a65",
+            "use_highlight_gradient": false,
+            "highlight_gradient_start_color": "#ef4a65",
+            "highlight_gradient_end_color": "#ff6b9d",
+            "highlight_gradient_angle": 45,
+            "subtitle_glass_color": "#ffffff",
+            "subtitle_icon_color": "#000000"
+          }
+        },
+        "feature_row_DrAYGc": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Core feature",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "yes",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_W4Fwxw": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Feature",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_ntHtdD": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Feature",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_afwJDU": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Advanced feature",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_PzLNMd": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Premium feature",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "value_type": "text",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        }
+      },
+      "block_order": [
+        "product_column_HQQ9kd",
+        "product_column_DF3TFg",
+        "feature_row_DrAYGc",
+        "feature_row_W4Fwxw",
+        "feature_row_ntHtdD",
+        "feature_row_afwJDU",
+        "feature_row_PzLNMd"
+      ],
+      "disabled": true,
+      "settings": {
+        "use_theme_colors": false,
+        "show_heading": true,
+        "title_part_1": "Why Choose",
+        "title_part_2": "Versa?",
+        "title_part_1_color": "#211a28",
+        "title_part_2_color": "#211a28",
+        "subheading": "<p>Here's why we're the industry leader</p>",
+        "desktop_description": "",
+        "show_description_on_mobile": false,
+        "heading_size": 40,
+        "subheading_size": 13,
+        "subheading_color": "#211a28",
+        "desktop_description_size_mobile": 14,
+        "desktop_description_size_desktop": 16,
+        "override_global_accent": false,
+        "accent_text_margin_left": 4,
+        "use_accent_gradient": true,
+        "accent_text_gradient": "linear-gradient(45deg, #EF4A65, #FF6B9D)",
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "300",
+        "table_column_width": 47,
+        "center_text_column_desktop": false,
+        "table_width": 1200,
+        "product_title_size": 21,
+        "subtitle_size": 10,
+        "feature_name_size": 17,
+        "text_value_size": 14,
+        "product_title_size_mobile": 16,
+        "subtitle_size_mobile": 10,
+        "feature_name_size_mobile": 12,
+        "text_value_size_mobile": 11,
+        "use_gradient_background": true,
+        "background_color": "#ffffff",
+        "gradient_direction": 180,
+        "gradient_color_1": "#ffffff",
+        "gradient_color_2": "#f2f2f7",
+        "text_color": "#211a28",
+        "subtitle_color": "#211a28",
+        "highlighted_text_color": "#ffffff",
+        "highlighted_subtitle_color": "#ffffff",
+        "highlighted_check_color": "#ffffff",
+        "highlighted_x_color": "#ffffff",
+        "border_color": "#eaeaea",
+        "icon_color": "#211a28",
+        "check_color": "#211a28",
+        "x_color": "#000000",
+        "highlight_border_radius": 8,
+        "use_highlight_border": true,
+        "highlight_border_color": "#f2f2f7",
+        "highlight_border_width": 1,
+        "unhighlighted_text_color": "#211a28",
+        "unhighlighted_subtitle_color": "#211a28",
+        "unhighlighted_icon_color": "#211a28",
+        "unhighlighted_check_color": "#211a28",
+        "unhighlighted_x_color": "#211a28"
+      }
+    },
+    "divider_y6qNyA": {
+      "type": "divider",
+      "disabled": true,
+      "name": "Divider",
+      "settings": {
+        "divider_style": "wavy",
+        "background_color": "rgba(0,0,0,0)",
+        "flip_direction": true,
+        "color": "#f2f2f7",
+        "height": 50,
+        "show_border": false,
+        "border_color": "#e0e0e0",
+        "border_width": 1,
+        "border_style": "solid",
+        "use_gradient": false,
+        "gradient_background": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "customer_reviews_carousel_A6rqPE": {
+      "type": "customer-reviews-carousel",
+      "blocks": {
+        "review_HgGGgG": {
+          "type": "review",
+          "settings": {
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 5,
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "reviewer_name": "User1",
+            "reviewer_age": "30",
+            "show_verified_badge": true,
+            "show_purchased_product": true,
+            "product_reference": "test-product",
+            "product_title": "Product Name",
+            "product_price": "$29.99",
+            "product_compare_price": "$39.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        },
+        "review_wnmGk4": {
+          "type": "review",
+          "settings": {
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 5,
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "reviewer_name": "User1",
+            "reviewer_age": "30",
+            "show_verified_badge": true,
+            "show_purchased_product": true,
+            "product_reference": "test-product",
+            "product_title": "Product Name",
+            "product_price": "$29.99",
+            "product_compare_price": "$39.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        },
+        "review_WyftnL": {
+          "type": "review",
+          "settings": {
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 5,
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "reviewer_name": "User1",
+            "reviewer_age": "30",
+            "show_verified_badge": true,
+            "show_purchased_product": true,
+            "product_reference": "comfy-neck-pillow",
+            "product_title": "Product Name",
+            "product_price": "$29.99",
+            "product_compare_price": "$39.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        },
+        "review_Tb4YXf": {
+          "type": "review",
+          "settings": {
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 5,
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "reviewer_name": "User1",
+            "reviewer_age": "30",
+            "show_verified_badge": true,
+            "show_purchased_product": true,
+            "product_reference": "",
+            "product_title": "Product Name",
+            "product_price": "$29.99",
+            "product_compare_price": "$39.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        }
+      },
+      "block_order": [
+        "review_HgGGgG",
+        "review_wnmGk4",
+        "review_WyftnL",
+        "review_Tb4YXf"
+      ],
+      "disabled": true,
+      "settings": {
+        "use_theme_colors": false,
+        "section_width": 1200,
+        "section_background": "#ffffff",
+        "title_text": "Join Over 10,000+",
+        "accent_text": "Happy Customers.",
+        "title_color": "#211a28",
+        "accent_color": "#000000",
+        "override_global_accent": false,
+        "accent_text_margin_left": 0,
+        "use_accent_gradient": true,
+        "accent_text_gradient": "linear-gradient(45deg, #EF4A65, #FF6B9D)",
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "300",
+        "custom_heading_styling": true,
+        "heading_font_size": 44,
+        "heading_font_size_mobile": 40,
+        "heading_line_height": 1.2,
+        "show_description": false,
+        "description_text": "See what our customers are saying about our products",
+        "description_color": "#000000",
+        "prev_button_bg": "#ffffff",
+        "prev_button_color": "#000000",
+        "prev_button_border": "#e0e0e0",
+        "next_button_bg": "#211a28",
+        "next_button_color": "#ffffff",
+        "next_button_border": "#211a28",
+        "scroll_amount": 360,
+        "card_width": 390,
+        "card_border_radius": 10,
+        "card_border_color": "#e0e0e0",
+        "card_background": "#ffffff",
+        "card_margin_top": 0,
+        "card_margin_right": 0,
+        "card_margin_bottom": 0,
+        "card_margin_left": 0,
+        "star_filled_color": "#f42e75",
+        "star_empty_color": "#e0e0e0",
+        "carousel_review_star_size": 16,
+        "review_text_color": "#000000",
+        "review_text_size": 14,
+        "review_text_size_mobile": 12,
+        "reviewer_info_color": "#000000",
+        "reviewer_info_bg_color": "#f5f5f5",
+        "reviewer_info_font_size": 12,
+        "verified_badge_text": "Verified Buyer",
+        "verified_badge_color": "#f42e75",
+        "verified_icon_color": "#f42e75",
+        "verified_badge_font_size": 10,
+        "enable_reviewer_info_border": true,
+        "reviewer_info_border_width": 1,
+        "reviewer_info_border_style": "solid",
+        "reviewer_info_border_color": "#f2f2f7",
+        "reviewer_info_border_radius": 8,
+        "product_label": "Item Purchased",
+        "product_label_color": "#211a28",
+        "product_title_color": "#211a28",
+        "product_price_color": "#f42e75",
+        "product_bg_color": "#f9f9f9",
+        "product_title_font_size": 12,
+        "product_price_font_size": 12,
+        "product_compare_price_font_size": 10,
+        "purchase_date_font_size": 10,
+        "product_border_color": "#f2f2f7",
+        "product_border_width": 1,
+        "product_border_style": "solid",
+        "summary_star_color": "#f42e75",
+        "summary_text_color": "#211a28",
+        "rating_summary_text": "<p>Rated 4.8/5 based on +10,839 Total Ratings</p>",
+        "rating_summary_font_size": 13,
+        "rating_summary_bg_color": "#fef6e6",
+        "purchase_date_prefix": "Purchased on",
+        "purchase_date_color": "#000000",
+        "purchase_date_icon_color": "#000000",
+        "rating_summary_gradient": "",
+        "enable_rating_summary_border": true,
+        "rating_summary_border_width": 1,
+        "rating_summary_border_style": "solid",
+        "rating_summary_border_color": "#f2f2f7",
+        "rating_summary_border_radius": 50
+      }
+    },
+    "satisfaction_guarantee_J4ypTy": {
+      "type": "satisfaction-guarantee",
+      "disabled": true,
+      "settings": {
+        "use_theme_colors": false,
+        "show_photos": true,
+        "allow_overflow": false,
+        "icon_style": "original",
+        "custom_svg_code": "",
+        "icon_color": "#000000",
+        "accent_text": "Money-Back",
+        "heading_text": "Guarantee",
+        "description_text": "We're so confident in the quality of our product that we offer a satisfaction guarantee. If you're not completely satisfied with your purchase, simply return the item within 30 days for a full refund.",
+        "product_name": "Premium Product",
+        "heading_text_color": "#000000",
+        "description_color": "#211a28",
+        "benefit_text_color": "#211a28",
+        "heading_size_desktop": 26,
+        "heading_size_mobile": 36,
+        "description_size_desktop": 12,
+        "description_size_mobile": 12,
+        "benefit_size_desktop": 12,
+        "benefit_size_mobile": 10,
+        "description_line_height": 1.5,
+        "accent_color": "",
+        "accent_text_margin_left": 4,
+        "use_global_accent_typography": false,
+        "use_accent_gradient": false,
+        "accent_text_gradient": "",
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "inherit",
+        "button_text": "CLAIM NOW",
+        "button_action_type": "product",
+        "redirect_product": "",
+        "custom_url": "",
+        "use_global_button_style": true,
+        "button_color": "#211a28",
+        "button_text_color": "#ffffff",
+        "button_border_width": 0,
+        "button_border_color": "#000000",
+        "benefit_1": "100% Satisfaction",
+        "benefit_2": "Fast Shipping",
+        "benefit_3": "Easy Returns",
+        "polaroid_size_desktop": 180,
+        "polaroid_size_mobile": 100,
+        "image_extension": 80,
+        "image_vertical_offset": 0,
+        "content_padding_mobile": 5,
+        "content_padding_desktop": 70,
+        "content_width_with_photos": 50,
+        "content_max_width_with_photos": 600,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_no_photos": 15,
+        "section_padding_vertical": 35,
+        "section_padding_horizontal": 5,
+        "section_padding_vertical_mobile": 5,
+        "section_padding_horizontal_mobile": 5,
+        "section_background": "linear-gradient(to right, #FFE8EC, #FFF9F0)",
+        "contain_section": true,
+        "container_padding": 0,
+        "container_background": "linear-gradient(to right, #FFFFFF, #F8F8F8)",
+        "enable_border": true,
+        "border_width": 1,
+        "border_style": "solid",
+        "border_color": "#f2f2f7",
+        "border_radius": 8,
+        "enable_shadow": false
+      }
+    },
+    "product_comparison_LkcUcj": {
+      "type": "product-comparison",
+      "blocks": {
+        "product_column_pMBHVB": {
+          "type": "product_column",
+          "settings": {
+            "product_name": "Alpha Brew",
+            "product_subtitle": "Science  Backed",
+            "product_image": "shopify://shop_images/Alpha_Brew_Black_Coffee_Pouch.png",
+            "product_image_size": 80,
+            "product_image_size_tablet": 60,
+            "product_image_size_mobile": 50,
+            "subtitle_custom_icon": "",
+            "show_subtitle_icon": true,
+            "use_subtitle_background": true,
+            "subtitle_border_color": "#ffffff",
+            "highlight_column": true,
+            "highlight_color": "#f1e5c2",
+            "use_highlight_gradient": false,
+            "highlight_gradient_start_color": "#d7ed96",
+            "highlight_gradient_end_color": "#ff6b9d",
+            "highlight_gradient_angle": 45,
+            "subtitle_glass_color": "#b98141",
+            "subtitle_icon_color": "#f1e5c2"
+          }
+        },
+        "product_column_WHFd4K": {
+          "type": "product_column",
+          "settings": {
+            "product_name": "Others",
+            "product_subtitle": "Fake Promises",
+            "product_image_size": 80,
+            "product_image_size_tablet": 60,
+            "product_image_size_mobile": 50,
+            "subtitle_custom_icon": "",
+            "show_subtitle_icon": true,
+            "use_subtitle_background": true,
+            "subtitle_border_color": "#ffffff",
+            "highlight_column": false,
+            "highlight_color": "#f1e5c2",
+            "use_highlight_gradient": false,
+            "highlight_gradient_start_color": "#ef4a65",
+            "highlight_gradient_end_color": "#ff6b9d",
+            "highlight_gradient_angle": 45,
+            "subtitle_glass_color": "#ffffff",
+            "subtitle_icon_color": "#000000"
+          }
+        },
+        "feature_row_MrdLXB": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Real Natural Ingredients",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_RNJUeM": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Natural Hormone Optimization",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_mYbJNq": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Testosterone Support",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_LkPUYf": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Absorbs 70% More Ingredients",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_aFwGyz": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Performance You & Her Notice",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_jK4dBe": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "4x Faster Results",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        }
+      },
+      "block_order": [
+        "product_column_pMBHVB",
+        "product_column_WHFd4K",
+        "feature_row_MrdLXB",
+        "feature_row_RNJUeM",
+        "feature_row_mYbJNq",
+        "feature_row_LkPUYf",
+        "feature_row_aFwGyz",
+        "feature_row_jK4dBe"
+      ],
+      "name": "Product Comparison",
+      "settings": {
+        "use_theme_colors": false,
+        "show_heading": true,
+        "title_part_1": "Us Vs.",
+        "title_part_2": "Them",
+        "title_part_1_color": "#b98141",
+        "title_part_2_color": "#1d1d1d",
+        "subheading": "<p>Here's why we're the industry leader</p>",
+        "desktop_description": "",
+        "show_description_on_mobile": false,
+        "heading_size": 32,
+        "subheading_size": 16,
+        "subheading_color": "#000000",
+        "desktop_description_size_mobile": 14,
+        "desktop_description_size_desktop": 16,
+        "override_global_accent": false,
+        "accent_text_margin_left": 0,
+        "use_accent_gradient": false,
+        "accent_text_gradient": "linear-gradient(45deg, rgba(241, 237, 194, 1), rgba(255, 107, 157, 1) 100%)",
+        "accent_font_family": "inherit",
+        "accent_font_style": "normal",
+        "accent_font_weight": "inherit",
+        "table_column_width": 47,
+        "center_text_column_desktop": false,
+        "table_width": 1200,
+        "product_title_size": 21,
+        "subtitle_size": 12,
+        "feature_name_size": 16,
+        "text_value_size": 14,
+        "product_title_size_mobile": 16,
+        "subtitle_size_mobile": 10,
+        "feature_name_size_mobile": 12,
+        "text_value_size_mobile": 11,
+        "use_gradient_background": true,
+        "background_color": "#f1e5c2",
+        "gradient_direction": 90,
+        "gradient_color_1": "#f1e5c2",
+        "gradient_color_2": "#ffffff",
+        "text_color": "#000000",
+        "subtitle_color": "#000000",
+        "highlighted_text_color": "#b98141",
+        "highlighted_subtitle_color": "#b98141",
+        "highlighted_check_color": "#b98141",
+        "highlighted_x_color": "#b98141",
+        "border_color": "#eeeeee",
+        "icon_color": "#ef4a65",
+        "check_color": "#ef4a65",
+        "x_color": "#000000",
+        "highlight_border_radius": 8,
+        "use_highlight_border": false,
+        "highlight_border_color": "#71e293",
+        "highlight_border_width": 1,
+        "unhighlighted_text_color": "#000000",
+        "unhighlighted_subtitle_color": "#000000",
+        "unhighlighted_icon_color": "#b98141",
+        "unhighlighted_check_color": "#b98141",
+        "unhighlighted_x_color": "#000000"
+      }
+    },
+    "statistics_column_qjYi4K": {
+      "type": "statistics-column",
+      "blocks": {
+        "statistic_FxHHaB": {
+          "type": "statistic",
+          "settings": {
+            "number": "100K+",
+            "title": "Happy Customers",
+            "description": "Customers trust us with their business worldwide"
+          }
+        },
+        "statistic_xNJ8Pz": {
+          "type": "statistic",
+          "settings": {
+            "number": "99%",
+            "title": "Satisfaction Rate",
+            "description": "Customer satisfaction is our top priority"
+          }
+        },
+        "statistic_jaNdQt": {
+          "type": "statistic",
+          "settings": {
+            "number": "24/7",
+            "title": "Support Available",
+            "description": "Round-the-clock customer support when you need it"
+          }
+        }
+      },
+      "block_order": [
+        "statistic_FxHHaB",
+        "statistic_xNJ8Pz",
+        "statistic_jaNdQt"
+      ],
+      "name": "Statistics Column",
+      "settings": {
+        "use_theme_colors": false,
+        "heading": "Our Impact",
+        "heading_accent": "Statistics",
+        "subtitle": "",
+        "heading_color": "#b98141",
+        "heading_size_mobile": 28,
+        "heading_size_desktop": 36,
+        "subtitle_color": "#666666",
+        "subtitle_size_mobile": 14,
+        "subtitle_size_desktop": 16,
+        "override_global_accent": false,
+        "accent_color": "#f1e5c2",
+        "use_accent_gradient": false,
+        "accent_text_gradient": "linear-gradient(45deg, rgba(239, 74, 101, 1), rgba(255, 107, 157, 1) 100%)",
+        "accent_text_margin_left": 0,
+        "accent_font_family": "inherit",
+        "accent_font_style": "normal",
+        "accent_font_weight": "inherit",
+        "number_color": "#b98141",
+        "number_gradient": "linear-gradient(135deg, rgba(185, 129, 65, 1), rgba(102, 102, 102, 1) 100%)",
+        "number_size_mobile": 36,
+        "number_size_desktop": 48,
+        "title_color": "#b98141",
+        "title_size_mobile": 18,
+        "title_size_desktop": 22,
+        "description_color": "#666666",
+        "description_size_mobile": 14,
+        "description_size_desktop": 16,
+        "image": "shopify://shop_images/ChatGPT_Image_Sep_19_2026_05_30_46_PM_26304e10-b118-428b-b746-97be161c2d5f.png",
+        "image_border_radius": 8,
+        "image_position_desktop": "right",
+        "image_position_mobile": "above",
+        "show_disclaimer": true,
+        "disclaimer_text": "* Based on internal studies and customer feedback surveys.",
+        "disclaimer_color": "#666666",
+        "disclaimer_icon_color": "#b98141",
+        "disclaimer_background_color": "#fafafa",
+        "disclaimer_size_mobile": 14,
+        "disclaimer_size_desktop": 16,
+        "disclaimer_line_height": 1.4,
+        "disclaimer_padding_top": 16,
+        "disclaimer_padding_bottom": 16,
+        "disclaimer_padding_left": 16,
+        "disclaimer_padding_right": 16,
+        "disclaimer_border_radius": 8,
+        "disclaimer_border_style": "none",
+        "disclaimer_border_width": 1,
+        "disclaimer_border_color": "#e0e0e0",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "section_background": "linear-gradient(135deg, rgba(248, 248, 248, 1), rgba(255, 255, 255, 1) 100%)",
+        "divider_color": "#e0e0e0"
+      }
+    },
+    "store_faq_Lpd3PW": {
+      "type": "store-faq",
+      "blocks": {
+        "faq_item_YYJUL8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How soon will I notice a difference with Alpha Brew?",
+            "answer": "<p>Most men report feeling more natural energy and focus within the first few days. <strong>Bedroom benefits like improved stamina and performance can be noticed within 2–4 weeks</strong> of consistent use. Remember — Alpha Brew isn’t a “magic pill.” It works by supporting healthy testosterone and blood flow naturally over time.</p>"
+          }
+        },
+        "faq_item_QKVnRn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will Alpha Brew really help me last longer in bed?",
+            "answer": "<p><strong>Yes </strong>— by improving blood flow, reducing stress, and <strong>supporting testosterone, Alpha Brew helps you perform</strong> with more control and stamina. Many men find they can stay present in the moment instead of “checking out early</p>"
+          }
+        },
+        "faq_item_appL6A": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe to drink every day?",
+            "answer": "<p><strong>Absolutely. Alpha Brew is made with 100% natural, science-backed ingredients</strong> like Tongkat Ali, Maca, and Ashwagandha. No synthetic chemicals, no hidden fillers. Just a healthier way to drink your daily coffee</p>"
+          }
+        },
+        "faq_item_fMQrU3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes Alpha Brew different from pills or supplements?",
+            "answer": "<p>Most <strong>pills are underdosed,& only absorb 20-33% of the nutrients, </strong> Alpha Brew coffee absorbs 70% of the nutrients and works 4x faster then any pills or supplements.</p>"
+          }
+        },
+        "faq_item_h9nrMM": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need to change my diet or lifestyle to see results?",
+            "answer": "<p><strong>No big changes are required.</strong> Simply replace your usual coffee with Alpha Brew daily. Of course, pairing it with regular exercise, sleep, and a balanced diet can maximize results</p>"
+          }
+        },
+        "faq_item_iYFxfb": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if Alpha Brew doesn’t work for me?",
+            "answer": "<p>IT has been proven to work for all types of an but we do understand that every man is different, which is why Alpha Brew comes with a <strong>100% money-back guarantee. </strong>If you don’t notice improved energy, drive, or performance, just contact us for a full refund — no questions asked</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_YYJUL8",
+        "faq_item_QKVnRn",
+        "faq_item_appL6A",
+        "faq_item_fMQrU3",
+        "faq_item_h9nrMM",
+        "faq_item_iYFxfb"
+      ],
+      "settings": {
+        "use_theme_colors": false,
+        "heading": "Frequently Asked Questions",
+        "subtitle": "<p>Find answers to common questions about our products, shipping, returns, and more.</p>",
+        "heading_color": "#b98141",
+        "section_padding": 60,
+        "section_bg_color": "#f1e5c2",
+        "border_radius": 8,
+        "border_color": "#b98141",
+        "border_style": "full",
+        "question_color": "#1d1d1d",
+        "question_bg_color": "#ffffff",
+        "answer_color": "#000000",
+        "answer_bg_color": "#ffffff",
+        "accordion_mode": true,
+        "image_border_radius": 8,
+        "center_when_no_image": false,
+        "center_max_width": 600,
+        "two_column_desktop": false,
+        "column_gap": 30,
+        "faq_item_spacing": 0,
+        "individual_item_borders": false,
+        "question_padding_top": 15,
+        "question_padding_bottom": 15,
+        "question_padding_left": 20,
+        "question_padding_right": 20,
+        "answer_padding_top": 15,
+        "answer_padding_bottom": 15,
+        "answer_padding_left": 20,
+        "answer_padding_right": 20,
+        "heading_font_size": 36,
+        "heading_font_size_mobile": 38,
+        "subtitle_font_size": 16,
+        "subtitle_font_size_mobile": 14,
+        "question_font_size": 16,
+        "question_font_size_mobile": 14,
+        "answer_font_size": 14,
+        "answer_font_size_mobile": 13
+      }
+    }
+  },
+  "order": [
+    "main",
+    "3_bars_stacks_JgUJBc",
+    "customer_reviews_carousel_cWGaEy",
+    "ingredient_filterv2_gPmdgG",
+    "4_benefits_Li9ngV",
+    "product_benefits_9n4igV",
+    "scrolling_features_bar_AhP6EL",
+    "sticky_add_to_cart_NJqgUd",
+    "product_benefits_NWiWMe",
+    "before_after_comparison_dg6PAy",
+    "4_benefits_CXdAtD",
+    "statistics_column_7jDNhp",
+    "image_with_text_9Vm4Bn",
+    "benefits_carousel_eXPzCJ",
+    "product_comparison_ahRqAP",
+    "divider_y6qNyA",
+    "customer_reviews_carousel_A6rqPE",
+    "satisfaction_guarantee_J4ypTy",
+    "product_comparison_LkcUcj",
+    "statistics_column_qjYi4K",
+    "store_faq_Lpd3PW"
+  ]
+}

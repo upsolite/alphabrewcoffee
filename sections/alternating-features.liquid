@@ -1,0 +1,653 @@
+{{ 'alternating-features.css' | asset_url | stylesheet_tag }}
+
+{% comment %} Google Fonts for accent text customization {% endcomment %}
+{% if section.settings.override_global_accent %}
+  {% if section.settings.accent_font_family != 'inherit' and section.settings.accent_font_family != 'serif' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% case section.settings.accent_font_family %}
+      {% when 'Georgia Pro' %}
+        <link href="https://fonts.googleapis.com/css2?family=Georgia+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+      {% when 'Bodoni Moda' %}
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800&display=swap" rel="stylesheet">
+      {% when 'Instrument Serif' %}
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'DM Serif Text' %}
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'Nothing You Could Do' %}
+        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    {% endcase %}
+  {% endif %}
+{% endif %}
+
+<div class="alt-feat-section" style="
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  {% if section.settings.use_theme_colors %}
+    background-color: {{ settings.global_section_accent_1_color }};
+  {% elsif section.settings.use_gradient %}
+    background: linear-gradient({{ section.settings.gradient_angle }}deg, {{ section.settings.gradient_start_color }} 0%, {{ section.settings.gradient_end_color }} 100%);
+  {% else %}
+    background-color: {{ section.settings.background_color }};
+  {% endif %}
+  --feature-spacing: {{ section.settings.feature_spacing }}px;
+  --feature-title-size-mobile: {{ section.settings.feature_title_size_mobile | default: 14 }}px;
+  --feature-title-size-desktop: {{ section.settings.feature_title_size_desktop | default: 16 }}px;
+  --description-size-mobile: {{ section.settings.description_size_mobile | default: 13 }}px;
+  --description-size-desktop: {{ section.settings.description_size_desktop | default: 14 }}px;
+  border-radius: {{ section.settings.section_border_radius | default: 0 }}px;
+">
+  <div class="alt-feat-container">
+    {% if section.settings.title != blank %}
+      <h2 class="alt-feat-section-title" style="
+        font-size: {{ section.settings.section_title_size | default: 34 }}px;
+        color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.heading_color }}{% endif %} !important;
+      ">
+        {{ section.settings.title }} 
+        {% if section.settings.title_accent != blank %}
+          <span class="{% if section.settings.override_global_accent %}custom-accent-text{% else %}global-accent-text{% endif %}">{{ section.settings.title_accent }}</span>
+        {% endif %}
+      </h2>
+    {% endif %}
+    
+    <div class="alt-feat-content">
+      <!-- Main image placed first in the DOM for mobile layout -->
+      <div class="alt-feat-image-column">
+        {% if section.settings.main_image != blank %}
+          <img src="{{ section.settings.main_image | img_url: '800x', scale: 2 }}" 
+               alt="{{ section.settings.title }}"
+               class="alt-feat-main-image"
+               style="border-radius: {{ section.settings.image_border_radius }}px;"
+               loading="lazy" width="" height="">
+        {% else %}
+          <div class="alt-feat-main-image-placeholder" style="border-radius: {{ section.settings.image_border_radius }}px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+            </svg>
+          </div>
+        {% endif %}
+      </div>
+      
+      <div class="alt-feat-features-column" style="gap: var(--feature-spacing);">
+        {% for block in section.blocks %}
+          {% if block.type == 'feature' %}
+            {% assign is_odd = forloop.index0 | modulo: 2 %}
+            <div class="alt-feat-item {% if is_odd == 1 %}alt-feat-item-odd{% else %}alt-feat-item-even{% endif %}" 
+                 style="
+                   padding-bottom: var(--feature-spacing);
+                   border-bottom: 1px solid {% if section.settings.use_theme_colors %}rgba({{ settings.global_section_background_color | color_to_rgb }}, 0.2){% else %}{{ section.settings.divider_color }}{% endif %};
+                 "
+                 {{ block.shopify_attributes }}>
+              <div class="alt-feat-icon-container" style="
+                width: {{ section.settings.icon_size }}px;
+                height: {{ section.settings.icon_size }}px;
+                {% if section.settings.icon_background_enabled %}
+                  border-radius: 50%;
+                  background-color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.icon_background_color }}{% endif %};
+                {% endif %}
+              ">
+                {% if block.settings.icon != blank %}
+                  <img src="{{ block.settings.icon | img_url: '60x60', scale: 2 }}" 
+                       alt="{{ block.settings.title }}" 
+                       class="alt-feat-icon"
+                       loading="lazy"
+                       width="{{ section.settings.icon_image_size }}" height="{{ section.settings.icon_image_size }}">
+                {% else %}
+                  <div class="alt-feat-icon-placeholder" style="
+                    color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.icon_color }}{% endif %};
+                  ">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+              
+              <div class="alt-feat-text-container">
+                <h3 class="alt-feat-title" style="
+                  color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.feature_title_color }}{% endif %} !important;
+                ">
+                  {{ block.settings.title }}
+                </h3>
+                
+                <div class="alt-feat-description" style="
+                  color: {% if section.settings.use_theme_colors %}{{ settings.global_section_background_color }}{% else %}{{ section.settings.description_color }}{% endif %} !important;
+                ">{{ block.settings.description }}</div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      
+      {% if section.blocks.size == 0 %}
+        <div class="alt-feat-placeholder-container">
+          <div class="alt-feat-placeholder-message">
+            Add feature blocks to populate this section.
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Enhanced accent text styling with global and local customization options */
+  .alt-feat-section .global-accent-text,
+  .alt-feat-section .custom-accent-text {
+    {% comment %} Always apply core accent text styling {% endcomment %}
+    padding-right: 4px !important;
+    
+    {% comment %} Check for gradient first - it works regardless of global/local settings {% endcomment %}
+    {% if section.settings.use_accent_gradient %}
+      background: {{ section.settings.accent_text_gradient }} !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      color: transparent !important;
+      display: inline-block !important;
+      padding: 2px 4px !important;
+      margin: -2px -4px !important;
+      line-height: 1.3 !important;
+    {% else %}
+      {% comment %} Apply solid color based on global or local settings {% endcomment %}
+      color: {% if section.settings.use_theme_colors %}{{ settings.global_section_text_color }}{% else %}{{ section.settings.accent_color | default: settings.accent_text_color }}{% endif %} !important;
+    {% endif %}
+    
+    {% if section.settings.override_global_accent %}
+      {% comment %} Use section-specific typography settings when override is enabled {% endcomment %}
+      {% if section.settings.accent_font_family != 'inherit' %}
+        {% case section.settings.accent_font_family %}
+          {% when 'serif' %}
+            font-family: serif !important;
+          {% when 'Georgia Pro' %}
+            font-family: 'Georgia Pro', Georgia, serif !important;
+          {% when 'Bodoni Moda' %}
+            font-family: 'Bodoni Moda', Georgia, serif !important;
+          {% when 'Instrument Serif' %}
+            font-family: 'Instrument Serif', Georgia, serif !important;
+          {% when 'DM Serif Text' %}
+            font-family: 'DM Serif Text', Georgia, serif !important;
+          {% when 'Nothing You Could Do' %}
+            font-family: 'Nothing You Could Do', cursive !important;
+        {% endcase %}
+      {% else %}
+        font-family: var(--font-accent-family, var(--font-body-family)) !important;
+      {% endif %}
+      
+      font-style: {% if section.settings.accent_font_style != 'normal' %}{{ section.settings.accent_font_style }}{% else %}var(--font-accent-style, normal){% endif %} !important;
+      font-weight: {% if section.settings.accent_font_weight != 'inherit' %}{{ section.settings.accent_font_weight }}{% else %}var(--font-accent-weight, inherit){% endif %} !important;
+      
+    {% else %}
+      {% comment %} Use global accent typography system {% endcomment %}
+      font-family: var(--font-accent-family, var(--font-body-family)) !important;
+      font-style: var(--font-accent-style, normal) !important;
+      font-weight: var(--font-accent-weight, inherit) !important;
+      letter-spacing: var(--font-accent-letter-spacing, inherit) !important;
+      text-transform: var(--font-accent-text-transform, none) !important;
+    {% endif %}
+    display: inline-block !important;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Alternating Features",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_theme_colors",
+      "label": "Use Theme Colors",
+      "default": true,
+      "info": "Apply the global theme colors in inverse manner (accent color as background)"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Section Border Radius",
+      "default": 0,
+      "info": "Adds rounded corners to the entire section"
+    },
+    {
+      "type": "header",
+      "content": "Icon Settings"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Icon Container Size",
+      "default": 70,
+      "info": "Size of the circular icon container"
+    },
+    {
+      "type": "range",
+      "id": "icon_image_size",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon Image Size",
+      "default": 35,
+      "info": "Size of the icon image within the container"
+    },
+    {
+      "type": "checkbox",
+      "id": "icon_background_enabled",
+      "label": "Enable Icon Background",
+      "default": true,
+      "info": "When disabled, icons will appear without the circular background"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Our Product"
+    },
+    {
+      "type": "text",
+      "id": "title_accent",
+      "label": "Section Title Accent",
+      "default": "Is Made For You"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#EF4A65"
+    },
+    {
+      "type": "header",
+      "content": "Gradient Background"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_gradient",
+      "label": "Use Gradient Background",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "gradient_start_color",
+      "label": "Gradient Start Color",
+      "default": "#EF4A65"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end_color",
+      "label": "Gradient End Color",
+      "default": "#990000"
+    },
+    {
+      "type": "range",
+      "id": "gradient_angle",
+      "min": 0,
+      "max": 360,
+      "step": 10,
+      "unit": "deg",
+      "label": "Gradient Angle",
+      "default": 90
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Section Heading Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "checkbox",
+      "id": "override_global_accent",
+      "label": "Override Global Accent Typography",
+      "default": false,
+      "info": "When enabled, use section-specific accent typography settings below. When disabled, use the global accent typography from Theme Settings > Typography > Accent Typography."
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#FFFFFF",
+      "info": "Used for accent text and highlights"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_accent_gradient",
+      "label": "Use Accent Gradient",
+      "default": false,
+      "info": "Apply gradient effect to the accent text instead of solid color"
+    },
+    {
+      "type": "color_background",
+      "id": "accent_text_gradient",
+      "label": "Accent Text Gradient",
+      "default": "linear-gradient(45deg, #EF4A65, #FF6B9D)",
+      "info": "Choose a gradient for the accent text. This setting is only used when 'Use Accent Gradient' is enabled above."
+    },
+    {
+      "type": "header",
+      "content": "Section-Specific Accent Font Settings"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_family",
+      "label": "Section Accent Font Family",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Use Global Setting"
+        },
+        {
+          "value": "serif",
+          "label": "System Serif"
+        },
+        {
+          "value": "Georgia Pro",
+          "label": "Georgia Pro"
+        },
+        {
+          "value": "Bodoni Moda",
+          "label": "Bodoni Moda"
+        },
+        {
+          "value": "Instrument Serif",
+          "label": "Instrument Serif"
+        },
+        {
+          "value": "DM Serif Text",
+          "label": "DM Serif Text"
+        },
+        {
+          "value": "Nothing You Could Do",
+          "label": "Nothing You Could Do"
+        }
+      ],
+      "default": "inherit",
+      "info": "Choose a custom font family for the accent text (only used when Override Global Accent Typography is enabled)"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_style",
+      "label": "Accent Text Font Style",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "italic",
+          "label": "Italic"
+        }
+      ],
+      "default": "normal",
+      "info": "Choose the font style for the accent text"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_weight",
+      "label": "Accent Text Font Weight",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Default (Inherit)"
+        },
+        {
+          "value": "300",
+          "label": "Light (300)"
+        },
+        {
+          "value": "400",
+          "label": "Normal (400)"
+        },
+        {
+          "value": "500",
+          "label": "Medium (500)"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold (600)"
+        },
+        {
+          "value": "700",
+          "label": "Bold (700)"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold (800)"
+        },
+        {
+          "value": "900",
+          "label": "Black (900)"
+        }
+      ],
+      "default": "inherit",
+      "info": "Choose the font weight (boldness) for the accent text"
+    },
+    {
+      "type": "color",
+      "id": "feature_title_color",
+      "label": "Feature Title Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#DDDDDD"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider Color",
+      "default": "rgba(255,255,255,0.2)"
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Border Radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "section_title_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Section Title Font Size",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "feature_title_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature Title Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "feature_title_size_desktop",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature Title Font Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font Size (Mobile)",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font Size (Desktop)",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "feature_spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Spacing between features",
+      "default": 30,
+      "info": "Controls the vertical gap between each feature item"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Describe your feature in detail and explain how it benefits your customers. This is a great place to highlight what makes your product different."
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Feature Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Alternating Features",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Quality First",
+            "description": "We prioritize quality in everything we do. Our products are built to last and exceed industry standards."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Customer Support",
+            "description": "Our dedicated support team is available to help you with any questions or concerns you may have."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Easy to Use",
+            "description": "Designed with simplicity in mind, our products are intuitive and user-friendly for everyone."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Fast Delivery",
+            "description": "We ship quickly and efficiently to ensure you receive your order as soon as possible."
+          }
+        }
+      ],
+      "settings": {
+        "background_color": "#EF4A65",
+        "title": "How Our Product",
+        "title_accent": "Helps You",
+        "heading_color": "#FFFFFF",
+        "feature_title_color": "#FFFFFF",
+        "description_color": "#FFFFFF",
+        "accent_color": "#000000"
+      }
+    }
+  ]
+}
+{% endschema %} 

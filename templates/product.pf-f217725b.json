@@ -1,0 +1,1750 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "shop-product-details",
+      "blocks": {
+        "reviews_R4dtXw": {
+          "type": "reviews",
+          "settings": {
+            "star_color": "#211a28",
+            "empty_star_color": "#e0e0e0",
+            "rating_text_color": "#000000",
+            "satisfaction_text": "Glowing Customers",
+            "satisfaction_text_color": "#ffffff",
+            "satisfaction_bg_color": "#211a28",
+            "margin_top": 0,
+            "margin_bottom": -5
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "use_custom_title": false,
+            "custom_title": "Product Title",
+            "font_size": 38,
+            "margin_top": 3,
+            "margin_bottom": 0,
+            "title_color": "#211a28",
+            "line_height": 1
+          }
+        },
+        "custom_text_VEHNzL": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<p>The only <strong>product you need.</strong> Made of the best quality. <em>Your placeholder text goes here.</em></p>",
+            "show_description": false,
+            "description": "<p>Add additional descriptive text here</p>",
+            "description_font_size": 12,
+            "description_spacing": 4,
+            "description_color": "#666666",
+            "description_opacity": 0.8,
+            "show_icon": false,
+            "custom_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" class=\"bi bi-stars\"><path d=\"M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z\"></path></svg>",
+            "icon_color": "#333333",
+            "icon_size": 20,
+            "icon_spacing": 8,
+            "icon_alignment": "center",
+            "text_align": "left",
+            "font_size": 14,
+            "text_color": "#333333",
+            "margin_top": 0,
+            "margin_bottom": 4,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "use_container": false,
+            "container_bg_type": "color",
+            "container_bg": "#f9f9fa",
+            "container_bg_gradient": "linear-gradient(180deg, rgba(248, 248, 248, 1), rgba(229, 229, 229, 1) 100%)",
+            "container_padding_top": 10,
+            "container_padding_bottom": 10,
+            "container_padding_h": 14,
+            "border_radius": 6,
+            "show_divider": false,
+            "divider_color": "#e0e0e0",
+            "divider_height": 1,
+            "divider_style": "solid",
+            "divider_spacing": 12
+          }
+        },
+        "custom_text_Qra839": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<p><strong>2025 Verified Results</strong></p>",
+            "show_description": true,
+            "description": "<p>The latest and most up to date product based on modern science.</p>",
+            "description_font_size": 12,
+            "description_spacing": 4,
+            "description_color": "#211a28",
+            "description_opacity": 0.8,
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"#fff\"></rect><path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path><path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"#fff\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path><polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline></svg>",
+            "icon_color": "#333333",
+            "icon_size": 20,
+            "icon_spacing": 8,
+            "icon_alignment": "center",
+            "text_align": "left",
+            "font_size": 14,
+            "text_color": "#333333",
+            "margin_top": 0,
+            "margin_bottom": 4,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "use_container": true,
+            "container_bg_type": "color",
+            "container_bg": "#f9f9fa",
+            "container_bg_gradient": "linear-gradient(180deg, rgba(248, 248, 248, 1), rgba(229, 229, 229, 1) 100%)",
+            "container_padding_top": 10,
+            "container_padding_bottom": 10,
+            "container_padding_h": 14,
+            "border_radius": 4,
+            "show_divider": true,
+            "divider_color": "#f2f2f7",
+            "divider_height": 1,
+            "divider_style": "solid",
+            "divider_spacing": 12
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_color": "#211a28",
+            "compare_price_color": "#c2c2c2",
+            "sale_badge_bg_color": "#fdeeee",
+            "sale_badge_text_color": "#ff0029",
+            "save_badge_enable_border": false,
+            "save_badge_border_color": "#000000",
+            "save_badge_border_width": 1,
+            "save_badge_border_style": "solid",
+            "price_font_size": 28,
+            "compare_price_font_size": 21,
+            "save_badge_font_size": 12,
+            "price_font_weight": "600",
+            "price_margin_top": 0,
+            "price_margin_bottom": 0,
+            "show_save_icon": true,
+            "save_icon_size_ratio": 0.9,
+            "save_icon_position_y": 0,
+            "save_badge_padding_v": 5,
+            "save_badge_padding_h": 6,
+            "custom_save_text": "",
+            "save_badge_display_type": "percentage",
+            "custom_save_amount": ""
+          }
+        },
+        "shipping_notice": {
+          "type": "shipping_notice",
+          "settings": {
+            "notice_text_before": "In Stock, Order Today To Receive It By",
+            "notice_text_after": "",
+            "days_ahead": 2,
+            "show_suffix": true,
+            "custom_shipping_text": "#211a28",
+            "custom_date_color": "#211a28",
+            "custom_highlight_color_off_theme": "#211a28",
+            "custom_bg_color_off_theme": "#ffffff",
+            "highlight_color": "#211a28",
+            "dot_color": "#08d227",
+            "bg_color": "#e4f9ff",
+            "enable_border": true,
+            "border_color": "#e5e5e5",
+            "border_width": 1,
+            "border_style": "solid",
+            "font_size": 12,
+            "container_margin_top": 5,
+            "container_margin_bottom": 0,
+            "enable_animation": true,
+            "suffix_text": ".",
+            "text_alignment": "left"
+          }
+        },
+        "custom_text_CwrTfG": {
+          "type": "custom_text",
+          "settings": {
+            "text": "<p><strong>LIMITED TIME - FREE GIFT OFFER</strong></p>",
+            "show_description": false,
+            "description": "<p>Grab the rest of our kit FREE for a limited time!</p>",
+            "description_font_size": 12,
+            "description_spacing": 4,
+            "description_color": "#ffffff",
+            "description_opacity": 0.8,
+            "show_icon": true,
+            "custom_icon": "<!--?xml version=\"1.0\" encoding=\"utf-8\"?-->\n\n\n<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->\n<svg height=\"800px\" width=\"800px\" version=\"1.1\" id=\"_x32_\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 512 512\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\">\n<style type=\"text/css\">\n\t.st0{fill:#fff;}\n</style>\n<g>\n\t<path class=\"st0\" d=\"M247.355,106.9C222.705,82.241,205.833,39.18,197.46,0c-8.386,39.188-25.24,82.258-49.899,106.917\n\t\tc-24.65,24.642-67.724,41.514-106.896,49.904c39.188,8.373,82.254,25.235,106.904,49.895c24.65,24.65,41.522,67.72,49.908,106.9\n\t\tc8.373-39.188,25.24-82.258,49.886-106.917c24.65-24.65,67.724-41.514,106.896-49.904\n\t\tC315.08,148.422,272.014,131.551,247.355,106.9z\"></path>\n\t<path class=\"st0\" d=\"M407.471,304.339c-14.714-14.721-24.81-40.46-29.812-63.864c-5.011,23.404-15.073,49.142-29.803,63.872\n\t\tc-14.73,14.714-40.464,24.801-63.864,29.812c23.408,5.01,49.134,15.081,63.864,29.811c14.73,14.722,24.81,40.46,29.82,63.864\n\t\tc5.001-23.413,15.081-49.142,29.802-63.872c14.722-14.722,40.46-24.802,63.856-29.82\n\t\tC447.939,329.14,422.201,319.061,407.471,304.339z\"></path>\n\t<path class=\"st0\" d=\"M146.352,354.702c-4.207,19.648-12.655,41.263-25.019,53.626c-12.362,12.354-33.968,20.82-53.613,25.027\n\t\tc19.645,4.216,41.251,12.656,53.613,25.027c12.364,12.362,20.829,33.96,25.036,53.618c4.203-19.658,12.655-41.255,25.023-53.626\n\t\tc12.354-12.362,33.964-20.82,53.605-25.035c-19.64-4.2-41.251-12.656-53.613-25.019\n\t\tC159.024,395.966,150.555,374.351,146.352,354.702z\"></path>\n</g>\n</svg>",
+            "icon_color": "#ffffff",
+            "icon_size": 14,
+            "icon_spacing": 8,
+            "icon_alignment": "center",
+            "text_align": "center",
+            "font_size": 14,
+            "text_color": "#ffffff",
+            "margin_top": 8,
+            "margin_bottom": -24,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "use_container": true,
+            "container_bg_type": "gradient",
+            "container_bg": "#211a28",
+            "container_bg_gradient": "linear-gradient(270deg, rgba(244, 46, 117, 1), rgba(93, 90, 175, 1) 100%)",
+            "container_padding_top": 5,
+            "container_padding_bottom": 18,
+            "container_padding_h": 14,
+            "border_radius": 7,
+            "show_divider": true,
+            "divider_color": "#ffffff",
+            "divider_height": 1,
+            "divider_style": "solid",
+            "divider_spacing": 12
+          }
+        },
+        "premium_attachment_kit_kVMhhR": {
+          "type": "premium_attachment_kit",
+          "settings": {
+            "title": "Free Items Included",
+            "show_item_count": true,
+            "original_price": "60",
+            "free_badge_text": "FREE",
+            "show_badge_icon": false,
+            "badge_icon_type": "gift",
+            "custom_badge_svg": "",
+            "badge_icon_size": 12,
+            "item_1_name": "",
+            "item_1_price": "0",
+            "item_1_compare_price": "40",
+            "item_1_icon": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_12_17_20_PM.png",
+            "item_2_name": "Brush",
+            "item_2_price": "0",
+            "item_2_compare_price": "40",
+            "item_2_icon": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_12_18_55_PM.png",
+            "item_3_name": "Serum",
+            "item_3_price": "0",
+            "item_3_compare_price": "35",
+            "item_3_icon": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_12_17_20_PM.png",
+            "item_4_name": "Microneedle Roller",
+            "item_4_price": "0",
+            "item_4_compare_price": "30",
+            "item_4_icon": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_01_20_47_PM.png",
+            "item_5_name": "Lip Balm",
+            "item_5_price": "0",
+            "item_5_compare_price": "25",
+            "item_5_icon": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_12_19_58_PM.png",
+            "item_6_name": "",
+            "item_6_price": "",
+            "item_6_compare_price": "",
+            "item_7_name": "",
+            "item_7_price": "",
+            "item_7_compare_price": "",
+            "item_8_name": "",
+            "item_8_price": "",
+            "item_8_compare_price": "",
+            "item_9_name": "",
+            "item_9_price": "",
+            "item_9_compare_price": "",
+            "item_10_name": "",
+            "item_10_price": "",
+            "item_10_compare_price": "",
+            "background_color": "#f9f9fa",
+            "border_color": "#211a28",
+            "text_color": "#211a28",
+            "header_color": "#211a28",
+            "free_badge_bg": "#fdeeee",
+            "free_badge_text_color": "#f42e75",
+            "item_background_color": "#ffffff",
+            "item_count_color": "#6b7280",
+            "item_border_radius": 6,
+            "container_border_radius": 6,
+            "margin_top": 6,
+            "margin_bottom": 8
+          }
+        },
+        "add_to_cart": {
+          "type": "add_to_cart",
+          "settings": {
+            "use_theme_colors": false,
+            "button_text_override": "BUY NOW",
+            "show_price_in_button": true,
+            "button_icon": "bag",
+            "custom_icon": "",
+            "icon_size": 15,
+            "buy_box_button_bg_color": "#211a28",
+            "button_text_color": "#ffffff",
+            "buy_box_button_hover_color": "#ef4a65",
+            "price_color": "#ffffff",
+            "card_border_radius": 10
+          }
+        },
+        "payment_icons_4M99Bi": {
+          "type": "payment_icons",
+          "settings": {
+            "custom_payment_icons": "mastercard, american_express, apple_pay, google_pay, shopify_pay, discover, visa, klarna",
+            "alignment": "center",
+            "icon_height": 22,
+            "icon_spacing": 6,
+            "margin_top": -10,
+            "margin_bottom": 5
+          }
+        },
+        "money_back_guarantee_kbK7cN": {
+          "type": "money_back_guarantee",
+          "settings": {
+            "text_small": "Less than 1%",
+            "text_large": "of customers claim our 30-Day Money Back Guarantee",
+            "container_bg_color": "#ffffff",
+            "border_color": "#211a28",
+            "enable_container_border": true,
+            "container_border_width": 1,
+            "container_border_style": "solid",
+            "container_border_color": "#211a28",
+            "container_border_radius": 10,
+            "text_small_color": "#211a28",
+            "text_large_color": "#211a28",
+            "padding": 15,
+            "badge_size": 45,
+            "icon_size": 30,
+            "text_small_size": 13,
+            "text_large_size": 13,
+            "margin_top": -5,
+            "margin_bottom": 10
+          }
+        },
+        "replica_warning_Gjgh6b": {
+          "type": "replica_warning",
+          "settings": {
+            "warning_title": "Watch Out For Cheap Replicas.",
+            "warning_text": "Only our brand guarantees the high quality product used by thousands for pain relief.",
+            "background_color": "#ffffff",
+            "text_color": "#f42e75",
+            "border_color": "#f42e75",
+            "icon_background_color": "#ffffff",
+            "icon_color": "#f42e75",
+            "title_font_size": 20,
+            "text_font_size": 14,
+            "border_width": 1,
+            "border_radius": 8,
+            "padding": 10,
+            "margin_top": -5,
+            "margin_bottom": 5
+          }
+        },
+        "divider_yp8EHi": {
+          "type": "divider",
+          "settings": {
+            "color": "#e4f9ff",
+            "style": "solid",
+            "thickness": 1,
+            "width": "100%",
+            "max_width": "100%",
+            "alignment": "center",
+            "margin_top": 0,
+            "margin_bottom": 10
+          }
+        },
+        "carousel_default_video_akUGBF": {
+          "type": "carousel_default_video",
+          "settings": {}
+        },
+        "carousel_default_video_6k7bGt": {
+          "type": "carousel_default_video",
+          "settings": {}
+        },
+        "carousel_default_video_DX3XK4": {
+          "type": "carousel_default_video",
+          "settings": {}
+        },
+        "carousel_default_video_eH4e7V": {
+          "type": "carousel_default_video",
+          "settings": {}
+        },
+        "faq": {
+          "type": "product_faq",
+          "settings": {
+            "items_limit": 5,
+            "image_size": 30,
+            "image_border_radius": 4,
+            "image_fit": "cover",
+            "text_size": 14,
+            "answer_text_size": 13,
+            "item_padding": 3,
+            "question_padding": 8,
+            "margin_top": 5,
+            "margin_bottom": 5,
+            "border_radius": 10,
+            "border_color": "#e5e5e5",
+            "question_color": "#211a28",
+            "question_bg_color": "#ffffff",
+            "answer_color": "#211a28",
+            "answer_bg_color": "#ffffff",
+            "accordion_mode": true,
+            "question_1": "Description",
+            "answer_1": "<p>Product description goes here.</p>",
+            "question_2": "How to use",
+            "answer_2": "<p>Usage instructions go here.</p>",
+            "question_3": "Features",
+            "answer_3": "<p>Key features go here.</p>",
+            "question_4": "Frequently Asked Questions",
+            "answer_4": "<p>Common questions and answers go here.</p>",
+            "question_5": "Shipping & Returns",
+            "answer_5": "<p>Shipping and return policy details go here.</p>"
+          }
+        },
+        "video_carousel_standalone_xw3T8p": {
+          "type": "video_carousel_standalone",
+          "settings": {
+            "heading": "See it in action",
+            "heading_size": 24,
+            "heading_color": "#211a28",
+            "scrollbar_color": "#211a28",
+            "disable_sound_controls": false,
+            "show_social_badge": true,
+            "social_platform": "instagram",
+            "view_count": 4.4,
+            "badge_text": "Over",
+            "badge_suffix": "M Views On Instagram"
+          }
+        },
+        "customer_review_XcjYbg": {
+          "type": "customer_review",
+          "settings": {
+            "reviewer_name": "Lauren J.",
+            "review_text": "This product exceeded my expectations. The quality is outstanding and I would highly recommend it to anyone.",
+            "rating": 5,
+            "avatar_url": "shopify://shop_images/64aaae55-6695-46eb-b604-3e5384a79fa2.png",
+            "background_color_start": "#ffffff",
+            "background_color_end": "#ffffff",
+            "text_color": "#211a28",
+            "border_color": "#211a28",
+            "star_color": "#211a28",
+            "margin_top": 5,
+            "margin_right": 0,
+            "margin_bottom": 15,
+            "margin_left": 0,
+            "verified_icon_color": "#211a28",
+            "review_text_color": "#211a28"
+          }
+        },
+        "delivery_date_block_qwerty": {
+          "type": "delivery_date",
+          "settings": {
+            "heading": "Delivery Information",
+            "heading_color": "#333333",
+            "heading_size": 16,
+            "shipping_days": 5,
+            "text_before": "Arrives by",
+            "text_after": ".",
+            "show_icon": true,
+            "accent_color": "#00c7ff",
+            "subtext": "Free shipping on all orders",
+            "subtext_color": "#666666",
+            "subtext_size": 13,
+            "background_color": "#f7f7f7",
+            "border_radius": 4,
+            "padding": 15,
+            "margin_top": 0,
+            "margin_bottom": 20
+          }
+        }
+      },
+      "block_order": [
+        "reviews_R4dtXw",
+        "title",
+        "custom_text_VEHNzL",
+        "custom_text_Qra839",
+        "price",
+        "shipping_notice",
+        "custom_text_CwrTfG",
+        "premium_attachment_kit_kVMhhR",
+        "add_to_cart",
+        "payment_icons_4M99Bi",
+        "money_back_guarantee_kbK7cN",
+        "replica_warning_Gjgh6b",
+        "divider_yp8EHi",
+        "carousel_default_video_akUGBF",
+        "carousel_default_video_6k7bGt",
+        "carousel_default_video_DX3XK4",
+        "carousel_default_video_eH4e7V",
+        "faq",
+        "video_carousel_standalone_xw3T8p",
+        "customer_review_XcjYbg",
+        "delivery_date_block_qwerty"
+      ],
+      "name": "Product Details",
+      "settings": {
+        "use_theme_colors": false,
+        "section_bg_color": "#ffffff",
+        "blocks_spacing": 4,
+        "text_color": "#333333",
+        "accent_color": "#1a281c",
+        "divider_color": "#eeeeee",
+        "show_product_info": true,
+        "show_product_gallery": true,
+        "show_product_variants": true,
+        "thumbnail_border_color": "#eeeeee",
+        "thumbnail_active_border_color": "#1a281c",
+        "dots_color": "#cccccc",
+        "enable_mobile_full_width_image": true
+      }
+    },
+    "scrolling_features_bar_AhP6EL": {
+      "type": "scrolling-features-bar",
+      "blocks": {
+        "feature_item_WJdNbm": {
+          "type": "feature_item",
+          "settings": {
+            "text": "PREMIUM QUALITY",
+            "icon_type": "svg",
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\"><path d=\"M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z\"></path></svg>"
+          }
+        },
+        "feature_item_CJxhgK": {
+          "type": "feature_item",
+          "settings": {
+            "text": "FAST SHIPPING",
+            "icon_type": "svg",
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\"><path d=\"M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm-6 0H5V6h9v2zm-9 11.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z\"></path></svg>"
+          }
+        },
+        "feature_item_VMc6KP": {
+          "type": "feature_item",
+          "settings": {
+            "text": "SATISFACTION GUARANTEED",
+            "icon_type": "svg",
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\"><path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\"></path></svg>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_WJdNbm",
+        "feature_item_CJxhgK",
+        "feature_item_VMc6KP"
+      ],
+      "settings": {
+        "use_theme_colors": false,
+        "vertical_padding": 15,
+        "item_gap": 60,
+        "mobile_item_gap": 30,
+        "font_size": 14,
+        "mobile_font_size": 12,
+        "letter_spacing": 0.5,
+        "uppercase_text": true,
+        "icon_size": 20,
+        "mobile_icon_size": 16,
+        "icon_spacing": 10,
+        "icon_type": "svg",
+        "slider_direction": "left",
+        "scrolling_velocity": 15,
+        "pause_on_hover": true,
+        "background_color": "#211a28",
+        "text_color": "#ffffff",
+        "icon_color": "#ffffff"
+      }
+    },
+    "sticky_add_to_cart_NJqgUd": {
+      "type": "sticky-add-to-cart",
+      "disabled": true,
+      "settings": {
+        "button_text": "CLAIM OFFER",
+        "delivery_days": 5,
+        "title_color": "#121212",
+        "title_desktop_font_size": 16,
+        "title_letter_spacing": 0,
+        "rating_text": "Excellent 4.8 | 1319 reviews",
+        "use_theme_colors": false,
+        "button_bg_color": "#211a28",
+        "button_hover_color": "#211a28",
+        "button_text_color": "#ffffff",
+        "star_color": "#211a28",
+        "background_color": "#ffffff",
+        "border_radius": 6,
+        "z_index": 9900,
+        "rating_text_color": "#211a28",
+        "rating_text_font_weight": "var(--font-weight-regular)",
+        "rating_text_desktop_font_size": 14,
+        "rating_text_letter_spacing": 0,
+        "delivery_text_color": "#211a28",
+        "delivery_text_font_weight": "var(--font-weight-bold)",
+        "delivery_text_desktop_font_size": 14,
+        "delivery_text_mobile_font_size": 12,
+        "delivery_text_letter_spacing": 0,
+        "delivery_date_display_format": "weekday_month_day",
+        "turn_off_delivery_date": false,
+        "delivery_text_prefix": "Get It By"
+      }
+    },
+    "product_benefits_NWiWMe": {
+      "type": "product-benefits",
+      "blocks": {
+        "benefit_HkrEf3": {
+          "type": "benefit",
+          "settings": {
+            "title": "High Quality Materials",
+            "description": "Made with premium materials that are built to last and deliver exceptional performance.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "preset_icon": "check",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_FhNtL9": {
+          "type": "benefit",
+          "settings": {
+            "title": "Easy to Use Design",
+            "description": "Intuitive design makes this product simple to use, saving you valuable time and effort.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "preset_icon": "clock",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_GRe7dT": {
+          "type": "benefit",
+          "settings": {
+            "title": "Multiple Configuration Options",
+            "description": "Customize your experience with various settings to meet your specific needs.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "preset_icon": "sparkle",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "custom_benefits_grid": {
+          "type": "benefit",
+          "settings": {
+            "title": "Long-Term Value",
+            "description": "A smart investment that pays for itself over time with its durability and efficiency.",
+            "benefit_color": "",
+            "benefit_description_color": "",
+            "use_image": false,
+            "preset_icon": "heart",
+            "use_custom_icon": true,
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_HkrEf3",
+        "benefit_FhNtL9",
+        "benefit_GRe7dT",
+        "custom_benefits_grid"
+      ],
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_left": 25,
+        "padding_right": 25,
+        "heading_size_mobile": 40,
+        "heading_size_desktop": 35,
+        "subtitle_size_mobile": 13,
+        "subtitle_size_desktop": 13,
+        "benefit_title_size_mobile": 14,
+        "benefit_title_size_desktop": 14,
+        "benefit_description_size_mobile": 12,
+        "benefit_description_size_desktop": 12,
+        "accent_color": "#ffffff",
+        "use_theme_colors": false,
+        "override_global_accent": true,
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "inherit",
+        "accent_text_gradient": "",
+        "accent_text_margin_left": 0,
+        "list_background": "linear-gradient(61deg, rgba(255, 255, 255, 0.2), rgba(255, 253, 253, 0.28) 97%)",
+        "list_border_radius": 8,
+        "border_color": "#ffffff33",
+        "heading_accent": "Beauty Products.",
+        "heading_regular": "Redefining",
+        "subtitle": "<p>Discover the outstanding features that make our product stand out from the competition.</p>",
+        "show_image": true,
+        "feature_image": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_03_26_21_PM.png",
+        "image_alt": "Feature product image",
+        "heading_color": "#ffffff",
+        "subtitle_color": "#ffffff",
+        "description_color": "#ffffff",
+        "section_background": "linear-gradient(180deg, rgba(244, 46, 117, 1), rgba(93, 90, 175, 1) 98%)"
+      }
+    },
+    "divider_Q7nmRz": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {
+        "divider_style": "wavy",
+        "background_color": "#f8f8f8",
+        "flip_direction": true,
+        "color": "#5d5aaf",
+        "height": 50,
+        "show_border": false,
+        "border_color": "#e0e0e0",
+        "border_width": 1,
+        "border_style": "solid",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_9Vm4Bn": {
+      "type": "image-with-text",
+      "blocks": {
+        "paragraph_xdBbmd": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph_text": "<p><strong>Add your paragraph text here. Th</strong>is can include formatting such as <strong>bold</strong> or <em>italic</em> text. Add your paragraph text here. This can include formatting such as <strong>bold</strong> or <em>italic</em> text. Add your paragraph text here. This can include formatting such as <strong>bold</strong> or <em>italic</em> text.</p>",
+            "margin_top": -13,
+            "margin_bottom": 0,
+            "paragraph_color": "#211a28"
+          }
+        },
+        "bullet_list_4nhqWM": {
+          "type": "bullet_list",
+          "settings": {
+            "two_columns": true,
+            "list_title": "",
+            "list_item_1": "First feature or benefit",
+            "list_item_1_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "list_item_2": "Second feature or benefit",
+            "list_item_2_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "list_item_3": "Third feature or benefit",
+            "list_item_3_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "list_item_4": "Fourth feature or benefit",
+            "list_item_4_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "list_item_5": "Fifth feature or benefit",
+            "list_item_5_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "list_item_6": "Sixth feature or benefit",
+            "list_item_6_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "list_color": "#333333",
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "paragraph_xdBbmd",
+        "bullet_list_4nhqWM"
+      ],
+      "name": "Image with Text",
+      "settings": {
+        "use_theme_colors": false,
+        "image_position": "left",
+        "text_align": "left",
+        "column_width": 50,
+        "content_spacing": 15,
+        "desktop_content_spacing": 40,
+        "section_border_radius": 0,
+        "heading": "No Lip Filler",
+        "heading_accent": "Needed.",
+        "image": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_03_26_21_PM.png",
+        "heading_font_size_mobile": 3.5,
+        "heading_font_size_desktop": 2.9,
+        "text_font_size_mobile": 1.1,
+        "text_font_size_desktop": 1.2,
+        "content_elements_spacing": 15,
+        "desktop_content_elements_spacing": 20,
+        "heading_bottom_margin": 20,
+        "desktop_heading_bottom_margin": 25,
+        "text_bottom_margin": 25,
+        "desktop_text_bottom_margin": 25,
+        "text_padding_vertical": 0,
+        "text_padding_left": 0,
+        "text_padding_right": 0,
+        "mobile_text_padding_vertical": 0,
+        "mobile_text_padding_horizontal": 0,
+        "button_padding_vertical": 12,
+        "button_padding_horizontal": 24,
+        "button_border_radius": 4,
+        "background_color": "#f8f8f8",
+        "heading_color": "#211a28",
+        "accent_color": "#211a28",
+        "text_color": "#211a28",
+        "button_bg_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "image_max_width": 800,
+        "image_max_height": 0,
+        "image_border_radius": 8,
+        "image_padding": 0,
+        "heading_size_desktop": 48,
+        "heading_letter_spacing": "heading",
+        "subtitle_size_mobile": 18,
+        "override_global_accent": true,
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "300",
+        "use_accent_gradient": true,
+        "accent_text_margin_left": 0
+      }
+    },
+    "steps_NPBhYa": {
+      "type": "steps",
+      "blocks": {
+        "step_PJMFgk": {
+          "type": "step",
+          "settings": {
+            "step_image": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_01_22_15_PM.png",
+            "image_background_color": "#000000",
+            "step_title": "1. Choose Your Product",
+            "step_description": "Browse our collection and select the perfect product for your needs.",
+            "content_background_color": "#ffffff"
+          }
+        },
+        "step_qpC4YG": {
+          "type": "step",
+          "settings": {
+            "step_image": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_03_26_21_PM.png",
+            "image_background_color": "#000000",
+            "step_title": "2. Apply Consistently",
+            "step_description": "Apply your product consistently for 3 to 6 weeks.",
+            "content_background_color": "#ffffff"
+          }
+        },
+        "step_4RDRDk": {
+          "type": "step",
+          "settings": {
+            "step_image": "shopify://shop_images/ChatGPT_Image_Jul_1_2025_06_51_03_PM.png",
+            "image_background_color": "#000000",
+            "step_title": "3. Say Hello To New Lips",
+            "step_description": "Personalize your selection with available customization options.",
+            "content_background_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "step_PJMFgk",
+        "step_qpC4YG",
+        "step_4RDRDk"
+      ],
+      "name": "Steps Results Section",
+      "settings": {
+        "use_theme_colors": false,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 20,
+        "title": "How",
+        "title_highlight": "It Works",
+        "subtitle": "<p>Follow these simple steps to get started</p>",
+        "title_color": "#000000",
+        "highlight_color": "#211a28",
+        "subtitle_color": "#4a4a4a",
+        "title_size_desktop": 34,
+        "title_size_mobile": 34,
+        "subtitle_size_desktop": 18,
+        "subtitle_size_mobile": 14,
+        "step_title_size_desktop": 18,
+        "step_title_size_mobile": 20,
+        "step_description_size_desktop": 12,
+        "step_description_size_mobile": 12,
+        "number_size_desktop": 20,
+        "number_size_mobile": 19,
+        "number_circle_size_desktop": 30,
+        "number_circle_size_mobile": 30,
+        "title_margin_bottom": 16,
+        "title_margin_bottom_tablet": 12,
+        "title_margin_bottom_mobile": 10,
+        "subtitle_margin_top": 0,
+        "subtitle_margin_bottom": 30,
+        "step_item_max_width_750px": 330,
+        "show_step_numbers": false,
+        "enable_mobile_carousel": false,
+        "mobile_image_layout": "compact",
+        "mobile_card_layout": "horizontal",
+        "prev_button_bg": "#ffffff",
+        "prev_button_color": "#000000",
+        "prev_button_border": "#e0e0e0",
+        "next_button_bg": "#211a28",
+        "next_button_color": "#ffffff",
+        "next_button_border": "#211a28",
+        "label_color": "#000000",
+        "number_border_color": "#000000",
+        "number_border_width": 1,
+        "number_border_style": "solid",
+        "number_background_color": "#ffffff",
+        "number_border_radius": 50,
+        "number_font_weight": "600",
+        "step_title_color": "#000000",
+        "description_color": "#000000",
+        "card_border_radius": 12,
+        "card_border_color": "#e0e0e0",
+        "card_border_style": "solid",
+        "card_border_width": 1,
+        "override_global_accent": true,
+        "accent_text_gradient": "linear-gradient(45deg, rgba(244, 46, 117, 1), rgba(93, 90, 175, 1) 94.964%)",
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "inherit",
+        "accent_text_margin_left": 0
+      }
+    },
+    "stacked_cards_dYNPWM": {
+      "type": "4-cards",
+      "blocks": {
+        "card_k3gUHa": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_12_18_55_PM.png",
+            "card_title": "Lipstick",
+            "card_description": "Use daily.",
+            "show_bullets": true,
+            "bullet_icon": "",
+            "bullet_points": "Increases Volume, Adds More Color, Increases Absorption",
+            "bullet_icon_color": "#ffffff",
+            "bullet_text_color": "#ffffff",
+            "bullet_container": false,
+            "bullet_container_bg": "#f8f9fa",
+            "bullet_container_border_color": "#e9ecef",
+            "bullet_container_border_style": "solid",
+            "bullet_container_border_width": 1,
+            "bullet_container_border_radius": 4
+          }
+        },
+        "card_pNPheC": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_12_17_20_PM.png",
+            "card_title": "Lip Serum",
+            "card_description": "Apply two drops daily.",
+            "show_bullets": true,
+            "bullet_icon": "",
+            "bullet_points": "Increases Volume, Adds More Color, Increases Absorption",
+            "bullet_icon_color": "#ffffff",
+            "bullet_text_color": "#ffffff",
+            "bullet_container": false,
+            "bullet_container_bg": "#f8f9fa",
+            "bullet_container_border_color": "#e9ecef",
+            "bullet_container_border_style": "solid",
+            "bullet_container_border_width": 1,
+            "bullet_container_border_radius": 4
+          }
+        },
+        "card_njWaLR": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_12_19_58_PM.png",
+            "card_title": "Lip Balm",
+            "card_description": "Apply whenever.",
+            "show_bullets": true,
+            "bullet_icon": "",
+            "bullet_points": "Increases Volume, Adds More Color, Increases Absorption",
+            "bullet_icon_color": "#ffffff",
+            "bullet_text_color": "#ffffff",
+            "bullet_container": false,
+            "bullet_container_bg": "#f8f9fa",
+            "bullet_container_border_color": "#e9ecef",
+            "bullet_container_border_style": "solid",
+            "bullet_container_border_width": 1,
+            "bullet_container_border_radius": 4
+          }
+        },
+        "card_VPN83A": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_01_20_47_PM.png",
+            "card_title": "Microneedle Roller",
+            "card_description": "Apply every two days.",
+            "show_bullets": true,
+            "bullet_icon": "",
+            "bullet_points": "Increases Volume, Adds More Color, Increases Absorption",
+            "bullet_icon_color": "#ffffff",
+            "bullet_text_color": "#ffffff",
+            "bullet_container": false,
+            "bullet_container_bg": "#f8f9fa",
+            "bullet_container_border_color": "#e9ecef",
+            "bullet_container_border_style": "solid",
+            "bullet_container_border_width": 1,
+            "bullet_container_border_radius": 4
+          }
+        }
+      },
+      "block_order": [
+        "card_k3gUHa",
+        "card_pNPheC",
+        "card_njWaLR",
+        "card_VPN83A"
+      ],
+      "name": "Cards",
+      "settings": {
+        "heading": "The Perfect",
+        "accent_text": "Kit.",
+        "subtitle": "<p>See how each item is designed to produce the best results.</p>",
+        "heading_alignment": "center",
+        "heading_size": 36,
+        "heading_color": "#ffffff",
+        "subtitle_color": "#ffffff",
+        "title_size": 18,
+        "title_size_mobile": 14,
+        "title_color": "#ffffff",
+        "description_size": 14,
+        "description_size_mobile": 10,
+        "description_color": "#ffffff",
+        "bullet_size": 13,
+        "bullet_size_mobile": 9,
+        "override_global_accent": true,
+        "accent_text_gradient": "linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "accent_left_margin": 0,
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": 400,
+        "horizontal_layout": false,
+        "hide_description": false,
+        "card_background_gradient": "linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(248, 249, 250, 0.28) 100%)",
+        "card_border_color": "#ffffff33",
+        "card_border_style": "solid",
+        "card_border_width": 1,
+        "card_border_radius": 12,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_left": 5,
+        "padding_right": 5,
+        "section_background_gradient": "linear-gradient(180deg, rgba(244, 46, 117, 1), rgba(93, 90, 175, 1) 100%)"
+      }
+    },
+    "divider_eHNkdm": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {
+        "divider_style": "wavy",
+        "background_color": "rgba(0,0,0,0)",
+        "flip_direction": true,
+        "color": "#5d5aaf",
+        "height": 50,
+        "show_border": false,
+        "border_color": "#e0e0e0",
+        "border_width": 1,
+        "border_style": "solid",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "before_after_comparison_dg6PAy": {
+      "type": "before-after-comparison",
+      "settings": {
+        "use_theme_colors": false,
+        "title": "The",
+        "title_accent": "Versa Difference.",
+        "accent_color": "#ef4a65",
+        "accent_text_gradient": "linear-gradient(45deg, rgba(244, 46, 117, 1), rgba(93, 90, 175, 1) 97%)",
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "inherit",
+        "description": "See the stunning transformations our products deliver — real results from real customers.",
+        "instructions_text": "Drag the slider to see the difference",
+        "before_image": "shopify://shop_images/ChatGPT_Image_Jul_1_2025_06_51_07_PM.png",
+        "after_image": "shopify://shop_images/ChatGPT_Image_Jul_1_2025_06_51_03_PM.png",
+        "before_label": "Before",
+        "after_label": "After",
+        "initial_position": 50,
+        "container_max_width": 800,
+        "container_border_radius": 8,
+        "title_font_size": 34,
+        "description_font_size": 12,
+        "instructions_font_size": 14,
+        "label_font_size": 12,
+        "image_aspect_ratio": "4/3",
+        "image_min_height": 250,
+        "image_max_height": 500,
+        "mobile_aspect_ratio": "4/3",
+        "mobile_min_height": 200,
+        "mobile_max_height": 400,
+        "mobile_container_width": 320,
+        "section_background_color": "#ffffff",
+        "title_color": "#211a28",
+        "description_color": "#211a28",
+        "instructions_color": "#211a28",
+        "slider_button_bg": "",
+        "slider_button_border": "",
+        "slider_button_icon": "#211a28",
+        "image_label_bg": "#211a28",
+        "image_label_text": "#ffffff",
+        "contain_section": true,
+        "container_padding_top": 0,
+        "container_padding_right": 0,
+        "container_padding_bottom": 0,
+        "container_padding_left": 0,
+        "container_padding_top_mobile": 20,
+        "container_padding_right_mobile": 0,
+        "container_padding_bottom_mobile": 20,
+        "container_padding_left_mobile": 0,
+        "container_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(248, 248, 248, 1) 100%)",
+        "enable_border": true,
+        "border_width": 1,
+        "border_style": "solid",
+        "border_color": "#e5e7eb",
+        "enable_shadow": false
+      }
+    },
+    "statistics_column_M3Cxtb": {
+      "type": "statistics-column",
+      "blocks": {
+        "statistic_ge4FBf": {
+          "type": "statistic",
+          "settings": {
+            "number": "500K+",
+            "title": "Happy Customers",
+            "description": "Customers trust us with their business worldwide"
+          }
+        },
+        "statistic_dhpdtF": {
+          "type": "statistic",
+          "settings": {
+            "number": "99%",
+            "title": "Satisfaction Rate",
+            "description": "Customer satisfaction is our top priority"
+          }
+        },
+        "statistic_74KbgM": {
+          "type": "statistic",
+          "settings": {
+            "number": "24/7",
+            "title": "Support Available",
+            "description": "Round-the-clock customer support when you need it"
+          }
+        }
+      },
+      "block_order": [
+        "statistic_ge4FBf",
+        "statistic_dhpdtF",
+        "statistic_74KbgM"
+      ],
+      "name": "Statistics Column",
+      "settings": {
+        "use_theme_colors": false,
+        "heading": "Statistics",
+        "heading_accent": "Don't Lie.",
+        "subtitle": "<p>Our results prove why we're the industry leader.</p>",
+        "heading_color": "#211a28",
+        "heading_size_mobile": 40,
+        "heading_size_desktop": 36,
+        "subtitle_color": "#211a28",
+        "subtitle_size_mobile": 14,
+        "subtitle_size_desktop": 16,
+        "override_global_accent": true,
+        "accent_color": "#ef4a65",
+        "accent_text_gradient": "linear-gradient(45deg, rgba(244, 46, 117, 1), rgba(93, 90, 175, 1) 100%)",
+        "accent_text_margin_left": 0,
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "inherit",
+        "number_color": "#211a28",
+        "number_gradient": "linear-gradient(135deg, rgba(244, 46, 117, 1), rgba(93, 90, 175, 1) 100%)",
+        "number_size_mobile": 42,
+        "number_size_desktop": 48,
+        "title_color": "#211a28",
+        "title_size_mobile": 14,
+        "title_size_desktop": 16,
+        "description_color": "#211a28",
+        "description_size_mobile": 13,
+        "description_size_desktop": 14,
+        "image": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_01_22_15_PM.png",
+        "image_border_radius": 8,
+        "image_position_desktop": "right",
+        "image_position_mobile": "above",
+        "show_disclaimer": true,
+        "disclaimer_text": "Based on internal studies and customer feedback surveys.",
+        "disclaimer_color": "#211a28",
+        "disclaimer_icon_color": "#211a28",
+        "disclaimer_background_color": "#ffffff33",
+        "disclaimer_size_mobile": 15,
+        "disclaimer_size_desktop": 16,
+        "disclaimer_line_height": 1.4,
+        "disclaimer_padding_top": 10,
+        "disclaimer_padding_bottom": 10,
+        "disclaimer_padding_left": 10,
+        "disclaimer_padding_right": 1,
+        "disclaimer_border_radius": 8,
+        "disclaimer_border_style": "dashed",
+        "disclaimer_border_width": 1,
+        "disclaimer_border_color": "#211a28",
+        "padding_top": 36,
+        "padding_bottom": 24,
+        "section_background": "linear-gradient(135deg, rgba(248, 248, 248, 1), rgba(255, 255, 255, 1) 100%)",
+        "divider_color": "#e0e0e0"
+      }
+    },
+    "benefits_carousel_eXPzCJ": {
+      "type": "benefits-carousel",
+      "blocks": {
+        "benefit_H7w9ta": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Improved Sleep",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_aMXFYf": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Reduced Stress",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_tUJQE6": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Enhanced Focus",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_ybHHta": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Better Mood",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        },
+        "benefit_jYzLxy": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Increased Energy",
+            "show_icon": true,
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_H7w9ta",
+        "benefit_aMXFYf",
+        "benefit_tUJQE6",
+        "benefit_ybHHta",
+        "benefit_jYzLxy"
+      ],
+      "settings": {
+        "heading": "You Can Expect",
+        "empty_text": "No benefits currently listed.",
+        "icon_size": 18,
+        "icon_size_mobile": 16,
+        "icon_color": "#ef4a65",
+        "icon_text_spacing": 8,
+        "icon_text_spacing_mobile": 6,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "scroll_speed": 20,
+        "heading_size": 32,
+        "heading_size_mobile": 27,
+        "heading_color": "#211a28",
+        "heading_gradient_start": "#ffffff",
+        "heading_gradient_end": "#ffffff",
+        "use_theme_colors": false,
+        "background_color": "#ffffff",
+        "border_start_color": "#5d5aaf",
+        "border_end_color": "#f42e75",
+        "item_background": "#ffffff",
+        "item_text_color": "#211a28",
+        "item_border_start": "#5d5aaf",
+        "item_border_end": "#f42e75",
+        "item_font_size_mobile": 14,
+        "empty_text_color": "#888888"
+      }
+    },
+    "product_comparison_ahRqAP": {
+      "type": "product-comparison",
+      "blocks": {
+        "product_column_HQQ9kd": {
+          "type": "product_column",
+          "settings": {
+            "product_name": "Our Product",
+            "product_subtitle": "Original",
+            "product_image": "shopify://shop_images/ChatGPT_Image_Jul_10_2025_03_45_43_PM.png",
+            "product_image_size": 80,
+            "product_image_size_tablet": 80,
+            "product_image_size_mobile": 75,
+            "subtitle_custom_icon": "",
+            "show_subtitle_icon": true,
+            "use_subtitle_background": true,
+            "subtitle_border_color": "#ffffff",
+            "highlight_column": true,
+            "highlight_color": "#c2e9fb",
+            "use_highlight_gradient": true,
+            "highlight_gradient_start_color": "#fffdfd47",
+            "highlight_gradient_end_color": "#ffffff45",
+            "highlight_gradient_angle": 90,
+            "subtitle_glass_color": "#ffffff",
+            "subtitle_icon_color": "#000000"
+          }
+        },
+        "product_column_DF3TFg": {
+          "type": "product_column",
+          "settings": {
+            "product_name": "Others",
+            "product_subtitle": "Knock-off",
+            "product_image_size": 80,
+            "product_image_size_tablet": 60,
+            "product_image_size_mobile": 50,
+            "subtitle_custom_icon": "",
+            "show_subtitle_icon": true,
+            "use_subtitle_background": true,
+            "subtitle_border_color": "#ffffff",
+            "highlight_column": false,
+            "highlight_color": "#ef4a65",
+            "use_highlight_gradient": false,
+            "highlight_gradient_start_color": "#ef4a65",
+            "highlight_gradient_end_color": "#ff6b9d",
+            "highlight_gradient_angle": 45,
+            "subtitle_glass_color": "#ffffff",
+            "subtitle_icon_color": "#000000"
+          }
+        },
+        "feature_row_DrAYGc": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Core feature",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "yes",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_W4Fwxw": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Feature",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_ntHtdD": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Feature",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_afwJDU": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Advanced feature",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "value_type": "checkmark",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        },
+        "feature_row_PzLNMd": {
+          "type": "feature_row",
+          "settings": {
+            "feature_name": "Premium feature",
+            "show_icon": true,
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
+            "value_type": "text",
+            "value_1": "yes",
+            "text_value_1": "Yes",
+            "value_2": "no",
+            "text_value_2": "No"
+          }
+        }
+      },
+      "block_order": [
+        "product_column_HQQ9kd",
+        "product_column_DF3TFg",
+        "feature_row_DrAYGc",
+        "feature_row_W4Fwxw",
+        "feature_row_ntHtdD",
+        "feature_row_afwJDU",
+        "feature_row_PzLNMd"
+      ],
+      "settings": {
+        "use_theme_colors": false,
+        "show_heading": true,
+        "title_part_1": "Why Choose",
+        "title_part_2": "Versa?",
+        "title_part_1_color": "#ffffff",
+        "title_part_2_color": "#ffffff",
+        "subheading": "<p>Here's why we're the industry leader</p>",
+        "heading_size": 40,
+        "subheading_size": 13,
+        "subheading_color": "#ffffff",
+        "accent_text_margin_left": 4,
+        "use_accent_gradient": true,
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "300",
+        "product_title_size": 21,
+        "subtitle_size": 10,
+        "feature_name_size": 17,
+        "text_value_size": 14,
+        "product_title_size_mobile": 16,
+        "subtitle_size_mobile": 10,
+        "feature_name_size_mobile": 12,
+        "text_value_size_mobile": 11,
+        "use_gradient_background": true,
+        "background_color": "#ffffff",
+        "gradient_direction": 175,
+        "gradient_color_1": "#f42e75",
+        "gradient_color_2": "#5d5aaf",
+        "text_color": "#211a28",
+        "subtitle_color": "#211a28",
+        "highlighted_text_color": "#ffffff",
+        "highlighted_subtitle_color": "#ffffff",
+        "highlighted_check_color": "#ffffff",
+        "highlighted_x_color": "#ffffff",
+        "border_color": "#ffffff45",
+        "icon_color": "#ffffff",
+        "check_color": "#ffffff",
+        "x_color": "#ffffff",
+        "highlight_border_radius": 8,
+        "use_highlight_border": true,
+        "highlight_border_color": "#ffffff33",
+        "highlight_border_width": 1,
+        "unhighlighted_text_color": "#ffffff",
+        "unhighlighted_subtitle_color": "#ffffff",
+        "unhighlighted_icon_color": "#ffffff",
+        "unhighlighted_check_color": "#ffffff",
+        "unhighlighted_x_color": "#ffffff"
+      }
+    },
+    "divider_kz9pE7": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {
+        "divider_style": "wavy",
+        "background_color": "rgba(0,0,0,0)",
+        "flip_direction": true,
+        "color": "#5d5aaf",
+        "height": 50,
+        "show_border": false,
+        "border_color": "#e0e0e0",
+        "border_width": 1,
+        "border_style": "solid",
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
+    "customer_reviews_carousel_A6rqPE": {
+      "type": "customer-reviews-carousel",
+      "blocks": {
+        "review_HgGGgG": {
+          "type": "review",
+          "settings": {
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 5,
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "reviewer_name": "Usera",
+            "reviewer_age": "30",
+            "show_verified_badge": true,
+            "show_purchased_product": true,
+            "product_reference": "test-product",
+            "product_title": "Product Name",
+            "product_price": "$29.99",
+            "product_compare_price": "$39.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        },
+        "review_wnmGk4": {
+          "type": "review",
+          "settings": {
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 5,
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "reviewer_name": "User1",
+            "reviewer_age": "30",
+            "show_verified_badge": true,
+            "show_purchased_product": true,
+            "product_reference": "test-product",
+            "product_title": "Product Name",
+            "product_price": "$29.99",
+            "product_compare_price": "$39.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        },
+        "review_WyftnL": {
+          "type": "review",
+          "settings": {
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 5,
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "reviewer_name": "User1",
+            "reviewer_age": "30",
+            "show_verified_badge": true,
+            "show_purchased_product": true,
+            "product_reference": "comfy-neck-pillow",
+            "product_title": "Product Name",
+            "product_price": "$29.99",
+            "product_compare_price": "$39.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        },
+        "review_Tb4YXf": {
+          "type": "review",
+          "settings": {
+            "image_position": "center center",
+            "wrap_image": false,
+            "rating": 5,
+            "review_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "reviewer_name": "User1",
+            "reviewer_age": "30",
+            "show_verified_badge": true,
+            "show_purchased_product": true,
+            "product_reference": "",
+            "product_title": "Product Name",
+            "product_price": "$29.99",
+            "product_compare_price": "$39.99",
+            "show_purchase_date": true,
+            "purchase_date": "March 14th, 2025"
+          }
+        }
+      },
+      "block_order": [
+        "review_HgGGgG",
+        "review_wnmGk4",
+        "review_WyftnL",
+        "review_Tb4YXf"
+      ],
+      "settings": {
+        "use_theme_colors": false,
+        "section_width": 1200,
+        "section_background": "#ffffff",
+        "title_text": "Join Over 10,000+",
+        "accent_text": "Happy Customers.",
+        "title_color": "#211a28",
+        "accent_color": "#000000",
+        "accent_text_margin_left": 0,
+        "use_accent_gradient": true,
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "300",
+        "custom_heading_styling": true,
+        "heading_font_size": 44,
+        "heading_font_size_mobile": 40,
+        "heading_line_height": 1.2,
+        "show_description": false,
+        "description_text": "See what our customers are saying about our products",
+        "description_color": "#000000",
+        "prev_button_bg": "#ffffff",
+        "prev_button_color": "#000000",
+        "prev_button_border": "#e0e0e0",
+        "next_button_bg": "#211a28",
+        "next_button_color": "#ffffff",
+        "next_button_border": "#211a28",
+        "scroll_amount": 360,
+        "card_width": 390,
+        "card_border_radius": 10,
+        "card_border_color": "#e0e0e0",
+        "card_background": "#ffffff",
+        "card_margin_top": 0,
+        "card_margin_right": 0,
+        "card_margin_bottom": 0,
+        "card_margin_left": 0,
+        "star_filled_color": "#f42e75",
+        "star_empty_color": "#e0e0e0",
+        "review_text_color": "#000000",
+        "review_text_size": 14,
+        "review_text_size_mobile": 12,
+        "reviewer_info_color": "#000000",
+        "reviewer_info_bg_color": "#f5f5f5",
+        "verified_badge_text": "Verified Buyer",
+        "verified_badge_color": "#f42e75",
+        "verified_icon_color": "#f42e75",
+        "enable_reviewer_info_border": true,
+        "reviewer_info_border_width": 1,
+        "reviewer_info_border_style": "solid",
+        "reviewer_info_border_color": "#f2f2f7",
+        "reviewer_info_border_radius": 8,
+        "product_label": "Item Purchased",
+        "product_label_color": "#211a28",
+        "product_title_color": "#211a28",
+        "product_price_color": "#f42e75",
+        "product_bg_color": "#f9f9f9",
+        "product_border_color": "#f2f2f7",
+        "product_border_width": 1,
+        "product_border_style": "solid",
+        "summary_star_color": "#f42e75",
+        "summary_text_color": "#211a28",
+        "rating_summary_bg_color": "#fef6e6",
+        "purchase_date_prefix": "Purchased on",
+        "purchase_date_color": "#000000",
+        "purchase_date_icon_color": "#000000",
+        "enable_rating_summary_border": true,
+        "rating_summary_border_width": 1,
+        "rating_summary_border_style": "solid",
+        "rating_summary_border_color": "#f2f2f7",
+        "rating_summary_border_radius": 50
+      }
+    },
+    "satisfaction_guarantee_J4ypTy": {
+      "type": "satisfaction-guarantee",
+      "settings": {
+        "use_theme_colors": false,
+        "show_photos": true,
+        "allow_overflow": false,
+        "icon_style": "original",
+        "custom_svg_code": "",
+        "icon_color": "#000000",
+        "description_text": "We're so confident in the quality of our product that we offer a satisfaction guarantee. If you're not completely satisfied with your purchase, simply return the item within 30 days for a full refund.",
+        "product_name": "Premium Product",
+        "description_color": "#211a28",
+        "benefit_text_color": "#211a28",
+        "heading_size_desktop": 26,
+        "heading_size_mobile": 36,
+        "description_size_desktop": 12,
+        "description_size_mobile": 12,
+        "benefit_size_desktop": 12,
+        "benefit_size_mobile": 10,
+        "description_line_height": 1.5,
+        "accent_text_margin_left": 4,
+        "accent_text_gradient": "linear-gradient(266deg, rgba(244, 46, 117, 1), rgba(171, 71, 151, 1) 47%, rgba(93, 90, 175, 1) 96%)",
+        "accent_font_family": "serif",
+        "accent_font_style": "italic",
+        "accent_font_weight": "inherit",
+        "button_text": "CLAIM NOW",
+        "use_global_button_style": true,
+        "button_color": "#211a28",
+        "button_text_color": "#ffffff",
+        "button_border_width": 0,
+        "button_border_color": "#000000",
+        "benefit_1": "100% Satisfaction",
+        "benefit_2": "Fast Shipping",
+        "benefit_3": "Easy Returns",
+        "image_1": "shopify://shop_images/ChatGPT_Image_Jun_25_2025_11_13_25_AM.png",
+        "image_2": "shopify://shop_images/ChatGPT_Image_Jun_25_2025_11_13_25_AM.png",
+        "image_4": "shopify://shop_images/ChatGPT_Image_Jun_25_2025_11_13_25_AM.png",
+        "image_5": "shopify://shop_images/ChatGPT_Image_Jun_25_2025_11_13_25_AM.png",
+        "polaroid_size_desktop": 180,
+        "polaroid_size_mobile": 100,
+        "image_extension": 80,
+        "image_vertical_offset": 0,
+        "content_padding_mobile": 5,
+        "content_padding_desktop": 70,
+        "content_width_with_photos": 50,
+        "content_max_width_with_photos": 600,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_no_photos": 15,
+        "section_padding_vertical": 35,
+        "section_padding_horizontal": 5,
+        "section_padding_vertical_mobile": 5,
+        "section_padding_horizontal_mobile": 5,
+        "section_background": "linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 97%)",
+        "contain_section": true,
+        "container_padding": 0,
+        "container_background": "linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 47%, rgba(248, 248, 248, 1) 100%)",
+        "enable_border": true,
+        "border_width": 1,
+        "border_style": "solid",
+        "border_color": "#f2f2f7",
+        "border_radius": 8,
+        "enable_shadow": false
+      }
+    },
+    "store_faq_Lpd3PW": {
+      "type": "store-faq",
+      "blocks": {
+        "faq_item_YYJUL8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I place an order?",
+            "answer": "<p>ASJDFASFJAFKWEFWAEFJWEFAWKFWAEJFWAEKFJWAEKFAWFKJAWEFKJWEKFJAWKFAWEKFJAWEKFJAWKEFAWKFJAWKEFJAWKEFJAWKJFAWKEFAWKEFJAWKEFJWEKFJAWKEFAWEKJFAWEJFAWKFAWJKFAWJFAKWEFJKAWEFJ</p><p>- ASJDFASFJAFKWEFWAEFJWEFAWKFWAEJFWAEKFJWAEKFAWFKJAWEFKJWEKFJAWKFAWEKFJAWEKFJAWKEFAWKFJAWKEFJAWKEFJAWKJFAWKEFAWKEFJAWKEFJWEKFJAWKEFAWEKJFAWEJFAWKFAWJKFAWJFAKWEFJKAWEFJ</p><p>- ASJDFASFJAFKWEFWAEFJWEFAWKFWAEJFWAEKFJWAEKFAWFKJAWEFKJWEKFJAWKFAWEKFJAWEKFJAWKEFAWKFJAWKEFJAWKEFJAWKJFAWKEFAWKEFJAWKEFJWEKFJAWKEFAWEKJFAWEJFAWKFAWJKFAWJFAKWEFJKAWEFJ</p><p>-ASJDFASFJAFKWEFWAEFJWEFAWKFWAEJFWAEKFJWAEKFAWFKJAWEFKJWEKFJAWKFAWEKFJAWEKFJAWKEFAWKFJAWKEFJAWKEFJAWKJFAWKEFAWKEFJAWKEFJWEKFJAWKEFAWEKJFAWEJFAWKFAWJKFAWJFAKWEFJKAWEFJ</p><p></p>"
+          }
+        },
+        "faq_item_QKVnRn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What payment methods do you accept?",
+            "answer": "<p>We accept major credit cards, PayPal, Shop Pay, and Apple Pay for your convenience and security.</p>"
+          }
+        },
+        "faq_item_appL6A": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Standard shipping typically takes 3-5 business days within the continental US. International shipping times vary by location.</p>"
+          }
+        },
+        "faq_item_fMQrU3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We offer a 30-day return policy. If you're not satisfied with your purchase, you can return it within 30 days for a full refund or exchange.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_YYJUL8",
+        "faq_item_QKVnRn",
+        "faq_item_appL6A",
+        "faq_item_fMQrU3"
+      ],
+      "settings": {
+        "use_theme_colors": true,
+        "heading": "Frequently Asked Questions",
+        "subtitle": "<p>Find answers to common questions about our products, shipping, returns, and more.</p>",
+        "heading_color": "#1773b0",
+        "section_padding": 60,
+        "section_bg_color": "#ffffff",
+        "border_radius": 8,
+        "border_color": "#e4f9ff",
+        "question_color": "#1773b0",
+        "question_bg_color": "#ffffff",
+        "answer_color": "#1773b0",
+        "answer_bg_color": "#ffffff",
+        "accordion_mode": true,
+        "heading_font_size": 36,
+        "heading_font_size_mobile": 38,
+        "subtitle_font_size": 16,
+        "subtitle_font_size_mobile": 14,
+        "question_font_size": 16,
+        "question_font_size_mobile": 14,
+        "answer_font_size": 14,
+        "answer_font_size_mobile": 13
+      }
+    },
+    "pf-f217725b": {
+      "type": "pf-f217725b",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "scrolling_features_bar_AhP6EL",
+    "sticky_add_to_cart_NJqgUd",
+    "product_benefits_NWiWMe",
+    "divider_Q7nmRz",
+    "image_with_text_9Vm4Bn",
+    "steps_NPBhYa",
+    "stacked_cards_dYNPWM",
+    "divider_eHNkdm",
+    "before_after_comparison_dg6PAy",
+    "statistics_column_M3Cxtb",
+    "benefits_carousel_eXPzCJ",
+    "product_comparison_ahRqAP",
+    "divider_kz9pE7",
+    "customer_reviews_carousel_A6rqPE",
+    "satisfaction_guarantee_J4ypTy",
+    "store_faq_Lpd3PW",
+    "pf-f217725b"
+  ]
+}

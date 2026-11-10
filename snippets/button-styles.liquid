@@ -1,0 +1,95 @@
+{% comment %}
+  Button Styles Snippet
+  
+  Usage in sections:
+  {% render 'button-styles', 
+    section: section, 
+    prefix: 'section_name',
+    selector: '.my-section .button'
+  %}
+  
+  This will generate CSS that either uses global button styling or section-specific styling
+  based on the section's settings.
+{% endcomment %}
+
+{% assign prefix = prefix | default: 'button' %}
+{% assign selector = selector | default: '.button' %}
+{% assign use_global_key = prefix | append: '_use_global_button_styling' %}
+{% assign use_global = section.settings[use_global_key] | default: true %}
+
+<style>
+  {{ selector }} {
+    /* Always use global spacing and consistency */
+    padding: var(--global-button-padding-y, 12px) 20px !important;
+    letter-spacing: var(--global-button-letter-spacing, 1px) !important;
+    font-family: var(--button-font-family) !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: none !important;
+    
+    {% if settings.enable_global_button_styling and use_global %}
+      /* Use global button styling (colors, typography, borders) */
+      font-size: var(--global-button-font-size, 14px) !important;
+      font-weight: var(--global-button-font-weight, 700) !important;
+      text-transform: var(--global-button-text-transform, none) !important;
+      border-radius: var(--global-button-radius, 8px) !important;
+      background-color: var(--button-bg-color) !important;
+      color: var(--button-text-color) !important;
+      border: var(--global-button-border-width, 0px) solid var(--button-border-color) !important;
+    {% else %}
+      /* Use section-specific styling (but keep global spacing) */
+      {% assign bg_color_key = prefix | append: '_background_color' %}
+      {% assign text_color_key = prefix | append: '_text_color' %}
+      {% assign hover_bg_color_key = prefix | append: '_hover_background_color' %}
+      {% assign hover_text_color_key = prefix | append: '_hover_text_color' %}
+      {% assign border_radius_key = prefix | append: '_border_radius' %}
+      {% assign font_size_key = prefix | append: '_font_size' %}
+      {% assign font_weight_key = prefix | append: '_font_weight' %}
+      {% assign text_transform_key = prefix | append: '_text_transform' %}
+      
+      {% assign bg_color = section.settings[bg_color_key] | default: '#EF4A65' %}
+      {% assign text_color = section.settings[text_color_key] | default: '#FFFFFF' %}
+      {% assign hover_bg_color = section.settings[hover_bg_color_key] | default: '#D63953' %}
+      {% assign hover_text_color = section.settings[hover_text_color_key] | default: '#FFFFFF' %}
+      {% assign border_radius = section.settings[border_radius_key] | default: 8 %}
+      {% assign font_size = section.settings[font_size_key] | default: 14 %}
+      {% assign font_weight = section.settings[font_weight_key] | default: 700 %}
+      {% assign text_transform = section.settings[text_transform_key] | default: 'none' %}
+      
+      font-size: {{ font_size }}px !important;
+      font-weight: {{ font_weight }} !important;
+      text-transform: {{ text_transform }} !important;
+      border-radius: {{ border_radius }}px !important;
+      background-color: {{ bg_color }} !important;
+      color: {{ text_color }} !important;
+      border: none !important;
+    {% endif %}
+  }
+  
+  {{ selector }}:hover,
+  {{ selector }}:focus {
+    {% if settings.enable_global_button_styling and use_global %}
+      background-color: var(--button-hover-bg-color) !important;
+      color: var(--button-hover-text-color) !important;
+    {% else %}
+      {% assign hover_bg_color_key = prefix | append: '_hover_background_color' %}
+      {% assign hover_text_color_key = prefix | append: '_hover_text_color' %}
+      {% assign hover_bg_color = section.settings[hover_bg_color_key] | default: '#D63953' %}
+      {% assign hover_text_color = section.settings[hover_text_color_key] | default: '#FFFFFF' %}
+      background-color: {{ hover_bg_color }} !important;
+      color: {{ hover_text_color }} !important;
+    {% endif %}
+    text-decoration: none !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  {{ selector }}:active {
+    transform: translateY(0);
+  }
+</style> 

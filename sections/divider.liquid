@@ -1,0 +1,243 @@
+{%- style -%}
+  .divider-section-{{ section.id }} {
+    --divider-color: {{ section.settings.color }};
+    --divider-height: {{ section.settings.height }}px;
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    
+    background-color: {{ section.settings.background_color }};
+    padding: var(--padding-top) 0 var(--padding-bottom) 0;
+    line-height: 0;
+  }
+
+  .divider-section-{{ section.id }} svg {
+    width: 100%;
+    height: var(--divider-height);
+    {% if section.settings.divider_style == 'gradient' %}
+      background: {{ section.settings.gradient_background }};
+    {% elsif section.settings.use_gradient %}
+      background: {{ section.settings.gradient_background }};
+      mask-composite: intersect;
+      -webkit-mask-composite: source-in;
+    {% endif %}
+    {% if section.settings.flip_direction %}
+      transform: scaleY(-1);
+    {% endif %}
+  }
+
+  .divider-section-{{ section.id }} svg path,
+  .divider-section-{{ section.id }} svg rect {
+    {% if section.settings.divider_style == 'gradient' %}
+      fill: transparent;
+    {% elsif section.settings.use_gradient %}
+      fill: black;
+    {% else %}
+      fill: var(--divider-color);
+    {% endif %}
+  }
+{%- endstyle -%}
+
+<div class="divider-section-{{ section.id }}">
+  {%- case section.settings.divider_style -%}
+    {%- when 'cloud' -%}
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M-5,90 Q 100,20 250,90 Q 400,50 550,90 Q 750,-20 950,70 Q 1100,40 1205,90 L 1205,120 L -5,120 Z" />
+        {%- if section.settings.show_border -%}
+          <path d="M-5,90 Q 100,20 250,90 Q 400,50 550,90 Q 750,-20 950,70 Q 1100,40 1205,90" fill="none" stroke="{{ section.settings.border_color }}" stroke-width="{{ section.settings.border_width }}"
+            {%- case section.settings.border_style -%}
+              {%- when 'dashed' -%} stroke-dasharray="10, 5" {%- when 'dotted' -%} stroke-dasharray="2, 3"
+            {%- endcase -%}
+            vector-effect="non-scaling-stroke" />
+        {%- endif -%}
+      </svg>
+    {%- when 'wavy' -%}
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,60 Q300,120 600,60 T1200,60 V120 H0 Z" />
+        {%- if section.settings.show_border -%}
+          <path d="M0,60 Q300,120 600,60 T1200,60" fill="none" stroke="{{ section.settings.border_color }}" stroke-width="{{ section.settings.border_width }}"
+            {%- case section.settings.border_style -%}
+              {%- when 'dashed' -%} stroke-dasharray="10, 5" {%- when 'dotted' -%} stroke-dasharray="2, 3"
+            {%- endcase -%}
+            vector-effect="non-scaling-stroke" />
+        {%- endif -%}
+      </svg>
+    {%- when 'diagonal' -%}
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,120 L1200,90 V120 H0 Z" />
+        {%- if section.settings.show_border -%}
+          <path d="M0,120 L1200,90" fill="none" stroke="{{ section.settings.border_color }}" stroke-width="{{ section.settings.border_width }}"
+            {%- case section.settings.border_style -%}
+              {%- when 'dashed' -%} stroke-dasharray="10, 5" {%- when 'dotted' -%} stroke-dasharray="2, 3"
+            {%- endcase -%}
+            vector-effect="non-scaling-stroke" />
+        {%- endif -%}
+      </svg>
+    {%- when 'gradient' -%}
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <rect x="0" y="0" width="1200" height="120" />
+        {%- if section.settings.show_border -%}
+          <rect x="0" y="0" width="1200" height="120" fill="none" stroke="{{ section.settings.border_color }}" stroke-width="{{ section.settings.border_width }}"
+            {%- case section.settings.border_style -%}
+              {%- when 'dashed' -%} stroke-dasharray="10, 5" {%- when 'dotted' -%} stroke-dasharray="2, 3"
+            {%- endcase -%}
+            vector-effect="non-scaling-stroke" />
+        {%- endif -%}
+      </svg>
+  {%- endcase -%}
+</div>
+
+{% schema %}
+{
+  "name": "Divider",
+  "tag": "section",
+  "class": "section section-divider",
+  "settings": [
+    {
+      "type": "select",
+      "id": "divider_style",
+      "label": "Divider style",
+      "options": [
+        {
+          "value": "cloud",
+          "label": "Cloud"
+        },
+        {
+          "value": "wavy",
+          "label": "Wavy"
+        },
+        {
+          "value": "diagonal",
+          "label": "Diagonal"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient Rectangle"
+        }
+      ],
+      "default": "wavy"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "checkbox",
+      "id": "flip_direction",
+      "label": "Flip direction",
+      "default": false,
+      "info": "Flips the divider vertically."
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "min": 10,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Height",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Border Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Show border",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "border_style",
+      "label": "Border style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "header",
+      "content": "Gradient Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_gradient",
+      "label": "Use gradient",
+      "default": false,
+      "info": "Applies a gradient fill to the divider instead of solid color (except for Gradient Rectangle style which is always gradient)."
+    },
+    {
+      "type": "color_background",
+      "id": "gradient_background",
+      "label": "Gradient",
+      "default": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      "info": "Choose your gradient colors and direction. Applies when 'Use gradient' is enabled or when using Gradient Rectangle style."
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Divider"
+    }
+  ]
+}
+{% endschema %} 

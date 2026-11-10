@@ -1,0 +1,1532 @@
+{%- comment -%}
+  Before & After Image Comparison Section
+  - Interactive slider to compare two images
+  - Fully responsive design
+  - Uses global theme variables for consistent styling
+{%- endcomment -%}
+
+{% comment %} Google Fonts for accent text customization {% endcomment %}
+{% if section.settings.override_global_accent %}
+  {% if section.settings.accent_font_family != 'inherit' and section.settings.accent_font_family != 'serif' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% case section.settings.accent_font_family %}
+      {% when 'Georgia Pro' %}
+        <link href="https://fonts.googleapis.com/css2?family=Georgia+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+      {% when 'Bodoni Moda' %}
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800&display=swap" rel="stylesheet">
+      {% when 'Instrument Serif' %}
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'DM Serif Text' %}
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'Nothing You Could Do' %}
+        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    {% endcase %}
+  {% endif %}
+{% endif %}
+
+{%- liquid
+  assign section_id = 'before-after-' | append: section.id
+  
+  # Color customization logic with theme toggle
+  # Handle checkbox boolean properly (Shopify checkboxes: checked = 'true', unchecked = blank/false)
+  assign use_theme_colors = section.settings.use_theme_colors
+  
+  # Core section colors with theme toggle logic
+  if use_theme_colors == true or use_theme_colors == 'true'
+    # TOGGLE IS ON: Use theme colors first, then custom as fallback, then defaults
+    if settings.global_section_text_color != blank and settings.global_section_text_color != '' and settings.global_section_text_color != 'rgba(0,0,0,0)'
+      assign title_color = settings.global_section_text_color
+    elsif section.settings.title_color != blank and section.settings.title_color != '' and section.settings.title_color != 'rgba(0,0,0,0)'
+      assign title_color = section.settings.title_color
+    else
+      assign title_color = '#1f2937'
+    endif
+    
+    if settings.global_section_text_color != blank and settings.global_section_text_color != '' and settings.global_section_text_color != 'rgba(0,0,0,0)'
+      assign description_color = settings.global_section_text_color
+    elsif section.settings.description_color != blank and section.settings.description_color != '' and section.settings.description_color != 'rgba(0,0,0,0)'
+      assign description_color = section.settings.description_color
+    else
+      assign description_color = '#374151'
+    endif
+    
+    if settings.global_section_text_color != blank and settings.global_section_text_color != '' and settings.global_section_text_color != 'rgba(0,0,0,0)'
+      assign instructions_color = settings.global_section_text_color
+    elsif section.settings.instructions_color != blank and section.settings.instructions_color != '' and section.settings.instructions_color != 'rgba(0,0,0,0)'
+      assign instructions_color = section.settings.instructions_color
+    else
+      assign instructions_color = '#6b7280'
+    endif
+    
+    if settings.global_section_background_color != blank and settings.global_section_background_color != '' and settings.global_section_background_color != 'rgba(0,0,0,0)'
+      assign section_bg_color = settings.global_section_background_color
+    elsif section.settings.section_background_color != blank and section.settings.section_background_color != '' and section.settings.section_background_color != 'rgba(0,0,0,0)'
+      assign section_bg_color = section.settings.section_background_color
+    else
+      assign section_bg_color = 'transparent'
+    endif
+  else
+    # TOGGLE IS OFF: Use ONLY custom section colors, ignore theme completely
+    if section.settings.title_color != blank and section.settings.title_color != '' and section.settings.title_color != 'rgba(0,0,0,0)'
+      assign title_color = section.settings.title_color
+    else
+      assign title_color = '#1f2937'
+    endif
+    
+    if section.settings.description_color != blank and section.settings.description_color != '' and section.settings.description_color != 'rgba(0,0,0,0)'
+      assign description_color = section.settings.description_color
+    else
+      assign description_color = '#374151'
+    endif
+    
+    if section.settings.instructions_color != blank and section.settings.instructions_color != '' and section.settings.instructions_color != 'rgba(0,0,0,0)'
+      assign instructions_color = section.settings.instructions_color
+    else
+      assign instructions_color = '#6b7280'
+    endif
+    
+    if section.settings.section_background_color != blank and section.settings.section_background_color != '' and section.settings.section_background_color != 'rgba(0,0,0,0)'
+      assign section_bg_color = section.settings.section_background_color
+    else
+      assign section_bg_color = 'transparent'
+    endif
+  endif
+  
+  # Interactive element colors (always use custom settings first)
+  if section.settings.divider_line_color != blank
+    assign divider_line_color = section.settings.divider_line_color
+  else
+    assign divider_line_color = '#ffffff'
+  endif
+  
+  if section.settings.slider_button_bg != blank
+    assign slider_button_bg = section.settings.slider_button_bg
+  else
+    assign slider_button_bg = '#ffffff'
+  endif
+  
+  if section.settings.slider_button_border != blank
+    assign slider_button_border = section.settings.slider_button_border
+  else
+    assign slider_button_border = '#f3f4f6'
+  endif
+  
+  if section.settings.slider_button_icon != blank
+    assign slider_button_icon = section.settings.slider_button_icon
+  else
+    assign slider_button_icon = '#374151'
+  endif
+  
+  if section.settings.image_label_bg != blank
+    assign image_label_bg = section.settings.image_label_bg
+  else
+    assign image_label_bg = 'rgba(255, 255, 255, 0.9)'
+  endif
+  
+  if section.settings.image_label_text != blank
+    assign image_label_text = section.settings.image_label_text
+  else
+    assign image_label_text = '#1f2937'
+  endif
+  
+  assign before_image = section.settings.before_image
+  assign after_image = section.settings.after_image
+  assign section_title = section.settings.title | default: 'Image Comparison'
+  assign section_description = section.settings.description | default: 'See the stunning transformations our products deliver — real results from real customers.'
+  assign before_label = section.settings.before_label | default: 'Before'
+  assign after_label = section.settings.after_label | default: 'After'
+  assign instructions_text = section.settings.instructions_text | default: 'Drag the slider to see the difference'
+  
+  assign container_max_width = section.settings.container_max_width | default: 600
+  assign border_radius = section.settings.border_radius | default: 8
+  assign initial_position = section.settings.initial_position | default: 50
+  
+  # Font size customization
+  assign title_font_size = section.settings.title_font_size | default: 32
+  assign description_font_size = section.settings.description_font_size | default: 16
+  assign instructions_font_size = section.settings.instructions_font_size | default: 14
+  assign label_font_size = section.settings.label_font_size | default: 12
+  
+  # Image size customization
+  assign image_aspect_ratio = section.settings.image_aspect_ratio | default: '4/3'
+  assign image_min_height = section.settings.image_min_height | default: 250
+  assign image_max_height = section.settings.image_max_height | default: 500
+  
+  # Mobile-specific image sizing
+  assign mobile_aspect_ratio = section.settings.mobile_aspect_ratio | default: '4/3'
+  assign mobile_min_height = section.settings.mobile_min_height | default: 200
+  assign mobile_max_height = section.settings.mobile_max_height | default: 400
+  assign mobile_container_width = section.settings.mobile_container_width | default: 320
+-%}
+
+{% comment %} Google Fonts for accent text customization {% endcomment %}
+{% if section.settings.override_global_accent %}
+  {% if section.settings.accent_font_family != 'inherit' and section.settings.accent_font_family != 'serif' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% case section.settings.accent_font_family %}
+      {% when 'Georgia Pro' %}
+        <link href="https://fonts.googleapis.com/css2?family=Georgia+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+      {% when 'Bodoni Moda' %}
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800&display=swap" rel="stylesheet">
+      {% when 'Instrument Serif' %}
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'DM Serif Text' %}
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+      {% when 'Nothing You Could Do' %}
+        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    {% endcase %}
+  {% endif %}
+{% endif %}
+
+{{ 'section-statistics.css' | asset_url | stylesheet_tag }}
+
+<div class="before-after-section" style="background-color: {{ section_bg_color }};">
+  <div class="page-width">
+    <div class="before-after-container {% if section.settings.contain_section %}contained{% endif %}" style="
+      {% if section.settings.contain_section %}
+        padding: {{ section.settings.container_padding_top }}px {{ section.settings.container_padding_right }}px {{ section.settings.container_padding_bottom }}px {{ section.settings.container_padding_left }}px;
+        border-radius: {{ section.settings.container_border_radius }}px;
+        background: {{ section.settings.container_background | default: '#FFFFFF' }};
+        {% if section.settings.enable_border %}
+          border: {{ section.settings.border_width }}px {{ section.settings.border_style }} {{ section.settings.border_color }};
+        {% endif %}
+        {% if section.settings.enable_shadow %}
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        {% endif %}
+      {% endif %}
+    ">
+      <div class="image-comparison-container-{{ section.id }}">
+        {% if section_title != blank or section.settings.title_accent != blank %}
+          <h2 class="comparison-title-{{ section.id }}">
+            {% if section_title != blank %}{{ section_title }}{% endif %}
+            {% if section.settings.title_accent != blank %}
+              <span class="accent-text {% if section.settings.override_global_accent %}custom-accent-text{% else %}global-accent-text{% endif %}">{{ section.settings.title_accent }}</span>
+            {% endif %}
+          </h2>
+        {% endif %}
+        
+        {% if section_description != blank %}
+          <p class="comparison-description-{{ section.id }}">{{ section_description }}</p>
+        {% endif %}
+        
+        <div class="slider-container-{{ section.id }}" id="sliderContainer{{ section.id }}">
+          <!-- After Image (Background) -->
+          <div class="after-image-{{ section.id }}">
+            {% if after_image != blank %}
+              <img src="{{ after_image | image_url: width: 1200 }}" alt="{{ after_label }}" loading="lazy" width="" height="">
+            {% else %}
+              <div class="placeholder-image">{{ 'image' | placeholder_svg_tag }}</div>
+            {% endif %}
+            <div class="image-label-{{ section.id }} label-after-{{ section.id }}">{{ after_label }}</div>
+          </div>
+          
+          <!-- Before Image (Clipped) -->
+          <div class="before-image-{{ section.id }}" id="beforeImage{{ section.id }}">
+            {% if before_image != blank %}
+              <img src="{{ before_image | image_url: width: 1200 }}" alt="{{ before_label }}" loading="lazy" width="" height="">
+            {% else %}
+              <div class="placeholder-image">{{ 'image' | placeholder_svg_tag }}</div>
+            {% endif %}
+            <div class="image-label-{{ section.id }} label-before-{{ section.id }}">{{ before_label }}</div>
+          </div>
+          
+          <!-- Vertical divider line -->
+          <div class="divider-line-{{ section.id }}" id="sliderLine{{ section.id }}"></div>
+          
+          <!-- Slider button -->
+          <div class="slider-button-{{ section.id }}" id="sliderButton{{ section.id }}">
+            <svg class="slider-icon-{{ section.id }}" viewBox="0 0 24 24">
+              <path d="M8 5L5 8M5 8L8 11M5 8H13M16 13L19 16M19 16L16 19M19 16H11" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        
+        {% if instructions_text != blank %}
+          <div class="slider-instructions-{{ section.id }}">
+            {{ instructions_text }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    (function() {
+      // Initialize slider functionality for section {{ section.id }}
+      let sliderPosition = {{ initial_position }}; // Start position from settings
+      let isDragging = false;
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchStartTime = 0;
+      let hasMovedHorizontally = false;
+      let isScrolling = null;
+      
+      // Get DOM elements
+      const container = document.getElementById('sliderContainer{{ section.id }}');
+      const beforeImage = document.getElementById('beforeImage{{ section.id }}');
+      const sliderLine = document.getElementById('sliderLine{{ section.id }}');
+      const sliderButton = document.getElementById('sliderButton{{ section.id }}');
+      
+      if (!container || !beforeImage || !sliderLine || !sliderButton) return;
+      
+      // Update slider position
+      function updateSliderPosition(percentage) {
+        // Clamp percentage between 0 and 100
+        percentage = Math.max(0, Math.min(100, percentage));
+        sliderPosition = percentage;
+        
+        // Update elements
+        beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        sliderLine.style.left = percentage + '%';
+        sliderButton.style.left = percentage + '%';
+        
+        // Force reflow to ensure immediate update
+        sliderButton.offsetLeft;
+        sliderLine.offsetLeft;
+      }
+      
+      // Get mouse/touch position relative to container
+      function getPositionFromEvent(e, container) {
+        const rect = container.getBoundingClientRect();
+        const clientX = e.type && e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        const offsetX = clientX - rect.left;
+        return Math.max(0, Math.min(100, (offsetX / rect.width) * 100));
+      }
+      
+      // Reset touch state
+      function resetTouchState() {
+        isDragging = false;
+        touchStartX = 0;
+        touchStartY = 0;
+        touchStartTime = 0;
+        hasMovedHorizontally = false;
+        isScrolling = null;
+        sliderButton.classList.remove('dragging');
+        sliderButton.style.transition = '';
+      }
+      
+      // Mouse events
+      function handleMouseDown(e) {
+        e.preventDefault();
+        isDragging = true;
+        sliderButton.classList.add('dragging');
+        sliderButton.style.transition = 'none';
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
+      }
+      
+      function handleMouseMove(e) {
+        if (!isDragging) return;
+        const percentage = getPositionFromEvent(e, container);
+        updateSliderPosition(percentage);
+      }
+      
+      function handleMouseUp() {
+        isDragging = false;
+        sliderButton.classList.remove('dragging');
+        sliderButton.style.transition = '';
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+      }
+      
+      // Touch events - completely rewritten for better mobile experience
+      function handleTouchStart(e) {
+        const touch = e.touches[0];
+        const rect = container.getBoundingClientRect();
+        const touchX = touch.clientX - rect.left;
+        const touchY = touch.clientY - rect.top;
+        
+        // Check if touch is within container bounds
+        if (touchX < 0 || touchX > rect.width || touchY < 0 || touchY > rect.height) {
+          return;
+        }
+        
+        // Reset state
+        resetTouchState();
+        
+        // Set initial touch values
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+        touchStartTime = Date.now();
+        isDragging = true;
+        isScrolling = null;
+        hasMovedHorizontally = false;
+        
+        sliderButton.classList.add('dragging');
+        sliderButton.style.transition = 'none';
+        
+        // Add touch event listeners
+        document.addEventListener('touchmove', handleTouchMove, { passive: false });
+        document.addEventListener('touchend', handleTouchEnd, { passive: true });
+        document.addEventListener('touchcancel', handleTouchCancel, { passive: true });
+      }
+      
+      function handleTouchMove(e) {
+        if (!isDragging) return;
+        
+        const touch = e.touches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        const absDeltaX = Math.abs(deltaX);
+        const absDeltaY = Math.abs(deltaY);
+        
+        // Determine scroll direction on first significant movement
+        if (isScrolling === null && (absDeltaX > 5 || absDeltaY > 5)) {
+          isScrolling = absDeltaY > absDeltaX;
+        }
+        
+        // If user is scrolling vertically, cancel slider interaction
+        if (isScrolling) {
+          resetTouchState();
+          document.removeEventListener('touchmove', handleTouchMove);
+          document.removeEventListener('touchend', handleTouchEnd);
+          document.removeEventListener('touchcancel', handleTouchCancel);
+          return;
+        }
+        
+        // If moving horizontally, prevent default scrolling and update slider
+        if (absDeltaX > 5) {
+          e.preventDefault();
+          hasMovedHorizontally = true;
+          const percentage = getPositionFromEvent(e, container);
+          updateSliderPosition(percentage);
+        }
+      }
+      
+      function handleTouchEnd(e) {
+        if (!isDragging) return;
+        
+        // Clean up event listeners
+          document.removeEventListener('touchmove', handleTouchMove);
+          document.removeEventListener('touchend', handleTouchEnd);
+        document.removeEventListener('touchcancel', handleTouchCancel);
+        
+        // If it was a quick tap without horizontal movement, treat as click
+        const touchDuration = Date.now() - touchStartTime;
+        if (touchDuration < 200 && !hasMovedHorizontally && !isScrolling) {
+          const percentage = getPositionFromEvent(e.changedTouches[0], container);
+          updateSliderPosition(percentage);
+        }
+        
+        resetTouchState();
+      }
+      
+      function handleTouchCancel() {
+        document.removeEventListener('touchmove', handleTouchMove);
+        document.removeEventListener('touchend', handleTouchEnd);
+        document.removeEventListener('touchcancel', handleTouchCancel);
+        resetTouchState();
+      }
+      
+      // Container click/tap events
+      function handleContainerClick(e) {
+        // Don't handle if clicking on slider button
+        if (e.target === sliderButton || sliderButton.contains(e.target)) return;
+        
+        // Don't handle if this was part of a drag gesture
+        if (hasMovedHorizontally) return;
+        
+        const percentage = getPositionFromEvent(e, container);
+        updateSliderPosition(percentage);
+      }
+      
+      // Attach event listeners
+      sliderButton.addEventListener('mousedown', handleMouseDown);
+      sliderButton.addEventListener('touchstart', handleTouchStart, { passive: true });
+      
+      container.addEventListener('mousedown', function(e) {
+        if (e.target === sliderButton || sliderButton.contains(e.target)) return;
+        handleMouseDown(e);
+      });
+      
+      container.addEventListener('touchstart', function(e) {
+        if (e.target === sliderButton || sliderButton.contains(e.target)) return;
+        handleTouchStart(e);
+      }, { passive: true });
+      
+      container.addEventListener('click', handleContainerClick);
+      
+      // Initialize position
+      updateSliderPosition({{ initial_position }});
+    })();
+  });
+</script>
+
+<style>
+  /* Before & After Comparison Styles */
+  .before-after-section {
+    padding: 40px 0;
+  }
+
+  [dir="rtl"] .before-after-section h2, [dir="rtl"] .before-after-section p {
+    text-align: center;
+  }
+  
+  .image-comparison-container-{{ section.id }} {
+    width: 100%;
+    max-width: {{ mobile_container_width }}px;
+    margin: 16px auto;
+    padding: 0 16px;
+  }
+
+  .comparison-title-{{ section.id }} {
+    font-size: {{ title_font_size }}px;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: 8px;
+    color: {{ title_color }} !important;
+    letter-spacing: var(--letter-spacing-heading);
+  }
+
+  /* Enhanced accent text styling with global and local customization options */
+  .before-after-section .accent-text {
+    {% comment %} Always apply core accent text styling {% endcomment %}
+    padding: 2px 4px !important;
+    margin: -2px -4px !important;
+    display: inline-block !important;
+    
+    {% comment %} Check for gradient first - it works regardless of global/local settings {% endcomment %}
+    {% if section.settings.use_theme_colors %}
+      {% comment %} Use global dark gradient when theme colors are enabled {% endcomment %}
+      background: {{ settings.global_accent_text_gradient_dark }} !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      color: transparent !important;
+      line-height: 1.3 !important;
+    {% elsif section.settings.use_accent_gradient %}
+      background: {{ section.settings.accent_text_gradient }} !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      color: transparent !important;
+    {% else %}
+      {% comment %} Apply solid color based on global or local settings {% endcomment %}
+      color: {% if section.settings.use_theme_colors %}{{ settings.global_section_accent_1_color }}{% else %}{{ section.settings.accent_color | default: settings.global_section_accent_1_color }}{% endif %} !important;
+    {% endif %}
+    
+    {% if section.settings.override_global_accent %}
+      {% comment %} Use section-specific typography settings when override is enabled {% endcomment %}
+      {% if section.settings.accent_font_family != 'inherit' %}
+        {% case section.settings.accent_font_family %}
+          {% when 'serif' %}
+            font-family: serif !important;
+          {% when 'Georgia Pro' %}
+            font-family: 'Georgia Pro', Georgia, serif !important;
+          {% when 'Bodoni Moda' %}
+            font-family: 'Bodoni Moda', Georgia, serif !important;
+          {% when 'Instrument Serif' %}
+            font-family: 'Instrument Serif', Georgia, serif !important;
+          {% when 'DM Serif Text' %}
+            font-family: 'DM Serif Text', Georgia, serif !important;
+          {% when 'Nothing You Could Do' %}
+            font-family: 'Nothing You Could Do', cursive !important;
+        {% endcase %}
+      {% endif %}
+      
+      {% if section.settings.accent_font_style != 'normal' %}
+        font-style: {{ section.settings.accent_font_style }} !important;
+      {% endif %}
+      
+      {% if section.settings.accent_font_weight != 'inherit' %}
+        font-weight: {{ section.settings.accent_font_weight }} !important;
+      {% endif %}
+      
+      {% if section.settings.accent_letter_spacing %}
+        letter-spacing: {{ section.settings.accent_letter_spacing }}em !important;
+      {% endif %}
+      
+      {% if section.settings.accent_text_transform != 'none' %}
+        text-transform: {{ section.settings.accent_text_transform }} !important;
+      {% endif %}
+    {% else %}
+      {% comment %} Use global accent typography settings {% endcomment %}
+      font-family: var(--font-accent-family) !important;
+      font-style: var(--font-accent-style) !important;
+      font-weight: var(--font-accent-weight) !important;
+      letter-spacing: var(--font-accent-letter-spacing) !important;
+      text-transform: var(--font-accent-text-transform) !important;
+    {% endif %}
+  }
+
+  /* Custom accent text styling when override is enabled */
+  .before-after-accent-text,
+  .before-after-section .custom-accent-text {
+    {% if section.settings.override_global_accent %}
+      {% comment %} Section-specific accent styling {% endcomment %}
+      {% if section.settings.use_accent_gradient and section.settings.accent_text_gradient != blank %}
+        background: {{ section.settings.accent_text_gradient }} !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        color: transparent !important;
+      {% else %}
+        color: {{ section.settings.accent_color | default: '#EF4A65' }} !important;
+      {% endif %}
+      
+      {% comment %} Custom font family {% endcomment %}
+      {% if section.settings.accent_font_family != 'inherit' %}
+        {% if section.settings.accent_font_family == 'serif' %}
+          font-family: serif !important;
+        {% elsif section.settings.accent_font_family == 'Georgia Pro' %}
+          font-family: 'Georgia Pro', Georgia, serif !important;
+        {% elsif section.settings.accent_font_family == 'Bodoni Moda' %}
+          font-family: 'Bodoni Moda', Georgia, serif !important;
+        {% elsif section.settings.accent_font_family == 'Instrument Serif' %}
+          font-family: 'Instrument Serif', Georgia, serif !important;
+        {% elsif section.settings.accent_font_family == 'DM Serif Text' %}
+          font-family: 'DM Serif Text', Georgia, serif !important;
+        {% elsif section.settings.accent_font_family == 'Nothing You Could Do' %}
+          font-family: 'Nothing You Could Do', cursive !important;
+        {% endif %}
+      {% endif %}
+      
+      {% comment %} Custom font style {% endcomment %}
+      {% if section.settings.accent_font_style != 'normal' %}
+        font-style: {{ section.settings.accent_font_style }} !important;
+      {% endif %}
+      
+      {% comment %} Custom font weight {% endcomment %}
+      {% if section.settings.accent_font_weight != 'inherit' %}
+        font-weight: {{ section.settings.accent_font_weight }} !important;
+      {% endif %}
+      
+      {% comment %} Custom left margin {% endcomment %}
+      {% if section.settings.accent_text_margin_left > 0 %}
+        margin-left: {{ section.settings.accent_text_margin_left }}px !important;
+      {% endif %}
+      
+      {% comment %} Custom letter spacing {% endcomment %}
+      {% if section.settings.accent_letter_spacing %}
+        letter-spacing: {{ section.settings.accent_letter_spacing }}em !important;
+      {% endif %}
+      
+      {% comment %} Custom text transform {% endcomment %}
+      {% if section.settings.accent_text_transform != 'none' %}
+        text-transform: {{ section.settings.accent_text_transform }} !important;
+      {% endif %}
+      
+    {% else %}
+      {% comment %} Use global accent styling {% endcomment %}
+      color: var(--font-accent-color) !important;
+      font-family: var(--font-accent-family) !important;
+      font-size: var(--font-accent-size) !important;
+      font-weight: var(--font-accent-weight) !important;
+      letter-spacing: var(--font-accent-letter-spacing) !important;
+      text-transform: var(--font-accent-text-transform) !important;
+    {% endif %}
+    
+    {% comment %} Base styling for all accent text {% endcomment %}
+    padding: 2px 4px !important;
+    margin: -2px -4px !important;
+    display: inline-block !important;
+  }
+
+  .comparison-description-{{ section.id }} {
+    font-size: {{ description_font_size }}px;
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    color: {{ description_color }};
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-body);
+  }
+
+  /* Main slider container - Mobile settings */
+  .slider-container-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: {{ border_radius }}px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    {% if mobile_aspect_ratio == 'auto' %}
+      aspect-ratio: auto;
+    {% else %}
+      aspect-ratio: {{ mobile_aspect_ratio }};
+    {% endif %}
+    min-height: {{ mobile_min_height }}px;
+    max-height: {{ mobile_max_height }}px;
+    touch-action: manipulation;
+    user-select: none;
+    cursor: ew-resize;
+  }
+
+  /* After image (background) */
+  .after-image-{{ section.id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .after-image-{{ section.id }} img,
+  .before-image-{{ section.id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  
+  .placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+  }
+  
+  .placeholder-image svg {
+    width: 50%;
+    height: 50%;
+    opacity: 0.3;
+  }
+
+  /* Before image (overlaid and clipped) */
+  .before-image-{{ section.id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    clip-path: inset(0 {{ 100 | minus: initial_position }}% 0 0);
+  }
+
+  /* Image labels */
+  .image-label-{{ section.id }} {
+    position: absolute;
+    background: {{ image_label_bg }};
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: {{ label_font_size }}px;
+    font-weight: var(--font-weight-bold);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: {{ image_label_text }};
+    letter-spacing: var(--letter-spacing-body);
+    z-index: 1;
+  }
+
+  .label-before-{{ section.id }} {
+    bottom: 8px;
+    left: 8px;
+  }
+
+  .label-after-{{ section.id }} {
+    bottom: 8px;
+    right: 8px;
+  }
+
+  /* Divider line */
+  .divider-line-{{ section.id }} {
+    position: absolute;
+    top: 0;
+    width: 3px;
+    background: {{ divider_line_color }};
+    height: 100%;
+    left: {{ initial_position }}%;
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Slider button */
+  .slider-button-{{ section.id }} {
+    position: absolute;
+    top: 50%;
+    left: {{ initial_position }}%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: {{ slider_button_bg }};
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    border: 2px solid {{ slider_button_border }};
+    transition: all 0.2s ease;
+    touch-action: none;
+  }
+
+  .slider-button-{{ section.id }}:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .slider-button-{{ section.id }}:active,
+  .slider-button-{{ section.id }}.dragging {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(0.95);
+    transition: none !important;
+  }
+
+  /* Arrow icon */
+  .slider-icon-{{ section.id }} {
+    width: 20px;
+    height: 20px;
+    stroke: {{ slider_button_icon }};
+    stroke-width: 2;
+    fill: none;
+  }
+
+  /* Instructions */
+  .slider-instructions-{{ section.id }} {
+    text-align: center;
+    margin-top: 12px;
+    font-size: {{ instructions_font_size }}px;
+    color: {{ instructions_color }};
+    padding: 0 8px;
+    letter-spacing: var(--letter-spacing-body);
+  }
+
+  /* Responsive design - Small screens (640px+) - Transition to desktop sizing */
+  @media (min-width: 640px) {
+    .image-comparison-container-{{ section.id }} {
+      max-width: 448px;
+      margin: 24px auto;
+      padding: 0 24px;
+    }
+
+    /* Switch to desktop image sizing */
+    .slider-container-{{ section.id }} {
+      {% if image_aspect_ratio == 'auto' %}
+        aspect-ratio: auto;
+      {% else %}
+        aspect-ratio: {{ image_aspect_ratio }};
+      {% endif %}
+      min-height: {{ image_min_height }}px;
+      max-height: {{ image_max_height }}px;
+    }
+
+    .comparison-title-{{ section.id }} {
+      font-size: calc({{ title_font_size }}px * 0.85);
+      margin-bottom: 12px;
+    }
+
+    .comparison-description-{{ section.id }} {
+      font-size: calc({{ description_font_size }}px * 1.1);
+      margin-bottom: 20px;
+    }
+
+    .slider-button-{{ section.id }} {
+      width: 44px;
+      height: 44px;
+    }
+
+    .slider-icon-{{ section.id }} {
+      width: 20px;
+      height: 20px;
+    }
+
+    .image-label-{{ section.id }} {
+      padding: 6px 12px;
+      font-size: calc({{ label_font_size }}px * 1.2);
+    }
+
+    .label-before-{{ section.id }} {
+      bottom: 12px;
+      left: 12px;
+    }
+
+    .label-after-{{ section.id }} {
+      bottom: 12px;
+      right: 12px;
+    }
+
+    .slider-instructions-{{ section.id }} {
+      margin-top: 16px;
+      font-size: calc({{ instructions_font_size }}px * 1.1);
+    }
+  }
+
+  /* Medium screens (768px+) */
+  @media (min-width: 768px) {
+    .image-comparison-container-{{ section.id }} {
+      max-width: 512px;
+      margin: 32px auto;
+    }
+
+    .comparison-title-{{ section.id }} {
+      font-size: calc({{ title_font_size }}px * 0.95);
+      margin-bottom: 16px;
+    }
+
+    .comparison-description-{{ section.id }} {
+      font-size: calc({{ description_font_size }}px * 1.25);
+      margin-bottom: 24px;
+    }
+
+    .slider-button-{{ section.id }} {
+      width: 48px;
+      height: 48px;
+    }
+
+    .slider-icon-{{ section.id }} {
+      width: 24px;
+      height: 24px;
+    }
+
+    .image-label-{{ section.id }} {
+      bottom: 16px;
+    }
+
+    .label-before-{{ section.id }} {
+      left: 16px;
+    }
+
+    .label-after-{{ section.id }} {
+      right: 16px;
+    }
+  }
+
+  /* Large screens (1024px+) */
+  @media (min-width: 1024px) {
+    .image-comparison-container-{{ section.id }} {
+      max-width: 512px;
+    }
+
+    .comparison-title-{{ section.id }} {
+      font-size: calc({{ title_font_size }}px * 1.1);
+    }
+  }
+
+  /* Extra large screens (1280px+) */
+  @media (min-width: 1280px) {
+    .image-comparison-container-{{ section.id }} {
+      max-width: {{ container_max_width }}px;
+    }
+
+    .comparison-title-{{ section.id }} {
+      font-size: calc({{ title_font_size }}px * 1.1);
+    }
+  }
+
+  .before-after-container.contained {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    .before-after-container.contained {
+      padding: {{ section.settings.container_padding_top_mobile }}px {{ section.settings.container_padding_right_mobile }}px {{ section.settings.container_padding_bottom_mobile }}px {{ section.settings.container_padding_left_mobile }}px !important;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Before & After Comparison",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Theme Integration"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_theme_colors",
+      "label": "Use theme colors",
+      "info": "When enabled, section will inherit global theme colors as defaults. When disabled, only custom colors below will be used.",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Image Comparison"
+    },
+    {
+      "type": "text",
+      "id": "title_accent",
+      "label": "Title Accent Text",
+      "info": "Optional accent text to highlight part of the title"
+    },
+    {
+      "type": "header",
+      "content": "Accent Text Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "override_global_accent",
+      "label": "Override Global Accent Typography",
+      "default": false,
+      "info": "When enabled, use section-specific accent typography settings below. When disabled, use the global accent typography from Theme Settings > Typography > Accent Typography."
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Text Color",
+      "default": "#EF4A65"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_accent_gradient",
+      "label": "Use Accent Gradient",
+      "default": false,
+      "info": "Apply gradient effect to the accent text instead of solid color"
+    },
+    {
+      "type": "color_background",
+      "id": "accent_text_gradient",
+      "label": "Accent Text Gradient",
+      "default": "linear-gradient(45deg, #EF4A65, #FF6B9D)",
+      "info": "Choose a gradient for the accent text. This setting is only used when 'Use Accent Gradient' is enabled above."
+    },
+    {
+      "type": "header",
+      "content": "Section-Specific Accent Font Settings"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_family",
+      "label": "Section Accent Font Family",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Use Global Setting"
+        },
+        {
+          "value": "serif",
+          "label": "System Serif"
+        },
+        {
+          "value": "Georgia Pro",
+          "label": "Georgia Pro"
+        },
+        {
+          "value": "Bodoni Moda",
+          "label": "Bodoni Moda"
+        },
+        {
+          "value": "Instrument Serif",
+          "label": "Instrument Serif"
+        },
+        {
+          "value": "DM Serif Text",
+          "label": "DM Serif Text"
+        },
+        {
+          "value": "Nothing You Could Do",
+          "label": "Nothing You Could Do"
+        }
+      ],
+      "default": "inherit",
+      "info": "Choose a custom font family for the accent text (only used when Override Global Accent Typography is enabled)"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_style",
+      "label": "Accent Text Font Style",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "italic", "label": "Italic" }
+      ],
+      "default": "normal",
+      "info": "Choose the font style for the accent text"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_weight",
+      "label": "Accent Text Font Weight",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Default (Inherit)"
+        },
+        {
+          "value": "300",
+          "label": "Light (300)"
+        },
+        {
+          "value": "400",
+          "label": "Normal (400)"
+        },
+        {
+          "value": "500",
+          "label": "Medium (500)"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold (600)"
+        },
+        {
+          "value": "700",
+          "label": "Bold (700)"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold (800)"
+        },
+        {
+          "value": "900",
+          "label": "Black (900)"
+        }
+      ],
+      "default": "inherit",
+      "info": "Choose the font weight (boldness) for the accent text"
+    },
+    {
+      "type": "range",
+      "id": "accent_letter_spacing",
+      "min": -0.1,
+      "max": 0.3,
+      "step": 0.1,
+      "label": "Accent Letter Spacing",
+      "default": 0.0,
+      "unit": "em"
+    },
+    {
+      "type": "select",
+      "id": "accent_text_transform",
+      "label": "Accent Text Transform",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "uppercase", "label": "Uppercase" },
+        { "value": "lowercase", "label": "Lowercase" },
+        { "value": "capitalize", "label": "Capitalize" }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "range",
+      "id": "accent_text_margin_left",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Accent Text Left Margin",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "See the stunning transformations our products deliver — real results from real customers."
+    },
+    {
+      "type": "text",
+      "id": "instructions_text",
+      "label": "Instructions text",
+      "default": "Drag the slider to see the difference"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Before image"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "After image"
+    },
+    {
+      "type": "text",
+      "id": "before_label",
+      "label": "Before label",
+      "default": "Before"
+    },
+    {
+      "type": "text",
+      "id": "after_label",
+      "label": "After label",
+      "default": "After"
+    },
+    {
+      "type": "header",
+      "content": "Settings"
+    },
+    {
+      "type": "range",
+      "id": "initial_position",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Initial slider position",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "min": 320,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "label": "Maximum container width",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "container_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Container Border Radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Font Size Customization"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 16,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Title font size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "description_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "instructions_font_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Instructions font size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Image label font size",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Image Size Customization"
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image aspect ratio",
+      "options": [
+        { "value": "16/9", "label": "16:9 (Widescreen)" },
+        { "value": "4/3", "label": "4:3 (Standard)" },
+        { "value": "3/2", "label": "3:2 (Photo)" },
+        { "value": "1/1", "label": "1:1 (Square)" },
+        { "value": "auto", "label": "Auto (Natural)" }
+      ],
+      "default": "4/3"
+    },
+    {
+      "type": "range",
+      "id": "image_min_height",
+      "min": 200,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "label": "Minimum image height",
+      "default": 250
+    },
+    {
+      "type": "range",
+      "id": "image_max_height",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Maximum image height",
+      "default": 500
+    },
+    {
+      "type": "header",
+      "content": "Mobile-specific Image Sizing"
+    },
+    {
+      "type": "select",
+      "id": "mobile_aspect_ratio",
+      "label": "Mobile image aspect ratio",
+      "options": [
+        { "value": "16/9", "label": "16:9 (Widescreen)" },
+        { "value": "4/3", "label": "4:3 (Standard)" },
+        { "value": "3/2", "label": "3:2 (Photo)" },
+        { "value": "1/1", "label": "1:1 (Square)" },
+        { "value": "auto", "label": "Auto (Natural)" }
+      ],
+      "default": "4/3"
+    },
+    {
+      "type": "range",
+      "id": "mobile_min_height",
+      "min": 200,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "label": "Minimum mobile image height",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "mobile_max_height",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Maximum mobile image height",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "mobile_container_width",
+      "min": 320,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "label": "Maximum mobile container width",
+      "default": 320
+    },
+    {
+      "type": "header",
+      "content": "Color Customization"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section background color"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color"
+    },
+    {
+      "type": "color",
+      "id": "instructions_color",
+      "label": "Instructions color"
+    },
+    {
+      "type": "color",
+      "id": "slider_button_bg",
+      "label": "Slider button background color"
+    },
+    {
+      "type": "color",
+      "id": "slider_button_border",
+      "label": "Slider button border color"
+    },
+    {
+      "type": "color",
+      "id": "slider_button_icon",
+      "label": "Slider button icon color"
+    },
+    {
+      "type": "color",
+      "id": "image_label_bg",
+      "label": "Image label background color"
+    },
+    {
+      "type": "color",
+      "id": "image_label_text",
+      "label": "Image label text color"
+    },
+    {
+      "type": "header",
+      "content": "Container Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "contain_section",
+      "label": "Contain Section",
+      "default": false,
+      "info": "Add padding and border around the section content"
+    },
+    {
+      "type": "header",
+      "content": "Container Padding - Desktop"
+    },
+    {
+      "type": "range",
+      "id": "container_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Container Top Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "container_padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Container Right Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "container_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Container Bottom Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "container_padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Container Left Padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Container Padding - Mobile"
+    },
+    {
+      "type": "range",
+      "id": "container_padding_top_mobile",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Container Top Padding (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding_right_mobile",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Container Right Padding (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding_bottom_mobile",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Container Bottom Padding (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding_left_mobile",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Container Left Padding (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "color_background",
+      "id": "container_background",
+      "label": "Container Background",
+      "default": "linear-gradient(to bottom, #FFFFFF, #F8F8F8)"
+    },
+    {
+      "type": "header",
+      "content": "Border Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_border",
+      "label": "Enable Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Width",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "border_style",
+      "label": "Border Style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#E5E7EB"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_shadow",
+      "label": "Enable Shadow",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before & After Comparison"
+    }
+  ]
+}
+{% endschema %} 
