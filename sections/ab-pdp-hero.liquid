@@ -41,7 +41,8 @@
   endif
 -%}
 
-<div class="ab-pdp" data-ab-pdp>
+<link rel="preload" href="{{ 'ab-cart.css' | asset_url }}" as="style">
+<div class="ab-pdp" data-ab-pdp data-ab-test="{{ template.suffix }}">
   {% comment %}
     Kaching's app embed attaches to the first product form on the page. The buy box
     here adds to cart itself, so this hidden form gives Kaching somewhere to attach.

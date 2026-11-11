@@ -1,0 +1,29 @@
+{% comment %}
+  A/B test: cart drawer footer (subtotal, checkout button, payment icons).
+  Sits inside .gb-discounts-cart-values, which the theme re-renders after every
+  cart change. Renders only when the cart holds a line from the product.ab-* templates.
+{% endcomment %}
+{%- liquid
+  assign ab_cart = false
+  for line in cart.items
+    if line.properties['_ab'] != blank
+      assign ab_cart = true
+      break
+    endif
+  endfor
+  assign threshold = settings.product_free_shipping | default: 0 | times: 100
+-%}
+{%- if ab_cart -%}
+  <div class="ab-cart-footer">
+    <p class="ab-cart-footer__total"><span>Subtotal</span><b>{{ cart.total_price | money }}</b></p>
+    <p class="ab-cart-footer__note">
+      {%- if cart.total_price >= threshold -%}Shipping: FREE · {% endif -%}
+      Taxes calculated at checkout
+    </p>
+    <button type="submit" class="ab-cart-footer__checkout" name="checkout" form="CartDrawer-Form" style="border-radius: 100px !important;">
+      <b>Checkout · {{ cart.total_price | money }}</b>
+      <small>Secure checkout</small>
+    </button>
+    <div class="ab-cart-footer__pay">{% render 'payment-icons' %}</div>
+  </div>
+{%- endif -%}

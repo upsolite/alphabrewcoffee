@@ -2,6 +2,10 @@
   <table class="cart-items" role="table">
     <tbody role="rowgroup">
       {%- for item in cart.items -%}
+        {%- if item.properties['_ab'] != blank -%}
+          {% render 'ab-cart-line', item: item %}
+          {%- continue -%}
+        {%- endif -%}
         <tr
           {% if item.id == settings.product_shipping_protection.selected_or_first_available_variant.id %}
             style="display:none;"

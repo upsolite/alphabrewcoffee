@@ -1,0 +1,84 @@
+{% comment %}
+  A/B test: cart drawer line for items added from the product.ab-* templates
+  (they carry the hidden _ab and _ab_bundle properties). Other lines keep the
+  theme's own markup, so Control's cart is unchanged.
+  Accepts: item
+{% endcomment %}
+{%- liquid
+  assign bundle = item.properties['_ab_bundle'] | plus: 0
+  if bundle < 1
+    assign bundle = 1
+  endif
+  case bundle
+    when 3
+      assign bundle_title = 'Buy 2, Get 1 Free'
+    when 5
+      assign bundle_title = 'Buy 3, Get 2 Free'
+    else
+      assign bundle_title = 'Buy 1'
+  endcase
+  assign bundles = item.quantity | divided_by: bundle
+  assign bags = item.quantity
+  assign base = ''
+  for option in item.options_with_values
+    if option.name == 'Caffeine'
+      assign base = option.value
+    endif
+  endfor
+  assign compare_total = item.variant.compare_at_price | times: item.quantity
+  case bundle
+    when 1
+      assign pack = 'ab-pack-1.png'
+    when 3
+      assign pack = 'ab-pack-3.png'
+    else
+      assign pack = 'ab-pack-5.png'
+  endcase
+-%}
+<tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item ab-line" role="row">
+  <td class="ab-line__media" role="cell">
+    <img src="{{ pack | asset_url }}" alt="" width="76" height="76" loading="lazy">
+  </td>
+  <td class="ab-line__details" role="cell">
+    <p class="ab-line__title cart-item__name">Alpha Brew Testosterone Coffee</p>
+    <p class="ab-line__bundle">{{ bundle_title }} · {{ bags }} {% if bags == 1 %}bag{% else %}bags{% endif %}{% if base != '' %} · {{ base | escape }}{% endif %}</p>
+    <p class="ab-line__plan">
+      {%- if item.selling_plan_allocation -%}
+        Delivers {{ item.selling_plan_allocation.selling_plan.name | remove: 'Delivery:' | strip | downcase }} · Skip or cancel anytime
+      {%- else -%}
+        One-time delivery
+      {%- endif -%}
+    </p>
+    <div class="ab-line__row">
+      <quantity-input class="quantity cart-quantity ab-line__qty">
+        <button class="quantity__button" name="minus" type="button" aria-label="Remove one bundle">−</button>
+        <span class="ab-line__count" aria-hidden="true">{{ bundles }}</span>
+        <input
+          class="quantity__input"
+          type="number"
+          data-quantity-variant-id="{{ item.variant.id }}"
+          name="updates[]"
+          value="{{ item.quantity }}"
+          data-cart-quantity="{{ item.quantity }}"
+          min="{{ bundle }}"
+          data-min="{{ bundle }}"
+          step="{{ bundle }}"
+          aria-label="Quantity"
+          id="Drawer-quantity-{{ item.index | plus: 1 }}"
+          data-index="{{ item.index | plus: 1 }}"
+        >
+        <button class="quantity__button" name="plus" type="button" aria-label="Add one bundle">+</button>
+      </quantity-input>
+      <span class="ab-line__prices">
+        {%- if compare_total > item.final_line_price -%}<s>{{ compare_total | money }}</s>{%- endif -%}
+        <b>{{ item.final_line_price | money }}</b>
+      </span>
+    </div>
+    <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}" data-id="{{ item.id }}">
+      <button type="button" class="ab-line__remove" aria-label="Remove {{ bundle_title | escape }}">Remove</button>
+    </cart-remove-button>
+    <div id="CartDrawer-LineItemError-{{ item.index | plus: 1 }}" class="cart-item__error" role="alert"{% unless item.line_level_error %} style="display: none;"{% endunless %}>
+      <small class="cart-item__error-text">{{ item.line_level_error }}</small>
+    </div>
+  </td>
+</tr>

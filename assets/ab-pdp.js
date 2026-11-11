@@ -228,6 +228,9 @@
       body.append('id', variantFor(c));
       body.append('quantity', c.dataset.qty);
       if (!onetime) body.append('selling_plan', c.dataset.plan);
+      // Hidden line properties: the cart drawer uses them to show the A/B layout.
+      body.append('properties[_ab]', root.dataset.abTest || 'ab');
+      body.append('properties[_ab_bundle]', c.dataset.qty);
       if (cart) {
         body.append('sections', cart.getSectionsToRender().map(function (s) { return s.id; }));
         body.append('sections_url', window.location.pathname);
@@ -425,7 +428,29 @@
     });
   }
 
+  /* Cart drawer: swipe right to close (only while it shows the A/B layout) */
+  function initCartSwipe() {
+    var drawer = document.querySelector('cart-drawer');
+    if (!drawer || drawer.dataset.abSwipe) return;
+    drawer.dataset.abSwipe = '1';
+    var x = null;
+    var y = null;
+    drawer.addEventListener('touchstart', function (e) {
+      if (!drawer.querySelector('[data-ab-cart]')) return;
+      x = e.touches[0].clientX;
+      y = e.touches[0].clientY;
+    }, { passive: true });
+    drawer.addEventListener('touchend', function (e) {
+      if (x === null) return;
+      var dx = e.changedTouches[0].clientX - x;
+      var dy = e.changedTouches[0].clientY - y;
+      x = null;
+      if (dx > 80 && Math.abs(dy) < dx / 2 && drawer.close) drawer.close();
+    }, { passive: true });
+  }
+
   function init() {
+    initCartSwipe();
     each('[data-ab-pdp]', function (root) {
       initGallery(root);
       initBuyBox(root);

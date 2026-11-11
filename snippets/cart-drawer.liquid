@@ -190,7 +190,9 @@
             {% endif %}
             <div id="CartDrawer-CartItems" class="drawer__contents js-contents">
               {%- if cart != empty -%}
+                {% render 'ab-cart-top' %}
                 {% render 'cart-items' %}
+                {% render 'ab-cart-bottom' %}
               {%- endif -%}
 
               <p id="CartDrawer-LiveRegionText" class="visually-hidden" role="status"></p>
@@ -997,6 +999,7 @@
           role="status"
           style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 5px;"
         >
+          {% render 'ab-cart-footer' %}
           <div class="totals__total">
             <span class="total_count">
               {{ 'sections.cart.items_total' | t: item_count: cart.item_count }}

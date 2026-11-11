@@ -1,0 +1,41 @@
+{% comment %}
+  A/B test: cart drawer top (free shipping bar). Renders only when the cart holds
+  a line from the product.ab-* templates. Sits inside #CartDrawer-CartItems, which
+  the theme re-renders after every cart change.
+{% endcomment %}
+{%- liquid
+  assign ab_cart = false
+  assign ab_bundles = 0
+  for line in cart.items
+    if line.properties['_ab'] != blank
+      assign ab_cart = true
+      assign line_bundle = line.properties['_ab_bundle'] | plus: 0
+      if line_bundle < 1
+        assign line_bundle = 1
+      endif
+      assign ab_bundles = line.quantity | divided_by: line_bundle | plus: ab_bundles
+    endif
+  endfor
+-%}
+{%- if ab_cart -%}
+  {{ 'ab-cart.css' | asset_url | stylesheet_tag }}
+  {%- liquid
+    assign threshold = settings.product_free_shipping | default: 0 | times: 100
+    assign remaining = threshold | minus: cart.total_price
+    assign progress = 100
+    if remaining > 0 and threshold > 0
+      assign progress = cart.total_price | times: 100 | divided_by: threshold
+    endif
+  -%}
+  <style>cart-drawer .drawer__heading { counter-reset: ab-count {{ ab_bundles }}; }</style>
+  <div class="ab-ship-bar" data-ab-cart>
+    <p>
+      {%- if remaining > 0 -%}
+        You’re {{ remaining | money }} away from FREE shipping
+      {%- else -%}
+        You’ve unlocked FREE shipping
+      {%- endif -%}
+    </p>
+    <span class="ab-ship-bar__track"><span style="width: {{ progress }}%;"></span></span>
+  </div>
+{%- endif -%}

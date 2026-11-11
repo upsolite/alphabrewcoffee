@@ -1,0 +1,25 @@
+{% comment %}
+  A/B test: "You're saving" and guarantee rows under the line items.
+  Renders only when the cart holds a line from the product.ab-* templates.
+{% endcomment %}
+{%- liquid
+  assign ab_cart = false
+  assign saving = 0
+  for line in cart.items
+    if line.properties['_ab'] != blank
+      assign ab_cart = true
+      if line.variant.compare_at_price > line.variant.price
+        assign line_compare = line.variant.compare_at_price | times: line.quantity
+        assign saving = line_compare | minus: line.final_line_price | plus: saving
+      endif
+    endif
+  endfor
+-%}
+{%- if ab_cart -%}
+  <div class="ab-cart-extra">
+    {%- if saving > 0 -%}
+      <p class="ab-saving"><span>You’re saving</span><b>{{ saving | money }}</b></p>
+    {%- endif -%}
+    <p class="ab-covered"><span aria-hidden="true">✓</span>Covered by our 90-day money-back guarantee</p>
+  </div>
+{%- endif -%}
