@@ -1,7 +1,8 @@
 <div class="ab-sec">
   <section class="ab-taste">
-    <h2 class="ab-h ab-h--32">{{ section.settings.heading | escape }}{% if section.settings.heading_accent != blank %} <em>{{ section.settings.heading_accent | escape }}</em>{% endif %}</h2>
-    {%- render 'ab-image', image: section.settings.image, fallback: 'ab-hot-iced.jpg', size: 700, w: 642, h: 600, alt: section.settings.image_alt, class: 'ab-taste__img' -%}
+    <h2 class="ab-h ab-h--32">{% render 'ab-swap', text: section.settings.heading, text_nc: section.settings.heading_nc %}{% if section.settings.heading_accent != blank %} <em>{% render 'ab-swap', text: section.settings.heading_accent, text_nc: section.settings.heading_accent_nc %}</em>{% endif %}</h2>
+    {%- render 'ab-image', image: section.settings.image, fallback: 'ab-hot-iced.jpg', size: 700, w: 642, h: 600, alt: section.settings.image_alt, class: 'ab-taste__img ab-caf-only' -%}
+    {%- render 'ab-image', image: section.settings.image_nc, fallback: 'ab-nc-bag.jpg', size: 700, w: 642, h: 600, alt: section.settings.image_alt, class: 'ab-taste__img ab-nc-only' -%}
     <div class="ab-taste__cols">
       {%- for block in section.blocks -%}
         {%- liquid
@@ -12,10 +13,10 @@
 -%}
         <div {{ block.shopify_attributes }}>
           {%- render 'ab-image', image: block.settings.icon, fallback: fallback, size: 96, w: 44, h: 48, alt: '' -%}
-          <h3>{{ block.settings.title | escape }}</h3>
-          <p>{{ block.settings.text | escape }}</p>
-          <blockquote>{{ block.settings.quote | escape }}</blockquote>
-          <small>{{ block.settings.author | escape }}</small>
+          <h3>{% render 'ab-swap', text: block.settings.title, text_nc: block.settings.title_nc %}</h3>
+          <p>{% render 'ab-swap', text: block.settings.text, text_nc: block.settings.text_nc %}</p>
+          <blockquote{% if section.settings.hide_quotes_nc %} class="ab-caf-only"{% endif %}>{{ block.settings.quote | escape }}</blockquote>
+          <small{% if section.settings.hide_quotes_nc %} class="ab-caf-only"{% endif %}>{{ block.settings.author | escape }}</small>
         </div>
       {%- endfor -%}
     </div>
@@ -45,6 +46,31 @@
       "type": "text",
       "id": "image_alt",
       "label": "Image description"
+    },
+    {
+      "type": "header",
+      "content": "No Caffeine (leave empty to keep the same)"
+    },
+    {
+      "type": "text",
+      "id": "heading_nc",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent_nc",
+      "label": "Heading accent"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_nc",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_quotes_nc",
+      "label": "Hide the customer quotes",
+      "default": true
     }
   ],
   "blocks": [
@@ -76,6 +102,20 @@
           "type": "text",
           "id": "author",
           "label": "Author"
+        },
+        {
+          "type": "header",
+          "content": "No Caffeine (leave empty to keep the same)"
+        },
+        {
+          "type": "text",
+          "id": "title_nc",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "text_nc",
+          "label": "Text"
         }
       ]
     }

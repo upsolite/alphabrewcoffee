@@ -12,11 +12,18 @@
 -%}
         <article class="ab-ing__card{% if forloop.index > 4 %} is-extra{% endif %}" {{ block.shopify_attributes }}>
           <div class="ab-ing__top">
-            <span class="ab-ing__img">{%- render 'ab-image', image: block.settings.image, fallback: fallback, size: 128, w: 64, h: 64, alt: '' -%}</span>
-            <h3>{{ block.settings.name | escape }}</h3>
+            <span class="ab-ing__img">
+              {%- if block.settings.image_nc != blank -%}
+                {%- render 'ab-image', image: block.settings.image, fallback: fallback, size: 128, w: 64, h: 64, alt: '', class: 'ab-caf-only' -%}
+                {%- render 'ab-image', image: block.settings.image_nc, size: 128, w: 64, h: 64, alt: '', class: 'ab-nc-only' -%}
+              {%- else -%}
+                {%- render 'ab-image', image: block.settings.image, fallback: fallback, size: 128, w: 64, h: 64, alt: '' -%}
+              {%- endif -%}
+            </span>
+            <h3>{% render 'ab-swap', text: block.settings.name, text_nc: block.settings.name_nc %}</h3>
           </div>
-          <p class="ab-ing__copy">{{ block.settings.copy | escape }}</p>
-          <p class="ab-ing__dose">{{ block.settings.dose | escape }}</p>
+          <p class="ab-ing__copy">{% render 'ab-swap', text: block.settings.copy, text_nc: block.settings.copy_nc %}</p>
+          <p class="ab-ing__dose">{% render 'ab-swap', text: block.settings.dose, text_nc: block.settings.dose_nc %}</p>
         </article>
       {%- endfor -%}
     </div>
@@ -88,6 +95,30 @@
         {
           "type": "text",
           "id": "dose",
+          "label": "Dose"
+        },
+        {
+          "type": "header",
+          "content": "No Caffeine (leave empty to keep the same)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_nc",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "name_nc",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "copy_nc",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "dose_nc",
           "label": "Dose"
         }
       ]

@@ -158,3 +158,15 @@
 .ab-guar__txt b { font-size: 22px; font-weight: 700; }
 .ab-guar__txt small { font-size: 9px; font-weight: 700; }
 .ab-guar__copy { font-size: 15px; line-height: 1.5; text-align: center; color: #d8d2c6; }
+
+/* Comparison cells that switch for No Caffeine: the inner span is only a wrapper. */
+.ab-sec .ab-cmp__body span span,
+.ab-sec .ab-cmp__brand > span span {
+    display: inline;
+    height: auto;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    color: inherit;
+}
+

@@ -1,0 +1,8 @@
+{% comment %}
+  Text that changes when No Caffeine is selected. Accepts: text, text_nc
+{% endcomment %}
+{%- if text_nc != blank and text_nc != text -%}
+  <span class="ab-caf-only">{{ text | escape }}</span><span class="ab-nc-only">{{ text_nc | escape }}</span>
+{%- else -%}
+  {{ text | escape }}
+{%- endif -%}

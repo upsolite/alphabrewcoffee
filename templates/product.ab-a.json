@@ -24,7 +24,8 @@
         "ab_slide_01": {
           "type": "slide",
           "settings": {
-            "alt": "The only coffee a man needs"
+            "alt": "The only coffee a man needs",
+            "nc_version": true
           }
         },
         "ab_slide_02": {
@@ -48,13 +49,15 @@
         "ab_slide_06": {
           "type": "slide",
           "settings": {
-            "alt": "Supplement Facts"
+            "alt": "Supplement Facts",
+            "nc_version": true
           }
         },
         "ab_slide_07": {
           "type": "slide",
           "settings": {
-            "alt": "Smooth energy, no jitters"
+            "alt": "Smooth energy, no jitters",
+            "nc_hide": true
           }
         },
         "ab_slide_08": {
@@ -167,9 +170,16 @@
         "base_heading": "Select Base",
         "base_title": "Caffeine",
         "base_subtitle": "Coffee Base",
+        "stock_note": "Only a few left",
         "trust_line": "Subscribe & Save · Skip or cancel anytime",
         "sheet_title": "Supplement Facts",
-        "sheet_caption": "1 scoop · 30 servings per bag · 100 mg caffeine per serving.\nAll 11 ingredients and their amounts are listed in the Alpha Brew Matrix."
+        "sheet_caption": "1 scoop · 30 servings per bag · 100 mg caffeine per serving.\nAll 11 ingredients and their amounts are listed in the Alpha Brew Matrix.",
+        "title_nc": "Daily Cacao Blend For Energy, Blood Flow & Sex Drive",
+        "description_nc": "Alpha Brew is natural testosterone support in your morning cup, with zero caffeine. <strong>It works four ways:</strong> helps manage cortisol, frees up testosterone, supports blood flow & keeps you lasting longer.",
+        "bullet_1_nc": "11 Clinically Studied Ingredients",
+        "base_nc_title": "No Caffeine",
+        "base_nc_subtitle": "Cacao Base",
+        "sheet_caption_nc": "1 scoop · 30 servings per bag · no caffeine. A cacao base replaces the Arabica coffee; every other ingredient and dose is the same."
       }
     },
     "tabs": {
@@ -376,7 +386,8 @@
           "settings": {
             "name": "L-Theanine",
             "copy": "Smooths out the caffeine for calm, focused energy.*",
-            "dose": "200 mg per scoop"
+            "dose": "200 mg per scoop",
+            "copy_nc": "Supports calm, focused energy.*"
           }
         },
         "ing_maca": {
@@ -430,7 +441,11 @@
             "name": "Arabica Coffee",
             "copy": "The premium dark roast base, with 100 mg caffeine per scoop.",
             "dose": "8,000 mg per scoop",
-            "image": "shopify://shop_images/Arabica_Coffee.png"
+            "image": "shopify://shop_images/Arabica_Coffee.png",
+            "name_nc": "Cacao Base",
+            "copy_nc": "The rich cacao base that replaces the coffee, with zero caffeine.",
+            "dose_nc": "8,000 mg per scoop",
+            "image_nc": "shopify://shop_images/Cacao-removebg-preview.png"
           }
         },
         "ing_cacao": {
@@ -586,7 +601,11 @@
             "label": "FULL CUP OF CAFFEINE",
             "brand": true,
             "column_2": true,
-            "column_3": false
+            "column_3": false,
+            "label_nc": "ZERO CAFFEINE",
+            "brand_nc": true,
+            "column_2_nc": false,
+            "column_3_nc": false
           }
         },
         "row_5": {
@@ -674,7 +693,9 @@
             "title": "Rich Dark Roast",
             "text": "Arabica + 2,000 mg cacao. Never chalky.",
             "quote": "“the taste is delicious”",
-            "author": "Damien, 46"
+            "author": "Damien, 46",
+            "title_nc": "Rich Cacao Base",
+            "text_nc": "10,000 mg cacao in every scoop."
           }
         },
         "ab_hex_2": {
@@ -683,7 +704,8 @@
             "title": "No Racing Heart",
             "text": "100 mg caffeine + 200 mg L-Theanine.*",
             "quote": "“no heart racing feeling”",
-            "author": "Mathew, 43"
+            "author": "Mathew, 43",
+            "text_nc": "Zero caffeine, plus 200 mg L-Theanine.*"
           }
         }
       },
@@ -694,7 +716,10 @@
       "settings": {
         "heading": "Tastes Like Coffee.",
         "heading_accent": "Without The Jitters.",
-        "image_alt": "Alpha Brew served hot and iced"
+        "image_alt": "Alpha Brew served hot and iced",
+        "heading_nc": "Rich Cacao Cup.",
+        "heading_accent_nc": "Zero Caffeine.",
+        "hide_quotes_nc": true
       }
     },
     "reviews": {

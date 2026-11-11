@@ -1031,3 +1031,92 @@ html body .ab-pdp button.ab-thumb {
     color: #fff;
     text-decoration: underline;
 }
+
+/* "Subscribe & Save" row with the stock note on the right */
+.ab-pdp .ab-plan-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 25px 0 8px;
+}
+
+.ab-pdp .ab-plan-row .ab-heading--plan {
+    margin: 0 !important;
+}
+
+.ab-pdp .ab-stock {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 600 !important;
+    color: #b98141;
+    white-space: nowrap;
+}
+
+.ab-pdp .ab-stock span {
+    width: 6px;
+    height: 6px;
+    border-radius: 100px;
+    background: #b98141;
+}
+
+/* Caffeine / No Caffeine. The selected base is a class on <html>, so every section can switch. */
+html.ab-nc .ab-caf-only,
+html:not(.ab-nc) .ab-nc-only {
+    display: none !important;
+}
+
+.ab-pdp .ab-bases {
+    display: flex;
+    gap: 10px;
+}
+
+.ab-pdp .ab-bases .ab-base {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.ab-pdp .ab-bases .ab-base input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.ab-pdp .ab-bases .ab-base:has(input:focus-visible) {
+    outline: 2px solid #b98141;
+    outline-offset: 2px;
+}
+
+.ab-pdp .ab-bases .ab-base:not(.is-selected) {
+    background: #fff;
+    border-color: #dcdad5;
+    color: #4d4d4d;
+}
+
+.ab-pdp .ab-bases .ab-base:not(.is-selected) strong {
+    color: #4d4d4d;
+}
+
+.ab-pdp .ab-bases .ab-base:not(.is-selected) span {
+    font-size: 12px;
+}
+
+.ab-pdp .ab-sticky__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ab-pdp .ab-sticky__title span {
+    font-weight: 600;
+}
+
+.ab-sheet__panel img.ab-nc-only {
+    aspect-ratio: 786 / 818;
+}
+

@@ -1,0 +1,11 @@
+{% comment %}
+  Comparison cell: a check or a cross, which can differ when No Caffeine is selected.
+  Accepts: value, value_nc, icon
+{% endcomment %}
+{%- capture yes -%}<img src="{{ icon | asset_url }}" alt="Yes" width="20" height="20">{%- endcapture -%}
+{%- capture no -%}<span aria-label="No">✕</span>{%- endcapture -%}
+{%- if value == value_nc -%}
+  {%- if value -%}{{ yes }}{%- else -%}{{ no }}{%- endif -%}
+{%- else -%}
+  <span class="ab-caf-only">{%- if value -%}{{ yes }}{%- else -%}{{ no }}{%- endif -%}</span><span class="ab-nc-only">{%- if value_nc -%}{{ yes }}{%- else -%}{{ no }}{%- endif -%}</span>
+{%- endif -%}

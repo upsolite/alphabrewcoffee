@@ -6,20 +6,32 @@
       <div class="ab-cmp__col ab-cmp__col--label">
         <div class="ab-cmp__head"></div>
         <div class="ab-cmp__body">
-          {%- for block in section.blocks -%}<span {{ block.shopify_attributes }}>{{ block.settings.label | escape }}</span>{%- endfor -%}
+          {%- for block in section.blocks -%}<span {{ block.shopify_attributes }}>{% render 'ab-swap', text: block.settings.label, text_nc: block.settings.label_nc %}</span>{%- endfor -%}
         </div>
       </div>
       <div class="ab-cmp__brand">
         <div class="ab-cmp__brand-head"><em>{{ section.settings.brand_line_1 | escape }}</em><b>{{ section.settings.brand_line_2 | escape }}</b></div>
         {%- for block in section.blocks -%}
-          <span>{%- if block.settings.brand -%}<img src="{{ 'ab-yes.svg' | asset_url }}" alt="Yes" width="20" height="20">{%- else -%}✕{%- endif -%}</span>
+          {%- liquid
+            assign brand_nc = block.settings.brand
+            if block.settings.label_nc != blank
+              assign brand_nc = block.settings.brand_nc
+            endif
+          -%}
+          <span>{% render 'ab-check', value: block.settings.brand, value_nc: brand_nc, icon: 'ab-yes.svg' %}</span>
         {%- endfor -%}
       </div>
       <div class="ab-cmp__col">
         <div class="ab-cmp__head"><img src="{{ 'ab-coffee.svg' | asset_url }}" alt="" width="22" height="22"><b>{{ section.settings.column_2 | escape }}</b></div>
         <div class="ab-cmp__body ab-cmp__body--mid">
           {%- for block in section.blocks -%}
-            {%- if block.settings.column_2 -%}<span><img src="{{ 'ab-yes-dim.svg' | asset_url }}" alt="Yes" width="20" height="20"></span>{%- else -%}<span aria-label="No">✕</span>{%- endif -%}
+            {%- liquid
+              assign col_nc = block.settings.column_2
+              if block.settings.label_nc != blank
+                assign col_nc = block.settings.column_2_nc
+              endif
+            -%}
+            <span>{% render 'ab-check', value: block.settings.column_2, value_nc: col_nc, icon: 'ab-yes-dim.svg' %}</span>
           {%- endfor -%}
         </div>
       </div>
@@ -27,7 +39,13 @@
         <div class="ab-cmp__head"><img src="{{ 'ab-mushroom.svg' | asset_url }}" alt="" width="22" height="22"><b>{{ section.settings.column_3 | escape }}</b></div>
         <div class="ab-cmp__body ab-cmp__body--end">
           {%- for block in section.blocks -%}
-            {%- if block.settings.column_3 -%}<span><img src="{{ 'ab-yes-dim.svg' | asset_url }}" alt="Yes" width="20" height="20"></span>{%- else -%}<span aria-label="No">✕</span>{%- endif -%}
+            {%- liquid
+              assign col_nc = block.settings.column_3
+              if block.settings.label_nc != blank
+                assign col_nc = block.settings.column_3_nc
+              endif
+            -%}
+            <span>{% render 'ab-check', value: block.settings.column_3, value_nc: col_nc, icon: 'ab-yes-dim.svg' %}</span>
           {%- endfor -%}
         </div>
       </div>
@@ -117,6 +135,33 @@
         {
           "type": "checkbox",
           "id": "column_3",
+          "label": "Column 3 has this",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "No Caffeine (when the label is filled in)"
+        },
+        {
+          "type": "text",
+          "id": "label_nc",
+          "label": "Label"
+        },
+        {
+          "type": "checkbox",
+          "id": "brand_nc",
+          "label": "Alpha Brew has this",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "column_2_nc",
+          "label": "Column 2 has this",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "column_3_nc",
           "label": "Column 3 has this",
           "default": false
         }
