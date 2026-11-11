@@ -210,10 +210,10 @@ cart-drawer:has([data-ab-cart]) .cart-items tbody {
 cart-drawer .ab-line__qty.quantity {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
     width: auto !important;
     min-height: 0 !important;
-    padding: 5px 12px;
+    padding: 5px 8px;
     border: 1px solid #dcdad5 !important;
     border-radius: 999px !important;
     background: #fff;
@@ -224,11 +224,14 @@ cart-drawer .ab-line__qty.quantity::after {
     display: none !important;
 }
 
-cart-drawer .ab-line__qty .quantity__button {
+/* Beats the theme's .drawer__inner.gradient .quantity__button width (custom.css).
+   Padding 4px + gap 10px keeps Figma's 12px edge and 14px gap with a larger tap area. */
+cart-drawer .drawer__inner .ab-line__qty .quantity__button {
     width: auto !important;
     min-width: 0;
     height: auto;
-    padding: 0;
+    margin: 0;
+    padding: 0 4px;
     border: 0;
     background: none;
     box-shadow: none;
