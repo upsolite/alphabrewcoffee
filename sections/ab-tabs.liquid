@@ -1,0 +1,180 @@
+{% comment %}
+  A/B test: "What to expect / FAQ's / Reviews" tabs under the buy box.
+  Separate from 3-bars-stacks so Control is not affected.
+{% endcomment %}
+
+<div class="ab-tabs" data-ab-tabs>
+  <div class="ab-tabs__bar" role="tablist">
+    <button type="button" class="ab-tabs__tab is-active" role="tab" style="border-radius: 14px !important;" aria-selected="true" data-ab-tab="expect">{{ section.settings.tab_1 | escape }}</button>
+    <button type="button" class="ab-tabs__tab" role="tab" style="border-radius: 14px !important;" aria-selected="false" data-ab-tab="faq">{{ section.settings.tab_2 | escape }}</button>
+    <button type="button" class="ab-tabs__tab" role="tab" style="border-radius: 14px !important;" aria-selected="false" data-ab-tab="reviews">{{ section.settings.tab_3 | escape }}</button>
+  </div>
+
+  <div class="ab-tabs__panel is-active" role="tabpanel" data-ab-panel="expect">
+    <h2 class="ab-tabs__h">{{ section.settings.expect_heading | escape }} <em>{{ section.settings.expect_accent | escape }}</em> {{ section.settings.expect_after | escape }}</h2>
+    {%- capture bolt -%}<span class="ab-step__icon">{%- render 'icon-speed-effect' -%}</span>{%- endcapture -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'step' -%}
+        {%- assign lines = block.settings.items | newline_to_br | split: '<br />' -%}
+        <div class="ab-step" {{ block.shopify_attributes }}>
+          <div class="ab-step__top">{{ bolt }}<div class="ab-step__label"><small>{{ block.settings.day | escape }}</small><h3>{{ block.settings.title | escape }}</h3></div></div>
+          <ul>{%- for line in lines -%}<li>{{ line | strip | escape }}</li>{%- endfor -%}</ul>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  <div class="ab-tabs__panel" role="tabpanel" data-ab-panel="faq" hidden>
+    <h2 class="ab-tabs__h">{{ section.settings.faq_heading | escape }} <em>{{ section.settings.faq_accent | escape }}</em></h2>
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'question' -%}
+        <div class="ab-qa" {{ block.shopify_attributes }}><h3>{{ block.settings.question | escape }}</h3><p>{{ block.settings.answer | escape }}</p></div>
+      {%- endif -%}
+    {%- endfor -%}
+    <button type="button" class="ab-tabs__more" data-ab-scroll="#ab-faq">{{ section.settings.faq_link | escape }}</button>
+  </div>
+
+  <div class="ab-tabs__panel" role="tabpanel" data-ab-panel="reviews" hidden>
+    <h2 class="ab-tabs__h">{{ section.settings.reviews_heading | escape }} <em>{{ section.settings.reviews_accent | escape }}</em></h2>
+    <p class="ab-tabs__score">★★★★★ {{ section.settings.reviews_score | escape }}</p>
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'quote' -%}
+        <div class="ab-quote" {{ block.shopify_attributes }}><span>★★★★★</span><p>{{ block.settings.text | escape }}</p><small>{{ block.settings.byline | escape }}</small></div>
+      {%- endif -%}
+    {%- endfor -%}
+    <button type="button" class="ab-tabs__more" data-ab-scroll="#ab-reviews">{{ section.settings.reviews_link | escape }}</button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "AB test: tabs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tab_1",
+      "label": "Tab 1 name"
+    },
+    {
+      "type": "text",
+      "id": "tab_2",
+      "label": "Tab 2 name"
+    },
+    {
+      "type": "text",
+      "id": "tab_3",
+      "label": "Tab 3 name"
+    },
+    {
+      "type": "text",
+      "id": "expect_heading",
+      "label": "Tab 1 heading"
+    },
+    {
+      "type": "text",
+      "id": "expect_accent",
+      "label": "Tab 1 heading accent"
+    },
+    {
+      "type": "text",
+      "id": "expect_after",
+      "label": "Tab 1 heading ending"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading",
+      "label": "Tab 2 heading"
+    },
+    {
+      "type": "text",
+      "id": "faq_accent",
+      "label": "Tab 2 heading accent"
+    },
+    {
+      "type": "text",
+      "id": "faq_link",
+      "label": "Tab 2 link"
+    },
+    {
+      "type": "text",
+      "id": "reviews_heading",
+      "label": "Tab 3 heading"
+    },
+    {
+      "type": "text",
+      "id": "reviews_accent",
+      "label": "Tab 3 heading accent"
+    },
+    {
+      "type": "text",
+      "id": "reviews_score",
+      "label": "Tab 3 score"
+    },
+    {
+      "type": "text",
+      "id": "reviews_link",
+      "label": "Tab 3 link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Timeline step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "day",
+          "label": "Day label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "items",
+          "label": "Points (one per line)"
+        }
+      ]
+    },
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "name": "Quote",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "byline",
+          "label": "Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AB test: tabs"
+    }
+  ]
+}
+{% endschema %}

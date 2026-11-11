@@ -163,6 +163,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  if (!prevArrow || !nextArrow) return;
+
   prevArrow.addEventListener("click", function () {
     if (!this.classList.contains("disabled")) {
       slidePrev();

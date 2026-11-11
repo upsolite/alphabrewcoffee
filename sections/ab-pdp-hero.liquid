@@ -1,0 +1,422 @@
+{% comment %}
+  A/B test (Elevate, mobile only): rotating banner, gallery, review strip and buy box.
+  Used only by templates/product.ab-*.json. Control (product.json) never loads this.
+
+  Prices come from Shopify: one-time = variant price x quantity,
+  subscription = selling plan allocation x quantity.
+{% endcomment %}
+
+{{ 'ab-pdp.css' | asset_url | stylesheet_tag }}
+{{ 'ab-sections.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ab-pdp.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign slides = section.blocks | where: 'type', 'slide'
+  assign plans = product.selling_plan_groups.first.selling_plans
+  assign titles = 'Buy 1|Buy 2, Get 1 Free|Buy 3, Get 2 Free' | split: '|'
+  assign quantities = '1,3,5' | split: ','
+  assign sub_lines = '1 bag, every month|3 bags, every 3 months|5 bags, every 5 months' | split: '|'
+  assign one_lines = '1 bag, one-time delivery|3 bags, one-time delivery|5 bags, one-time delivery' | split: '|'
+  assign badges = '|MOST POPULAR|BEST VALUE' | split: '|'
+  assign pack_files = 'ab-pack-1.png,ab-pack-3.png,ab-pack-5.png' | split: ','
+-%}
+
+<div class="ab-pdp" data-ab-pdp>
+  {% comment %}
+    Kaching's app embed attaches to the first product form on the page. The buy box
+    here adds to cart itself, so this hidden form gives Kaching somewhere to attach.
+    Without it, Kaching takes over the theme's free-product form in layout/theme.liquid
+    and the cart drawer adds extra bags. Never submitted.
+  {% endcomment %}
+  {%- form 'product', product, class: 'form ab-kaching-anchor', hidden: 'hidden', data-type: 'add-to-cart-form' -%}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="product-variant-id">
+    <button type="submit" name="add" tabindex="-1" hidden></button>
+  {%- endform -%}
+
+  <div class="ab-banner" data-ab-banner>
+    <button type="button" class="ab-banner__nav" data-ab-banner-prev aria-label="Previous message">‹</button>
+    <div class="ab-banner__msgs" aria-live="polite">
+      {%- assign messages = section.blocks | where: 'type', 'banner' -%}
+      {%- for block in messages -%}
+        <p class="ab-banner__msg{% if forloop.first %} is-active{% endif %}" {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</p>
+      {%- endfor -%}
+    </div>
+    <button type="button" class="ab-banner__nav" data-ab-banner-next aria-label="Next message">›</button>
+  </div>
+
+  <div class="ab-gallery" data-ab-gallery>
+    <div class="ab-gallery__track" data-ab-track>
+      {%- for block in slides -%}
+        {%- liquid
+          assign fallback = ''
+          if block.id contains 'ab_'
+            assign fallback = block.id | replace: '_', '-' | append: '.jpg'
+          endif
+        -%}
+        <button type="button" class="ab-gallery__slide" data-ab-slide="{{ forloop.index0 }}" aria-label="Open image {{ forloop.index }} of {{ slides.size }}" {{ block.shopify_attributes }}>
+          {%- render 'ab-image', image: block.settings.image, fallback: fallback, size: 1060, w: 786, h: 786, alt: block.settings.alt, eager: forloop.first -%}
+        </button>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="ab-body">
+    <div class="ab-thumbs" data-ab-thumbs>
+      {%- for block in slides -%}
+        {%- liquid
+          assign fallback = ''
+          if block.id contains 'ab_'
+            assign fallback = block.id | replace: '_', '-' | replace: 'slide', 'thumb' | append: '.jpg'
+          endif
+        -%}
+        <button type="button" class="ab-thumb{% if forloop.first %} is-active{% endif %}" style="border-radius: 6px !important;" data-ab-thumb="{{ forloop.index0 }}" aria-label="Show image {{ forloop.index }}">
+          {%- render 'ab-image', image: block.settings.image, fallback: fallback, size: 240, w: 53, h: 53, alt: '' -%}
+        </button>
+      {%- endfor -%}
+    </div>
+
+    <div class="ab-strip">
+      {%- capture stars -%}
+        <span class="ab-stars" aria-label="5 out of 5 stars">
+          {%- for i in (1..5) -%}<img src="{{ 'ab-star.svg' | asset_url }}" alt="" width="14" height="14">{%- endfor -%}
+        </span>
+      {%- endcapture -%}
+      {%- capture verified -%}<img src="{{ 'ab-verified.svg' | asset_url }}" alt="" width="12" height="12">{%- endcapture -%}
+      {%- assign strip_reviews = section.blocks | where: 'type', 'strip_review' -%}
+      {%- for block in strip_reviews -%}
+        <div class="ab-strip__card" {{ block.shopify_attributes }}><p>{{ block.settings.text }}</p><div class="ab-strip__foot">{{ stars }}<span>{{ verified }} {{ block.settings.author | escape }}</span></div></div>
+      {%- endfor -%}
+    </div>
+
+    <button type="button" class="ab-rating" data-ab-scroll="#ab-reviews">
+      <span class="ab-rating__faces">
+        {%- for i in (1..3) -%}
+          {%- assign face_key = 'face_' | append: i -%}
+          {%- assign face_file = 'ab-face-' | append: i | append: '.jpg' -%}
+          {%- render 'ab-image', image: section.settings[face_key], fallback: face_file, size: 64, w: 21, h: 21, alt: '', eager: true -%}
+        {%- endfor -%}
+      </span>
+      {{ stars }}
+      <span class="ab-rating__text">{{ section.settings.rating_text | escape }}</span>
+    </button>
+
+    <h1 class="ab-title">{{ section.settings.title | escape }}</h1>
+
+    <button type="button" class="ab-label-link" data-ab-sheet-open>
+      {{ section.settings.label_link | escape }}
+      <svg width="9" height="9" viewBox="0 0 10.2 9.6" fill="none" aria-hidden="true"><path d="M9.54 6.69V.67H3.12" stroke="#4A3512" stroke-width="1.33" stroke-linecap="square"/><path d="M.94 8.67 8.86 1.3" stroke="#4A3512" stroke-width="1.33" stroke-linecap="square"/></svg>
+    </button>
+
+    <p class="ab-desc">{{ section.settings.description }}</p>
+
+    <ul class="ab-bullets">
+      {%- for i in (1..4) -%}
+        {%- assign key = 'bullet_' | append: i -%}
+        {%- if section.settings[key] != blank -%}
+          <li><img src="{{ 'ab-check.svg' | asset_url }}" alt="" width="15" height="15">{{ section.settings[key] | escape }}</li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+
+    <p class="ab-heading">{{ section.settings.base_heading | escape }}</p>
+    <div class="ab-base">
+      <strong>{{ section.settings.base_title | escape }}</strong>
+      <span>{{ section.settings.base_subtitle | escape }}</span>
+    </div>
+
+    <p class="ab-heading ab-heading--plan"><span class="ab-sub">Subscribe &amp; Save</span><span class="ab-one">One-Time Purchase</span></p>
+
+    <div class="ab-cards" role="radiogroup" aria-label="Choose your bundle" data-ab-cards>
+      {%- for title in titles -%}
+        {%- liquid
+          assign i = forloop.index0
+          assign v = product.variants[i]
+          assign pack_key = 'pack_' | append: forloop.index
+          if section.settings[pack_key] != blank
+            assign pack_url = section.settings[pack_key] | image_url: width: 240
+          else
+            assign pack_url = pack_files[i] | asset_url
+          endif
+          assign qty = quantities[i] | plus: 0
+          assign plan = plans[i]
+          assign alloc = nil
+          for a in v.selling_plan_allocations
+            if a.selling_plan.id == plan.id
+              assign alloc = a
+              break
+            endif
+          endfor
+          assign cups = qty | times: 30.0
+          assign sub_total = alloc.price | times: qty
+          assign one_total = v.price | times: qty
+          assign compare_total = v.compare_at_price | times: qty
+          assign sub_save = compare_total | minus: sub_total | divided_by: 100.0 | round | times: 100
+          assign one_save = compare_total | minus: one_total | divided_by: 100.0 | round | times: 100
+          assign sub_cup = sub_total | divided_by: cups | round
+          assign one_cup = one_total | divided_by: cups | round
+          assign is_default = false
+          if i == 1
+            assign is_default = true
+          endif
+        -%}
+        <label
+          class="ab-card{% if is_default %} is-selected{% endif %}"
+          data-ab-card
+          data-variant="{{ v.id }}"
+          data-plan="{{ plan.id }}"
+          data-qty="{{ qty }}"
+          data-title="{{ title | escape }}"
+          data-pack="{{ pack_url }}"
+          data-sub="{{ sub_total | money }}"
+          data-one="{{ one_total | money }}"
+          data-compare="{{ compare_total | money }}"
+        >
+          <input type="radio" name="ab-bundle" value="{{ i }}"{% if is_default %} checked{% endif %}>
+          <span class="ab-card__radio" aria-hidden="true"></span>
+          <span class="ab-card__pack"><img src="{{ pack_url }}" alt="" width="52" height="52" loading="lazy"></span>
+          <span class="ab-card__main">
+            <span class="ab-card__title">{{ title }}</span>
+            <span class="ab-card__save"><span class="ab-sub">Save {{ sub_save | money_without_trailing_zeros }}</span><span class="ab-one">Save {{ one_save | money_without_trailing_zeros }}</span></span>
+            <span class="ab-card__line"><span class="ab-sub">{{ sub_lines[i] }}</span><span class="ab-one">{{ one_lines[i] }}</span></span>
+          </span>
+          <span class="ab-card__prices">
+            <span class="ab-card__price"><span class="ab-sub">{{ sub_total | money }}</span><span class="ab-one">{{ one_total | money }}</span></span>
+            <s class="ab-card__compare">{{ compare_total | money }}</s>
+            <span class="ab-card__cup"><span class="ab-sub">{{ sub_cup | money }} / cup</span><span class="ab-one">{{ one_cup | money }} / cup</span></span>
+          </span>
+          {%- if badges[i] != blank -%}<span class="ab-card__badge">{{ badges[i] }}</span>{%- endif -%}
+        </label>
+      {%- endfor -%}
+    </div>
+
+    <button type="button" class="ab-mode" data-ab-mode>
+      <span class="ab-sub"><span aria-hidden="true">→</span> <u>Try it Once - No Autoship (<span data-ab-one-price></span>)</u></span>
+      <span class="ab-one"><span aria-hidden="true">←</span> <u>Back to Subscribe &amp; Save (save up to 67%)</u></span>
+    </button>
+
+    <div class="ab-ship">
+      <img src="{{ 'ab-truck.svg' | asset_url }}" alt="" width="18" height="18">
+      <span data-ab-delivery><b>Free shipping on every bundle</b></span>
+    </div>
+
+    <button type="button" class="ab-atc" data-ab-atc>
+      <span class="ab-atc__label" data-ab-atc-label>Add To Cart</span>
+      <span class="ab-atc__sub" data-ab-atc-sub>90-Day Money-Back Guarantee</span>
+    </button>
+    <p class="ab-error" data-ab-error role="alert" hidden></p>
+
+    <p class="ab-secure"><span class="ab-sub">{{ section.settings.trust_line | escape }}</span><span class="ab-one">One-time purchase · No subscription</span></p>
+
+    <div class="ab-pay">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'payment_icons' -%}{%- render 'payment-icons', block: block -%}{%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="ab-sticky" data-ab-sticky aria-hidden="true">
+    <span class="ab-sticky__pack"><img data-ab-sticky-pack src="{{ pack_files[1] | asset_url }}" alt="" width="46" height="46"></span>
+    <span class="ab-sticky__main">
+      <b data-ab-sticky-title></b>
+      <span><b class="ab-sticky__price" data-ab-sticky-price></b> <s data-ab-sticky-compare></s></span>
+    </span>
+    <button type="button" class="ab-sticky__btn" data-ab-atc tabindex="-1"><span data-ab-atc-label>Add To Cart</span></button>
+  </div>
+
+  <div class="ab-sheet" data-ab-sheet role="dialog" aria-modal="true" aria-label="Supplement Facts" hidden>
+    <div class="ab-sheet__panel" data-ab-sheet-panel>
+      <div class="ab-sheet__handle" data-ab-sheet-handle></div>
+      <div class="ab-sheet__head"><b>{{ section.settings.sheet_title | escape }}</b><button type="button" data-ab-sheet-close aria-label="Close">×</button></div>
+      {%- render 'ab-image', image: section.settings.label_image, fallback: 'ab-slide-06.jpg', size: 1060, w: 786, h: 786, alt: section.settings.sheet_title -%}
+      <p>{{ section.settings.sheet_caption | newline_to_br }}</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "AB test: hero and buy box",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating text"
+    },
+    {
+      "type": "image_picker",
+      "id": "face_1",
+      "label": "Customer photo 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "face_2",
+      "label": "Customer photo 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "face_3",
+      "label": "Customer photo 3"
+    },
+    {
+      "type": "text",
+      "id": "label_link",
+      "label": "Nutrition label link"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "bullet_1",
+      "label": "Bullet 1"
+    },
+    {
+      "type": "text",
+      "id": "bullet_2",
+      "label": "Bullet 2"
+    },
+    {
+      "type": "text",
+      "id": "bullet_3",
+      "label": "Bullet 3"
+    },
+    {
+      "type": "text",
+      "id": "bullet_4",
+      "label": "Bullet 4"
+    },
+    {
+      "type": "text",
+      "id": "base_heading",
+      "label": "Base heading"
+    },
+    {
+      "type": "text",
+      "id": "base_title",
+      "label": "Base card title"
+    },
+    {
+      "type": "text",
+      "id": "base_subtitle",
+      "label": "Base card subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "pack_1",
+      "label": "Bundle image: 1 bag"
+    },
+    {
+      "type": "image_picker",
+      "id": "pack_2",
+      "label": "Bundle image: 3 bags"
+    },
+    {
+      "type": "image_picker",
+      "id": "pack_3",
+      "label": "Bundle image: 5 bags"
+    },
+    {
+      "type": "text",
+      "id": "trust_line",
+      "label": "Line under Add To Cart"
+    },
+    {
+      "type": "text",
+      "id": "sheet_title",
+      "label": "Nutrition sheet title"
+    },
+    {
+      "type": "image_picker",
+      "id": "label_image",
+      "label": "Nutrition label image"
+    },
+    {
+      "type": "textarea",
+      "id": "sheet_caption",
+      "label": "Nutrition sheet caption"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Message"
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "name": "Gallery slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Image description"
+        }
+      ]
+    },
+    {
+      "type": "strip_review",
+      "name": "Review strip card",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Name"
+        }
+      ]
+    },
+    {
+      "type": "payment_icons",
+      "name": "Payment icons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "custom_payment_icons",
+          "label": "Payment icons"
+        },
+        {
+          "type": "text",
+          "id": "alignment",
+          "label": "Alignment",
+          "default": "center"
+        },
+        {
+          "type": "number",
+          "id": "icon_height",
+          "label": "Icon height",
+          "default": 22
+        },
+        {
+          "type": "number",
+          "id": "icon_spacing",
+          "label": "Icon spacing",
+          "default": 10
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

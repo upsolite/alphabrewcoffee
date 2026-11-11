@@ -1,0 +1,68 @@
+<div class="ab-sec">
+  <section class="ab-how">
+    <h2 class="ab-h ab-h--32">{{ section.settings.heading | escape }}{% if section.settings.heading_accent != blank %} <em>{{ section.settings.heading_accent | escape }}</em>{% endif %}</h2>
+    {%- render 'ab-image', image: section.settings.image, fallback: 'ab-pour.jpg', size: 800, w: 722, h: 600, alt: section.settings.image_alt, class: 'ab-how__photo' -%}
+    <ol class="ab-how__steps">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}><span class="ab-how__n{% if forloop.first %} is-first{% endif %}">{{ forloop.index }}</span><div><small>STEP {{ forloop.index }}</small><b>{{ block.settings.title | escape }}</b><p>{{ block.settings.text | escape }}</p></div></li>
+      {%- endfor -%}
+    </ol>
+    <button type="button" class="ab-block-btn" style="border-radius: 10px !important;" data-ab-scroll="[data-ab-cards]">{{ section.settings.button_label | escape }}</button>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "AB test: how to use",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Photo"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Photo description"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AB test: how to use"
+    }
+  ]
+}
+{% endschema %}

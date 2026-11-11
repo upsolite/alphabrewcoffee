@@ -1,0 +1,146 @@
+<div class="ab-sec">
+  <section class="ab-rev" id="ab-reviews">
+    <div class="ab-rev__summary">
+      <h2>{{ section.settings.heading | escape }}</h2>
+      <span class="ab-rev__stars">{%- for i in (1..5) -%}<img src="{{ 'ab-star.svg' | asset_url }}" alt="" width="20" height="20">{%- endfor -%}</span>
+      <b>{{ section.settings.score | escape }}</b>
+      <small>{{ section.settings.ratings_text | escape }}</small>
+    </div>
+    <div class="ab-rev__chips" role="group" aria-label="Filter reviews by topic">
+      <button type="button" class="ab-chip is-active" style="border-radius: 100px !important;" data-ab-chip="all">All</button>
+      <button type="button" class="ab-chip" style="border-radius: 100px !important;" data-ab-chip="energy">Energy</button>
+      <button type="button" class="ab-chip" style="border-radius: 100px !important;" data-ab-chip="bedroom">Bedroom</button>
+      <button type="button" class="ab-chip" style="border-radius: 100px !important;" data-ab-chip="taste">Taste</button>
+      <button type="button" class="ab-chip" style="border-radius: 100px !important;" data-ab-chip="routine">Routine</button>
+    </div>
+    {%- capture rstars -%}<span class="ab-rev__rs">{%- for i in (1..5) -%}<img src="{{ 'ab-star.svg' | asset_url }}" alt="" width="14" height="14">{%- endfor -%}</span>{%- endcapture -%}
+    {%- for block in section.blocks -%}
+      {%- liquid
+  assign fallback = ''
+  if block.id contains 'ab_'
+    assign fallback = block.id | replace: '_', '-' | append: '.jpg'
+  endif
+-%}
+      {%- liquid
+        assign tag_keys = ''
+        assign tag_text = ''
+        if block.settings.tag_energy
+          assign tag_keys = tag_keys | append: 'energy '
+          assign tag_text = tag_text | append: 'ENERGY · '
+        endif
+        if block.settings.tag_bedroom
+          assign tag_keys = tag_keys | append: 'bedroom '
+          assign tag_text = tag_text | append: 'BEDROOM · '
+        endif
+        if block.settings.tag_taste
+          assign tag_keys = tag_keys | append: 'taste '
+          assign tag_text = tag_text | append: 'TASTE · '
+        endif
+        if block.settings.tag_routine
+          assign tag_keys = tag_keys | append: 'routine '
+          assign tag_text = tag_text | append: 'ROUTINE · '
+        endif
+        assign tag_text = tag_text | strip | remove_last: ' ·'
+      -%}
+      <article class="ab-review" data-ab-tags="{{ tag_keys | strip }}" {{ block.shopify_attributes }}>
+        <header><b>{{ block.settings.name | escape }}</b><span class="ab-verified">{{ section.settings.verified_label | escape }}</span><small>{{ block.settings.date | escape }}</small></header>
+        {{ rstars }}
+        {%- if tag_text != blank -%}<span class="ab-tag">{{ tag_text }}</span>{%- endif -%}
+        {%- assign review_alt = 'Photo from ' | append: block.settings.name -%}
+        {%- render 'ab-image', image: block.settings.image, fallback: fallback, size: 400, w: 200, h: 200, alt: review_alt, class: 'ab-review__img' -%}
+        <p>{{ block.settings.text | escape }}</p>
+      </article>
+    {%- endfor -%}
+    <p class="ab-note">{{ section.settings.footnote | escape }}</p>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "AB test: reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "score",
+      "label": "Score"
+    },
+    {
+      "type": "text",
+      "id": "ratings_text",
+      "label": "Ratings text"
+    },
+    {
+      "type": "text",
+      "id": "verified_label",
+      "label": "Verified label"
+    },
+    {
+      "type": "text",
+      "id": "footnote",
+      "label": "Footnote"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name and age"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date line"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo (optional)"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review"
+        },
+        {
+          "type": "checkbox",
+          "id": "tag_energy",
+          "label": "Topic: Energy",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "tag_bedroom",
+          "label": "Topic: Bedroom",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "tag_taste",
+          "label": "Topic: Taste",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "tag_routine",
+          "label": "Topic: Routine",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AB test: reviews"
+    }
+  ]
+}
+{% endschema %}

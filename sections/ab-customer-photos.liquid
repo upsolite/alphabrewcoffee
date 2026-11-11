@@ -1,0 +1,82 @@
+<div class="ab-sec">
+  <section class="ab-photos">
+    <div class="ab-photos__head">
+      <span class="ab-photos__stars">{%- for i in (1..5) -%}<img src="{{ 'ab-star.svg' | asset_url }}" alt="" width="26" height="26">{%- endfor -%}</span>
+      <h2 class="ab-h ab-h--30">{{ section.settings.heading | escape }}{% if section.settings.heading_accent != blank %} <em>{{ section.settings.heading_accent | escape }}</em>{% endif %}</h2>
+    </div>
+    <div class="ab-carousel" data-ab-carousel>
+      {%- for block in section.blocks -%}
+        {%- liquid
+  assign fallback = ''
+  if block.id contains 'ab_'
+    assign fallback = block.id | replace: '_', '-' | append: '.jpg'
+  endif
+-%}
+        <figure class="ab-photo" {{ block.shopify_attributes }}>
+          {%- assign photo_alt = block.settings.name | append: ' holding Alpha Brew' -%}
+          {%- render 'ab-image', image: block.settings.image, fallback: fallback, size: 600, w: 600, h: 760, alt: photo_alt -%}
+          <blockquote>{{ block.settings.quote | escape }}</blockquote>
+          <figcaption><b>{{ block.settings.name | escape }}</b><span>{{ block.settings.badge | escape }}</span></figcaption>
+        </figure>
+      {%- endfor -%}
+    </div>
+    <div class="ab-dots" data-ab-dots></div>
+    <p class="ab-note">{{ section.settings.footnote | escape }}</p>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "AB test: customer photos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent"
+    },
+    {
+      "type": "text",
+      "id": "footnote",
+      "label": "Footnote"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "Customer photo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name and age"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AB test: customer photos"
+    }
+  ]
+}
+{% endschema %}

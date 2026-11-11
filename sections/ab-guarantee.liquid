@@ -1,0 +1,50 @@
+<div class="ab-sec">
+  <section class="ab-guar">
+    <span class="ab-guar__seal">
+      <img src="{{ 'ab-seal-1.svg' | asset_url }}" alt="" width="96" height="96">
+      <img class="ab-guar__core" src="{{ 'ab-seal-2.svg' | asset_url }}" alt="" width="74" height="74">
+      <span class="ab-guar__txt"><b>90</b><small>DAY</small></span>
+    </span>
+    <h2 class="ab-h ab-h--30 ab-h--light">{{ section.settings.heading | escape }}{% if section.settings.heading_accent != blank %} <em>{{ section.settings.heading_accent | escape }}</em>{% endif %}</h2>
+    <p class="ab-guar__copy">{{ section.settings.copy | escape }}</p>
+    <button type="button" class="ab-cta" data-ab-scroll="[data-ab-cards]"><b>{{ section.settings.button_label | escape }}</b><small>{{ section.settings.button_sub | escape }}</small></button>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "AB test: guarantee",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "text",
+      "id": "button_sub",
+      "label": "Button small text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "AB test: guarantee"
+    }
+  ]
+}
+{% endschema %}

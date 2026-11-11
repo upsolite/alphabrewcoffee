@@ -1,0 +1,61 @@
+{% comment %}
+  A/B test: FAQ cards. Questions and answers are editable blocks.
+{% endcomment %}
+
+<div class="ab-sec">
+  <section class="ab-faq" id="ab-faq">
+    <h2 class="ab-h ab-h--30">{{ section.settings.heading | escape }}{% if section.settings.heading_accent != blank %} <em>{{ section.settings.heading_accent | escape }}</em>{% endif %}</h2>
+    <div class="ab-faq__list" data-ab-faq>
+      {%- for block in section.blocks -%}
+        <div class="ab-faq__item" {{ block.shopify_attributes }}>
+          <button type="button" class="ab-faq__q" aria-expanded="false">
+            <span>{{ block.settings.question | escape }}</span>
+            <i aria-hidden="true">+</i>
+          </button>
+          <div class="ab-faq__a"><div class="ab-faq__a-inner">{{ block.settings.answer }}</div></div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "AB test: FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AB test: FAQ"
+    }
+  ]
+}
+{% endschema %}

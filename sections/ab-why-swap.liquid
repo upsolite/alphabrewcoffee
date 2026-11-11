@@ -1,0 +1,72 @@
+<div class="ab-sec">
+  <section class="ab-why">
+    <h2 class="ab-h ab-h--28 ab-h--light">{{ section.settings.heading | escape }}{% if section.settings.heading_accent != blank %} <em>{{ section.settings.heading_accent | escape }}</em>{% endif %}</h2>
+    <div class="ab-carousel ab-carousel--why" data-ab-carousel>
+      {%- for block in section.blocks -%}
+        {%- liquid
+  assign fallback = ''
+  if block.id contains 'ab_'
+    assign fallback = block.id | replace: '_', '-' | append: '.jpg'
+  endif
+-%}
+        <article class="ab-why__card" {{ block.shopify_attributes }}>
+          {%- render 'ab-image', image: block.settings.image, fallback: fallback, size: 640, w: 636, h: 476, alt: '' -%}
+          <div><h3>{{ block.settings.title | escape }}</h3><p>{{ block.settings.text | escape }}</p></div>
+        </article>
+      {%- endfor -%}
+    </div>
+    <div class="ab-dots ab-dots--dark" data-ab-dots></div>
+    <p class="ab-note ab-note--dark">{{ section.settings.disclaimer | escape }}</p>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "AB test: why swap",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent"
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Disclaimer"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AB test: why swap"
+    }
+  ]
+}
+{% endschema %}
