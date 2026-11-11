@@ -57,6 +57,10 @@
     color: #b98141;
 }
 
+.ab-sec .ab-h--break em {
+    display: block;
+}
+
 .ab-sec .ab-h--30 {
     font-size: 30px !important;
     line-height: 1.08 !important;
@@ -213,7 +217,8 @@
 
 .ab-ing__copy {
     font-size: 14.5px;
-    font-weight: 600;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
     line-height: 1.35;
     color: #fff;
 }
@@ -364,7 +369,7 @@
 
 .ab-dots i.is-active {
     width: 22px;
-    background: #b98141;
+    background: #F1E5C2;
 }
 .ab-photos .ab-dots i.is-active {
     background-color: #1D1D1D;
@@ -374,7 +379,7 @@
 }
 
 .ab-dots--dark i.is-active {
-    background: #b98141;
+    background: #F1E5C2;
 }
 
 /* Customer photos */
@@ -672,6 +677,7 @@
     font-weight: 600;
     line-height: 1.35;
     padding-left: 0;
+    font-style: normal;
 }
 
 .ab-taste__cols small {

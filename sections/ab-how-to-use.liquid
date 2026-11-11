@@ -1,6 +1,6 @@
 <div class="ab-sec">
   <section class="ab-how">
-    <h2 class="ab-h ab-h--32">{{ section.settings.heading | escape }}{% if section.settings.heading_accent != blank %} <em>{{ section.settings.heading_accent | escape }}</em>{% endif %}</h2>
+    <h2 class="ab-h ab-h--32{% if section.settings.heading_break %} ab-h--break{% endif %}">{{ section.settings.heading | escape }}{% if section.settings.heading_accent != blank %} <em>{{ section.settings.heading_accent | escape }}</em>{% endif %}</h2>
     {%- render 'ab-image', image: section.settings.image, fallback: 'ab-pour.jpg', size: 800, w: 722, h: 600, alt: section.settings.image_alt, class: 'ab-how__photo' -%}
     <ol class="ab-how__steps">
       {%- for block in section.blocks -%}
@@ -24,6 +24,12 @@
       "type": "text",
       "id": "heading_accent",
       "label": "Heading accent"
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_break",
+      "label": "Break accent onto a new line",
+      "default": false
     },
     {
       "type": "image_picker",

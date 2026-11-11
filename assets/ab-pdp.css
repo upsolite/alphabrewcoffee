@@ -563,8 +563,12 @@ html body .ab-pdp button.ab-thumb {
     letter-spacing: normal;
 }
 
+.ab-ship span {
+    font-weight: 600;
+}
+
 .ab-ship b {
-    font-weight: 700;
+    font-weight: 700 !important;
     color: #1d1d1d;
 }
 
@@ -948,10 +952,10 @@ html body .ab-pdp button.ab-thumb {
 
 .ab-tabs .ab-tabs__h {
     margin: 0 0;
-    font-size: 24px !important;
+    font-size: 28px !important;
     font-weight: 700 !important;
     line-height: 1.1;
-    letter-spacing: -.28px;
+    letter-spacing: -1%;
     color: #fff !important;
 }
 

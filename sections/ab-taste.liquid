@@ -1,6 +1,6 @@
 <div class="ab-sec">
   <section class="ab-taste">
-    <h2 class="ab-h ab-h--32">{% render 'ab-swap', text: section.settings.heading, text_nc: section.settings.heading_nc %}{% if section.settings.heading_accent != blank %} <em>{% render 'ab-swap', text: section.settings.heading_accent, text_nc: section.settings.heading_accent_nc %}</em>{% endif %}</h2>
+    <h2 class="ab-h ab-h--32{% if section.settings.heading_break %} ab-h--break{% endif %}">{% render 'ab-swap', text: section.settings.heading, text_nc: section.settings.heading_nc %}{% if section.settings.heading_accent != blank %} <em>{% render 'ab-swap', text: section.settings.heading_accent, text_nc: section.settings.heading_accent_nc %}</em>{% endif %}</h2>
     {%- render 'ab-image', image: section.settings.image, fallback: 'ab-hot-iced.jpg', size: 700, w: 642, h: 600, alt: section.settings.image_alt, class: 'ab-taste__img ab-caf-only' -%}
     {%- render 'ab-image', image: section.settings.image_nc, fallback: 'ab-nc-bag.jpg', size: 700, w: 642, h: 600, alt: section.settings.image_alt, class: 'ab-taste__img ab-nc-only' -%}
     <div class="ab-taste__cols">
@@ -36,6 +36,12 @@
       "type": "text",
       "id": "heading_accent",
       "label": "Heading accent"
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_break",
+      "label": "Break accent onto a new line",
+      "default": false
     },
     {
       "type": "image_picker",
