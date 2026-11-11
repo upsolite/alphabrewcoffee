@@ -301,8 +301,8 @@
     </div>
 
     <button type="button" class="ab-mode" data-ab-mode>
-      <span class="ab-sub"><span aria-hidden="true">→</span> <u>Try it Once - No Autoship (<span data-ab-one-price></span>)</u></span>
-      <span class="ab-one"><span aria-hidden="true">←</span> <u>Back to Subscribe &amp; Save (save up to 67%)</u></span>
+      <span class="ab-sub">{% render 'ab-arrow', dir: 'right' %}<u>Try it Once - No Autoship (<span data-ab-one-price></span>)</u></span>
+      <span class="ab-one">{% render 'ab-arrow', dir: 'left' %}<u>Back to Subscribe &amp; Save (save up to 67%)</u></span>
     </button>
 
     <div class="ab-ship">

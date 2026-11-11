@@ -31,7 +31,7 @@
         <div class="ab-qa" {{ block.shopify_attributes }}><h3>{{ block.settings.question | escape }}</h3><p>{{ block.settings.answer | escape }}</p></div>
       {%- endif -%}
     {%- endfor -%}
-    <button type="button" class="ab-tabs__more" data-ab-scroll="#ab-faq">{{ section.settings.faq_link | escape }}</button>
+    <button type="button" class="ab-tabs__more" data-ab-scroll="#ab-faq">{{ section.settings.faq_link | remove: '↓' | strip | escape }}{% render 'ab-arrow', dir: 'down' %}</button>
   </div>
 
   <div class="ab-tabs__panel" role="tabpanel" data-ab-panel="reviews" hidden>
@@ -42,7 +42,7 @@
         <div class="ab-quote" {{ block.shopify_attributes }}><span>★★★★★</span><p>{{ block.settings.text | escape }}</p><small>{{ block.settings.byline | escape }}</small></div>
       {%- endif -%}
     {%- endfor -%}
-    <button type="button" class="ab-tabs__more" data-ab-scroll="#ab-reviews">{{ section.settings.reviews_link | escape }}</button>
+    <button type="button" class="ab-tabs__more" data-ab-scroll="#ab-reviews">{{ section.settings.reviews_link | remove: '↓' | strip | escape }}{% render 'ab-arrow', dir: 'down' %}</button>
   </div>
 </div>
 

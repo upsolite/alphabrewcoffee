@@ -80,7 +80,22 @@ html body .ab-pdp button.ab-thumb {
 }
 
 .ab-pdp.is-onetime .ab-one {
-    display: inline;
+    display: inline-flex;
+}
+
+/* Arrow + text: Figma gap 5px */
+.ab-mode .ab-sub, .ab-mode .ab-one {
+    align-items: center;
+    gap: 5px;
+}
+
+.ab-pdp:not(.is-onetime) .ab-mode .ab-sub {
+    display: inline-flex;
+}
+
+.ab-arrow {
+    flex: none;
+    display: inline-block;
 }
 
 .ab-pdp.is-onetime .ab-sub {
@@ -778,8 +793,9 @@ html body .ab-pdp button.ab-thumb {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 16px;
-    font-size: 14px;
+    padding: max(12px, env(safe-area-inset-top)) 8px 0 20px;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .ab-lb button {
@@ -792,6 +808,10 @@ html body .ab-pdp button.ab-thumb {
     min-height: 44px;
     font-size: 26px;
     box-shadow: none;
+}
+
+.ab-lb [data-x] {
+    font-size: 20px;
 }
 
 .ab-lb__stage {
@@ -811,25 +831,44 @@ html body .ab-pdp button.ab-thumb {
     transition: transform .2s;
 }
 
-.ab-lb__prev, .ab-lb__next {
+/* Figma State 11: 30px dark circles, 12px from the edges, centred on the slide */
+.ab-lb .ab-lb__prev, .ab-lb .ab-lb__next {
     position: absolute;
     top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    min-width: 0;
+    min-height: 0;
+    padding: 0 0 3px;
+    border-radius: 50% !important;
+    background: rgba(0, 0, 0, .55);
+    font-size: 22px;
+    line-height: 1;
     transform: translateY(-50%);
 }
 
 .ab-lb__prev {
-    left: 4px;
+    left: 12px;
 }
 
 .ab-lb__next {
-    right: 4px;
+    right: 12px;
 }
 
 .ab-lb__thumbs {
+    position: relative;
     display: flex;
-    gap: 8px;
+    gap: 6px;
     overflow-x: auto;
-    padding: 12px 16px 20px;
+    padding: 0 16px;
+    scrollbar-width: none;
+}
+
+.ab-lb__thumbs::-webkit-scrollbar {
+    display: none;
 }
 
 .ab-lb__thumbs img {
@@ -837,8 +876,18 @@ html body .ab-pdp button.ab-thumb {
     width: 48px;
     height: 48px;
     border: 1px solid #555;
-    border-radius: 6px;
+    border-radius: 4px;
     object-fit: cover;
+    cursor: pointer;
+}
+
+.ab-lb__hint {
+    margin: 0;
+    padding: 22px 16px max(24px, env(safe-area-inset-bottom));
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: rgba(255, 255, 255, .7);
 }
 
 .ab-lb__thumbs img.is-active {
@@ -1044,13 +1093,20 @@ html body .ab-pdp button.ab-thumb {
     color: #666;
 }
 
+/* Figma: Geist SemiBold 14px, one underline running under the text and the arrow */
 .ab-tabs button.ab-tabs__more {
     align-self: flex-start;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 18px;
-    color: #fff;
-    text-decoration: underline;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 1px;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 16px;
+    white-space: nowrap;
+    color: #fff !important;
+    text-decoration: none;
+    background: linear-gradient(currentColor, currentColor) left bottom / 100% 1.5px no-repeat;
 }
 
 /* "Subscribe & Save" row with the stock note on the right */

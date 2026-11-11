@@ -322,7 +322,7 @@
 
 .ab-how__steps b {
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 800 !important;
     line-height: 1.1;
     letter-spacing: -.44px;
 }
@@ -366,7 +366,9 @@
     width: 22px;
     background: #b98141;
 }
-
+.ab-photos .ab-dots i.is-active {
+    background-color: #1D1D1D;
+}
 .ab-dots--dark i {
     background: #5c5c5c;
 }
@@ -429,6 +431,7 @@
     padding-top: 8px;
     border-top: 1px solid #cfc2a6;
     font-size: 14px;
+    justify-content: space-between;
 }
 
 .ab-photo figcaption span {
@@ -660,7 +663,10 @@
     line-height: 1.4;
     color: #4d4d4d;
 }
-
+.ab-sec .ab-taste .ab-caf-only,
+.ab-sec .ab-taste .ab-nc-only {
+    display: block;
+}
 .ab-taste__cols blockquote {
     font-size: 13px;
     font-weight: 600;

@@ -51,9 +51,10 @@
     lb.className = 'ab-lb';
     lb.setAttribute('role', 'dialog');
     lb.setAttribute('aria-modal', 'true');
-    lb.innerHTML = '<div class="ab-lb__top"><span data-c></span><button type="button" data-x aria-label="Close">×</button></div>' +
+    lb.innerHTML = '<div class="ab-lb__top"><span data-c></span><button type="button" data-x aria-label="Close">✕</button></div>' +
       '<div class="ab-lb__stage"><img alt=""><button type="button" class="ab-lb__prev" aria-label="Previous">‹</button><button type="button" class="ab-lb__next" aria-label="Next">›</button></div>' +
-      '<div class="ab-lb__thumbs"></div>';
+      '<div class="ab-lb__thumbs"></div>' +
+      '<p class="ab-lb__hint">Pinch or double-tap to zoom · swipe down to close</p>';
     var img = lb.querySelector('.ab-lb__stage img');
     var row = lb.querySelector('.ab-lb__thumbs');
     var count = lb.querySelector('[data-c]');
@@ -71,6 +72,8 @@
       img.src = srcs[n];
       count.textContent = (n + 1) + ' / ' + srcs.length;
       Array.prototype.forEach.call(row.children, function (t, j) { t.classList.toggle('is-active', j === n); });
+      var t = row.children[n];
+      if (t) row.scrollTo({ left: t.offsetLeft - (row.clientWidth - t.offsetWidth) / 2, behavior: 'smooth' });
     }
     function close() {
       lb.remove();

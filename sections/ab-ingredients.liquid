@@ -1,6 +1,6 @@
 <div class="ab-sec">
   <section class="ab-ing">
-    <h2 class="ab-h ab-h--30">{{ section.settings.heading | escape }}{% if section.settings.heading_accent != blank %} {{ section.settings.heading_accent | escape }}{% endif %}</h2>
+    <h2 class="ab-h ab-h--30">{{ section.settings.heading | escape }}{% if section.settings.heading_accent != blank %} <em>{{ section.settings.heading_accent | escape }}</em>{% endif %}</h2>
     <p class="ab-sub-copy">{{ section.settings.subtext | escape }}</p>
     <div class="ab-ing__list" data-ab-ing>
       {%- for block in section.blocks -%}
