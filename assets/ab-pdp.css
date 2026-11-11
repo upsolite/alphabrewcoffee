@@ -1113,6 +1113,10 @@ html body .ab-pdp button.ab-thumb {
     background: linear-gradient(currentColor, currentColor) left bottom / 100% 1.5px no-repeat;
 }
 
+body[data-apply-button-radius-to-all=true] button:not([class*=shopify]):not([class*=tab-button]).ab-tabs__more {
+    border-radius: 0 !important;
+}
+
 /* "Subscribe & Save" row with the stock note on the right */
 .ab-pdp .ab-plan-row {
     display: flex;
