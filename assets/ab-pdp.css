@@ -22,10 +22,13 @@ body > kaching-bundle, kaching-bundles-sticky-atc {
     font-family: var(--font-body-family, Geist, sans-serif);
     box-sizing: border-box;
 }
+.ab-pdp, .ab-tabs {
+    letter-spacing: normal;
+}
 
 .ab-pdp *, .ab-tabs * {
     box-sizing: border-box;
-    letter-spacing: normal;
+    letter-spacing: inherit;
 }
 
 .ab-pdp button, .ab-tabs button {
@@ -963,11 +966,29 @@ html body .ab-pdp button.ab-thumb {
 
 .ab-step ul {
     margin: 0;
-    padding-left: 50px;
+    padding-left: 59px;
+    list-style: none;
     font-size: 14px;
     line-height: 19.6px;
-    letter-spacing: -.5px;
+    letter-spacing: -1px;
     color: #fff;
+}
+
+.ab-step li {
+    position: relative;
+    margin: 0;
+}
+
+/* Dot sits on the icon's centre line, as in Figma */
+.ab-step li::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: -41px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
 }
 
 .ab-tabs .ab-qa h3 {
