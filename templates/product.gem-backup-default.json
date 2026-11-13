@@ -91,7 +91,7 @@
             "table_row_5_col_3": "",
             "table_row_5_col_4": "",
             "table_row_5_col_5": "",
-            "size_chart_image": "shopify:\/\/shop_images\/CB693358-A73C-444B-9816-4A4B1097BE7A.jpg",
+            "size_chart_image": "shopify://shop_images/CB693358-A73C-444B-9816-4A4B1097BE7A.jpg",
             "custom_content": "",
             "margin_top": 8,
             "margin_bottom": 16
@@ -100,15 +100,15 @@
         "custom_text_L4tTeC": {
           "type": "custom_text",
           "settings": {
-            "text": "<p>⚛︎ <strong>Science Backed Ingredients  <\/strong><\/p>",
+            "text": "<p>⚛︎ <strong>Science Backed Ingredients  </strong></p>",
             "show_description": true,
-            "description": "<p>Developed from the most up- date research  findings. Proven Ingredients <\/p>",
+            "description": "<p>Developed from the most up- date research  findings. Proven Ingredients </p>",
             "description_font_size": 15,
             "description_spacing": 6,
             "description_color": "#1d1d1d",
             "description_opacity": 0.8,
             "show_icon": false,
-            "custom_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 16 16\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" fill=\"currentColor\" class=\"bi bi-stars\"><path d=\"M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z\"><\/path><\/svg>",
+            "custom_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" class=\"bi bi-stars\"><path d=\"M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z\"></path></svg>",
             "icon_color": "#333333",
             "icon_size": 20,
             "icon_spacing": 8,
@@ -140,7 +140,7 @@
           "settings": {
             "star_color": "#b98141",
             "empty_star_color": "#e0e0e0",
-            "rating_text_content": "<p>Rated <strong>4.7<\/strong> (<em>137<\/em>)<\/p>",
+            "rating_text_content": "<p>Rated <strong>4.7</strong> (<em>137</em>)</p>",
             "rating_text_color": "#000000",
             "satisfaction_text": "Happy Customers",
             "satisfaction_text_color": "#1d1d1d",
@@ -166,15 +166,15 @@
           "name": "Top Badge (Custom Text)",
           "disabled": true,
           "settings": {
-            "text": "<p><strong>New Product Release<\/strong><\/p>",
+            "text": "<p><strong>New Product Release</strong></p>",
             "show_description": true,
-            "description": "<p>Developed from the most up-to-date research findings.<br\/>Undergone Independent Lab Testing.<\/p>",
+            "description": "<p>Developed from the most up-to-date research findings.<br/>Undergone Independent Lab Testing.</p>",
             "description_font_size": 14,
             "description_spacing": 4,
             "description_color": "#002106",
             "description_opacity": 0.5,
             "show_icon": true,
-            "custom_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M12 12V12.0099M8.71136 6.30454C8.26263 7.92073 7.99964 9.88359 7.99964 12C7.99964 12.7739 8.03481 13.5273 8.10136 14.2507M8.71136 6.30454C9.43362 3.70324 10.6371 2 11.9996 2C13.3622 2 14.5656 3.70322 15.2879 6.30451M8.71136 6.30454C6.09744 5.62938 4.02067 5.81998 3.33938 7C2.6581 8.18001 3.5314 10.0738 5.42303 11.9999M8.71136 6.30454C9.74152 6.57063 10.8551 6.97118 11.9996 7.49862M18.5761 11.9999C17.4008 10.8033 15.8325 9.59409 13.9996 8.5359C13.3294 8.14893 12.6594 7.80269 11.9996 7.49862M18.5761 11.9999C20.4678 13.9261 21.3412 15.82 20.6599 17C19.9786 18.18 17.9018 18.3706 15.2879 17.6955M18.5761 11.9999C17.8306 12.759 16.9269 13.5232 15.8979 14.2506M18.5761 11.9999C20.4678 10.0738 21.3411 8.18 20.6598 6.99999C19.9785 5.81998 17.9018 5.62937 15.2879 6.30451M8.71136 17.6954C6.09739 18.3706 4.02058 18.18 3.33929 17C2.65799 15.82 3.53134 13.9261 5.42303 11.9999M8.71136 17.6954C10.3354 17.2759 12.1667 16.5223 13.9995 15.4641C14.6698 15.0771 15.3047 14.67 15.8979 14.2506M8.71136 17.6954C9.43361 20.2967 10.6371 22 11.9996 22C13.3622 22 14.5657 20.2968 15.2879 17.6955M8.71136 17.6954C8.42672 16.6702 8.21681 15.5056 8.10136 14.2507M15.2879 6.30451C14.2577 6.57059 13.1441 6.97116 11.9996 7.49862M15.8979 14.2506C15.7825 15.5055 15.5726 16.6702 15.2879 17.6955M5.42303 11.9999C6.16857 12.7591 7.07229 13.5232 8.10136 14.2507\" stroke=\"#506D52\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "custom_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12 12V12.0099M8.71136 6.30454C8.26263 7.92073 7.99964 9.88359 7.99964 12C7.99964 12.7739 8.03481 13.5273 8.10136 14.2507M8.71136 6.30454C9.43362 3.70324 10.6371 2 11.9996 2C13.3622 2 14.5656 3.70322 15.2879 6.30451M8.71136 6.30454C6.09744 5.62938 4.02067 5.81998 3.33938 7C2.6581 8.18001 3.5314 10.0738 5.42303 11.9999M8.71136 6.30454C9.74152 6.57063 10.8551 6.97118 11.9996 7.49862M18.5761 11.9999C17.4008 10.8033 15.8325 9.59409 13.9996 8.5359C13.3294 8.14893 12.6594 7.80269 11.9996 7.49862M18.5761 11.9999C20.4678 13.9261 21.3412 15.82 20.6599 17C19.9786 18.18 17.9018 18.3706 15.2879 17.6955M18.5761 11.9999C17.8306 12.759 16.9269 13.5232 15.8979 14.2506M18.5761 11.9999C20.4678 10.0738 21.3411 8.18 20.6598 6.99999C19.9785 5.81998 17.9018 5.62937 15.2879 6.30451M8.71136 17.6954C6.09739 18.3706 4.02058 18.18 3.33929 17C2.65799 15.82 3.53134 13.9261 5.42303 11.9999M8.71136 17.6954C10.3354 17.2759 12.1667 16.5223 13.9995 15.4641C14.6698 15.0771 15.3047 14.67 15.8979 14.2506M8.71136 17.6954C9.43361 20.2967 10.6371 22 11.9996 22C13.3622 22 14.5657 20.2968 15.2879 17.6955M8.71136 17.6954C8.42672 16.6702 8.21681 15.5056 8.10136 14.2507M15.2879 6.30451C14.2577 6.57059 13.1441 6.97116 11.9996 7.49862M15.8979 14.2506C15.7825 15.5055 15.5726 16.6702 15.2879 17.6955M5.42303 11.9999C6.16857 12.7591 7.07229 13.5232 8.10136 14.2507\" stroke=\"#506D52\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
             "icon_color": "rgba(0,0,0,0)",
             "icon_size": 20,
             "icon_spacing": 8,
@@ -232,22 +232,22 @@
           "settings": {
             "benefit_1_text": "Satisfy Her Fully",
             "benefit_1_use_image": true,
-            "benefit_1_image": "shopify:\/\/shop_images\/4_61e75d1b-4cf9-4658-bb4b-477d2d1a9296.png",
+            "benefit_1_image": "shopify://shop_images/4_61e75d1b-4cf9-4658-bb4b-477d2d1a9296.png",
             "benefit_1_use_custom_icon": false,
             "benefit_1_custom_icon": "",
             "benefit_2_text": "Last Longer",
             "benefit_2_use_image": false,
-            "benefit_2_image": "shopify:\/\/shop_images\/Untitled_design_3_e3848075-e54f-4f3f-8b2d-92ec9b5fc88f.png",
+            "benefit_2_image": "shopify://shop_images/Untitled_design_3_e3848075-e54f-4f3f-8b2d-92ec9b5fc88f.png",
             "benefit_2_use_custom_icon": false,
             "benefit_2_custom_icon": "",
             "benefit_3_text": "Feel Stronger",
             "benefit_3_use_image": true,
-            "benefit_3_image": "shopify:\/\/shop_images\/8_346206ae-9457-488c-9f57-209178b5c31e.png",
+            "benefit_3_image": "shopify://shop_images/8_346206ae-9457-488c-9f57-209178b5c31e.png",
             "benefit_3_use_custom_icon": false,
             "benefit_3_custom_icon": "",
             "benefit_4_text": "Clinically Proven Results",
             "benefit_4_use_image": false,
-            "benefit_4_image": "shopify:\/\/shop_images\/Untitled_design_3_copy_6.png",
+            "benefit_4_image": "shopify://shop_images/Untitled_design_3_copy_6.png",
             "benefit_4_use_custom_icon": false,
             "benefit_4_custom_icon": "",
             "icon_bg_color": "#f1e5c2",
@@ -366,21 +366,21 @@
             "title_uppercase_option_1": false,
             "option_1_title": "BUY 1",
             "option_1_quantity": 1,
-            "option_1_image": "shopify:\/\/shop_images\/2_copy_2_76cebffe-a68f-4291-8824-978e16bfdea8.png",
+            "option_1_image": "shopify://shop_images/2_copy_2_76cebffe-a68f-4291-8824-978e16bfdea8.png",
             "option_1_custom_price": "",
             "option_1_compare_at_price": "105",
             "show_option_2": true,
             "option_2_title": "BUY 2 GET 1 FREE",
             "option_2_quantity": 2,
             "option_2_price": "22",
-            "option_2_image": "shopify:\/\/shop_images\/unnamed.jpg",
+            "option_2_image": "shopify://shop_images/unnamed.jpg",
             "option_2_custom_price": "",
             "option_2_compare_at_price": "",
             "show_option_3": true,
             "option_3_title": "BUY 3 GET 2 FREE",
             "option_3_quantity": 5,
             "option_3_price": "",
-            "option_3_image": "shopify:\/\/shop_images\/Kaching-Bundles-Untitled_design_3.png",
+            "option_3_image": "shopify://shop_images/Kaching-Bundles-Untitled_design_3.png",
             "option_3_custom_price": "",
             "option_3_compare_at_price": "",
             "show_option_4": false,
@@ -465,14 +465,14 @@
           }
         },
         "kaching_bundles_app_block_LeH766": {
-          "type": "shopify:\/\/apps\/kaching-bundles\/blocks\/app-block\/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
           "settings": {
             "product": "heat-activated-testosterone-coffee",
             "manual_deal_block_id": ""
           }
         },
         "aftersell_by_rokt_pdp_upsells_hWetcE": {
-          "type": "shopify:\/\/apps\/rokt-aftersell\/blocks\/pdp-upsells\/509ec35d-0632-4dfc-a105-fa799cd9d149",
+          "type": "shopify://apps/aftersell/blocks/pdp-upsells/509ec35d-0632-4dfc-a105-fa799cd9d149",
           "settings": {}
         },
         "divider_wt4Jib": {
@@ -513,7 +513,7 @@
             "item_4_name": "Premium Metal Scoop",
             "item_4_price": "0.00",
             "item_4_compare_price": "19.00",
-            "item_5_name": "10 EUR \/ USD Giftcard",
+            "item_5_name": "10 EUR / USD Giftcard",
             "item_5_price": "0.00",
             "item_5_compare_price": "10.00",
             "item_6_name": "",
@@ -596,7 +596,7 @@
         "custom_liquid_EHyU6k": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"custom-shipping-container\">\n  <div class=\"custom-shipping-item\">\n    <svg class=\"green-circle\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"12\" height=\"13\" viewBox=\"0 0 12 13\" fill=\"none\">\n      <circle cx=\"6\" cy=\"6.5\" r=\"6\" fill=\"#137333\"\/>\n    <\/svg>\n    <div class=\"text-block-shipping\">Ships by <span id=\"shipping-date\" class=\"shipping-date\"><\/span><\/div>\n  <\/div>\n  <div class=\"custom-shipping-item flags-container\">\n    <img id=\"country-flag\" class=\"custom-icon\" src=\"\" alt=\"Country Flag\">\n    <div id=\"country-text\" class=\"shipping-worldwide\"><\/div>\n  <\/div>\n<\/div>\n\n<style>\n  .custom-shipping-container {\n    display: flex;\n    padding: 8px 16px;\n    justify-content: space-between;\n    align-items: center;\n    background-color: #f6f6f6;\n    border-radius: 20px;\n    margin-top: 10px;\n    width: 100%;\n    box-sizing: border-box;\n  }\n  .custom-shipping-item {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n  }\n  .text-block-shipping {\n    font-size: 12px;\n    color: #000;\n    white-space: nowrap;\n  }\n  .shipping-date {\n    font-weight: bold;\n  }\n  .shipping-worldwide {\n    font-size: 12px;\n    color: #000;\n    white-space: nowrap;\n  }\n  .shipping-worldwide .bold {\n    font-weight: bold;\n  }\n  .green-circle {\n    animation: fade 1s ease-in-out infinite;\n    flex-shrink: 0;\n  }\n  @keyframes fade {\n    0%, 100% { opacity: 1; }\n    50% { opacity: 0.5; }\n  }\n  .flags-container {\n    display: flex;\n    gap: 6px;\n    align-items: center;\n  }\n  .custom-icon {\n    width: 16px;\n    height: 12px;\n    flex-shrink: 0;\n  }\n  \n  @media (max-width: 768px) {\n    .custom-shipping-container {\n      padding: 6px 12px;\n    }\n    .text-block-shipping,\n    .shipping-worldwide {\n      font-size: 11px;\n    }\n  }\n<\/style>\n\n<script>\n  (function() {\n    function getNextWeekday(date) {\n      var day = date.getDay();\n      var daysToAdd = (day === 5) ? 3 : (day === 6) ? 2 : 1;\n      return new Date(date.setDate(date.getDate() + daysToAdd));\n    }\n    \n    var today = new Date();\n    var shipDate = getNextWeekday(today);\n    var options = { weekday: 'short', month: 'long', day: 'numeric' };\n    var formattedDate = shipDate.toLocaleDateString('en-US', options);\n    \n    var dateElement = document.getElementById('shipping-date');\n    if (dateElement) {\n      dateElement.textContent = formattedDate;\n    }\n    \n    \/\/ Fetch the visitor's country using an IP geolocation API\n    fetch('https:\/\/ipapi.co\/json\/')\n      .then(response => response.json())\n      .then(data => {\n        var countryCode = data.country_code;\n        var flagUrl = 'https:\/\/flagcdn.com\/w20\/' + countryCode.toLowerCase() + '.png';\n        \n        var flagElement = document.getElementById('country-flag');\n        var textElement = document.getElementById('country-text');\n        \n        if (flagElement) {\n          flagElement.src = flagUrl;\n        }\n        if (textElement) {\n          textElement.innerHTML = 'Fast <span class=\"bold\">' + countryCode + '<\/span> Shipping';\n        }\n      })\n      .catch(error => {\n        console.error('Error fetching the IP information:', error);\n        \/\/ Fallback to US\n        var flagElement = document.getElementById('country-flag');\n        var textElement = document.getElementById('country-text');\n        if (flagElement) {\n          flagElement.src = 'https:\/\/flagcdn.com\/w20\/us.png';\n        }\n        if (textElement) {\n          textElement.innerHTML = 'Fast <span class=\"bold\">US<\/span> Shipping';\n        }\n      });\n  })();\n<\/script>"
+            "custom_liquid": "<div class=\"custom-shipping-container\">\n  <div class=\"custom-shipping-item\">\n    <svg class=\"green-circle\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"13\" viewBox=\"0 0 12 13\" fill=\"none\">\n      <circle cx=\"6\" cy=\"6.5\" r=\"6\" fill=\"#137333\"/>\n    </svg>\n    <div class=\"text-block-shipping\">Ships by <span id=\"shipping-date\" class=\"shipping-date\"></span></div>\n  </div>\n  <div class=\"custom-shipping-item flags-container\">\n    <img id=\"country-flag\" class=\"custom-icon\" src=\"\" alt=\"Country Flag\">\n    <div id=\"country-text\" class=\"shipping-worldwide\"></div>\n  </div>\n</div>\n\n<style>\n  .custom-shipping-container {\n    display: flex;\n    padding: 8px 16px;\n    justify-content: space-between;\n    align-items: center;\n    background-color: #f6f6f6;\n    border-radius: 20px;\n    margin-top: 10px;\n    width: 100%;\n    box-sizing: border-box;\n  }\n  .custom-shipping-item {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n  }\n  .text-block-shipping {\n    font-size: 12px;\n    color: #000;\n    white-space: nowrap;\n  }\n  .shipping-date {\n    font-weight: bold;\n  }\n  .shipping-worldwide {\n    font-size: 12px;\n    color: #000;\n    white-space: nowrap;\n  }\n  .shipping-worldwide .bold {\n    font-weight: bold;\n  }\n  .green-circle {\n    animation: fade 1s ease-in-out infinite;\n    flex-shrink: 0;\n  }\n  @keyframes fade {\n    0%, 100% { opacity: 1; }\n    50% { opacity: 0.5; }\n  }\n  .flags-container {\n    display: flex;\n    gap: 6px;\n    align-items: center;\n  }\n  .custom-icon {\n    width: 16px;\n    height: 12px;\n    flex-shrink: 0;\n  }\n  \n  @media (max-width: 768px) {\n    .custom-shipping-container {\n      padding: 6px 12px;\n    }\n    .text-block-shipping,\n    .shipping-worldwide {\n      font-size: 11px;\n    }\n  }\n</style>\n\n<script>\n  (function() {\n    function getNextWeekday(date) {\n      var day = date.getDay();\n      var daysToAdd = (day === 5) ? 3 : (day === 6) ? 2 : 1;\n      return new Date(date.setDate(date.getDate() + daysToAdd));\n    }\n    \n    var today = new Date();\n    var shipDate = getNextWeekday(today);\n    var options = { weekday: 'short', month: 'long', day: 'numeric' };\n    var formattedDate = shipDate.toLocaleDateString('en-US', options);\n    \n    var dateElement = document.getElementById('shipping-date');\n    if (dateElement) {\n      dateElement.textContent = formattedDate;\n    }\n    \n    // Fetch the visitor's country using an IP geolocation API\n    fetch('https://ipapi.co/json/')\n      .then(response => response.json())\n      .then(data => {\n        var countryCode = data.country_code;\n        var flagUrl = 'https://flagcdn.com/w20/' + countryCode.toLowerCase() + '.png';\n        \n        var flagElement = document.getElementById('country-flag');\n        var textElement = document.getElementById('country-text');\n        \n        if (flagElement) {\n          flagElement.src = flagUrl;\n        }\n        if (textElement) {\n          textElement.innerHTML = 'Fast <span class=\"bold\">' + countryCode + '</span> Shipping';\n        }\n      })\n      .catch(error => {\n        console.error('Error fetching the IP information:', error);\n        // Fallback to US\n        var flagElement = document.getElementById('country-flag');\n        var textElement = document.getElementById('country-text');\n        if (flagElement) {\n          flagElement.src = 'https://flagcdn.com/w20/us.png';\n        }\n        if (textElement) {\n          textElement.innerHTML = 'Fast <span class=\"bold\">US</span> Shipping';\n        }\n      });\n  })();\n</script>"
           }
         },
         "payment_icons_D8JNK4": {
@@ -699,15 +699,15 @@
           "type": "custom_text",
           "disabled": true,
           "settings": {
-            "text": "<p><strong>The G-01 Accessories:<\/strong><\/p>",
+            "text": "<p><strong>The G-01 Accessories:</strong></p>",
             "show_description": false,
-            "description": "<p>Add additional descriptive text here<\/p>",
+            "description": "<p>Add additional descriptive text here</p>",
             "description_font_size": 12,
             "description_spacing": 4,
             "description_color": "#666666",
             "description_opacity": 0.8,
             "show_icon": false,
-            "custom_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 16 16\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" fill=\"currentColor\" class=\"bi bi-stars\"><path d=\"M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z\"><\/path><\/svg>",
+            "custom_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" class=\"bi bi-stars\"><path d=\"M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z\"></path></svg>",
             "icon_color": "#333333",
             "icon_size": 20,
             "icon_spacing": 8,
@@ -747,7 +747,7 @@
             "best_seller_text": "BEST SELLER",
             "best_seller_tag_color": "#fafafa",
             "best_seller_tag_text_color": "#1d1d1d",
-            "custom_bestseller_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"none\"><\/rect><path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path><path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path><polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline><\/svg>",
+            "custom_bestseller_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"none\"></rect><path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path><path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path><polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline></svg>",
             "card_background_color": "#ffffff",
             "product_image_background_color": "#d7ed96",
             "title_color": "#1d1d1d",
@@ -778,7 +778,7 @@
             "best_seller_text": "BEST SELLER",
             "best_seller_tag_color": "#fafafa",
             "best_seller_tag_text_color": "#1d1d1d",
-            "custom_bestseller_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"none\"><\/rect><path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path><path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path><polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline><\/svg>",
+            "custom_bestseller_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\"><rect width=\"256\" height=\"256\" fill=\"none\"></rect><path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path><path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path><polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline></svg>",
             "card_background_color": "#ffffff",
             "product_image_background_color": "#d7ed96",
             "title_color": "#1d1d1d",
@@ -852,15 +852,15 @@
             "accordion_mode": true,
             "question_1": "How Soon Will I See Results?",
             "use_product_description_for_question_1": false,
-            "answer_1": "<p>Most men report feeling more natural energy and focus within the first few days. <strong>Bedroom benefits like improved stamina and performance can be noticed within 2–4 weeks<\/strong> of consistent use. Remember — Alpha Brew isn’t a “magic pill.” It works by supporting healthy testosterone and blood flow naturally over time.<\/p>",
+            "answer_1": "<p>Most men report feeling more natural energy and focus within the first few days. <strong>Bedroom benefits like improved stamina and performance can be noticed within 2–4 weeks</strong> of consistent use. Remember — Alpha Brew isn’t a “magic pill.” It works by supporting healthy testosterone and blood flow naturally over time.</p>",
             "question_2": "How to Use?",
-            "answer_2": "<p>Enjoy once daily.<\/p><ul><li>Add <strong>1 scoop<\/strong> to Hot Water.<\/li><li><\/li><li>Mix it with for 10-15 second <\/li><\/ul><p><em>* Relates Alpha Brew Coffee.<\/em><\/p>",
+            "answer_2": "<p>Enjoy once daily.</p><ul><li>Add <strong>1 scoop</strong> to Hot Water.</li><li></li><li>Mix it with for 10-15 second </li></ul><p><em>* Relates Alpha Brew Coffee.</em></p>",
             "question_3": "What makes Alpha Brew different from pills or supplements?",
-            "answer_3": "<p>Most <strong>pills are underdosed,& only absorb 20-33% of the nutrients, <\/strong> Alpha Brew coffee absorbs 70% of the nutrients and works 4x faster then any pills or supplements.<\/p>",
+            "answer_3": "<p>Most <strong>pills are underdosed,& only absorb 20-33% of the nutrients, </strong> Alpha Brew coffee absorbs 70% of the nutrients and works 4x faster then any pills or supplements.</p>",
             "question_4": "What if Alpha Brew doesn’t work for me?",
-            "answer_4": "<p>IT has been proven to work for all types of an but we do understand that every man is different, which is why Alpha Brew comes with a <strong>100% money-back guarantee. <\/strong>If you don’t notice improved energy, drive, or performance, just contact us for a full refund — no questions asked<\/p>",
+            "answer_4": "<p>IT has been proven to work for all types of an but we do understand that every man is different, which is why Alpha Brew comes with a <strong>100% money-back guarantee. </strong>If you don’t notice improved energy, drive, or performance, just contact us for a full refund — no questions asked</p>",
             "question_5": "How Does It Taste?",
-            "answer_5": "<p>Like coffee - but smoother and less bitter <\/p><p>The Caco & Coffee Combination gives it a delicious perfect coffee taste. Most guys say it tastes like the perfect cup of coffee. <\/p>",
+            "answer_5": "<p>Like coffee - but smoother and less bitter </p><p>The Caco & Coffee Combination gives it a delicious perfect coffee taste. Most guys say it tastes like the perfect cup of coffee. </p>",
             "question_6": "",
             "answer_6": "",
             "question_7": "",
@@ -954,19 +954,19 @@
         "review_image_AeVrg7": {
           "type": "review_image",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/unnamed_3.jpg"
+            "review_image": "shopify://shop_images/unnamed_3.jpg"
           }
         },
         "review_image_KbPxaC": {
           "type": "review_image",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/unnamed_1.jpg"
+            "review_image": "shopify://shop_images/unnamed_1.jpg"
           }
         },
         "review_image_wDxEad": {
           "type": "review_image",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/unnamed_3.jpg"
+            "review_image": "shopify://shop_images/unnamed_3.jpg"
           }
         }
       },
@@ -991,7 +991,7 @@
         "redirect_page": "",
         "custom_url": "",
         "button_horizontal_padding": 30,
-        "rating_text": "Rated 4.8\/5 by 1,319+ Happy Customers",
+        "rating_text": "Rated 4.8/5 by 1,319+ Happy Customers",
         "mobile_title_size": 29,
         "desktop_title_size": 42,
         "mobile_subtitle_size": 14,
@@ -1034,7 +1034,7 @@
         "review_7a3pU7": {
           "type": "review",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/unnamed-26.png",
+            "review_image": "shopify://shop_images/unnamed-26.png",
             "image_position": "center center",
             "wrap_image": true,
             "rating": 4,
@@ -1054,7 +1054,7 @@
         "review_e74FXA": {
           "type": "review",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/IMG_6797.jpg",
+            "review_image": "shopify://shop_images/IMG_6797.jpg",
             "image_position": "center center",
             "wrap_image": true,
             "rating": 5,
@@ -1074,7 +1074,7 @@
         "review_BmfNq7": {
           "type": "review",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/IMG_6799_2.jpg",
+            "review_image": "shopify://shop_images/IMG_6799_2.jpg",
             "image_position": "center center",
             "wrap_image": true,
             "rating": 5,
@@ -1094,7 +1094,7 @@
         "review_Lrxdxw": {
           "type": "review",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/49c9b137-f345-4a6b-8b00-1ba9d2cb8a12_min.webp",
+            "review_image": "shopify://shop_images/49c9b137-f345-4a6b-8b00-1ba9d2cb8a12_min.webp",
             "image_position": "center center",
             "wrap_image": false,
             "rating": 4,
@@ -1114,7 +1114,7 @@
         "review_RL3JYq": {
           "type": "review",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/619ce82a-0025-4582-b56a-f564ee68b726_min.webp",
+            "review_image": "shopify://shop_images/619ce82a-0025-4582-b56a-f564ee68b726_min.webp",
             "image_position": "center center",
             "wrap_image": false,
             "rating": 4,
@@ -1134,7 +1134,7 @@
         "review_yf8FmB": {
           "type": "review",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/0eb63e41-b255-49a2-b044-2cd235b52717_min.webp",
+            "review_image": "shopify://shop_images/0eb63e41-b255-49a2-b044-2cd235b52717_min.webp",
             "image_position": "center center",
             "wrap_image": false,
             "rating": 4,
@@ -1154,7 +1154,7 @@
         "review_NDwzni": {
           "type": "review",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/2ffbcdfd-fc98-4642-ae65-32b6bbefbfaa_min.webp",
+            "review_image": "shopify://shop_images/2ffbcdfd-fc98-4642-ae65-32b6bbefbfaa_min.webp",
             "image_position": "center center",
             "wrap_image": false,
             "rating": 4,
@@ -1174,7 +1174,7 @@
         "review_EDeVY7": {
           "type": "review",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/9511da35-7e94-42e6-afff-c7e01d286448_min.webp",
+            "review_image": "shopify://shop_images/9511da35-7e94-42e6-afff-c7e01d286448_min.webp",
             "image_position": "center center",
             "wrap_image": false,
             "rating": 5,
@@ -1194,7 +1194,7 @@
         "review_FmnETK": {
           "type": "review",
           "settings": {
-            "review_image": "shopify:\/\/shop_images\/eab41103-d379-4bc9-80f7-52921d42ff89_min.webp",
+            "review_image": "shopify://shop_images/eab41103-d379-4bc9-80f7-52921d42ff89_min.webp",
             "image_position": "center center",
             "wrap_image": false,
             "rating": 4,
@@ -1293,7 +1293,7 @@
         "product_border_style": "solid",
         "summary_star_color": "#b98141",
         "summary_text_color": "#000000",
-        "rating_summary_text": "<p>Rated 4.8\/5 based on +10,839 Total Ratings<\/p>",
+        "rating_summary_text": "<p>Rated 4.8/5 based on +10,839 Total Ratings</p>",
         "rating_summary_font_size": 13,
         "rating_summary_bg_color": "#fef6e6",
         "purchase_date_prefix": "Purchased on",
@@ -1313,7 +1313,7 @@
         "step_HQCRRP": {
           "type": "step",
           "settings": {
-            "step_image": "shopify:\/\/shop_images\/unnamed-64.jpg",
+            "step_image": "shopify://shop_images/unnamed-64.jpg",
             "image_background_color": "#f5f5f5",
             "step_title": "Take 1 Scoop",
             "step_description": "use the scooper provided",
@@ -1323,7 +1323,7 @@
         "step_YqpGBA": {
           "type": "step",
           "settings": {
-            "step_image": "shopify:\/\/shop_images\/unnamed-67.jpg",
+            "step_image": "shopify://shop_images/unnamed-67.jpg",
             "image_background_color": "#f5f5f5",
             "step_title": "Mix it with your coffee",
             "step_description": "Mix with coffee or with 10oz of hot water",
@@ -1333,7 +1333,7 @@
         "step_98gdPa": {
           "type": "step",
           "settings": {
-            "step_image": "shopify:\/\/shop_images\/unnamed-66.jpg",
+            "step_image": "shopify://shop_images/unnamed-66.jpg",
             "image_background_color": "#f5f5f5",
             "step_title": "Enjoy",
             "step_description": "Start Feeling Stronger",
@@ -1423,7 +1423,7 @@
           "settings": {
             "badge_text": "Day 1",
             "title": "Feel More Focused",
-            "description": "<p>With L- Theanine helps you feel more focused and calm helps lowers your cortisol and stress levels <\/p>",
+            "description": "<p>With L- Theanine helps you feel more focused and calm helps lowers your cortisol and stress levels </p>",
             "custom_icon": ""
           }
         },
@@ -1432,7 +1432,7 @@
           "settings": {
             "badge_text": "Week 1",
             "title": "Feel More Energy",
-            "description": "<p>With Shilajit and caffine you will start to feel more energized  throughout the day<\/p>",
+            "description": "<p>With Shilajit and caffine you will start to feel more energized  throughout the day</p>",
             "custom_icon": ""
           }
         },
@@ -1441,7 +1441,7 @@
           "settings": {
             "badge_text": "Month 1",
             "title": "Faster Metabolism",
-            "description": "<p>Your metabolism will start to move faster helping you burn more calories <\/p>",
+            "description": "<p>Your metabolism will start to move faster helping you burn more calories </p>",
             "custom_icon": ""
           }
         },
@@ -1450,7 +1450,7 @@
           "settings": {
             "badge_text": "Month 2",
             "title": "Feel Stronger",
-            "description": "<p>Your testosterone levels will start to increase and you will feel stronger <\/p>",
+            "description": "<p>Your testosterone levels will start to increase and you will feel stronger </p>",
             "custom_icon": ""
           }
         }
@@ -1529,7 +1529,7 @@
             "preset_icon": "lightning",
             "use_custom_icon": true,
             "custom_icon_svg": "",
-            "icon_image": "shopify:\/\/shop_images\/6_06c8ddb2-c133-450c-ae94-f5a0157019ab.png",
+            "icon_image": "shopify://shop_images/6_06c8ddb2-c133-450c-ae94-f5a0157019ab.png",
             "icon_size_mobile": 28,
             "icon_size_desktop": 32,
             "vertical_spacing": 14
@@ -1543,7 +1543,7 @@
             "preset_icon": "shield",
             "use_custom_icon": true,
             "custom_icon_svg": "",
-            "icon_image": "shopify:\/\/shop_images\/6_8ac1dc02-2272-4fa2-b3cf-c496017211d8.png",
+            "icon_image": "shopify://shop_images/6_8ac1dc02-2272-4fa2-b3cf-c496017211d8.png",
             "icon_size_mobile": 28,
             "icon_size_desktop": 32,
             "vertical_spacing": 20
@@ -1557,7 +1557,7 @@
             "preset_icon": "refresh",
             "use_custom_icon": true,
             "custom_icon_svg": "",
-            "icon_image": "shopify:\/\/shop_images\/4_61e75d1b-4cf9-4658-bb4b-477d2d1a9296.png",
+            "icon_image": "shopify://shop_images/4_61e75d1b-4cf9-4658-bb4b-477d2d1a9296.png",
             "icon_size_mobile": 28,
             "icon_size_desktop": 32,
             "vertical_spacing": 20
@@ -1571,7 +1571,7 @@
             "preset_icon": "check",
             "use_custom_icon": true,
             "custom_icon_svg": "",
-            "icon_image": "shopify:\/\/shop_images\/9.png",
+            "icon_image": "shopify://shop_images/9.png",
             "icon_size_mobile": 28,
             "icon_size_desktop": 32,
             "vertical_spacing": 20
@@ -1619,7 +1619,7 @@
         "icon_border_style": "solid",
         "icon_border_color": "#b98141",
         "show_image": true,
-        "section_image": "shopify:\/\/shop_images\/Doctor_neww.png",
+        "section_image": "shopify://shop_images/Doctor_neww.png",
         "image_border_radius": 15,
         "override_global_accent": false,
         "accent_color": "#1d1d1d",
@@ -1644,7 +1644,7 @@
             "use_image": false,
             "preset_icon": "check",
             "use_custom_icon": false,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"><\/path><\/svg>"
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"></path></svg>"
           }
         },
         "benefit_7PpXXD": {
@@ -1657,7 +1657,7 @@
             "use_image": false,
             "preset_icon": "clock",
             "use_custom_icon": false,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"><\/path><\/svg>"
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"></path></svg>"
           }
         },
         "benefit_LUVxER": {
@@ -1670,7 +1670,7 @@
             "use_image": false,
             "preset_icon": "sparkle",
             "use_custom_icon": false,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"><\/path><\/svg>"
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"></path></svg>"
           }
         },
         "benefit_BVcCg3": {
@@ -1681,10 +1681,10 @@
             "benefit_color": "",
             "benefit_description_color": "",
             "use_image": false,
-            "icon_image": "shopify:\/\/shop_images\/9.png",
+            "icon_image": "shopify://shop_images/9.png",
             "preset_icon": "check",
             "use_custom_icon": false,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"><\/path><\/svg>"
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"></path></svg>"
           }
         }
       },
@@ -1726,7 +1726,7 @@
         "subtitle": "Alpha Brew Ingredients Absorb 70% More Nutrients Then Pills & Supplements",
         "show_image": true,
         "media_type": "image",
-        "feature_image": "shopify:\/\/shop_images\/Copy_of_Static_Templates_1080_copy.png",
+        "feature_image": "shopify://shop_images/Copy_of_Static_Templates_1080_copy.png",
         "image_alt": "Feature product image",
         "video_autoplay": true,
         "video_muted": true,
@@ -1746,7 +1746,7 @@
           "settings": {
             "text": "PREMIUM QUALITY",
             "icon_type": "svg",
-            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         },
         "feature_item_CJxhgK": {
@@ -1754,7 +1754,7 @@
           "settings": {
             "text": "FAST SHIPPING",
             "icon_type": "svg",
-            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         },
         "feature_item_VMc6KP": {
@@ -1762,7 +1762,7 @@
           "settings": {
             "text": "SATISFACTION GUARANTEED",
             "icon_type": "svg",
-            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         }
       },
@@ -1846,7 +1846,7 @@
             "use_image": false,
             "preset_icon": "check",
             "use_custom_icon": true,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         },
         "benefit_FhNtL9": {
@@ -1859,7 +1859,7 @@
             "use_image": false,
             "preset_icon": "clock",
             "use_custom_icon": true,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         },
         "benefit_GRe7dT": {
@@ -1872,7 +1872,7 @@
             "use_image": false,
             "preset_icon": "sparkle",
             "use_custom_icon": true,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         },
         "custom_benefits_grid": {
@@ -1885,7 +1885,7 @@
             "use_image": false,
             "preset_icon": "heart",
             "use_custom_icon": true,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         }
       },
@@ -1924,7 +1924,7 @@
         "border_color": "#ffffff",
         "heading_accent": "Beauty Products.",
         "heading_regular": "Redefining",
-        "subtitle": "<p>Discover the outstanding features that make our product stand out from the competition.<\/p>",
+        "subtitle": "<p>Discover the outstanding features that make our product stand out from the competition.</p>",
         "show_image": true,
         "media_type": "image",
         "image_alt": "Feature product image",
@@ -1966,10 +1966,10 @@
         "description_font_size": 12,
         "instructions_font_size": 14,
         "label_font_size": 12,
-        "image_aspect_ratio": "4\/3",
+        "image_aspect_ratio": "4/3",
         "image_min_height": 250,
         "image_max_height": 500,
-        "mobile_aspect_ratio": "4\/3",
+        "mobile_aspect_ratio": "4/3",
         "mobile_min_height": 200,
         "mobile_max_height": 400,
         "mobile_container_width": 320,
@@ -2009,7 +2009,7 @@
             "description": "Short benefit description.",
             "preset_icon": "lightning",
             "use_custom_icon": true,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "icon_size_mobile": 38,
             "icon_size_desktop": 46,
             "vertical_spacing": 20
@@ -2022,7 +2022,7 @@
             "description": "Short benefit description.",
             "preset_icon": "shield",
             "use_custom_icon": true,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "icon_size_mobile": 38,
             "icon_size_desktop": 46,
             "vertical_spacing": 20
@@ -2035,7 +2035,7 @@
             "description": "Short benefit description.",
             "preset_icon": "refresh",
             "use_custom_icon": true,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "icon_size_mobile": 42,
             "icon_size_desktop": 46,
             "vertical_spacing": 20
@@ -2048,7 +2048,7 @@
             "description": "Short benefit description.",
             "preset_icon": "check",
             "use_custom_icon": true,
-            "custom_icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "custom_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"transparent\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"white\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "icon_size_mobile": 42,
             "icon_size_desktop": 46,
             "vertical_spacing": 20
@@ -2221,7 +2221,7 @@
         "paragraph_xdBbmd": {
           "type": "paragraph",
           "settings": {
-            "paragraph_text": "<p><strong>Add your paragraph text here. Th<\/strong>is can include formatting such as <strong>bold<\/strong> or <em>italic<\/em> text. Add your paragraph text here. This can include formatting such as <strong>bold<\/strong> or <em>italic<\/em> text. Add your paragraph text here. This can include formatting such as <strong>bold<\/strong> or <em>italic<\/em> text.<\/p>",
+            "paragraph_text": "<p><strong>Add your paragraph text here. Th</strong>is can include formatting such as <strong>bold</strong> or <em>italic</em> text. Add your paragraph text here. This can include formatting such as <strong>bold</strong> or <em>italic</em> text. Add your paragraph text here. This can include formatting such as <strong>bold</strong> or <em>italic</em> text.</p>",
             "margin_top": -13,
             "margin_bottom": 0,
             "paragraph_color": "#211a28"
@@ -2233,17 +2233,17 @@
             "two_columns": true,
             "list_title": "",
             "list_item_1": "First feature or benefit",
-            "list_item_1_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "list_item_1_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "list_item_2": "Second feature or benefit",
-            "list_item_2_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "list_item_2_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "list_item_3": "Third feature or benefit",
-            "list_item_3_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "list_item_3_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "list_item_4": "Fourth feature or benefit",
-            "list_item_4_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "list_item_4_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "list_item_5": "Fifth feature or benefit",
-            "list_item_5_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "list_item_5_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "list_item_6": "Sixth feature or benefit",
-            "list_item_6_svg": "<svg viewbox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"currentColor\" opacity=\"0.1\"><\/circle><path d=\"M9 12l2 2 4-4\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\"><\/path><\/svg>",
+            "list_item_6_svg": "<svg viewbox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"currentColor\" opacity=\"0.1\"></circle><path d=\"M9 12l2 2 4-4\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\"></path></svg>",
             "list_color": "#333333",
             "list_title_color": "#333333",
             "pill_style": false,
@@ -2343,7 +2343,7 @@
           "settings": {
             "benefit_text": "Improved Sleep",
             "show_icon": true,
-            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         },
         "benefit_aMXFYf": {
@@ -2351,7 +2351,7 @@
           "settings": {
             "benefit_text": "Reduced Stress",
             "show_icon": true,
-            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         },
         "benefit_tUJQE6": {
@@ -2359,7 +2359,7 @@
           "settings": {
             "benefit_text": "Enhanced Focus",
             "show_icon": true,
-            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         },
         "benefit_ybHHta": {
@@ -2367,7 +2367,7 @@
           "settings": {
             "benefit_text": "Better Mood",
             "show_icon": true,
-            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         },
         "benefit_jYzLxy": {
@@ -2375,7 +2375,7 @@
           "settings": {
             "benefit_text": "Increased Energy",
             "show_icon": true,
-            "custom_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>"
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>"
           }
         }
       },
@@ -2467,7 +2467,7 @@
           "settings": {
             "feature_name": "Core feature",
             "show_icon": true,
-            "feature_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "value_type": "checkmark",
             "value_1": "yes",
             "text_value_1": "Yes",
@@ -2480,7 +2480,7 @@
           "settings": {
             "feature_name": "Feature",
             "show_icon": true,
-            "feature_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "value_type": "checkmark",
             "value_1": "yes",
             "text_value_1": "Yes",
@@ -2493,7 +2493,7 @@
           "settings": {
             "feature_name": "Feature",
             "show_icon": true,
-            "feature_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "value_type": "checkmark",
             "value_1": "yes",
             "text_value_1": "Yes",
@@ -2506,7 +2506,7 @@
           "settings": {
             "feature_name": "Advanced feature",
             "show_icon": true,
-            "feature_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "value_type": "checkmark",
             "value_1": "yes",
             "text_value_1": "Yes",
@@ -2519,7 +2519,7 @@
           "settings": {
             "feature_name": "Premium feature",
             "show_icon": true,
-            "feature_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"><\/path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"><\/polyline>\n<\/svg>",
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 256 256\">\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" opacity=\"0.2\"></path>\n  <path d=\"M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z\" fill=\"white\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></path>\n  <polyline points=\"88 136 112 160 168 104\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"16\"></polyline>\n</svg>",
             "value_type": "text",
             "value_1": "yes",
             "text_value_1": "Yes",
@@ -2545,7 +2545,7 @@
         "title_part_2": "Versa?",
         "title_part_1_color": "#211a28",
         "title_part_2_color": "#211a28",
-        "subheading": "<p>Here's why we're the industry leader<\/p>",
+        "subheading": "<p>Here's why we're the industry leader</p>",
         "desktop_description": "",
         "show_description_on_mobile": false,
         "heading_size": 40,
@@ -2773,7 +2773,7 @@
         "product_border_style": "solid",
         "summary_star_color": "#f42e75",
         "summary_text_color": "#211a28",
-        "rating_summary_text": "<p>Rated 4.8\/5 based on +10,839 Total Ratings<\/p>",
+        "rating_summary_text": "<p>Rated 4.8/5 based on +10,839 Total Ratings</p>",
         "rating_summary_font_size": 13,
         "rating_summary_bg_color": "#fef6e6",
         "purchase_date_prefix": "Purchased on",
@@ -2868,7 +2868,7 @@
           "settings": {
             "product_name": "Alpha Brew",
             "product_subtitle": "Science  Backed",
-            "product_image": "shopify:\/\/shop_images\/Kaching-Bundles-2_e3be271b-f7b4-4252-9e67-937b1e49cd38.png",
+            "product_image": "shopify://shop_images/Kaching-Bundles-2_e3be271b-f7b4-4252-9e67-937b1e49cd38.png",
             "product_image_size": 80,
             "product_image_size_tablet": 60,
             "product_image_size_mobile": 50,
@@ -2913,7 +2913,7 @@
           "settings": {
             "feature_name": "Real Natural Ingredients",
             "show_icon": true,
-            "feature_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"><\/polygon><\/svg>",
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
             "value_type": "checkmark",
             "value_1": "yes",
             "text_value_1": "Yes",
@@ -2926,7 +2926,7 @@
           "settings": {
             "feature_name": "Natural Hormone Optimization",
             "show_icon": true,
-            "feature_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"><\/polygon><\/svg>",
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
             "value_type": "checkmark",
             "value_1": "yes",
             "text_value_1": "Yes",
@@ -2939,7 +2939,7 @@
           "settings": {
             "feature_name": "Testosterone Support",
             "show_icon": true,
-            "feature_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"><\/polygon><\/svg>",
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
             "value_type": "checkmark",
             "value_1": "yes",
             "text_value_1": "Yes",
@@ -2952,7 +2952,7 @@
           "settings": {
             "feature_name": "Absorbs 70% More Ingredients",
             "show_icon": true,
-            "feature_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"><\/polygon><\/svg>",
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
             "value_type": "checkmark",
             "value_1": "yes",
             "text_value_1": "Yes",
@@ -2965,7 +2965,7 @@
           "settings": {
             "feature_name": "Performance You & Her Notice",
             "show_icon": true,
-            "feature_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"><\/polygon><\/svg>",
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
             "value_type": "checkmark",
             "value_1": "yes",
             "text_value_1": "Yes",
@@ -2978,7 +2978,7 @@
           "settings": {
             "feature_name": "4x Faster Results",
             "show_icon": true,
-            "feature_icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"><\/polygon><\/svg>",
+            "feature_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"></polygon></svg>",
             "value_type": "checkmark",
             "value_1": "yes",
             "text_value_1": "Yes",
@@ -3005,7 +3005,7 @@
         "title_part_2": "Them",
         "title_part_1_color": "#b98141",
         "title_part_2_color": "#1d1d1d",
-        "subheading": "<p>Here's why we're the industry leader<\/p>",
+        "subheading": "<p>Here's why we're the industry leader</p>",
         "desktop_description": "",
         "show_description_on_mobile": false,
         "heading_size": 32,
@@ -3079,7 +3079,7 @@
         "statistic_jaNdQt": {
           "type": "statistic",
           "settings": {
-            "number": "24\/7",
+            "number": "24/7",
             "title": "Support Available",
             "description": "Round-the-clock customer support when you need it"
           }
@@ -3120,7 +3120,7 @@
         "description_color": "#666666",
         "description_size_mobile": 14,
         "description_size_desktop": 16,
-        "image": "shopify:\/\/shop_images\/Kaching-Bundles-2_0b52b586-573e-4d8e-ac72-f837a875ccf1.png",
+        "image": "shopify://shop_images/Kaching-Bundles-2_0b52b586-573e-4d8e-ac72-f837a875ccf1.png",
         "image_border_radius": 8,
         "image_position_desktop": "right",
         "image_position_mobile": "above",
@@ -3153,42 +3153,42 @@
           "type": "faq_item",
           "settings": {
             "question": "How soon will I notice a difference with Alpha Brew?",
-            "answer": "<p>Most men report feeling more natural energy and focus within the first few days. <strong>Bedroom benefits like improved stamina and performance can be noticed within 2–4 weeks<\/strong> of consistent use. Remember — Alpha Brew isn’t a “magic pill.” It works by supporting healthy testosterone and blood flow naturally over time.<\/p>"
+            "answer": "<p>Most men report feeling more natural energy and focus within the first few days. <strong>Bedroom benefits like improved stamina and performance can be noticed within 2–4 weeks</strong> of consistent use. Remember — Alpha Brew isn’t a “magic pill.” It works by supporting healthy testosterone and blood flow naturally over time.</p>"
           }
         },
         "faq_item_QKVnRn": {
           "type": "faq_item",
           "settings": {
             "question": "Will Alpha Brew really help me last longer in bed?",
-            "answer": "<p><strong>Yes <\/strong>— by improving blood flow, reducing stress, and <strong>supporting testosterone, Alpha Brew helps you perform<\/strong> with more control and stamina. Many men find they can stay present in the moment instead of “checking out early<\/p>"
+            "answer": "<p><strong>Yes </strong>— by improving blood flow, reducing stress, and <strong>supporting testosterone, Alpha Brew helps you perform</strong> with more control and stamina. Many men find they can stay present in the moment instead of “checking out early</p>"
           }
         },
         "faq_item_appL6A": {
           "type": "faq_item",
           "settings": {
             "question": "Is it safe to drink every day?",
-            "answer": "<p><strong>Absolutely. Alpha Brew is made with 100% natural, science-backed ingredients<\/strong> like Tongkat Ali, Maca, and Ashwagandha. No synthetic chemicals, no hidden fillers. Just a healthier way to drink your daily coffee<\/p>"
+            "answer": "<p><strong>Absolutely. Alpha Brew is made with 100% natural, science-backed ingredients</strong> like Tongkat Ali, Maca, and Ashwagandha. No synthetic chemicals, no hidden fillers. Just a healthier way to drink your daily coffee</p>"
           }
         },
         "faq_item_fMQrU3": {
           "type": "faq_item",
           "settings": {
             "question": "What makes Alpha Brew different from pills or supplements?",
-            "answer": "<p>Most <strong>pills are underdosed,& only absorb 20-33% of the nutrients, <\/strong> Alpha Brew coffee absorbs 70% of the nutrients and works 4x faster then any pills or supplements.<\/p>"
+            "answer": "<p>Most <strong>pills are underdosed,& only absorb 20-33% of the nutrients, </strong> Alpha Brew coffee absorbs 70% of the nutrients and works 4x faster then any pills or supplements.</p>"
           }
         },
         "faq_item_h9nrMM": {
           "type": "faq_item",
           "settings": {
             "question": "Do I need to change my diet or lifestyle to see results?",
-            "answer": "<p><strong>No big changes are required.<\/strong> Simply replace your usual coffee with Alpha Brew daily. Of course, pairing it with regular exercise, sleep, and a balanced diet can maximize results<\/p>"
+            "answer": "<p><strong>No big changes are required.</strong> Simply replace your usual coffee with Alpha Brew daily. Of course, pairing it with regular exercise, sleep, and a balanced diet can maximize results</p>"
           }
         },
         "faq_item_iYFxfb": {
           "type": "faq_item",
           "settings": {
             "question": "What if Alpha Brew doesn’t work for me?",
-            "answer": "<p>IT has been proven to work for all types of an but we do understand that every man is different, which is why Alpha Brew comes with a <strong>100% money-back guarantee. <\/strong>If you don’t notice improved energy, drive, or performance, just contact us for a full refund — no questions asked<\/p>"
+            "answer": "<p>IT has been proven to work for all types of an but we do understand that every man is different, which is why Alpha Brew comes with a <strong>100% money-back guarantee. </strong>If you don’t notice improved energy, drive, or performance, just contact us for a full refund — no questions asked</p>"
           }
         }
       },
@@ -3203,7 +3203,7 @@
       "settings": {
         "use_theme_colors": false,
         "heading": "Frequently Asked Questions",
-        "subtitle": "<p>Find answers to common questions about our products, shipping, returns, and more.<\/p>",
+        "subtitle": "<p>Find answers to common questions about our products, shipping, returns, and more.</p>",
         "heading_color": "#b98141",
         "section_padding": 60,
         "section_bg_color": "#f1e5c2",

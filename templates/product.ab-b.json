@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -25,105 +34,122 @@
           "type": "slide",
           "settings": {
             "alt": "The only coffee a man needs",
-            "nc_version": true
+            "nc_version": true,
+            "nc_hide": false
           }
         },
         "ab_slide_02": {
           "type": "slide",
           "settings": {
-            "alt": "11 benefits"
+            "alt": "11 benefits",
+            "nc_version": false,
+            "nc_hide": false
           }
         },
         "ab_slide_03": {
           "type": "slide",
           "settings": {
-            "alt": "Real results"
+            "alt": "Real results",
+            "nc_version": false,
+            "nc_hide": false
           }
         },
         "ab_slide_05": {
           "type": "slide",
           "settings": {
-            "alt": "How to prepare"
+            "alt": "How to prepare",
+            "nc_version": false,
+            "nc_hide": false
           }
         },
         "ab_slide_06": {
           "type": "slide",
           "settings": {
             "alt": "Supplement Facts",
-            "nc_version": true
+            "nc_version": true,
+            "nc_hide": false
           }
         },
         "ab_slide_07": {
           "type": "slide",
           "settings": {
             "alt": "Smooth energy, no jitters",
+            "nc_version": false,
             "nc_hide": true
           }
         },
         "ab_slide_08": {
           "type": "slide",
           "settings": {
-            "alt": "Us vs them"
+            "alt": "Us vs them",
+            "nc_version": false,
+            "nc_hide": false
           }
         },
         "ab_slide_09": {
           "type": "slide",
           "settings": {
-            "alt": "What you get"
+            "alt": "What you get",
+            "nc_version": false,
+            "nc_hide": false
           }
         },
         "ab_slide_10": {
           "type": "slide",
           "settings": {
-            "alt": "100K+ happy customers"
+            "alt": "100K+ happy customers",
+            "nc_version": false,
+            "nc_hide": false
           }
         },
         "ab_slide_11": {
           "type": "slide",
           "settings": {
-            "alt": "90-day money-back guarantee"
+            "alt": "90-day money-back guarantee",
+            "nc_version": false,
+            "nc_hide": false
           }
         },
         "strip_1": {
           "type": "strip_review",
           "settings": {
-            "text": "“[…] I've been <strong>enjoying sex more</strong> because I've been <strong>lasting a little longer</strong> then usual”",
+            "text": "“I've been <strong>enjoying sex more</strong> because I've been<strong> lasting a little longer</strong> then usual”",
             "author": "Mathew, 43"
           }
         },
         "strip_2": {
           "type": "strip_review",
           "settings": {
-            "text": "“<strong>My Wife didn't want me to leave</strong> […] I had <strong>more stamina, wasn't tired</strong>”",
-            "author": "Yaniq Rodeo"
+            "text": "“At 56 I am <strong>having sex and horny like when I was 18!!! My wife is over the top</strong>”",
+            "author": "Dan C., 56"
           }
         },
         "strip_3": {
           "type": "strip_review",
           "settings": {
-            "text": "“I was skeptical at first, but <strong>after using this for a month, I'm a true believer</strong>.”",
-            "author": "Mathew, 56"
+            "text": "“It seemed to give me <strong>a lot more energy. I don’t get any crash</strong> from it”",
+            "author": "Norman V."
           }
         },
         "strip_4": {
           "type": "strip_review",
           "settings": {
-            "text": "“i work out in construction <strong>It actually works</strong> […] <strong>instead of regular coffee</strong>”",
+            "text": "“I work out in construction <strong>It actually works… instead of regular coffee</strong>”",
             "author": "Miguel, 44"
           }
         },
         "strip_5": {
           "type": "strip_review",
           "settings": {
-            "text": "“I'm 55 years old […] mushroom coffee similar to this and this is the <strong>best by far</strong>”",
-            "author": "Mike Charles"
+            "text": "“I have been drinking <strong>other supplements</strong> similar to this and <strong>this is the best by far</strong>”",
+            "author": "Jim J., 55"
           }
         },
         "strip_6": {
           "type": "strip_review",
           "settings": {
-            "text": "“[…] <strong>Ive felt stronger</strong> and less weak and drained throughout the day”",
-            "author": "Andrew, 38"
+            "text": "“It does seem to <strong>help my energy level</strong> that use to drop off at <strong>1:00 or 2:00 in the afternoon</strong>.”",
+            "author": "Martin S"
           }
         },
         "payment": {
@@ -160,24 +186,28 @@
       ],
       "settings": {
         "title": "Daily Coffee For Energy, Blood Flow & Sex Drive",
+        "title_nc": "Daily Cacao Blend For Energy, Blood Flow & Sex Drive",
         "rating_text": "100k+ Vitalized Men",
         "label_link": "View Nutrition Label",
         "description": "Alpha Brew is natural testosterone support in your morning cup of coffee. <strong>It works four ways:</strong> helps manage cortisol, frees up testosterone, supports blood flow & keeps you lasting longer.",
+        "description_nc": "Alpha Brew is natural testosterone support in your morning cup. <strong>It works four ways:</strong> helps manage cortisol, frees up testosterone, supports blood flow & keeps you lasting longer.",
         "bullet_1": "Blocks Cortisol",
+        "bullet_1_nc": "",
         "bullet_2": "Frees Up Testosterone",
         "bullet_3": "Boosts Blood Flow & Circulation",
         "bullet_4": "Supports Sex Drive & Keeps You Lasting Longer",
+        "bullet_2_nc": "",
+        "bullet_3_nc": "",
+        "bullet_4_nc": "",
         "base_heading": "Select Base",
         "base_title": "Caffeine",
         "base_subtitle": "Coffee Base",
+        "base_nc_title": "No Caffeine",
+        "base_nc_subtitle": "Cacao Base",
         "stock_note": "Only a few left",
         "trust_line": "Subscribe & Save · Skip or cancel anytime · Made in USA",
         "sheet_title": "Supplement Facts",
         "sheet_caption": "1 scoop · 30 servings per bag · 100 mg caffeine per serving.\nAll 11 ingredients and their amounts are listed in the Alpha Brew Matrix.",
-        "title_nc": "Daily Cacao Blend For Energy, Blood Flow & Sex Drive",
-        "description_nc": "Alpha Brew is natural testosterone support in your morning cup. <strong>It works four ways:</strong> helps manage cortisol, frees up testosterone, supports blood flow & keeps you lasting longer.",
-        "base_nc_title": "No Caffeine",
-        "base_nc_subtitle": "Cacao Base",
         "sheet_caption_nc": "1 scoop · 30 servings per bag · no caffeine. A cacao base replaces the Arabica coffee; every other ingredient and dose is the same."
       }
     },
@@ -270,89 +300,6 @@
         "reviews_link": "Read all reviews ↓"
       }
     },
-    "faq": {
-      "type": "ab-faq",
-      "blocks": {
-        "q1": {
-          "type": "faq",
-          "settings": {
-            "question": "How soon will I notice a difference?",
-            "answer": "<p>Many men report more natural energy and focus within the first few days. Bedroom benefits like stamina and performance can be noticed within 6-8 weeks of daily use. That's why the 3-bag bundle is the one we recommend.*</p>"
-          }
-        },
-        "q2": {
-          "type": "faq",
-          "settings": {
-            "question": "Will Alpha Brew help me last longer in bed?",
-            "answer": "<p><strong>Yes</strong> — by improving blood flow, reducing stress, and <strong>supporting testosterone, Alpha Brew helps you perform</strong> with more control and stamina. Many men find they can stay present in the moment instead of “checking out early.”</p>"
-          }
-        },
-        "q3": {
-          "type": "faq",
-          "settings": {
-            "question": "Is it safe to drink every day?",
-            "answer": "<p><strong>Absolutely. Alpha Brew is made with 100% natural, science-backed ingredients</strong> like Tongkat Ali, Maca, and Ashwagandha. No synthetic chemicals, no hidden fillers. Just a healthier way to drink your daily coffee.</p>"
-          }
-        },
-        "q4": {
-          "type": "faq",
-          "settings": {
-            "question": "How much caffeine is in it?",
-            "answer": "<p>[Placeholder: answer to be added by client]</p>"
-          }
-        },
-        "q5": {
-          "type": "faq",
-          "settings": {
-            "question": "How does it taste?",
-            "answer": "<p>Like coffee - but smoother and less bitter.</p><p>The Cacao &amp; Coffee Combination gives it a delicious perfect coffee taste. Most guys say it tastes like the perfect cup of coffee.</p>"
-          }
-        },
-        "q6": {
-          "type": "faq",
-          "settings": {
-            "question": "How many cups are in a bag?",
-            "answer": "<p>30. One bag is a 1-month supply at one cup a day, with 100 mg of caffeine per cup.</p>"
-          }
-        },
-        "q7": {
-          "type": "faq",
-          "settings": {
-            "question": "How is this different from testosterone pills?",
-            "answer": "<p>Most <strong>pills are underdosed, &amp; only absorb 20-33% of the nutrients.</strong> Alpha Brew coffee absorbs 70% of the nutrients and works 4x faster than any pills or supplements.</p>"
-          }
-        },
-        "q8": {
-          "type": "faq",
-          "settings": {
-            "question": "Can I cancel my subscription?",
-            "answer": "<p>Yes. You can skip or cancel anytime from Manage Subscription in your account.</p>"
-          }
-        },
-        "q9": {
-          "type": "faq",
-          "settings": {
-            "question": "What if it doesn't work for me?",
-            "answer": "<p>Every order comes with a 90-day money-back guarantee. If you don't notice more energy, drive or performance, contact us for a full refund.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5",
-        "q6",
-        "q7",
-        "q8",
-        "q9"
-      ],
-      "settings": {
-        "heading": "Frequently Asked",
-        "heading_accent": "Questions"
-      }
-    },
     "ingredients": {
       "type": "ab-ingredients",
       "blocks": {
@@ -361,7 +308,10 @@
           "settings": {
             "name": "L-Citrulline",
             "copy": "Supports healthy blood flow and circulation.*",
-            "dose": "6,000 mg per scoop"
+            "dose": "6,000 mg per scoop",
+            "name_nc": "",
+            "copy_nc": "",
+            "dose_nc": ""
           }
         },
         "ab_ing_2": {
@@ -369,7 +319,10 @@
           "settings": {
             "name": "Tongkat Ali",
             "copy": "Supports healthy testosterone levels and drive.*",
-            "dose": "400 mg per scoop"
+            "dose": "400 mg per scoop",
+            "name_nc": "",
+            "copy_nc": "",
+            "dose_nc": ""
           }
         },
         "ab_ing_3": {
@@ -377,7 +330,10 @@
           "settings": {
             "name": "Ashwagandha",
             "copy": "Supports a healthy stress response.*",
-            "dose": "600 mg per scoop"
+            "dose": "600 mg per scoop",
+            "name_nc": "",
+            "copy_nc": "",
+            "dose_nc": ""
           }
         },
         "ab_ing_4": {
@@ -386,74 +342,94 @@
             "name": "L-Theanine",
             "copy": "Smooths out the caffeine for calm, focused energy.*",
             "dose": "200 mg per scoop",
-            "copy_nc": "Supports calm, focused energy.*"
+            "name_nc": "",
+            "copy_nc": "Supports calm, focused energy.*",
+            "dose_nc": ""
           }
         },
         "ing_maca": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Black_Maca-removebg-preview.png",
             "name": "Black Maca",
             "copy": "Traditionally used for libido and stamina.*",
             "dose": "1,000 mg per scoop",
-            "image": "shopify://shop_images/Black_Maca-removebg-preview.png"
+            "name_nc": "",
+            "copy_nc": "",
+            "dose_nc": ""
           }
         },
         "ing_fenugreek": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Fenugreek.png",
             "name": "Fenugreek",
             "copy": "Supports healthy testosterone and strength.*",
             "dose": "500 mg per scoop",
-            "image": "shopify://shop_images/Fenugreek.png"
+            "name_nc": "",
+            "copy_nc": "",
+            "dose_nc": ""
           }
         },
         "ing_goat_weed": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Horney_Goat_Weed.png",
             "name": "Horny Goat Weed",
             "copy": "Traditionally used to support sexual performance.*",
             "dose": "800 mg per scoop",
-            "image": "shopify://shop_images/Horney_Goat_Weed.png"
+            "name_nc": "",
+            "copy_nc": "",
+            "dose_nc": ""
           }
         },
         "ing_tribulus": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Tribulus_Terrestris.png",
             "name": "Tribulus Terrestris",
             "copy": "Traditionally used for vitality and drive.*",
             "dose": "500 mg per scoop",
-            "image": "shopify://shop_images/Tribulus_Terrestris.png"
+            "name_nc": "",
+            "copy_nc": "",
+            "dose_nc": ""
           }
         },
         "ing_shilajit": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Shilajit.png",
             "name": "Shilajit",
             "copy": "Supports energy and vitality.*",
             "dose": "200 mg per scoop",
-            "image": "shopify://shop_images/Shilajit.png"
+            "name_nc": "",
+            "copy_nc": "",
+            "dose_nc": ""
           }
         },
         "ing_coffee": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Arabica_Coffee.png",
             "name": "Arabica Coffee",
             "copy": "The premium dark roast base, with 100 mg caffeine per scoop.",
             "dose": "8,000 mg per scoop",
-            "image": "shopify://shop_images/Arabica_Coffee.png",
+            "image_nc": "shopify://shop_images/Cacao-removebg-preview.png",
             "name_nc": "Cacao Base",
             "copy_nc": "The rich cacao base that replaces the coffee, with zero caffeine.",
-            "dose_nc": "8,000 mg per scoop",
-            "image_nc": "shopify://shop_images/Cacao-removebg-preview.png"
+            "dose_nc": "8,000 mg per scoop"
           }
         },
         "ing_cacao": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Cacao-removebg-preview.png",
             "name": "Cacao",
             "copy": "Supports circulation and daily performance.*",
             "dose": "2,000 mg per scoop",
-            "image": "shopify://shop_images/Cacao-removebg-preview.png"
+            "name_nc": "",
+            "copy_nc": "",
+            "dose_nc": ""
           }
         }
       },
@@ -512,6 +488,7 @@
       "settings": {
         "heading": "Ready In 15 Seconds.",
         "heading_accent": "No Machine Needed.",
+        "heading_break": false,
         "image_alt": "Pouring hot water over a scoop of Alpha Brew",
         "button_label": "TRY ALPHA BREW"
       }
@@ -522,7 +499,7 @@
         "ab_photo_1": {
           "type": "photo",
           "settings": {
-            "quote": "“[…] the focus and energy this coffee gives me is balanced no heart racing feeling like regular coffee”",
+            "quote": "“The focus and energy this coffee gives me is balanced no heart racing feeling like regular coffee”",
             "name": "Mathew, 43",
             "badge": "Verified Buyer"
           }
@@ -530,7 +507,7 @@
         "ab_photo_2": {
           "type": "photo",
           "settings": {
-            "quote": "“i work out in construction It actually works i felt the difference in energy […]”",
+            "quote": "“I work out in construction It actually works i felt the difference in energy”",
             "name": "Miguel, 44",
             "badge": "Verified Buyer"
           }
@@ -538,7 +515,7 @@
         "ab_photo_3": {
           "type": "photo",
           "settings": {
-            "quote": "“[…] Ive felt stronger and less weak and drained throughout the day”",
+            "quote": "“Ive felt stronger and less weak and drained throughout the day”",
             "name": "Andrew, 38",
             "badge": "Verified Buyer"
           }
@@ -546,7 +523,7 @@
         "ab_photo_4": {
           "type": "photo",
           "settings": {
-            "quote": "“[…] i look forward every morning to drink it the taste is delicious […]”",
+            "quote": "“I look forward every morning to drink it the taste is delicious”",
             "name": "Damien, 46",
             "badge": "Verified Buyer"
           }
@@ -573,7 +550,11 @@
             "label": "TESTOSTERONE SUPPORT*",
             "brand": true,
             "column_2": false,
-            "column_3": false
+            "column_3": false,
+            "label_nc": "",
+            "brand_nc": true,
+            "column_2_nc": false,
+            "column_3_nc": false
           }
         },
         "row_2": {
@@ -582,7 +563,11 @@
             "label": "LIBIDO & STAMINA SUPPORT*",
             "brand": true,
             "column_2": false,
-            "column_3": false
+            "column_3": false,
+            "label_nc": "",
+            "brand_nc": true,
+            "column_2_nc": false,
+            "column_3_nc": false
           }
         },
         "row_3": {
@@ -591,7 +576,11 @@
             "label": "6,000 MG L-CITRULLINE",
             "brand": true,
             "column_2": false,
-            "column_3": false
+            "column_3": false,
+            "label_nc": "",
+            "brand_nc": true,
+            "column_2_nc": false,
+            "column_3_nc": false
           }
         },
         "row_4": {
@@ -613,7 +602,11 @@
             "label": "BUILT FOR MEN",
             "brand": true,
             "column_2": false,
-            "column_3": false
+            "column_3": false,
+            "label_nc": "",
+            "brand_nc": true,
+            "column_2_nc": false,
+            "column_3_nc": false
           }
         },
         "row_6": {
@@ -622,7 +615,11 @@
             "label": "90-DAY GUARANTEE",
             "brand": true,
             "column_2": false,
-            "column_3": false
+            "column_3": false,
+            "label_nc": "",
+            "brand_nc": true,
+            "column_2_nc": false,
+            "column_3_nc": false
           }
         }
       },
@@ -704,6 +701,7 @@
             "text": "100 mg caffeine + 200 mg L-Theanine.*",
             "quote": "“no heart racing feeling”",
             "author": "Mathew, 43",
+            "title_nc": "",
             "text_nc": "Zero caffeine, plus 200 mg L-Theanine.*"
           }
         }
@@ -715,6 +713,7 @@
       "settings": {
         "heading": "Tastes Like Coffee.",
         "heading_accent": "Without The Jitters.",
+        "heading_break": false,
         "image_alt": "Alpha Brew served hot and iced",
         "heading_nc": "Rich Cacao Cup.",
         "heading_accent_nc": "Zero Caffeine.",
@@ -798,6 +797,89 @@
         "ratings_text": "Based on 100k total ratings",
         "verified_label": "Verified",
         "footnote": "Individual results vary."
+      }
+    },
+    "faq": {
+      "type": "ab-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "How soon will I notice a difference?",
+            "answer": "<p>Many men report more natural energy and focus within the first few days. Bedroom benefits like stamina and performance can be noticed within 6-8 weeks of daily use. That's why the 3-bag bundle is the one we recommend.*</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Will Alpha Brew help me last longer in bed?",
+            "answer": "<p><strong>Yes</strong> — by improving blood flow, reducing stress, and <strong>supporting testosterone, Alpha Brew helps you perform</strong> with more control and stamina. Many men find they can stay present in the moment instead of “checking out early.”</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Is it safe to drink every day?",
+            "answer": "<p><strong>Absolutely. Alpha Brew is made with 100% natural, science-backed ingredients</strong> like Tongkat Ali, Maca, and Ashwagandha. No synthetic chemicals, no hidden fillers. Just a healthier way to drink your daily coffee.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "How much caffeine is in it?",
+            "answer": "<p>[Placeholder: answer to be added by client]</p>"
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "How does it taste?",
+            "answer": "<p>Like coffee - but smoother and less bitter.</p><p>The Cacao &amp; Coffee Combination gives it a delicious perfect coffee taste. Most guys say it tastes like the perfect cup of coffee.</p>"
+          }
+        },
+        "q6": {
+          "type": "faq",
+          "settings": {
+            "question": "How many cups are in a bag?",
+            "answer": "<p>30. One bag is a 1-month supply at one cup a day, with 100 mg of caffeine per cup.</p>"
+          }
+        },
+        "q7": {
+          "type": "faq",
+          "settings": {
+            "question": "How is this different from testosterone pills?",
+            "answer": "<p>Most <strong>pills are underdosed, &amp; only absorb 20-33% of the nutrients.</strong> Alpha Brew coffee absorbs 70% of the nutrients and works 4x faster than any pills or supplements.</p>"
+          }
+        },
+        "q8": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I cancel my subscription?",
+            "answer": "<p>Yes. You can skip or cancel anytime from Manage Subscription in your account.</p>"
+          }
+        },
+        "q9": {
+          "type": "faq",
+          "settings": {
+            "question": "What if it doesn't work for me?",
+            "answer": "<p>Every order comes with a 90-day money-back guarantee. If you don't notice more energy, drive or performance, contact us for a full refund.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8",
+        "q9"
+      ],
+      "settings": {
+        "heading": "Frequently Asked",
+        "heading_accent": "Questions"
       }
     },
     "guarantee": {

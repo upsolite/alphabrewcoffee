@@ -472,7 +472,7 @@
           }
         },
         "aftersell_by_rokt_pdp_upsells_hWetcE": {
-          "type": "shopify://apps/rokt-aftersell/blocks/pdp-upsells/509ec35d-0632-4dfc-a105-fa799cd9d149",
+          "type": "shopify://apps/aftersell/blocks/pdp-upsells/509ec35d-0632-4dfc-a105-fa799cd9d149",
           "settings": {}
         },
         "divider_wt4Jib": {
