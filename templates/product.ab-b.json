@@ -73,6 +73,7 @@
         "ab_slide_07": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Runner-up_07-a_centred_bag_circle_stats_full_quote_Higgsfield_v2_1.png",
             "alt": "Smooth energy, no jitters",
             "nc_version": false,
             "nc_hide": true
@@ -89,6 +90,7 @@
         "ab_slide_09": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Runner-up_09-b_3_bags_in_a_row_5-column_panel_Higgsfield_v2_2.png",
             "alt": "What you get",
             "nc_version": false,
             "nc_hide": false
@@ -650,6 +652,7 @@
         "ab_why_1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Image.png",
             "title": "Increases Libido",
             "text": "Black Maca and Horny Goat Weed have been used for centuries to support libido and stamina. Both are in every scoop of the coffee you already drink.*"
           }
@@ -657,6 +660,7 @@
         "ab_why_2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Image_1.png",
             "title": "Last Longer",
             "text": "6,000 mg L-Citrulline supports healthy blood flow, which is what staying power depends on. You get the full 6 grams in one morning cup.*"
           }
@@ -664,6 +668,7 @@
         "ab_why_3": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Image_2.png",
             "title": "Feel Stronger",
             "text": "Tongkat Ali and Fenugreek support healthy testosterone, and 600 mg Ashwagandha supports a healthy stress response. You feel like yourself again, at work and at home.*"
           }

@@ -73,6 +73,7 @@
         "ab_slide_07": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Runner-up_07-a_centred_bag_circle_stats_full_quote_Higgsfield_v2_1.png",
             "alt": "Smooth energy, no jitters",
             "nc_version": false,
             "nc_hide": true
@@ -89,6 +90,7 @@
         "ab_slide_09": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Runner-up_09-b_3_bags_in_a_row_5-column_panel_Higgsfield_v2_2.png",
             "alt": "What you get",
             "nc_version": false,
             "nc_hide": false
@@ -262,15 +264,15 @@
         "quote_1": {
           "type": "quote",
           "settings": {
-            "text": "“i work out in construction It actually works i felt the difference in energy […]”",
-            "byline": "Miguel, 44 · Verified Buyer"
+            "text": "“I've been enjoying sex more because I've been lasting a little longer then usual”",
+            "byline": "Mathew, 43 · Verified Buyer"
           }
         },
         "quote_2": {
           "type": "quote",
           "settings": {
-            "text": "“[…] the focus and energy this coffee gives me is balanced no heart racing feeling like regular coffee”",
-            "byline": "Mathew, 43 · Verified Buyer"
+            "text": "“At 56 I am having sex and horny like when I was 18!!! My wife is over the top”",
+            "byline": "Dan C., 56 · Verified Buyer"
           }
         }
       },
@@ -650,6 +652,7 @@
         "ab_why_1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Image.png",
             "title": "Increases Libido",
             "text": "Black Maca and Horny Goat Weed have been used for centuries to support libido and stamina. Both are in every scoop of the coffee you already drink.*"
           }
@@ -657,6 +660,7 @@
         "ab_why_2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Image_1.png",
             "title": "Last Longer",
             "text": "6,000 mg L-Citrulline supports healthy blood flow, which is what staying power depends on. You get the full 6 grams in one morning cup.*"
           }
@@ -664,6 +668,7 @@
         "ab_why_3": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Image_2.png",
             "title": "Feel Stronger",
             "text": "Tongkat Ali and Fenugreek support healthy testosterone, and 600 mg Ashwagandha supports a healthy stress response. You feel like yourself again, at work and at home.*"
           }
